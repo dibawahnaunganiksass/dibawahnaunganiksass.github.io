@@ -1,0 +1,169 @@
+/* Wasiat & Ruhul Jihad page styles */
+.page-wasiat{
+  --green: #19af55;
+  --text: #1c1c1c;
+  --muted: #555;
+  --border: rgba(25,175,85,.35);
+}
+
+.page-wasiat *{ box-sizing: border-box; }
+.page-wasiat .nilai-kiai{ padding: 56px 0; background: #fff; position: relative; overflow: hidden; }
+.page-wasiat .container{ width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+
+.page-wasiat .nilai-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+/* ===== Watermark IKSASS ===== */
+.page-wasiat .iksass-watermark::before{
+  content: "IKSASS";
+  position: absolute;
+  right: -20px;
+  top: 10px;
+  font-weight: 800;
+  font-size: clamp(64px, 9vw, 140px);
+  letter-spacing: .12em;
+  color: rgba(0,0,0,.05);
+  transform: rotate(-8deg);
+  pointer-events: none;
+  user-select: none;
+}
+
+.page-wasiat .iksass-watermark::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(25,175,85,.10), transparent 55%),
+    radial-gradient(1000px 500px at 90% 30%, rgba(25,175,85,.08), transparent 50%);
+  pointer-events: none;
+}
+
+/* ===== RUHUL JIHAD (KIRI) ===== */
+.page-wasiat .ruhuls-accent{ width: 120px; height: 4px; background: var(--green); border-radius: 999px; margin-bottom: 10px; }
+.page-wasiat .ruhuls-title{ margin: 0 0 18px; font-size: 32px; letter-spacing: .4px; }
+
+
+/* ===== 5 WASIAT (KANAN) ===== */
+.page-wasiat .wasiat{
+  position: relative;
+  padding-top: 8px;
+}
+.page-wasiat .wasiat-title{
+  margin: 0 0 16px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.page-wasiat .wasiat-list{
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.page-wasiat .wasiat-sublist{ margin: 10px 0 0 18px; padding: 0; }
+.page-wasiat .wasiat-sublist li{ margin: 4px 0; }
+
+.page-wasiat .wasiat-quote{
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-left: 4px solid rgba(25,175,85,.55);
+  background: rgba(25,175,85,.06);
+  border-radius: 10px;
+  color: #2e2e2e;
+}
+
+.page-wasiat .wasiat-footer{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.page-wasiat .wasiat-label{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f3f5f7;
+  color: #333;
+  font-size: 13px;
+}
+
+/* Foto Kiai (moved under RUHUL JIHAD) */
+.page-wasiat .kiai-foto img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.18);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+.page-wasiat .nilai-grid{ grid-template-columns: 1fr; gap: 28px; }
+.page-wasiat .wasiat{ padding-right: 0; }
+.page-wasiat .kiai-foto{ position: static; width: 160px; margin: 0 0 14px auto; }
+.page-wasiat .ruhuls-title{ font-size: 26px; }
+.page-wasiat .wasiat-title{ font-size: 26px; }
+}
+
+
+
+/* Shared card look (Ruhul Jihad & 5 Wasiat) */
+.ruhuls-card,
+.page-wasiat .wasiat-card{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+  background: #fff;
+  margin-bottom: 14px;
+}
+.page-wasiat .ruhuls-card h3{ margin: 0 0 6px; font-size: 16px; font-weight: 800; }
+.page-wasiat .ruhuls-card p{ margin: 0; line-height: 1.75; color: #444; }
+
+.page-wasiat .wasiat-card{ margin-top: 10px; }
+.page-wasiat .wasiat-card .wasiat-list{ padding-left: 18px; }
+.page-wasiat .wasiat-card .wasiat-footer{ margin-top: 16px; }
+
+/* Image under RUHUL JIHAD */
+.page-wasiat .wasiat-asad-wrap{
+  width: 100%;
+  margin: 10px 0 14px;
+}
+.page-wasiat .wasiat-asad-wrap img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 16px 40px rgba(0,0,0,.14);
+  background: #fff;
+}
+
+
+
+/* === RESPONSIVE WASIAT === */
+@media (max-width: 900px){
+.page-wasiat .wasiat-grid{
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+.page-wasiat .wasiat-left, .page-wasiat .wasiat-right{
+    max-width: 100% !important;
+  }
+}
+@media (max-width: 520px){
+.page-wasiat .ruhuls h2, .page-wasiat .wasiat-title{
+    font-size: 24px !important;
+  }
+.page-wasiat .ruhuls-card, .page-wasiat .wasiat-card{
+    padding: 14px 14px !important;
+    border-radius: 14px !important;
+  }
+}
+ /* === END RESPONSIVE WASIAT === */

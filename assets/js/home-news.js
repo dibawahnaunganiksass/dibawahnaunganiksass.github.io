@@ -1,0 +1,84 @@
+(() => {
+  const getRootPrefix = () => {
+    const parts = (location.pathname || "/").split("/").filter(Boolean);
+    const last = parts[parts.length - 1] || "";
+    if (last.includes(".")) parts.pop();
+    return "../".repeat(Math.max(0, parts.length));
+  };
+  const ROOT_PREFIX = getRootPrefix();
+
+  const rootEl = document.querySelector('[data-home-news]');
+  if (!rootEl) return;
+
+  const esc = (s = '') => String(s)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+
+  const normalizeImage = (src = '') => {
+    const v = String(src || '').trim();
+    if (!v) return ROOT_PREFIX + 'assets/img/og-default.png';
+    if (v.startsWith('http://') || v.startsWith('https://') || v.startsWith('data:')) return v;
+    if (v.startsWith('/')) return ROOT_PREFIX + v.slice(1);
+    // If someone ever passes relative path, anchor it to root.
+    return `/${v.replace(/^\.+\//, '')}`;
+  };
+
+  const renderCard = (item) => {
+    const href = ROOT_PREFIX + `berita/${esc(item.slug)}/`;
+    const img = normalizeImage(item.image);
+
+    // Home card meta matches existing homepage markup
+    const metaParts = [];
+    if (item.location) metaParts.push(item.location);
+    if (item.date_display) metaParts.push(item.date_display);
+    const meta = metaParts.join(' • ');
+
+    return `
+      <a class="news-card" href="${href}">
+        <img class="news-thumb" src="${esc(img)}" alt="${esc(item.title)}" loading="lazy" decoding="async">
+        <div class="news-body">
+          <p class="news-title">${esc(item.title)}</p>
+          ${item.excerpt ? `<p class="news-snippet">${esc(item.excerpt)}</p>` : ''}
+          ${meta ? `<div class="news-meta">${esc(meta)}</div>` : ''}
+        </div>
+      </a>
+    `;
+  };
+
+  // Skeleton placeholders (keeps layout stable on slow connections)
+  const skeletonCount = 4;
+  rootEl.innerHTML = Array.from({ length: skeletonCount }).map(() => {
+    return `
+      <div class="news-card" aria-hidden="true">
+        <div class="news-thumb" style="background: var(--bg-soft);"></div>
+        <div class="news-body">
+          <p class="news-title" style="background: var(--bg-soft); height: 14px; border-radius: 8px; margin-bottom: 10px;"></p>
+          <p class="news-snippet" style="background: var(--bg-soft); height: 12px; border-radius: 8px;"></p>
+          <div class="news-meta" style="background: var(--bg-soft); height: 10px; border-radius: 8px; width: 40%;"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  fetch(ROOT_PREFIX + 'berita/news-index.json', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error('Gagal memuat news-index.json'))))
+    .then((list) => {
+      const safeList = Array.isArray(list) ? list : [];
+      const top = safeList
+        .filter((x) => x && typeof x === 'object' && x.slug && x.title)
+        .slice(0, 4);
+
+      if (!top.length) {
+        rootEl.innerHTML = '<p class="news-snippet">Berita belum tersedia.</p>';
+        return;
+      }
+
+      rootEl.innerHTML = top.map(renderCard).join('');
+    })
+    .catch(() => {
+      rootEl.innerHTML = '<p class="news-snippet">Berita belum tersedia.</p>';
+    });
+})();

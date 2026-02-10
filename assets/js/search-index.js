@@ -1,0 +1,135 @@
+// Auto Search Index (lintas kategori)
+// - Berita: diambil otomatis dari /berita/news-index.json
+// - Halaman non-berita + dokumen: diambil dari /assets/data/pages-index.json (dibuat oleh tools/build_pages_index.py)
+// Output: window.SEARCH_INDEX (dipakai oleh assets/js/search.js)
+
+(function(){
+  function getRootPrefix(){
+    try{
+      const depth = Math.max(0, window.location.pathname.split('/').length - 2);
+      return '../'.repeat(depth);
+    }catch(e){
+      return '';
+    }
+  }
+
+  const ROOT_PREFIX = getRootPrefix();
+
+  const BASE_INDEX = [
+    {
+      title: 'Berita',
+      url: 'berita/',
+      excerpt: 'Kumpulan kabar dan update terbaru dari IKSASS.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Profil',
+      url: 'profil/',
+      excerpt: 'Profil organisasi, sejarah singkat, dan arah gerak perjuangan.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Kelembagaan',
+      url: 'kelembagaan/',
+      excerpt: 'Struktur pengurus, komisariat, rayon, sub-rayon, dan data kelembagaan.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Agenda',
+      url: 'agenda/',
+      excerpt: 'Agenda kegiatan dan jadwal organisasi.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Dokumen',
+      url: 'dokumen/',
+      excerpt: 'Dokumen, arsip, dan publikasi terkait IKSASS.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Galeri',
+      url: 'galeri/',
+      excerpt: 'Galeri foto dan dokumentasi kegiatan.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Info',
+      url: 'info/',
+      excerpt: 'Informasi umum dan pengumuman.',
+      category: 'Navigasi'
+    },
+    {
+      title: 'Kontak',
+      url: 'kontak/',
+      excerpt: 'Kontak dan kanal komunikasi resmi.',
+      category: 'Navigasi'
+    }
+  ];
+
+  // Minimal index dulu supaya search tidak kosong total saat loading
+  window.SEARCH_INDEX = BASE_INDEX.slice();
+
+  function normalizeTag(s){
+    return (s || '')
+      .toString()
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g,'')
+      .replace(/\s+/g,'-')
+      .replace(/-+/g,'-');
+  }
+
+  function buildTagsFromNewsItem(it){
+    const tags = new Set();
+    // slug tokens
+    (it.slug || '').split('-').filter(Boolean).forEach(t => tags.add(normalizeTag(t)));
+    // location tokens
+    (it.location || '').split(/\s+|,|\//).filter(Boolean).forEach(t => tags.add(normalizeTag(t)));
+    // tanggal (tahun)
+    if (it.date_iso && /^\d{4}-\d{2}-\d{2}$/.test(it.date_iso)) tags.add(it.date_iso.slice(0,4));
+    return Array.from(tags).filter(Boolean);
+  }
+
+  async function loadJSON(path, errMsg){
+    const res = await fetch(ROOT_PREFIX + path, { cache: 'no-store' });
+    if (!res.ok) throw new Error(errMsg);
+    return await res.json();
+  }
+
+  async function buildIndex(){
+    // Load pages index + news index in parallel
+    const [pagesRaw, newsRaw] = await Promise.all([
+      loadJSON('assets/data/pages-index.json', 'Tidak bisa memuat pages-index.json'),
+      loadJSON('berita/news-index.json', 'Tidak bisa memuat news-index.json')
+    ]);
+
+    const pagesItems = Array.isArray(pagesRaw)
+      ? pagesRaw.map(it => ({
+          title: it.title || '',
+          url: it.url || '',
+          excerpt: it.excerpt || '',
+          category: it.category || 'Halaman',
+          tags: it.tags || []
+        }))
+      : [];
+
+    const list = Array.isArray(newsRaw) ? newsRaw : [];
+    const beritaItems = list.map(it => ({
+      title: it.title || '',
+      url: `berita/${it.slug}/`,
+      excerpt: it.excerpt || '',
+      category: 'Berita',
+      date: it.date_display || '',
+      tags: buildTagsFromNewsItem(it)
+    }));
+
+    // Final: navigasi + pages + berita
+    window.SEARCH_INDEX = BASE_INDEX.concat(pagesItems, beritaItems);
+    window.dispatchEvent(new CustomEvent('search:index:ready'));
+  }
+
+  buildIndex().catch(() => {
+    // Fallback: tetap bisa search navigasi.
+    window.dispatchEvent(new CustomEvent('search:index:ready'));
+  });
+})();

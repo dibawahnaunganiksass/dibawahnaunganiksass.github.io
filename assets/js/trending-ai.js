@@ -1,0 +1,12 @@
+
+(function(){
+ const cards=document.querySelectorAll('.news-card');
+ cards.forEach((c,i)=>{
+  if(i<3){
+    const b=document.createElement('div');
+    b.className='badge-trending';
+    b.innerText='🚀 Trending';
+    c.appendChild(b);
+  }
+ });
+})();
