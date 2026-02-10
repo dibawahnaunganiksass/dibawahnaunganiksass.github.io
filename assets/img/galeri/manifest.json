@@ -1,0 +1,70 @@
+[
+  {
+    "album_slug": "mubes-iksass-2025",
+    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
+    "tag": "Perjuangan",
+    "folder": "assets/img/galeri/mubes-iksass-2025/",
+    "cover": "assets/img/galeri/mubes-iksass-2025/mubes-iksass-2025-01.jpg",
+    "images": [
+      "mubes-iksass-2025-01.jpg",
+      "mubes-iksass-2025-02.jpg",
+      "mubes-iksass-2025-03.jpg",
+      "mubes-iksass-2025-04.jpg",
+      "mubes-iksass-2025-05.jpg",
+      "mubes-iksass-2025-06.jpg",
+      "mubes-iksass-2025-07.jpg",
+      "mubes-iksass-2025-08.jpg"
+    ],
+    "generated_at": "2026-02-10T13:11:24.557648Z"
+  },
+  {
+    "album_slug": "khidmah-sosial",
+    "title": "Khidmah Sosial — Hadir untuk Umat",
+    "tag": "Sosial",
+    "folder": "assets/img/galeri/khidmah-sosial/",
+    "cover": "assets/img/galeri/khidmah-sosial/khidmah-sosial-01.jpg",
+    "images": [
+      "khidmah-sosial-01.jpg",
+      "khidmah-sosial-02.jpg",
+      "khidmah-sosial-03.jpg",
+      "khidmah-sosial-04.jpg",
+      "khidmah-sosial-05.jpg",
+      "khidmah-sosial-06.jpg",
+      "khidmah-sosial-07.jpg",
+      "khidmah-sosial-08.jpg"
+    ],
+    "generated_at": "2026-02-10T13:11:24.558569Z"
+  },
+  {
+    "album_slug": "silaturahim-alumni",
+    "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
+    "tag": "Ukhuwah",
+    "folder": "assets/img/galeri/silaturahim-alumni/",
+    "cover": "assets/img/galeri/silaturahim-alumni/silaturahim-alumni-01.jpg",
+    "images": [
+      "silaturahim-alumni-01.jpg",
+      "silaturahim-alumni-02.jpg",
+      "silaturahim-alumni-03.jpg",
+      "silaturahim-alumni-04.jpg",
+      "silaturahim-alumni-05.jpg",
+      "silaturahim-alumni-06.jpg"
+    ],
+    "generated_at": "2026-02-10T13:11:24.559423Z"
+  },
+  {
+    "album_slug": "pendidikan-ke-nuan",
+    "title": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
+    "tag": "Pendidikan",
+    "folder": "assets/img/galeri/pendidikan-ke-nuan/",
+    "cover": "assets/img/galeri/pendidikan-ke-nuan/pendidikan-ke-nuan-01.jpg",
+    "images": [
+      "pendidikan-ke-nuan-01.jpg",
+      "pendidikan-ke-nuan-02.jpg",
+      "pendidikan-ke-nuan-03.jpg",
+      "pendidikan-ke-nuan-04.jpg",
+      "pendidikan-ke-nuan-05.jpg",
+      "pendidikan-ke-nuan-06.jpg"
+    ],
+    "generated_at": "2026-02-10T13:11:24.560481Z"
+  }
+]

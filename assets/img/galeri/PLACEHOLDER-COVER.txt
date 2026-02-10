@@ -1,0 +1,1 @@
+Taruh cover album di: assets/img/galeri/<album-slug>/<album-slug>-01.jpg
