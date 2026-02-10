@@ -1,0 +1,22 @@
+[
+  {
+    "name": "KHR. Syamsul Arifin",
+    "role": "Pendiri dan Pengasuh I",
+    "image": "/assets/img/founding-father/syamsul-arifin.jpg"
+  },
+  {
+    "name": "KHR. As'ad Syamsul Arifin",
+    "role": "Pendiri dan Pengasuh II",
+    "image": "/assets/img/founding-father/asad-syamsul-arifin.jpg"
+  },
+  {
+    "name": "KHR. Achmad Fawaid As'ad",
+    "role": "Pengasuh III",
+    "image": "/assets/img/founding-father/achmad-fawaid-asad.jpg"
+  },
+  {
+    "name": "KHR. Achmad Azaim Ibrahimy",
+    "role": "Pengasuh IV",
+    "image": "/assets/img/founding-father/achmad-azaim-ibrahimy.jpg"
+  }
+]
