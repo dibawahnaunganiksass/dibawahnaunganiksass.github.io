@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IKSASS — Galeri</title>
+  <meta name="description" content="Galeri IKSASS: Jejak perjuangan, khidmah, ukhuwah, pendidikan, dan Ke-NU-an.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="/assets/img/logo-iksass.png">
+  <link rel="apple-touch-icon" href="/assets/img/logo-iksass.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IKSASS">
+  <meta property="og:title" content="IKSASS — Galeri">
+  <meta property="og:description" content="Galeri IKSASS: Jejak perjuangan, khidmah, ukhuwah, pendidikan, dan Ke-NU-an.">
+  <meta property="og:image" content="/assets/img/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IKSASS — Galeri">
+  <meta name="twitter:description" content="Galeri IKSASS: Jejak perjuangan, khidmah, ukhuwah, pendidikan, dan Ke-NU-an.">
+  <meta name="twitter:image" content="/assets/img/og-default.png">
+
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="/assets/css/override.css" rel="stylesheet">
+  <script src="/assets/js/meta-url.js"></script>
+</head>
+<body>
+<div data-include="header"></div>
+<main class="page" id="konten" tabindex="-1">
+  <div class="container">
+
+    <div class="breadcrumb">Media</div>
+    <h1 class="page-title">Galeri IKSASS</h1>
+    <p class="page-sub">
+      Merekam perjalanan, merawat kenangan, menguatkan kebersamaan.
+      Setiap momen yang ditampilkan adalah kurasi—bukan sekadar arsip.
+    </p>
+
+    <div class="hero-card" style="margin:14px 0 0">
+      <div class="pill">Perjuangan</div>
+      <div class="pill">Sosial</div>
+      <div class="pill">Ukhuwah</div>
+      <div class="pill">Pendidikan</div>
+      <div class="pill">Ke-NU-an</div>
+    </div>
+
+    <div class="prose" style="margin-top:12px">
+      <p>
+        Berikut adalah highlight momen terpilih. Untuk menambah atau mengganti foto album, taruh foto di
+        <code>assets/img/galeri/&lt;album&gt;/</code> dengan pola <code>&lt;album&gt;-NN.jpg</code>,
+        lalu jalankan <code>python tools/build_gallery.py</code>.
+      </p>
+    </div>
+
+    <style>
+      .gallery-grid--4{display:grid;gap:18px;grid-template-columns:repeat(1,minmax(0,1fr));}
+      @media (min-width:768px){.gallery-grid--4{grid-template-columns:repeat(2,minmax(0,1fr));}}
+      @media (min-width:1100px){.gallery-grid--4{grid-template-columns:repeat(4,minmax(0,1fr));}}
+      .gallery-card{display:block;border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.08);text-decoration:none;background:#fff;}
+      .gallery-card__media{aspect-ratio:16/9;background:rgba(0,0,0,.04);}
+      .gallery-card__media img{width:100%;height:100%;object-fit:cover;display:block;}
+      .gallery-card__body{padding:14px;}
+      .gallery-card:hover{box-shadow:0 14px 40px rgba(0,0,0,.10);transform:translateY(-2px);transition:all .2s ease;}
+    </style>
+
+    <div class="gallery-grid--4" style="margin-top:14px">
+
+    <a class="gallery-card" href="/galeri/mubes-iksass-2025.html">
+      <div class="gallery-card__media">
+        <img src="/assets/img/galeri/mubes-iksass-2025/mubes-iksass-2025-01.jpg" alt="Mubes IKSASS 2025 — Konsolidasi & Arah Baru" loading="lazy">
+      </div>
+      <div class="gallery-card__body">
+        <div class="pill">Perjuangan</div>
+        <h3 class="title" style="margin:10px 0 6px">Mubes IKSASS 2025 — Konsolidasi & Arah Baru</h3>
+        <p class="desc" style="margin:0">Muktamar Besar IKSASS 2025 menjadi ruang pertemuan lintas generasi alumni Pondok Pesantren Salafiyah Syafi’iyah Sukorejo. Bukan sekadar forum pengambilan keputusan, momen ini mempertemukan gagasan, pengalaman, dan semangat kebersamaan untuk meneguhkan arah perjuangan organisasi ke depan.</p>
+      </div>
+    </a>
+
+    <a class="gallery-card" href="/galeri/khidmah-sosial.html">
+      <div class="gallery-card__media">
+        <img src="/assets/img/galeri/khidmah-sosial/khidmah-sosial-01.jpg" alt="Khidmah Sosial — Hadir untuk Umat" loading="lazy">
+      </div>
+      <div class="gallery-card__body">
+        <div class="pill">Sosial</div>
+        <h3 class="title" style="margin:10px 0 6px">Khidmah Sosial — Hadir untuk Umat</h3>
+        <p class="desc" style="margin:0">IKSASS hadir di tengah masyarakat melalui gerakan khidmah sosial yang berangkat dari nilai kepedulian dan kemanusiaan. Dalam kebersamaan para alumni dan relawan, setiap langkah kecil menjadi wujud nyata kepedulian terhadap sesama, sekaligus penguatan peran sosial pesantren di tengah masyarakat.</p>
+      </div>
+    </a>
+
+    <a class="gallery-card" href="/galeri/silaturahim-alumni.html">
+      <div class="gallery-card__media">
+        <img src="/assets/img/galeri/silaturahim-alumni/silaturahim-alumni-01.jpg" alt="Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan" loading="lazy">
+      </div>
+      <div class="gallery-card__body">
+        <div class="pill">Ukhuwah</div>
+        <h3 class="title" style="margin:10px 0 6px">Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan</h3>
+        <p class="desc" style="margin:0">Silaturahim alumni bukan hanya tentang pertemuan, tetapi tentang merawat ikatan batin yang terjalin sejak di pesantren. Dalam suasana sederhana dan penuh kehangatan, para alumni saling berbagi cerita, pengalaman, dan harapan, memperkuat ukhuwah yang menjadi fondasi gerak IKSASS.</p>
+      </div>
+    </a>
+
+    <a class="gallery-card" href="/galeri/pendidikan-ke-nuan.html">
+      <div class="gallery-card__media">
+        <img src="/assets/img/galeri/pendidikan-ke-nuan/pendidikan-ke-nuan-01.jpg" alt="Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi" loading="lazy">
+      </div>
+      <div class="gallery-card__body">
+        <div class="pill">Pendidikan</div>
+        <h3 class="title" style="margin:10px 0 6px">Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi</h3>
+        <p class="desc" style="margin:0">Pendidikan dan nilai-nilai Ke-NU-an menjadi fondasi utama gerak IKSASS dalam membentuk insan yang berilmu, berakhlak, dan berkeadaban. Melalui pengajian, forum keilmuan, serta penguatan tradisi Ahlussunnah wal Jama’ah, IKSASS terus merawat warisan pesantren agar tetap hidup, relevan, dan membumi di tengah perubahan zaman.</p>
+      </div>
+    </a>
+    </div>
+  </div>
+</main>
+<div data-include="footer"></div>
+<script defer src="../assets/js/partials.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/search.js"></script>
+</body>
+</html>
