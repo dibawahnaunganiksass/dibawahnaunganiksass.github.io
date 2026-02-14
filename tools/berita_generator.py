@@ -98,11 +98,17 @@ def make_banner(title: str, subtitle: str, outpath: Path):
   img.save(outpath)
 
 def main():
-  if len(sys.argv) < 2:
-    print("Usage: python tools/berita_generator.py berita/data/new-article.json")
+  args = sys.argv[1:]
+  no_index = False
+  if '--no-index' in args:
+    no_index = True
+    args = [a for a in args if a != '--no-index']
+
+  if len(args) < 1:
+    print("Usage: python tools/berita_generator.py [--no-index] berita/data/new-article.json")
     sys.exit(1)
 
-  data_path = Path(sys.argv[1]).resolve()
+  data_path = Path(args[0]).resolve()
   data = json.loads(data_path.read_text(encoding="utf-8"))
 
   title = data.get("title","").strip()
@@ -146,36 +152,41 @@ def main():
 
   # body paragraphs insertion
   paras = "\n".join([f'            <p>{p}</p>' for p in body])
-  html = html.replace("            <p>[Paragraf 1: lead]</p>\n            <p>[Paragraf 2: detail]</p>\n            <p>[Paragraf 3: konteks]</p>\n            <p>[Paragraf 4: penutup]</p>", paras)
+
+  # Prefer marker replacement (robust across indentation)
+  if "<!-- BODY_PARAGRAPHS -->" in html:
+    html = html.replace("<!-- BODY_PARAGRAPHS -->", paras)
+  else:
+    # Backward compat: replace old placeholder block using regex
+    html = re.sub(r"<p>\[Paragraf 1: lead\]</p>\s*<p>\[Paragraf 2: detail\]</p>\s*<p>\[Paragraf 3: konteks\]</p>\s*<p>\[Paragraf 4: penutup\]</p>", paras, html, count=1)
+
+  # Ensure CTA exists (inline, non-floating)
+  if 'class="news-cta__btn"' not in html:
+    cta = """\n\n<!-- CTA (inline, non-floating) -->\n<div class=\"news-cta\" aria-label=\"Ajakan bergabung channel IKSASS\">\n  <div class=\"news-cta__content\">\n    <h3>Gabung Channel IKSASS</h3>\n    <p>Dapatkan update kegiatan, agenda, dan berita terbaru langsung dari IKSASS.</p>\n  </div>\n  <a class=\"news-cta__btn\" href=\"https://whatsapp.com/channel/0029Vb6q9hnKLaHnmhqaR53G\" rel=\"noopener\" target=\"_blank\">\n    <span class=\"news-cta__icon\" aria-hidden=\"true\">WA</span>\n    Gabung Sekarang\n  </a>\n</div>\n"""
+    html = re.sub(r"\s*</article>", cta + "</article>", html, count=1)
+
 
   out_dir = ROOT / "berita" / slug
   out_dir.mkdir(parents=True, exist_ok=True)
   (out_dir / "index.html").write_text(html, encoding="utf-8")
 
 
-  # Update berita/news-index.json (listing)
-  idx_path = ROOT / "berita" / "news-index.json"
-  try:
-    idx = json.loads(idx_path.read_text(encoding="utf-8")) if idx_path.exists() else []
-  except Exception:
-    idx = []
-  entry = {
-    "slug": slug,
-    "title": title,
-    "excerpt": (body[0][:140] + "…") if body else "",
-    "date_iso": data.get("date_iso",""),
-    "date_display": date_display,
-    "location": location,
-    "image": featured_rel
-  }
-  # remove existing same slug
-  idx = [e for e in idx if e.get("slug") != slug]
-  idx.append(entry)
-  # sort by date_iso desc if available
-  def key(e):
-    return e.get("date_iso","")
-  idx.sort(key=key, reverse=True)
-  idx_path.write_text(json.dumps(idx, ensure_ascii=False, indent=2), encoding="utf-8")
+  # Rebuild berita/news-index.json (single source of truth: berita/data/*.json)
+  # By default generator rebuilds the index so:
+  # - mega menu hover "Berita" updates
+  # - /berita listing updates
+  # - sidebar "Terkini/Populer" updates
+  #
+  # You can disable it via: python tools/berita_generator.py --no-index berita/data/xxx.json
+  if not no_index:
+    try:
+      import subprocess
+      idx_builder = ROOT / "tools" / "build_news_index.py"
+      if idx_builder.exists():
+        subprocess.call([sys.executable, str(idx_builder)], cwd=str(ROOT))
+    except Exception:
+      pass
+
 
   print("OK: dibuat")
   print("-", out_dir / "index.html")

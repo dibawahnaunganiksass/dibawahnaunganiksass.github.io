@@ -38,7 +38,9 @@
 
     return `
       <a class="news-card" href="${href}">
-        <img class="news-thumb" src="${esc(img)}" alt="${esc(item.title)}" loading="lazy" decoding="async">
+        <div class="news-thumb">
+          <img src="${esc(img)}" alt="${esc(item.title)}" loading="lazy" decoding="async">
+        </div>
         <div class="news-body">
           <p class="news-title">${esc(item.title)}</p>
           ${item.excerpt ? `<p class="news-snippet">${esc(item.excerpt)}</p>` : ''}

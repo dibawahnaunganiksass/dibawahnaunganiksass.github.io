@@ -55,3 +55,60 @@
     });
   });
 })();
+
+
+/* Support legacy markup:
+   <div class="accordion">
+     <button class="accordion-header"><span class="arrow">⌄</span></button>
+     <div class="accordion-body">...</div>
+   </div>
+*/
+(function () {
+  const roots = document.querySelectorAll('.accordion');
+  if (!roots.length) return;
+
+  roots.forEach((root) => {
+    const headers = Array.from(root.querySelectorAll('.accordion-header'));
+    if (!headers.length) return;
+
+    headers.forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+      const panel = btn.nextElementSibling;
+      if (panel && panel.classList.contains('accordion-body')) {
+        panel.style.display = 'none';
+      }
+    });
+
+    function closeAll(exceptBtn) {
+      headers.forEach((btn) => {
+        if (exceptBtn && btn === exceptBtn) return;
+        const panel = btn.nextElementSibling;
+        btn.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        if (panel && panel.classList.contains('accordion-body')) {
+          panel.style.display = 'none';
+        }
+      });
+    }
+
+    headers.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const panel = btn.nextElementSibling;
+        if (!panel || !panel.classList.contains('accordion-body')) return;
+
+        const isOpen = btn.classList.contains('is-open');
+        closeAll(isOpen ? null : btn);
+
+        if (isOpen) {
+          btn.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+          panel.style.display = 'none';
+        } else {
+          btn.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+          panel.style.display = 'block';
+        }
+      });
+    });
+  });
+})();

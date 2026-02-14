@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dibawahnaunganiksass.github.io/sitemap.xml

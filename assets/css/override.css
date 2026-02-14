@@ -770,7 +770,9 @@ main{ padding-top: 0 !important; }
 }
 /* === END MOBILE NAV OVERRIDE === */
 
-/* WhatsApp CTA at bottom of article */
+/* =====================================================
+   WhatsApp CTA (INLINE in detail berita, NON-FLOATING)
+   ===================================================== */
 .news-cta{
   margin-top: 28px;
   padding: 18px 18px;
@@ -840,9 +842,7 @@ main{ padding-top: 0 !important; }
   box-shadow: 0 14px 24px rgba(0,0,0,.22);
   filter: brightness(1.02);
 }
-.news-cta__btn:active{
-  transform: translateY(0);
-}
+.news-cta__btn:active{ transform: translateY(0); }
 .news-cta__btn:focus-visible{
   outline: 3px solid rgba(255,255,255,.85);
   outline-offset: 3px;
@@ -859,16 +859,10 @@ main{ padding-top: 0 !important; }
   box-shadow: inset 0 1px 0 rgba(255,255,255,.28);
 }
 @media (max-width: 768px){
-  .news-cta{
-    flex-direction: column;
-    align-items: stretch;
-    text-align: left;
-  }
-  .news-cta__btn{
-    justify-content: center;
-    width: 100%;
-  }
+  .news-cta{ flex-direction: column; align-items: stretch; text-align: left; }
+  .news-cta__btn{ justify-content: center; width: 100%; }
 }
+
 
 /* =====================================================
    INFO ORGANISASI — HIGHLIGHT IMAGE (Pengumuman Utama)
@@ -1336,8 +1330,8 @@ main{ padding-top: 0 !important; }
     font-size: 13px;
     line-height: 1.35;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    
+    
     overflow: hidden;
     opacity: .95;
   }
@@ -1376,8 +1370,8 @@ main{ padding-top: 0 !important; }
     line-height: 1.35;
     color: #475569;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    
+    
     overflow: hidden;
     opacity: .95;
   }
@@ -1697,4 +1691,480 @@ main{ padding-top: 0 !important; }
   font-size:12px;
   color: var(--primary, #0f5132);
   margin-bottom:6px;
+}
+
+
+/* CTA ROW MOBILE WRAP */
+.cta-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+@media (max-width: 420px){
+  .cta-row .btn{
+    flex: 1 1 auto;
+    min-width: 120px;
+    text-align:center;
+  }
+}
+
+
+/* STRUKTUR ORG PILLS */
+.hero-card .pill{ text-decoration:none; font-weight:800; }
+.hero-card .pill:focus-visible{ outline:none; box-shadow: 0 0 0 3px rgba(15,122,60,.14); }
+
+
+/* HAMBURGER SIZE */
+.iconbtn.hamburger{
+  width:44px;
+  height:44px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  line-height:1;
+}
+
+
+/* === STRUKTUR PREMIUM POLISH === */
+
+.struktur-intro{
+  margin-bottom: 28px;
+}
+
+.struktur-subtitle{
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 24px 0 16px;
+  color: #1e293b;
+}
+
+.card-grid .card{
+  transition: all .2s ease;
+}
+
+.card-grid .card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  border-color: #15803d;
+}
+
+@media (max-width: 768px){
+  .card-grid .card:active{
+    transform: scale(.98);
+  }
+}
+
+
+/* STRUKTUR PREMIUM HOVER FOR GRID4 */
+.grid4 .card{
+  transition: all .2s ease;
+}
+.grid4 .card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  border-color: #15803d;
+}
+@media (max-width: 768px){
+  .grid4 .card:active{ transform: scale(.98); }
+}
+
+
+/* === STRUKTUR SPACING FIX === */
+.struktur-intro{
+  margin-bottom: 14px !important;
+}
+
+.struktur-subtitle{
+  margin: 16px 0 10px !important;
+}
+
+.page-sub{
+  margin-bottom: 8px !important;
+}
+
+.section{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+
+/* === STRUKTUR SPACING FIX v2 (page-specific) === */
+.page-struktur .struktur-intro{ margin-bottom: 10px !important; }
+.page-struktur .section.section-tight{
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+.page-struktur .grid4{ margin-top: 0 !important; }
+.page-struktur .content-text{ margin-top: 12px !important; }
+.page-struktur .content-text p{ margin: 0 0 10px; }
+
+
+/* KONTAK LAYOUT HELPERS */
+.grid2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 900px){
+  .grid2{ grid-template-columns: 1fr; }
+}
+.gap-lg{ gap: 18px; }
+.spacer{ height: 10px; }
+.link-list{ margin: 10px 0 0; padding-left: 18px; }
+.link-list li{ margin: 8px 0; }
+.notice{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  background: rgba(21, 128, 61, 0.06);
+}
+
+
+/* === UNITLIST MOBILE CARDS (Rayon/Sub Rayon/Komisariat) === */
+@media (max-width: 860px){
+  .page-unitlist table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .page-unitlist thead{ display:none !important; }
+  .page-unitlist table, 
+  .page-unitlist tbody,
+  .page-unitlist tr,
+  .page-unitlist td{
+    display:block;
+    width: 100%;
+  }
+  .page-unitlist tr{
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 16px;
+    padding: 12px 14px;
+    margin: 12px 0;
+    box-shadow: 0 6px 16px rgba(0,0,0,.04);
+  }
+  .page-unitlist td{
+    border: 0 !important;
+    padding: 8px 0 !important;
+  }
+  .page-unitlist td + td{
+    border-top: 1px solid rgba(0,0,0,.06) !important;
+  }
+  .page-unitlist td{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 14px;
+  }
+  .page-unitlist td::before{
+    flex: 0 0 120px;
+    font-weight: 600;
+    color: rgba(15,23,42,.65);
+  }
+  .page-unitlist td:nth-child(1)::before{ content:"Nama"; }
+  .page-unitlist td:nth-child(2)::before{ content:"Wilayah/Induk"; }
+  .page-unitlist td:nth-child(3)::before{ content:"Detail"; }
+
+  /* make action button/link easier to tap */
+  .page-unitlist td:nth-child(3) a,
+  .page-unitlist td:nth-child(3) button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border-radius: 999px;
+  }
+}
+
+/* Accordion button state (Pengurus Pusat) */
+.accordion-header .arrow{
+  display:inline-block;
+  transition: transform .2s ease;
+}
+.accordion-header.is-open .arrow{
+  transform: rotate(180deg);
+}
+
+
+/* === UNITLIST (DIV TABLE) MOBILE CARDS v2 === */
+@media (max-width: 860px){
+  .page-unitlist .table{ width:100%; }
+  /* hide header row */
+  .page-unitlist .table .tr:has(.th){ display:none !important; }
+
+  .page-unitlist .table .tr{
+    display:block;
+    background:#fff;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:16px;
+    padding:12px 14px;
+    margin:12px 0;
+    box-shadow:0 6px 16px rgba(0,0,0,.04);
+  }
+  .page-unitlist .table .td{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:14px;
+    padding:8px 0;
+  }
+  .page-unitlist .table .td + .td{
+    border-top:1px solid rgba(0,0,0,.06);
+  }
+  .page-unitlist .table .td::before{
+    flex:0 0 120px;
+    font-weight:600;
+    color:rgba(15,23,42,.65);
+  }
+  .page-unitlist .table .td:nth-child(1)::before{ content:"Nama"; }
+  .page-unitlist .table .td:nth-child(2)::before{ content:"Wilayah/Induk"; }
+  .page-unitlist .table .td:nth-child(3)::before{ content:"Detail"; }
+
+  .page-unitlist .link-buka{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:40px;
+    padding:8px 14px;
+    border-radius:999px;
+  }
+}
+
+/* Fallback for browsers without :has() (iOS older): hide first row when it contains .th */
+@media (max-width: 860px){
+  .page-unitlist .table .tr.header-row{ display:none !important; }
+}
+
+
+/* === UNITLIST MOBILE ROWSTYLE (revert cards, keep 1-row list) === */
+@media (max-width: 860px){
+  /* cancel card transformation */
+  .page-unitlist .table .tr{
+    display:grid !important;
+    grid-template-columns: 1fr 120px 72px;
+    gap: 12px;
+    align-items:center;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* restore row separators */
+  .page-unitlist .table{
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .page-unitlist .table .tr + .tr{
+    border-top: 1px solid rgba(0,0,0,.06);
+  }
+
+  /* restore cells */
+  .page-unitlist .table .td,
+  .page-unitlist .table .th{
+    display:block !important;
+    padding: 12px 14px !important;
+    border: 0 !important;
+  }
+
+  /* disable mobile labels */
+  .page-unitlist .table .td::before{ content: none !important; display:none !important; }
+
+  /* Column alignment */
+  .page-unitlist .table .td:nth-child(2),
+  .page-unitlist .table .th:nth-child(2){
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  .page-unitlist .table .td:nth-child(3),
+  .page-unitlist .table .th:nth-child(3){
+    text-align: right;
+  }
+
+  /* Make name tidy: clamp to 2 lines so rows feel aligned */
+  .page-unitlist .table .td:nth-child(1){
+    font-weight: 800;
+    line-height: 1.2;
+    display:block !important;
+    
+    
+    overflow: hidden;
+  }
+
+  /* Search box spacing */
+  .page-unitlist .search-input,
+  .page-unitlist input[type="search"],
+  .page-unitlist input[type="text"]{
+    margin-bottom: 14px;
+  }
+
+  /* CTA button */
+  .page-unitlist .link-buka{
+    display:inline-flex !important;
+    align-items:center;
+    justify-content:center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border-radius: 999px;
+  }
+
+  /* Hide header row on mobile to keep list compact */
+  .page-unitlist .table .tr.header-row{ display:none !important; }
+}
+
+
+/* === UNITLIST NAME FULL WRAP FIX === */
+@media (max-width: 860px){
+  .page-unitlist .table .td:nth-child(1){
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    word-break: break-word;
+  }
+}
+
+
+/* === PREMIUM POLISH UNITLIST === */
+.page-unitlist .table .tr{
+  transition: background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+@media (hover:hover){
+  .page-unitlist .table .tr:not(.header-row):hover{
+    background: rgba(21, 128, 61, 0.04);
+  }
+  .page-unitlist .table .tr:not(.header-row):hover .link-buka{
+    box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  }
+}
+@media (max-width: 860px){
+  .page-unitlist .table .tr:not(.header-row):active{
+    transform: scale(.995);
+    background: rgba(2, 132, 199, 0.04);
+  }
+  .page-unitlist .link-buka:active{
+    transform: scale(.98);
+  }
+}
+
+
+/* === MICRO TRANSITION ACCORDION === */
+.accordion-body{
+  transition: max-height .22s ease, opacity .22s ease;
+}
+
+
+/* === FIX: MEGA MENU BERITA STABIL (DESKTOP) === */
+
+@media (min-width: 992px){
+  /* Pastikan panel mega selalu di atas konten halaman */
+  .berita-mega .mega{
+    z-index: 5000 !important;
+    top: calc(var(--iksass-header-h, 72px)) !important; /* hilangkan gap +10px */
+  }
+
+  /* Jembatan hover: cegah hover putus saat kursor turun dari tombol ke panel */
+  .berita-mega:hover::after{
+    content:"";
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: var(--iksass-header-h, 72px);
+    width: min(var(--container-width, 1200px), calc(100vw - 40px));
+    height: 16px;
+    z-index: 4999; /* tepat di bawah panel .mega */
+    background: transparent;
+  }
+}
+
+
+/* === FIX: THUMBNAIL BREAKPOINT (MOBILE CONTAIN, DESKTOP COVER) === */
+
+/* Desktop: penuh frame (cover) */
+@media (min-width: 992px){
+  .page-berita .news-card__img img,
+  .news-article .featured-media__frame img,
+  .sidebar-news__thumb img{
+    object-fit: cover !important;
+    background: transparent !important;
+  }
+}
+
+/* Mobile/Tablet: tampil utuh (contain) */
+@media (max-width: 991px){
+  .page-berita .news-card__img img,
+  .news-article .featured-media__frame img,
+  .sidebar-news__thumb img{
+    object-fit: contain !important;
+    background: #f3f4f6 !important; /* letterbox rapi */
+  }
+}
+
+
+
+/* =====================================================
+   THUMBNAIL NORMALIZATION (SAFE BREAKPOINTS)
+   - Desktop: cover (fills frame)
+   - Mobile/Tablet: contain (shows full image)
+   NOTE: round sidebar thumbs keep cover.
+===================================================== */
+@media (min-width: 992px){
+  /* Listing cards + homepage cards */
+  .news-card__img img,
+  .news-thumb > img,
+  .news-cover img,
+  .berita-mega img.mega-thumb{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 991px){
+  .news-card__img img,
+  .news-thumb > img,
+  .news-cover img,
+  .berita-mega img.mega-thumb{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f3f4f6;
+  }
+}
+
+/* Gallery filters (Akar/Proses/Wadah/Hikmah) */
+.gallery-filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.gallery-filters .pill{cursor:pointer}
+.gallery-filters .pill.is-active{background:var(--accent);color:#fff;border-color:transparent}
+.gallery-filters .pill:focus-visible{outline:2px solid rgba(224,122,0,.35);outline-offset:2px}
+.gallery-card.is-hidden{display:none}
+
+
+/* IKSASS Profil Standard Header */
+.breadcrumb.proker-breadcrumb{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+  align-items:center;
+}
+.breadcrumb.proker-breadcrumb a{
+  color:inherit;
+  text-decoration:none;
+}
+.breadcrumb.proker-breadcrumb a:hover{
+  text-decoration:underline;
+}
+.breadcrumb.proker-breadcrumb .sep{
+  opacity:.6;
+}
+.breadcrumb.proker-breadcrumb .active{
+  opacity:.9;
+  font-weight:600;
 }

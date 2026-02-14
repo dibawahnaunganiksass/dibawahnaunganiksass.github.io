@@ -121,3 +121,8 @@ Aman dijalankan berkali-kali
 
 ✨ Website IKSASS sudah dibuat supaya ADMIN TIDAK RIBET.
 Kalau kamu bisa klik dua kali, berarti kamu bisa kelola website ini.
+
+=== DESIGN SYSTEM (LOCKED) ===
+- Tokens & komponen standar: assets/css/design-system.css
+- Halaman panduan: /styleguide/
+- File ini harus di-load setelah main.css.

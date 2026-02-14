@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Panduan UI | IKSASS</title>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="#0f6b3d" name="theme-color"/>
+<link href="../assets/img/logo-iksass.png" rel="icon"/>
+<link href="../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
+<link as="style" href="../assets/css/main.min.css" rel="preload"/><link href="../assets/css/main.min.css" rel="stylesheet"/>
+<link as="style" href="../assets/css/design-system.min.css" rel="preload"/><link href="../assets/css/design-system.min.css" rel="stylesheet"/>
+<link href="../assets/css/override.min.css" rel="stylesheet"/>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://dibawahnaunganiksass.github.io/styleguide//">
+<meta name="description" content="Informasi resmi IKSASS — Panduan UI | IKSASS.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b3a2e">
+
+<meta property="og:site_name" content="IKSASS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Panduan UI | IKSASS">
+<meta property="og:description" content="Informasi resmi IKSASS — Panduan UI | IKSASS.">
+<meta property="og:url" content="https://dibawahnaunganiksass.github.io/styleguide//">
+<meta property="og:image" content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Panduan UI | IKSASS">
+<meta name="twitter:description" content="Informasi resmi IKSASS — Panduan UI | IKSASS.">
+<meta name="twitter:image" content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dibawahnaunganiksass.github.io/#organization", "name": "IKSASS", "url": "https://dibawahnaunganiksass.github.io", "logo": {"@type": "ImageObject", "url": "https://dibawahnaunganiksass.github.io/assets/img/logo-iksass.png"}}, {"@type": "WebSite", "@id": "https://dibawahnaunganiksass.github.io/#website", "url": "https://dibawahnaunganiksass.github.io", "name": "IKSASS", "publisher": {"@id": "https://dibawahnaunganiksass.github.io/#organization"}}, {"@type": "WebPage", "@id": "https://dibawahnaunganiksass.github.io/styleguide//#webpage", "url": "https://dibawahnaunganiksass.github.io/styleguide//", "name": "Panduan UI | IKSASS", "isPartOf": {"@id": "https://dibawahnaunganiksass.github.io/#website"}, "about": {"@id": "https://dibawahnaunganiksass.github.io/#organization"}}]}</script>
+<!-- SEO:END -->
+
+</head>
+<body>
+<div data-include="header"></div>
+<main class="page" id="konten" tabindex="-1">
+<div class="container">
+<div class="breadcrumb">Panduan UI</div>
+<h1 class="page-title">Design System IKSASS</h1>
+<p class="page-sub">Kumpulan token &amp; komponen UI standar untuk menjaga konsistensi seluruh halaman.</p>
+<div class="content-text">
+<h2>Typography</h2>
+<p>Contoh hirarki judul dan paragraf menggunakan skala standar.</p>
+<h3>Heading 3 Contoh</h3>
+<p>Ini contoh paragraf body. Gunakan jarak dan line-height standar agar nyaman dibaca.</p>
+<h2>Buttons</h2>
+<div class="btn-row" style="margin-bottom:16px;">
+<a class="btn primary" href="javascript:void(0)">Primary</a>
+<a class="btn ghost" href="javascript:void(0)">Ghost</a>
+<a class="btn" href="javascript:void(0)">Default</a>
+<a class="btn sm" href="javascript:void(0)">Small</a>
+</div>
+<p><em>Catatan:</em> gunakan <code>.btn-row</code> untuk aksi sejajar (lebar seragam di desktop, full-width di mobile).</p>
+<h2>Cards</h2>
+<div class="grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;">
+<div class="card" style="border:1px solid var(--border);padding:16px;background:var(--bg);">
+<h3 style="margin:0 0 8px;">Card Title</h3>
+<p style="margin:0 0 10px;color:var(--muted);">Deskripsi singkat card. Konsisten radius &amp; shadow.</p>
+<a class="btn sm ghost" href="javascript:void(0)">Aksi</a>
+</div>
+<div class="card" style="border:1px solid var(--border);padding:16px;background:var(--bg);">
+<h3 style="margin:0 0 8px;">Card Title</h3>
+<p style="margin:0 0 10px;color:var(--muted);">Deskripsi singkat card. Konsisten radius &amp; shadow.</p>
+<a class="btn sm primary" href="javascript:void(0)">Aksi</a>
+</div>
+<div class="card" style="border:1px solid var(--border);padding:16px;background:var(--bg);">
+<h3 style="margin:0 0 8px;">Card Title</h3>
+<p style="margin:0 0 10px;color:var(--muted);">Deskripsi singkat card. Konsisten radius &amp; shadow.</p>
+<a class="btn sm" href="javascript:void(0)">Aksi</a>
+</div>
+</div>
+<style>
+          @media (max-width: 900px){ .grid{ grid-template-columns:1fr !important; } }
+        </style>
+<h2>Forms</h2>
+<p>Contoh input dengan fokus yang jelas.</p>
+<div style="max-width:520px;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;background:var(--bg);">
+<label style="display:block;font-size:14px;color:var(--muted);margin-bottom:6px;">Nama</label>
+<input placeholder="Tulis nama..." style="width:100%;padding:12px 12px;border:1px solid var(--border);border-radius:12px;outline:none;" type="text"/>
+<div style="height:12px;"></div>
+<label style="display:block;font-size:14px;color:var(--muted);margin-bottom:6px;">Pesan</label>
+<textarea placeholder="Tulis pesan..." rows="4" style="width:100%;padding:12px 12px;border:1px solid var(--border);border-radius:12px;outline:none;"></textarea>
+<div style="height:14px;"></div>
+<div class="btn-row">
+<button class="btn primary" type="button">Kirim</button>
+<button class="btn ghost" type="button">Batal</button>
+</div>
+</div>
+<script>
+          // focus ring on inputs (native outline removed above)
+          document.addEventListener('focusin', (e)=>{
+            const el=e.target;
+            if(el && (el.tagName==='INPUT' || el.tagName==='TEXTAREA')){
+              el.style.boxShadow='var(--focus-ring)';
+              el.style.borderColor='var(--accent)';
+            }
+          });
+          document.addEventListener('focusout', (e)=>{
+            const el=e.target;
+            if(el && (el.tagName==='INPUT' || el.tagName==='TEXTAREA')){
+              el.style.boxShadow='none';
+              el.style.borderColor='var(--border)';
+            }
+          });
+        </script>
+<h2>Aturan Singkat</h2>
+<ul>
+<li>Pakai <code>.page-title</code> &amp; <code>.page-sub</code> untuk header halaman.</li>
+<li>Jarak antar section gunakan skala 8px (token <code>--space-*</code>).</li>
+<li>Tombol utama gunakan <code>.btn.primary</code>; tombol sekunder gunakan <code>.btn.ghost</code>.</li>
+<li>Pastikan fokus keyboard terlihat (ring hijau).</li>
+</ul>
+</div>
+</div>
+</main>
+<div data-include="footer"></div>
+<script defer="" src="../assets/js/partials.min.js"></script>
+<script defer="" src="../assets/js/main.min.js"></script>
+</body>
+</html>

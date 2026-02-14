@@ -11,9 +11,20 @@
     ]
   },
   {
+    "title": "Program Kerja",
+    "url": "program-kerja.html",
+    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Halaman",
+    "tags": [
+      "program",
+      "kerja",
+      "halaman"
+    ]
+  },
+  {
     "title": "Agenda",
     "url": "agenda/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Agenda. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Agenda",
     "tags": [
       "agenda",
@@ -35,7 +46,7 @@
   {
     "title": "Info Organisasi",
     "url": "dokumen/",
-    "excerpt": "Dokumen resmi IKSASS: pedoman, keputusan, dan arsip organisasi.",
+    "excerpt": "IKSASS — IKSASS — Info Organisasi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Dokumen",
     "tags": [
       "dokumen",
@@ -47,7 +58,7 @@
   {
     "title": "FAQ",
     "url": "faq/",
-    "excerpt": "Pertanyaan yang sering ditanyakan (FAQ) tentang IKSASS.",
+    "excerpt": "IKSASS — IKSASS — FAQ. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Halaman",
     "tags": [
       "faq",
@@ -128,25 +139,9 @@
     ]
   },
   {
-    "title": "Ikatan Santri Alumni Salafiyah Syafi’iyah (IKSASS)",
-    "url": "index/",
-    "excerpt": "Website resmi Ikatan Santri Alumni Salafiyah Syafi’iyah (IKSASS), rumah besar santri dan alumni dalam khidmah, dakwah, dan keberlanjutan perjuangan pesantren.",
-    "category": "Halaman",
-    "tags": [
-      "index",
-      "ikatan",
-      "santri",
-      "alumni",
-      "salafiyah",
-      "syafi-iyah",
-      "iksass",
-      "halaman"
-    ]
-  },
-  {
     "title": "Info",
     "url": "info/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Info. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Info",
     "tags": [
       "info",
@@ -156,7 +151,7 @@
   {
     "title": "Kebijakan Privasi",
     "url": "kebijakan-privasi/",
-    "excerpt": "Kebijakan privasi situs IKSASS.",
+    "excerpt": "IKSASS — IKSASS — Kebijakan Privasi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Halaman",
     "tags": [
       "kebijakan",
@@ -176,20 +171,20 @@
     ]
   },
   {
-    "title": "Kontak & Sekretariat",
+    "title": "Kontak IKSASS",
     "url": "kontak/",
     "excerpt": "Informasi kontak dan sekretariat resmi IKSASS sebagai sarana komunikasi dan koordinasi organisasi.",
     "category": "Kontak",
     "tags": [
       "kontak",
       "index",
-      "sekretariat"
+      "iksass"
     ]
   },
   {
     "title": "Program Kerja",
     "url": "profil/program-kerja.html",
-    "excerpt": "Mengarahkan ke Program Kerja …",
+    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Profil",
     "tags": [
       "profil",
@@ -209,9 +204,21 @@
     ]
   },
   {
+    "title": "Program Kerja",
+    "url": "program-kerja/",
+    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Halaman",
+    "tags": [
+      "program",
+      "kerja",
+      "index",
+      "halaman"
+    ]
+  },
+  {
     "title": "Pencarian",
     "url": "search/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pencarian. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Halaman",
     "tags": [
       "search",
@@ -223,7 +230,7 @@
   {
     "title": "Arah Gerak & Perjuangan",
     "url": "tentang/arah-gerak-perjuangan.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -258,7 +265,7 @@
   {
     "title": "Sejarah Singkat IKSASS",
     "url": "tentang/sejarah.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Sejarah. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -270,7 +277,7 @@
   {
     "title": "Visi & Misi",
     "url": "tentang/visi-misi.html",
-    "excerpt": "Visi dan Misi IKSASS sebagai kompas nilai dan arah gerak organisasi dalam dakwah, pendidikan, sosial, ekonomi, serta komitmen kebangsaan.",
+    "excerpt": "IKSASS — IKSASS — Visi dan Misi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -281,7 +288,7 @@
   {
     "title": "Tentang Website Ini",
     "url": "tentang/website-ini.html",
-    "excerpt": "Website Di bawah Naungan IKSASS merupakan platform digital yang menjelaskan peran IKSASS sebagai support system resmi di dunia maya.",
+    "excerpt": "IKSASS — Di bawah Naungan IKSASS — Tentang Website Ini. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -292,7 +299,7 @@
   {
     "title": "Terima kasih!",
     "url": "terima-kasih/",
-    "excerpt": "Terima kasih. Pesan Anda telah kami terima.",
+    "excerpt": "IKSASS — IKSASS — Terima Kasih. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Halaman",
     "tags": [
       "terima",
@@ -304,7 +311,7 @@
   {
     "title": "IKSASS — Beranda",
     "url": "wasiat/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Beranda. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Wasiat",
     "tags": [
       "wasiat",
@@ -316,7 +323,7 @@
   {
     "title": "Arah Gerak & Perjuangan",
     "url": "tentang/arah-gerak-perjuangan/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -354,7 +361,7 @@
   {
     "title": "Sejarah Singkat IKSASS",
     "url": "tentang/sejarah/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Sejarah. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -367,7 +374,7 @@
   {
     "title": "Visi & Misi",
     "url": "tentang/visi-misi/",
-    "excerpt": "Visi dan Misi IKSASS sebagai kompas nilai dan arah gerak organisasi dalam dakwah, pendidikan, sosial, ekonomi, serta komitmen kebangsaan.",
+    "excerpt": "IKSASS — IKSASS — Visi dan Misi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -379,7 +386,7 @@
   {
     "title": "Tentang Website Ini",
     "url": "tentang/website-ini/",
-    "excerpt": "Website Di bawah Naungan IKSASS merupakan platform digital yang menjelaskan peran IKSASS sebagai support system resmi di dunia maya.",
+    "excerpt": "IKSASS — Di bawah Naungan IKSASS — Tentang Website Ini. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Tentang",
     "tags": [
       "tentang",
@@ -422,7 +429,7 @@
   {
     "title": "Program Kerja",
     "url": "profil/program-kerja/",
-    "excerpt": "index, follow",
+    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Profil",
     "tags": [
       "profil",
@@ -496,7 +503,7 @@
   {
     "title": "Publikasi dan Teknologi dan Informasi",
     "url": "profil/program-kerja/publikasi-teknologi-dan-informasi.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Publikasi dan Teknologi dan Informasi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Profil",
     "tags": [
       "profil",
@@ -511,7 +518,7 @@
   {
     "title": "Struktur Organisasi",
     "url": "profil/struktur-organisasi/",
-    "excerpt": "Struktur organisasi IKSASS sebagai landasan kerja santri dan alumni dalam khidmah bersama pesantren dan pengasuh.",
+    "excerpt": "Struktur organisasi IKSASS sebagai landasan kerja santri dan alumni dalam khidmah bersama pesantren dan <strong>pengasuh</strong>.",
     "category": "Profil",
     "tags": [
       "profil",
@@ -622,7 +629,7 @@
   {
     "title": "Publikasi dan Teknologi dan Informasi",
     "url": "profil/program-kerja/publikasi-dan-teknologi-dan-informasi/",
-    "excerpt": "Departemen ini memperkuat syiar dan informasi IKSASS melalui media digital dan teknologi informasi.",
+    "excerpt": "IKSASS — Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Profil",
     "tags": [
       "profil",
@@ -638,7 +645,7 @@
   {
     "title": "Publikasi dan Teknologi dan Informasi",
     "url": "profil/program-kerja/publikasi-teknologi-dan-informasi/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Publikasi dan Teknologi dan Informasi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Profil",
     "tags": [
       "profil",
@@ -654,7 +661,7 @@
   {
     "title": "Pengurus Komisariat IKSASS",
     "url": "kelembagaan/pengurus-komisariat-iksass/detail.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -667,7 +674,7 @@
   {
     "title": "Pengurus Komisariat IKSASS",
     "url": "kelembagaan/pengurus-komisariat-iksass/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -680,7 +687,7 @@
   {
     "title": "Pengurus Komisariat IKSASS Sukorejo",
     "url": "kelembagaan/pengurus-komisariat-iksass/sukorejo.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS Sukorejo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -693,7 +700,7 @@
   {
     "title": "IKSASS — Pengurus Pusat IKSASS",
     "url": "kelembagaan/pengurus-pusat-iksass/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Pusat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -706,7 +713,7 @@
   {
     "title": "Pengurus Rayon IKSASS",
     "url": "kelembagaan/pengurus-rayon-iksass/detail.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -719,7 +726,7 @@
   {
     "title": "Pengurus Rayon IKSASS",
     "url": "kelembagaan/pengurus-rayon-iksass/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -732,7 +739,7 @@
   {
     "title": "Pengurus Rayon IKSASS Jawa Timur",
     "url": "kelembagaan/pengurus-rayon-iksass/jawa-timur.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS Jawa Timur. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -746,7 +753,7 @@
   {
     "title": "Pengurus Sub Rayon IKSASS",
     "url": "kelembagaan/pengurus-sub-rayon-iksass/detail.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -760,7 +767,7 @@
   {
     "title": "Pengurus Sub Rayon IKSASS",
     "url": "kelembagaan/pengurus-sub-rayon-iksass/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -774,7 +781,7 @@
   {
     "title": "Pengurus Sub Rayon IKSASS Situbondo",
     "url": "kelembagaan/pengurus-sub-rayon-iksass/situbondo.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS Situbondo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -788,7 +795,7 @@
   {
     "title": "Pengurus Sub Rayon IKSASS",
     "url": "kelembagaan/pengurus-sub-rayon-iksass/detail/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -803,7 +810,7 @@
   {
     "title": "Pengurus Sub Rayon IKSASS Situbondo",
     "url": "kelembagaan/pengurus-sub-rayon-iksass/situbondo/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS Situbondo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -818,7 +825,7 @@
   {
     "title": "Pengurus Rayon IKSASS",
     "url": "kelembagaan/pengurus-rayon-iksass/detail/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -832,7 +839,7 @@
   {
     "title": "Pengurus Rayon IKSASS Jawa Timur",
     "url": "kelembagaan/pengurus-rayon-iksass/jawa-timur/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS Jawa Timur. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -847,7 +854,7 @@
   {
     "title": "Pengurus Komisariat IKSASS",
     "url": "kelembagaan/pengurus-komisariat-iksass/detail/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -861,7 +868,7 @@
   {
     "title": "Pengurus Komisariat IKSASS Sukorejo",
     "url": "kelembagaan/pengurus-komisariat-iksass/sukorejo/",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS Sukorejo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
     "tags": [
       "kelembagaan",
@@ -875,7 +882,7 @@
   {
     "title": "Khidmah Sosial — Hadir untuk Umat",
     "url": "galeri/khidmah-sosial/",
-    "excerpt": "IKSASS hadir di tengah masyarakat melalui gerakan khidmah sosial yang berangkat dari nilai kepedulian dan kemanusiaan. Dalam kebersamaan para alumni dan relawan, setiap langkah kec…",
+    "excerpt": "IKSASS — Khidmah Sosial — Hadir untuk Umat | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Galeri",
     "tags": [
       "galeri",
@@ -890,7 +897,7 @@
   {
     "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
     "url": "galeri/mubes-iksass-2025/",
-    "excerpt": "Muktamar Besar IKSASS 2025 menjadi ruang pertemuan lintas generasi alumni Pondok Pesantren Salafiyah Syafi’iyah Sukorejo. Bukan sekadar forum pengambilan keputusan, momen ini mempe…",
+    "excerpt": "IKSASS — Mubes IKSASS 2025 — Konsolidasi & Arah Baru | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Galeri",
     "tags": [
       "galeri",
@@ -906,7 +913,7 @@
   {
     "title": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
     "url": "galeri/pendidikan-ke-nuan/",
-    "excerpt": "Pendidikan dan nilai-nilai Ke-NU-an menjadi fondasi utama gerak IKSASS dalam membentuk insan yang berilmu, berakhlak, dan berkeadaban. Melalui pengajian, forum keilmuan, serta peng…",
+    "excerpt": "IKSASS — Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Galeri",
     "tags": [
       "galeri",
@@ -924,7 +931,7 @@
   {
     "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
     "url": "galeri/silaturahim-alumni/",
-    "excerpt": "Silaturahim alumni bukan hanya tentang pertemuan, tetapi tentang merawat ikatan batin yang terjalin sejak di pesantren. Dalam suasana sederhana dan penuh kehangatan, para alumni sa…",
+    "excerpt": "IKSASS — Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Galeri",
     "tags": [
       "galeri",

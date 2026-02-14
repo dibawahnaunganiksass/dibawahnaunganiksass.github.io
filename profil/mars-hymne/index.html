@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Mars &amp; Hymne IKSASS</title>
+<meta content="Mars dan Hymne IKSASS (dokumen resmi organisasi) untuk dibaca dan dihafal bersama." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#0f766e" name="theme-color"/>
+<link href="../../assets/img/logo-iksass.png" rel="icon"/>
+<link href="../../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
+<!-- Social preview (Open Graph / Twitter) -->
+<meta content="website" property="og:type"/>
+<meta content="IKSASS" property="og:site_name"/>
+<meta content="id_ID" property="og:locale"/>
+<meta content="IKSASS — Mars &amp; Hymne" property="og:title"/>
+<meta content="Mars dan Hymne IKSASS (dokumen resmi organisasi)." property="og:description"/>
+<meta content="../../assets/img/og-default.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="IKSASS — Mars &amp; Hymne" name="twitter:title"/>
+<meta content="Mars dan Hymne IKSASS (dokumen resmi organisasi)." name="twitter:description"/>
+<meta content="../../assets/img/og-default.png" name="twitter:image"/>
+<link as="style" href="../../assets/css/main.min.css" rel="preload"/><link href="../../assets/css/main.min.css" rel="stylesheet"/>
+<link as="style" href="../../assets/css/design-system.min.css" rel="preload"/><link href="../../assets/css/design-system.min.css" rel="stylesheet"/>
+<link href="../../assets/css/override.min.css" rel="stylesheet"/>
+<script defer="" src="../../assets/js/meta-url.min.js"></script>
+<style>
+    /* Page-scoped: Mars & Hymne (mobile-first, no style leak)
+       NOTE: Typography follows "Tentang IKSASS" page (page-title/page-sub).
+    */
+    .page-mh #konten{padding-bottom:110px;}
+    .page-mh .mh-wrap{padding:10px 0 26px}
+
+    /* Card wrapper that matches site standard (hero-card disclaimer feel) */
+    .page-mh .mh-hero{
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(15,122,60,.08), var(--bg-soft));
+    }
+
+    .page-mh .mh-kicker{
+      display:inline-flex;align-items:center;gap:8px;width:fit-content;
+      font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--primary);font-size:12px;padding:6px 10px;border-radius:999px;
+      background:rgba(16,185,129,.10);border:1px solid rgba(16,185,129,.22)
+    }
+    .page-mh .mh-lead{margin:10px 0 0;color:var(--muted);max-width:75ch}
+
+    /* Use site-standard .btn styling; only add layout + active/inactive states */
+    .page-mh .mh-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .page-mh .mh-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+    .page-mh .mh-actions .btn{flex:1 1 190px;min-width:190px}
+    .page-mh .btn.is-active{border-color:rgba(15,122,60,.55);background:rgba(15,122,60,.08)}
+    .page-mh .btn.is-inactive{opacity:.78}
+    .page-mh .btn.is-inactive:hover{opacity:1}
+    .page-mh .btn:focus-visible{outline:3px solid rgba(15,122,60,.35);outline-offset:2px}
+
+
+    .page-mh .mh-tabs{margin-top:16px;display:grid;gap:12px}
+
+    /* Tab row: tabs + fullscreen button (aligned) */
+    .page-mh .tabrow{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+      padding:10px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+    }
+    .page-mh .tabbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .page-mh .tabbar button{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:800;
+      cursor:pointer;
+      display:inline-flex;gap:8px;align-items:center;
+    }
+    .page-mh .tabbar button[aria-selected="true"]{
+      border-color: rgba(15,122,60,.55);
+      background: rgba(15,122,60,.08);
+    }
+    .page-mh .tabbar button:hover{background:rgba(15,122,60,.06)}
+    .page-mh .tabbar button:focus-visible{outline:3px solid rgba(15,122,60,.35);outline-offset:2px}
+
+    .page-mh .tabrow .btn{padding:10px 14px}
+    .page-mh .tabrow .btn{white-space:nowrap}
+
+    .page-mh .panel{
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+
+    .page-mh .panel-head{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+      padding:16px 16px 10px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(15,122,60,.06), rgba(255,255,255,0));
+    }
+    .page-mh .panel-title{margin:0;font-size:18px}
+    .page-mh .panel-note{margin:6px 0 0;color:var(--muted);font-size:13px;max-width:80ch}
+
+    .page-mh .lyrics-grid{
+      display:grid;
+      gap:14px;
+      padding:14px;
+    }
+    .page-mh .lyrics-card{
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      background:rgba(15,122,60,.02);
+    }
+    .page-mh .lyrics-card h3{
+      margin:0;
+      padding:12px 14px;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      background:rgba(15,122,60,.05);
+      border-bottom:1px solid var(--border);
+    }
+    .page-mh pre{
+      margin:0;
+      padding:14px;
+      white-space:pre-wrap;
+      word-break:break-word;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height:1.7;
+      font-weight:700;
+    }
+
+    .page-mh .toast{margin-top:10px;color:var(--muted);font-size:13px}
+
+    /* Integrity banner */
+    .page-mh .mh-alert{
+      margin-top:12px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(245,158,11,.35);
+      background:rgba(245,158,11,.10);
+      color:#7a4a00;
+      font-weight:800;
+      display:none;
+    }
+    .page-mh .mh-alert.show{display:block}
+
+    /* Fullscreen / modal */
+    .page-mh .mh-fs[hidden]{display:none !important;}
+    .page-mh .mh-fs{
+      position:fixed;inset:0;z-index:9999;
+      background:rgba(10,15,20,.62);
+      display:flex;align-items:center;justify-content:center;
+      padding:14px;
+    }
+    .page-mh .mh-fs-card{
+      width:min(980px, 100%);
+      max-height:min(92vh, 900px);
+      background:#fff;
+      border-radius:20px;
+      border:1px solid var(--border);
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+    .page-mh .mh-fs-head{
+      padding:14px 14px 12px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(15,122,60,.06), rgba(255,255,255,0));
+    }
+    .page-mh .mh-fs-title{margin:0;font-size:16px;font-weight:950}
+    .page-mh .mh-fs-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end}
+    .page-mh .mh-mini{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      padding:8px 10px;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .page-mh .mh-mini:hover{background:rgba(15,122,60,.06)}
+    .page-mh .mh-mini:focus-visible{outline:3px solid rgba(15,122,60,.35);outline-offset:2px}
+    .page-mh .mh-fs-body{padding:12px 14px 16px;overflow:auto}
+    .page-mh .mh-fs-body pre{font-weight:750;line-height:1.75}
+
+    /* Sticky audio bar */
+    .page-mh .mh-audio[hidden]{display:none !important;}
+    .page-mh .mh-audio{
+      position:fixed;left:12px;right:12px;bottom:12px;
+      z-index:8000;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 14px 40px rgba(0,0,0,.18);
+      padding:10px 12px;
+      display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    }
+    .page-mh .mh-audio .mh-a-title{font-weight:950}
+    .page-mh .mh-a-row{display:flex;gap:10px;align-items:center;flex:1 1 280px;min-width:260px}
+    .page-mh .mh-a-btn{
+      border:1px solid var(--border);
+      background:rgba(15,122,60,.06);
+      border-radius:12px;
+      padding:9px 10px;
+      font-weight:950;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .page-mh .mh-a-btn:hover{background:rgba(15,122,60,.10)}
+    .page-mh .mh-a-btn:focus-visible{outline:3px solid rgba(15,122,60,.35);outline-offset:2px}
+    .page-mh .mh-a-seek{flex:1 1 180px;min-width:180px}
+    .page-mh .mh-a-time{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:800;font-size:13px;min-width:92px;text-align:right}
+
+    @media (min-width: 860px){
+      .page-mh .mh-wrap{padding:16px 0 32px}
+      .page-mh .lyrics-grid{grid-template-columns:1fr 1fr}
+      .page-mh .panel-head{align-items:center}
+    }
+
+    @media print{
+      /* When printing, only show the dedicated print container (built by JS) */
+      body.mh-is-printing *{visibility:hidden !important;}
+      body.mh-is-printing #mh-print,
+      body.mh-is-printing #mh-print *{visibility:visible !important;}
+      body.mh-is-printing #mh-print{position:absolute;left:0;top:0;width:100%;}
+
+      #mh-print{padding:0;margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+      .mh-print-head{padding:14mm 14mm 8mm;border-bottom:1px solid #ddd;}
+      .mh-print-brand{display:flex;align-items:center;gap:10px;}
+      .mh-print-logo{width:28mm;height:28mm;object-fit:contain;}
+      .mh-print-head h1{margin:0;font-size:18pt;line-height:1.15;}
+      .mh-print-meta{margin-top:4mm;font-size:10pt;color:#444;}
+      .mh-print-body{padding:10mm 14mm 14mm;}
+      .mh-print-section{page-break-after:always;break-after:page;}
+      .mh-print-section:last-child{page-break-after:auto;break-after:auto;}
+      .mh-print-section h2{margin:0 0 4mm;font-size:12pt;letter-spacing:.04em;text-transform:uppercase;color:#333;}
+      .mh-print-section pre{margin:0;white-space:pre-wrap;word-break:break-word;line-height:1.6;font-size:12pt;font-weight:600;}
+
+      /* Watermark */
+      .mh-print-watermark{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+      .mh-print-watermark img{width:120mm;opacity:.06;filter:grayscale(100%);}
+
+      @page{size:A4; margin:14mm;}
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://dibawahnaunganiksass.github.io/profil/mars-hymne//">
+<meta name="description" content="Informasi resmi IKSASS — Mars &amp;amp; Hymne IKSASS.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b3a2e">
+
+<meta property="og:site_name" content="IKSASS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mars &amp;amp; Hymne IKSASS">
+<meta property="og:description" content="Informasi resmi IKSASS — Mars &amp;amp; Hymne IKSASS.">
+<meta property="og:url" content="https://dibawahnaunganiksass.github.io/profil/mars-hymne//">
+<meta property="og:image" content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mars &amp;amp; Hymne IKSASS">
+<meta name="twitter:description" content="Informasi resmi IKSASS — Mars &amp;amp; Hymne IKSASS.">
+<meta name="twitter:image" content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dibawahnaunganiksass.github.io/#organization", "name": "IKSASS", "url": "https://dibawahnaunganiksass.github.io", "logo": {"@type": "ImageObject", "url": "https://dibawahnaunganiksass.github.io/assets/img/logo-iksass.png"}}, {"@type": "WebSite", "@id": "https://dibawahnaunganiksass.github.io/#website", "url": "https://dibawahnaunganiksass.github.io", "name": "IKSASS", "publisher": {"@id": "https://dibawahnaunganiksass.github.io/#organization"}}, {"@type": "WebPage", "@id": "https://dibawahnaunganiksass.github.io/profil/mars-hymne//#webpage", "url": "https://dibawahnaunganiksass.github.io/profil/mars-hymne//", "name": "Mars &amp; Hymne IKSASS", "isPartOf": {"@id": "https://dibawahnaunganiksass.github.io/#website"}, "about": {"@id": "https://dibawahnaunganiksass.github.io/#organization"}}]}</script>
+<!-- SEO:END -->
+
+</head>
+<body class="page-mh">
+<div data-include="header"></div>
+<main class="page" id="konten" tabindex="-1"><div class="container mh-wrap"><div class="breadcrumb">Profil Organisasi</div><h1 class="page-title">Mars &amp; Hymne IKSASS</h1><p class="page-sub">Dokumen resmi organisasi</p><div class="content-text">
+<section aria-labelledby="mh-title" class="mh-hero">
+<p class="mh-lead">
+          Halaman ini memuat <strong>Mars</strong> dan <strong>Hymne</strong> IKSASS sebagai materi resmi organisasi untuk dibaca, dipelajari, dan digunakan dalam kegiatan.
+        </p>
+<div aria-label="Aksi cepat" class="mh-actions" role="group">
+<button aria-label="Salin lirik yang sedang terbuka" class="btn primary" id="btn-copy" type="button">📋 Salin lirik</button>
+<button aria-label="Cetak lirik yang sedang terbuka" class="btn" id="btn-print" type="button">🖨️ Cetak</button>
+<a aria-label="Unduh PDF Mars IKSASS" class="btn is-active" data-kind="pdf" data-target="mars" download="" href="../../dokumen/mars-iksass.pdf" id="dl-pdf-mars">⬇️ Unduh PDF (Mars)</a>
+<a aria-label="Unduh PDF Hymne IKSASS" class="btn is-inactive" data-kind="pdf" data-target="hymne" download="" href="../../dokumen/hymne-iksass.pdf" id="dl-pdf-hymne">⬇️ Unduh PDF (Hymne)</a>
+<a aria-label="Unduh MP3 Mars IKSASS" class="btn is-active" data-kind="mp3" data-target="mars" download="" href="../../media/audio/mars-iksass.mp3" id="dl-mp3-mars">🎧 Unduh MP3 (Mars)</a>
+<a aria-label="Unduh MP3 Hymne IKSASS" class="btn is-inactive" data-kind="mp3" data-target="hymne" download="" href="../../media/audio/hymne-iksass.mp3" id="dl-mp3-hymne">🎧 Unduh MP3 (Hymne)</a>
+</div>
+<div aria-live="polite" class="toast" id="toast"></div>
+<div aria-live="polite" class="mh-alert" id="mh-integrity" role="status"></div>
+</section>
+<section aria-label="Konten Mars dan Hymne" class="mh-tabs">
+<div aria-label="Bar tab dan aksi" class="tabrow">
+<div aria-label="Pilih konten" class="tabbar" role="tablist">
+<button aria-controls="panel-mars" aria-selected="true" id="tab-mars" role="tab" type="button">🎺 Mars IKSASS</button>
+<button aria-controls="panel-hymne" aria-selected="false" id="tab-hymne" role="tab" type="button">🎼 Hymne IKSASS</button>
+</div>
+<button aria-label="Buka mode layar penuh untuk membaca lirik (mengikuti tab aktif)" class="btn" id="btn-fullscreen" type="button">⛶ Layar penuh</button>
+</div>
+<!-- Mars -->
+<article aria-labelledby="tab-mars" class="panel" id="panel-mars" role="tabpanel">
+<header class="panel-head">
+<div>
+<h2 class="panel-title" id="mars">Mars IKSASS</h2>
+<p class="panel-note">Lirik ditulis mengikuti dokumen resmi organisasi.</p>
+</div>
+<span aria-hidden="true" class="mh-kicker">Mars</span>
+</header>
+<div class="lyrics-grid">
+<section aria-label="Lirik Mars - Bagian 1" class="lyrics-card">
+<h3>Bagian 1</h3>
+<pre id="text-mars-1">Wahai kawan, sambutlah cahaya terang
+Jangan diam jangan lelah terus berjuang
+Wahai kawan, marilah kepalkan tangan
+Kebenaran haruslah terus kau perjuangkan
+
+Marilah hai kawan bersatu dalam IKSASS
+Berjuang bersama mengabdi tanpa batas
+Buktikan santri Salafiyah Syafi’iyah
+Perjuangan kita menegakkan agama</pre>
+</section>
+<section aria-label="Lirik Mars - Bagian 2" class="lyrics-card">
+<h3>Bagian 2</h3>
+<pre id="text-mars-2">Terangi alam dengan cahaya
+Tebarkan ilmu bagi sesama
+Berlandas ahlus sunnah wal jama’ah
+Kibarkan panji kalimat Allah
+
+Subhanallah wal hamdulillah wa laa
+ilaha illallah...2x (Kembali ke awal)
+
+Janganlah hai kawan kita gadaikan iman
+Hidup ini harus berhias ketakwaan
+Marilah hai kawan kita kuatkan iman
+Tegakkan kokohkan walau halau
+menghadang
+
+♫ (Kembali ke subhanallah)</pre>
+</section>
+</div>
+</article>
+<!-- Hymne -->
+<article aria-labelledby="tab-hymne" class="panel" hidden="" id="panel-hymne" role="tabpanel">
+<header class="panel-head">
+<div>
+<h2 class="panel-title" id="hymne">Hymne IKSASS</h2>
+<p class="panel-note">Lirik ditulis mengikuti dokumen resmi organisasi.</p>
+</div>
+<span aria-hidden="true" class="mh-kicker">Hymne</span>
+</header>
+<div class="lyrics-grid">
+<section aria-label="Lirik Hymne - Bagian 1" class="lyrics-card">
+<h3>Bagian 1</h3>
+<pre id="text-hymne-1">Berdiri ku merenung
+Ditengah tempat ini
+Melangkah kan anganku berawal dari sini
+Melayang ku bersama renungan hati ini
+Sadarkan aku bahwa
+Hidup perlu agama
+
+And Now one heart
+We are standing on the side
+Alaikallah. Nahnu tawakkalna
+
+Tak kan ku lupakan asalku
+Yang telah menjadi jalanku
+Terlalu besar jasamu
+Untuk ku tak mengingatmu
+Sungguh besar pengorbanan mu
+Akan kami kenang selalu</pre>
+</section>
+<section aria-label="Lirik Hymne - Bagian 2" class="lyrics-card">
+<h3>Bagian 2</h3>
+<pre id="text-hymne-2">Terlalu besar jasamu(kiai Syamsul)
+Untuk ku tak mengingatmu(kiai as‘ad)
+Sungguh besar pengorbanan mu(kiai fawaid)
+Teguhkan perjuangan mu
+
+Penerus tempat ini
+Berawal dari sini
+Teruskanlah mengabdi
+
+Salafiyah Syafiiyah bahtera hidupku
+Hantarkan diriku pada hidup yang baru
+Salafiyah Syafiiyah tempatku merindu
+Ingatkan diriku hari hari yang biru
+Salafiyah Syafiiyah Iksass kita bina
+Berjuang bersama berlandaskan agama
+Assyarifah fawazan lentara indonesi
+Ibrahimi tercinta
+Salafiyah Syafiiyah
+Tempat ini ku cinta</pre>
+</section>
+</div>
+</article>
+</section>
+<section aria-labelledby="mh-notes-title" class="panel" style="margin-top:14px">
+<header class="panel-head">
+<div>
+<h2 class="panel-title" id="mh-notes-title">Keterangan &amp; Pedoman Penggunaan</h2>
+<p class="panel-note">Ringkas dan resmi—untuk memastikan penggunaan Mars &amp; Hymne konsisten di berbagai kegiatan.</p>
+</div>
+<span aria-hidden="true" class="mh-kicker">Catatan</span>
+</header>
+<div style="padding:14px 16px;color:var(--text);line-height:1.7">
+<ul style="margin:0;padding-left:18px;display:grid;gap:8px">
+<li><strong>Dokumen resmi organisasi:</strong> lirik di halaman ini mengikuti naskah resmi IKSASS.</li>
+<li><strong>Untuk kegiatan:</strong> dapat digunakan untuk pembukaan/penutupan acara, penguatan identitas, dan pembinaan anggota.</li>
+<li><strong>Konsistensi:</strong> bila ada kebutuhan koreksi redaksi/penulisan, lakukan melalui mekanisme internal organisasi agar versi publik tetap rapi.</li>
+<li><strong>Integritas:</strong> sistem akan memberi peringatan bila isi lirik pada halaman ini berbeda dari versi yang diset sebagai “resmi”.</li>
+</ul>
+</div>
+</section>
+</div></div></main>
+<div data-include="footer"></div>
+<!-- Fullscreen reader (built for accessibility; JS toggles hidden) -->
+<div aria-hidden="true" class="mh-fs" hidden="" id="mh-fs">
+<div aria-labelledby="mh-fs-title" aria-modal="true" class="mh-fs-card" role="dialog">
+<div class="mh-fs-head">
+<p class="mh-fs-title" id="mh-fs-title">Pembaca Layar Penuh</p>
+<div aria-label="Kontrol layar penuh" class="mh-fs-controls" role="group">
+<button aria-label="Perkecil ukuran teks" class="mh-mini" id="mh-fs-dec" type="button">A−</button>
+<button aria-label="Perbesar ukuran teks" class="mh-mini" id="mh-fs-inc" type="button">A+</button>
+<button aria-label="Tutup layar penuh" class="mh-mini" id="mh-fs-close" type="button">✕</button>
+</div>
+</div>
+<div class="mh-fs-body">
+<h2 id="mh-fs-subtitle" style="margin:0 0 6px;font-size:18px">—</h2>
+<pre id="mh-fs-text" style="font-size:18px"></pre>
+</div>
+</div>
+</div>
+<!-- Sticky audio bar -->
+<div aria-label="Pemutar audio Mars dan Hymne" class="mh-audio" id="mh-audio">
+<div class="mh-a-row">
+<button aria-label="Putar atau jeda audio" class="mh-a-btn" id="mh-a-toggle" type="button">▶︎ Putar</button>
+<div>
+<div class="mh-a-title" id="mh-a-title">Audio</div>
+<div id="mh-a-sub" style="color:var(--muted);font-weight:800;font-size:13px">Siap diputar</div>
+</div>
+</div>
+<input aria-label="Geser untuk maju/mundur" class="mh-a-seek" id="mh-a-seek" max="100" min="0" type="range" value="0"/>
+<div class="mh-a-time" id="mh-a-time">00:00 / 00:00</div>
+<button aria-label="Ganti audio sesuai tab" class="mh-a-btn" id="mh-a-switch" type="button">⇄ Ikuti tab</button>
+</div>
+<audio id="audio-mars" preload="metadata" src="../../media/audio/mars-iksass.mp3"></audio>
+<audio id="audio-hymne" preload="metadata" src="../../media/audio/hymne-iksass.mp3"></audio>
+<script defer="" src="../../assets/js/partials.min.js"></script>
+<script defer="" src="../../assets/js/mars-hymne.min.js"></script>
+</body>
+</html>

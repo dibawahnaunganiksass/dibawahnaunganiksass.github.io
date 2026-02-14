@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Yel-Yel IKSASS</title>
+<meta content="Slogan dan yel-yel IKSASS: seruan kebersamaan dan salam perjuangan." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#0f766e" name="theme-color"/>
+<link href="../../assets/img/logo-iksass.png" rel="icon"/>
+<link href="../../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
+<!-- Social preview (Open Graph / Twitter) -->
+<meta content="website" property="og:type"/>
+<meta content="IKSASS" property="og:site_name"/>
+<meta content="IKSASS — Slogan &amp; Yel-yel" property="og:title"/>
+<meta content="Slogan dan yel-yel IKSASS." property="og:description"/>
+<meta content="../../assets/img/og-default.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="IKSASS — Slogan &amp; Yel-yel" name="twitter:title"/>
+<meta content="Slogan dan yel-yel IKSASS." name="twitter:description"/>
+<meta content="../../assets/img/og-default.png" name="twitter:image"/>
+<link as="style" href="../../assets/css/main.min.css" rel="preload"/><link href="../../assets/css/main.min.css" rel="stylesheet"/>
+<link as="style" href="../../assets/css/design-system.min.css" rel="preload"/><link href="../../assets/css/design-system.min.css" rel="stylesheet"/>
+<link href="../../assets/css/override.min.css" rel="stylesheet"/>
+<script defer="" src="../../assets/js/meta-url.min.js"></script>
+<meta content="id_ID" property="og:locale"/>
+<style>
+  /* Page-scoped: Yel–Yel (mobile-first, semantic & scalable) */
+  .page-yelyel .yel-wrap{padding:10px 0 22px}
+
+  /* Subtle section container so the top split feels like one composition */
+  .page-yelyel .yel-top{
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(16,185,129,.06), rgba(255,255,255,0) 45%);
+  }
+
+  .page-yelyel .yel-hero{display:grid;gap:12px}
+  .page-yelyel .yel-kicker{display:inline-flex;align-items:center;gap:8px;width:fit-content;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.10);border:1px solid rgba(16,185,129,.22)}
+  .page-yelyel .yel-title{margin:0;font-size:clamp(34px,6vw,56px);line-height:1.03}
+  .page-yelyel .yel-lead{margin:4px 0 0;color:var(--muted);max-width:70ch}
+
+  .page-yelyel .yel-top{display:grid;gap:16px;margin-top:14px;align-items:start}
+  .page-yelyel .yel-left{display:grid;gap:12px;min-width:0}
+  .page-yelyel .yel-bullets{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:8px;max-width:60ch}
+  .page-yelyel .yel-bullets li::marker{color:var(--primary)}
+  .page-yelyel .yel-subline{margin:0;color:var(--muted)}
+  .page-yelyel .yel-section{padding:0;margin-top:14px}
+
+  .page-yelyel .card{overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.06);transition:box-shadow .18s ease, transform .18s ease}
+  .page-yelyel .card:hover{box-shadow:0 16px 34px rgba(0,0,0,.08);transform:translateY(-1px)}
+  .page-yelyel .card__title{margin:0 0 10px;font-size:18px}
+
+  /* Give key cards a subtle "brand" accent */
+  .page-yelyel .yel-top > .card{border-top:4px solid rgba(16,185,129,.45)}
+  .page-yelyel .yel-section .card{border-top:3px solid rgba(16,185,129,.28)}
+
+  /* Call & response */
+  .page-yelyel .callresp{display:grid;gap:10px}
+  .page-yelyel .callresp__head{display:none;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:12px}
+  /* Render as a true 2-column list (clean, table-like) */
+  .page-yelyel .callresp__list{list-style:none;padding:0;margin:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff}
+  .page-yelyel .callresp__item{padding:12px 14px;display:grid;gap:6px;min-width:0;transition:background .15s ease}
+  .page-yelyel .callresp__item + .callresp__item{border-top:1px solid var(--border)}
+  .page-yelyel .callresp__item:nth-child(even){background:rgba(15,118,110,.03)}
+  .page-yelyel .callresp__item:hover{background:rgba(15,118,110,.06)}
+  .page-yelyel .callresp__call{font-weight:900}
+  .page-yelyel .callresp__resp{font-weight:900;font-size:18px;line-height:1.25}
+  .page-yelyel .callresp__note{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:75ch}
+
+  /* Moves */
+  .page-yelyel .moves{margin:0;padding-left:18px;display:grid;gap:10px}
+  .page-yelyel .moves strong{font-weight:900}
+
+  /* Filosofi diagram (no images) */
+  /* Center the section label exactly in the card */
+  .page-yelyel #filosofi-title{display:flex;justify-content:center;margin-bottom:10px}
+  .page-yelyel .tag-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:12px;margin-inline:auto}
+  .page-yelyel .diagram{position:relative;display:grid;gap:12px;margin-top:12px}
+  .page-yelyel .node{border:1px solid var(--border);border-radius:16px;background:#fff;padding:14px;min-width:0;box-shadow:0 10px 22px rgba(0,0,0,.06)}
+  .page-yelyel .node__num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:900;color:var(--primary);margin:0 auto 10px}
+  .page-yelyel .node__title{margin:0 0 6px;font-weight:900}
+  .page-yelyel .node__text{margin:0;color:var(--text);line-height:1.5}
+  .page-yelyel .node--center{background:rgba(16,185,129,.10);border-color:rgba(16,185,129,.35)}
+  .page-yelyel .node--center .node__title{letter-spacing:.06em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+
+  @media (min-width: 641px){
+    .page-yelyel .yel-wrap{padding:16px 0 28px}
+    /* Two-column split: left (Yel–Yel) and right (Teriakan & Jawaban) */
+    .page-yelyel .yel-top{grid-template-columns:1fr 1fr;gap:28px}
+    .page-yelyel .callresp__head{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:end}
+    .page-yelyel .callresp__head{padding:0 0 10px}
+    .page-yelyel .callresp__head span{padding:0 12px}
+    .page-yelyel .callresp__head span:first-child{border-right:1px solid var(--border)}
+    .page-yelyel .callresp__head span:last-child{padding-left:14px}
+
+    .page-yelyel .callresp__item{grid-template-columns:1fr 1fr;gap:0;align-items:start}
+    .page-yelyel .callresp__call{padding:2px 12px;border-right:1px solid var(--border)}
+    .page-yelyel .callresp__resp{padding:2px 12px 2px 14px}
+    .page-yelyel .callresp__call{color:var(--text)}
+    .page-yelyel .callresp__resp{justify-self:start}
+    .page-yelyel .callresp__resp{font-size:18px}
+
+    /* Diagram layout: clean modern (no arrows)
+       02 (top-center)
+       01 (mid-left) — Konsekuensi (center) — 03 (mid-right)
+       04 (bottom-center)
+    */
+    .page-yelyel .diagram{max-width:980px;margin-inline:auto;grid-template-columns:1fr 1.1fr 1fr;grid-template-areas:
+      ".. n2 .."
+      "n1 nc n3"
+      ".. n4 ..";align-items:stretch;gap:14px}
+    .page-yelyel .diagram .n1{grid-area:n1}
+    .page-yelyel .diagram .n2{grid-area:n2}
+    .page-yelyel .diagram .n3{grid-area:n3}
+    .page-yelyel .diagram .nc{grid-area:nc}
+    .page-yelyel .diagram .n4{grid-area:n4}
+
+    /* No arrows for the clean option (A) */
+  }
+
+  @media (min-width: 1025px){
+    .page-yelyel .card__title{font-size:19px}
+    .page-yelyel .callresp__resp{font-size:19px}
+
+    /* Make the right card feel premium on desktop (keeps reading context) */
+    .page-yelyel .yel-top > .card{position:sticky;top:92px}
+  }
+</style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://dibawahnaunganiksass.github.io/profil/yel-yel.html">
+<meta name="description" content="Informasi resmi IKSASS — Yel-Yel IKSASS.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b3a2e">
+
+<meta property="og:site_name" content="IKSASS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yel-Yel IKSASS">
+<meta property="og:description" content="Informasi resmi IKSASS — Yel-Yel IKSASS.">
+<meta property="og:url" content="https://dibawahnaunganiksass.github.io/profil/yel-yel.html">
+<meta property="og:image" content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yel-Yel IKSASS">
+<meta name="twitter:description" content="Informasi resmi IKSASS — Yel-Yel IKSASS.">
+<meta name="twitter:image" content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dibawahnaunganiksass.github.io/#organization", "name": "IKSASS", "url": "https://dibawahnaunganiksass.github.io", "logo": {"@type": "ImageObject", "url": "https://dibawahnaunganiksass.github.io/assets/img/logo-iksass.png"}}, {"@type": "WebSite", "@id": "https://dibawahnaunganiksass.github.io/#website", "url": "https://dibawahnaunganiksass.github.io", "name": "IKSASS", "publisher": {"@id": "https://dibawahnaunganiksass.github.io/#organization"}}, {"@type": "WebPage", "@id": "https://dibawahnaunganiksass.github.io/profil/yel-yel.html#webpage", "url": "https://dibawahnaunganiksass.github.io/profil/yel-yel.html", "name": "Yel-Yel IKSASS", "isPartOf": {"@id": "https://dibawahnaunganiksass.github.io/#website"}, "about": {"@id": "https://dibawahnaunganiksass.github.io/#organization"}}]}</script>
+<!-- SEO:END -->
+
+</head>
+<body class="page-yelyel">
+<div data-include="header"></div>
+<main class="page" id="konten" tabindex="-1"><div class="container yel-wrap"><div class="breadcrumb">Profil Organisasi &gt; Yel-Yel IKSASS</div><h1 class="page-title">Yel-Yel IKSASS</h1><p class="page-sub">Seruan kebersamaan dan salam perjuangan</p><div class="content-text"><div class="container yel-wrap">
+<section aria-labelledby="callresp-title" class="yel-top">
+<div class="yel-left">
+<header aria-labelledby="page-title" class="yel-hero">
+<p class="yel-lead">Teriakan itu bukan hanya sekedar urakan, namun untuk terus memantik api semangat dalam jiwa kita agar ia selalu terbakar.</p>
+</header>
+<p class="yel-subline">Seruan kebersamaan yang menguatkan semangat perjuangan dan khidmah IKSASS.</p>
+<ul class="yel-bullets">
+<li>Perjuangan masih panjang sepanjang masa depan.</li>
+<li>Perjuangan tidak boleh mati—perjuangan harus tetap hidup.</li>
+<li>Panjang umur perjuangan.</li>
+</ul>
+</div>
+<section aria-label="Teriakan dan Jawaban" class="card">
+<h2 class="card__title" id="callresp-title">Teriakan &amp; Jawaban</h2>
+<div class="callresp">
+<div aria-hidden="true" class="callresp__head">
+<span>Teriakan</span>
+<span>Jawaban</span>
+</div>
+<ol class="callresp__list">
+<li class="callresp__item">
+<span class="callresp__call">Siapa kita?</span>
+<span class="callresp__resp">IKSASS</span>
+</li>
+<li class="callresp__item">
+<span class="callresp__call">IKSASS?</span>
+<span class="callresp__resp">Berjuang Bersama Mengabdi Tanpa Batas</span>
+</li>
+<li class="callresp__item">
+<span class="callresp__call">Salam Perjuangan</span>
+<span class="callresp__resp">Salam Kiai Fawaid</span>
+</li>
+<li class="callresp__item">
+<span class="callresp__call">Salam Kiai Fawaid</span>
+<span class="callresp__resp">Salam Kiai Perjuangan</span>
+</li>
+<li class="callresp__item">
+<span class="callresp__call">Sokarajjhe</span>
+<span class="callresp__resp">Sampe Mate Sampe Odik Pole</span>
+</li>
+</ol>
+<p class="callresp__note">Ejaan mengikuti kaidah publikasi. Dalam praktik, bunyi seruan menyesuaikan dialek dan kebiasaan internal.</p>
+</div>
+</section>
+</section>
+<section aria-labelledby="moves-title" class="section section-tight yel-section">
+<div class="card">
+<h2 class="card__title" id="moves-title">Gerakan Teriakan</h2>
+<ol class="moves">
+<li>Saat teriakan <strong>IKSASS</strong> menunjukkan tangan terkepal ke depan menunjukkan semangat.</li>
+<li>Saat menjawab <strong>Berjuang Bersama</strong> tangan terkepal ke depan. Saat menjawab <strong>Mengabdi</strong> tarik tangan terkepal ke dada sebelah kiri. Saat menjawab <strong>Tanpa Batas</strong> kembali posisi tangan mengepal ke dada menunjukkan semangat.</li>
+<li>Saat menjawab <strong>Salam Perjuangan</strong> dan <strong>Salam Kiai Fawaid</strong> tangan terkepal ke depan sesuai irama teriakan.</li>
+</ol>
+</div>
+</section>
+<section aria-labelledby="filosofi-title" class="section yel-section">
+<div class="card">
+<h2 class="card__title" id="filosofi-title">
+<span class="tag-pill">Filosofi Mengepalkan Tangan di Depan Dada</span>
+</h2>
+<div aria-label="Diagram filosofi" class="diagram">
+<article class="node n1">
+<div class="node__num">01</div>
+<p class="node__text"><strong>Bangga</strong> lahir dan besar di Pondok Pesantren Salafiyah Syafi’iyah Sukorejo.</p>
+</article>
+<article class="node n2">
+<div class="node__num">02</div>
+<p class="node__text"><strong>Bangga</strong> menjadi penerus perjuangan pendiri dan pengasuh Pondok Pesantren Salafiyah Syafi’iyah Sukorejo.</p>
+</article>
+<article class="node n3">
+<div class="node__num">03</div>
+<p class="node__text"><strong>Bangga</strong> berorganisasi IKSASS—Ikatan Santri Alumni Salafiyah Syafi’iyah.</p>
+</article>
+<article class="node node--center nc">
+<p class="node__title">Konsekuensi</p>
+<p class="node__text">Lahirnya tanggung jawab penuh atas diri kita sendiri untuk Pesantren kita dan Organisasi (IKSASS).</p>
+</article>
+<article class="node n4">
+<div class="node__num">04</div>
+<p class="node__text">Sebagai simbol ikrar diri, tegar, terus semangat dalam perjuangan dan khidmah di jalur Salafiyah Syafi’iyah.</p>
+</article>
+</div>
+</div>
+</section>
+</div></div></div></main>
+<div data-include="footer"></div>
+<script defer="defer" src="../../assets/js/partials.min.js"></script>
+<script defer="" src="../../assets/js/main.min.js"></script>
+<script defer="" src="../../assets/js/search-index.min.js"></script>
+<script defer="" src="../../assets/js/search.min.js"></script>
+</body>
+</html>

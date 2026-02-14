@@ -15,7 +15,17 @@ const getRootPrefix = () => {
   return "../".repeat(Math.max(0, parts.length));
 };
 const ROOT_PREFIX = getRootPrefix();
-const normUrl = (u) => (u && u.startsWith("/") ? (ROOT_PREFIX + u.slice(1)) : u);
+const normUrl = (u) => {
+  if (!u) return "";
+  // Keep absolute http(s) URLs as-is
+  if (/^(https?:)?\/\//i.test(u)) return u;
+  // Absolute from site root -> prefix to current depth
+  if (u.startsWith("/")) return (ROOT_PREFIX + u.slice(1));
+  // Common site-relative assets path (works on nested pages)
+  if (u.startsWith("assets/")) return (ROOT_PREFIX + u);
+  if (u.startsWith("./assets/")) return (ROOT_PREFIX + u.replace(/^\.\//, ""));
+  return u;
+};
 
 (async function () {
   function $(sel, root) { return (root || document).querySelector(sel); }

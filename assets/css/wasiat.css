@@ -7,7 +7,7 @@
 }
 
 .page-wasiat *{ box-sizing: border-box; }
-.page-wasiat .nilai-kiai{ padding: 56px 0; background: #fff; position: relative; overflow: hidden; }
+.page-wasiat .nilai-kiai{ padding: 32px 0 56px; background: #fff; position: relative; overflow: hidden; }
 .page-wasiat .container{ width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
 
 .page-wasiat .nilai-grid{

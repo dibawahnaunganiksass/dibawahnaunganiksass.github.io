@@ -8,6 +8,16 @@
   }
   const ROOT_PREFIX = getRootPrefix();
 
+  // Normalize site-relative URLs so assets work on nested pages (e.g., /galeri/, /kontak/).
+  function toRootUrl(u){
+    const v = String(u || '').trim();
+    if (!v) return '';
+    if (/^(https?:)?\/\//i.test(v) || v.startsWith('data:')) return v;
+    if (v.startsWith('/')) return ROOT_PREFIX + v.slice(1);
+    // strip leading ./ or ../ to avoid nesting issues, then anchor to ROOT_PREFIX
+    return ROOT_PREFIX + v.replace(/^\.+\//, '');
+  }
+
   window.__IKSASS_INIT = window.__IKSASS_INIT || {};
 
   // Remove any duplicated caret characters that might be embedded in drawer accordion labels
@@ -111,7 +121,7 @@
 
         // Lazy-load berita data only when drawer opens (keeps header lighter)
         // Then build/refresh Berita accordion in the drawer.
-        ensureBeritaMegaLoaded().then(() => {
+        ensureBeritaDataLoaded().then(() => {
           setupMobileBeritaAccordion();
         });
       } else {
@@ -178,109 +188,139 @@
     });
   }
 
-  // Mobile drawer: turn "Berita" into an accordion with 4 latest items (taken from the mega menu)
-    
-// Lazy-load Berita mega menu data (fetch only when needed)
-let __beritaMegaPromise = null;
-async function ensureBeritaMegaLoaded(){
-  if (window.__IKSASS_INIT.beritaMegaLoaded) return true;
-  if (__beritaMegaPromise) return __beritaMegaPromise;
+  // Mobile drawer + desktop mega menu should read from ONE source of truth:
+  // /berita/news-index.json (latest posts). Avoid depending on DOM scraping.
 
-  __beritaMegaPromise = (async () => {
+  // Helper: format ISO date -> "DD Mon YYYY" (ID short months)
+  const __monthID = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+  function __fmtDateID(iso){
+    if (!iso) return '';
+    const d = new Date(iso + 'T00:00:00');
+    if (Number.isNaN(d.getTime())) return '';
+    const dd = String(d.getDate()).padStart(2,'0');
+    return `${dd} ${__monthID[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
+  let __newsIndexPromise = null;
+  async function getLatestNews(limit = 4){
+    if (__newsIndexPromise) {
+      const all = await __newsIndexPromise;
+      return all.slice(0, Math.max(0, limit));
+    }
+
+    __newsIndexPromise = (async () => {
+      try{
+        const res = await fetch(ROOT_PREFIX + 'berita/news-index.json', { cache: 'no-store' });
+        if (!res.ok) return [];
+        const data = await res.json();
+        if (!Array.isArray(data)) return [];
+
+        return data
+          .filter(x => x && x.slug && x.title)
+          .map(x => ({
+            slug: x.slug,
+            title: x.title,
+            image: x.image || '',
+            excerpt: x.excerpt || '',
+            date_iso: x.date_iso || '',
+            date_display_short: x.date_iso ? __fmtDateID(x.date_iso) : (x.date_display || '')
+          }))
+          .sort((a,b) => (b.date_iso || '').localeCompare(a.date_iso || ''));
+      }catch(_){
+        return [];
+      }
+    })();
+
+    const all = await __newsIndexPromise;
+    return all.slice(0, Math.max(0, limit));
+  }
+
+  // Lazy-load Berita mega menu data (fetch only when needed)
+  async function ensureBeritaDataLoaded(){
+    if (window.__IKSASS_INIT.beritaDataLoaded) return true;
     try{
-      await updateBeritaMegaMenu();
-      window.__IKSASS_INIT.beritaMegaLoaded = true;
+      // prime cache
+      await getLatestNews(4);
+      window.__IKSASS_INIT.beritaDataLoaded = true;
       return true;
     }catch(_){
       return false;
-    }finally{
-      // keep promise for this page lifecycle (prevents duplicate fetches)
     }
-  })();
+  }
 
-  return __beritaMegaPromise;
-}
+  // Lazy-load + build Berita mega menu (desktop). Kept separate so the mobile drawer
+  // does not depend on desktop DOM.
+  let __beritaMegaPromise = null;
+  async function ensureBeritaMegaLoaded(){
+    if (window.__IKSASS_INIT.beritaMegaLoaded) return true;
+    if (__beritaMegaPromise) return __beritaMegaPromise;
 
-// Update "Berita" mega menu (desktop) from /berita/news-index.json so hover always shows latest 4.
+    __beritaMegaPromise = (async () => {
+      try{
+        await ensureBeritaDataLoaded();
+        await updateBeritaMegaMenu();
+        window.__IKSASS_INIT.beritaMegaLoaded = true;
+        return true;
+      }catch(_){
+        return false;
+      }
+    })();
+
+    return __beritaMegaPromise;
+  }
+
+  // Update "Berita" mega menu (desktop) from /berita/news-index.json so hover always shows latest 4.
   async function updateBeritaMegaMenu(){
     const postsWrap = document.querySelector('.dropdown.berita-mega .mega-posts');
     if (!postsWrap) return;
 
-    // Helper: format ISO date -> "DD Mon YYYY" (ID short months)
-    const month = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
-    function fmtDate(iso){
-      if (!iso) return '';
-      const d = new Date(iso + 'T00:00:00');
-      if (Number.isNaN(d.getTime())) return '';
-      const dd = String(d.getDate()).padStart(2,'0');
-      return `${dd} ${month[d.getMonth()]} ${d.getFullYear()}`;
-    }
+    const items = await getLatestNews(4);
+    if (!items.length) return;
 
-    try{
-      const res = await fetch(ROOT_PREFIX + 'berita/news-index.json', { cache: 'no-store' });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (!Array.isArray(data)) return;
-
-      const items = data
-        .filter(x => x && x.slug && x.title)
-        .map(x => ({
-          slug: x.slug,
-          title: x.title,
-          image: x.image || '',
-          excerpt: x.excerpt || '',
-          date_iso: x.date_iso || '',
-          date_display_short: x.date_iso ? fmtDate(x.date_iso) : (x.date_display || '')
-        }))
-        .sort((a,b) => (b.date_iso || '').localeCompare(a.date_iso || ''))
-        .slice(0, 4);
-
-      if (!items.length) return;
-
-      postsWrap.innerHTML = items.map(it => `
-        <a class="mega-card" href="${ROOT_PREFIX}berita/${it.slug}/">
-          <img class="mega-thumb" src="${(it.image && it.image.startsWith('/')) ? (ROOT_PREFIX + it.image.slice(1)) : it.image}" alt="${it.title}" loading="lazy" decoding="async"/>
-          <div class="mega-card-body">
-            <div class="mega-card-title">${it.title}</div>
-            <div class="mega-card-meta">${it.date_display_short}</div>
-            ${it.excerpt ? `<div class="mega-card-snippet">${it.excerpt}</div>` : ``}
-          </div>
-        </a>
-      `.trim()).join('');
-
-    }catch(e){
-      // fail silently
-    }
+    postsWrap.innerHTML = items.map(it => `
+      <a class="mega-card" href="${ROOT_PREFIX}berita/${it.slug}/">
+        <img class="mega-thumb" src="${toRootUrl(it.image) || (ROOT_PREFIX + 'assets/img/og-default.png')}" alt="${it.title}" loading="lazy" decoding="async"/>
+        <div class="mega-card-body">
+          <div class="mega-card-title">${it.title}</div>
+          <div class="mega-card-meta">${it.date_display_short}</div>
+          ${it.excerpt ? `<div class="mega-card-snippet">${it.excerpt}</div>` : ``}
+        </div>
+      </a>
+    `.trim()).join('');
   }
 
-  function setupMobileBeritaAccordion(){
-    // If already built, skip
-    if (document.querySelector('[data-drawer] .drawer-berita')) return;
+  async function setupMobileBeritaAccordion(){
+    const drawer = document.querySelector('[data-drawer]');
+    if (!drawer) return;
 
-    const drawerLinks = document.querySelector('[data-drawer] .drawer-links');
+    const drawerLinks = drawer.querySelector('.drawer-links[data-drawer-content="menu"]');
     if (!drawerLinks) return;
 
-    const beritaLink = Array.from(drawerLinks.querySelectorAll('a'))
-      .find(a => a.textContent.trim().toLowerCase() === 'berita');
-    if (!beritaLink) return;
-
-    const mega = document.querySelector('.dropdown.berita-mega .mega');
-    if (!mega) return;
-
-    let cards = Array.from(mega.querySelectorAll('.mega-posts .mega-card')).slice(0, 4);
-    if (!cards.length) {
-      // If mega menu hasn't been populated yet, fetch data then try again.
-      ensureBeritaMegaLoaded().then(() => {
-        cards = Array.from(mega.querySelectorAll('.mega-posts .mega-card')).slice(0, 4);
-        if (cards.length) setupMobileBeritaAccordion();
+    // If already built, just refresh items (keeps it always in sync with JSON)
+    const existing = drawer.querySelector('.drawer-berita');
+    if (existing) {
+      const list = existing.querySelector('.drawer-news-list');
+      if (!list) return;
+      const items = await getLatestNews(4);
+      if (!items.length) return;
+      list.innerHTML = '';
+      items.forEach(it => {
+        const a = document.createElement('a');
+        a.className = 'drawer-news-item';
+        a.href = `${ROOT_PREFIX}berita/${it.slug}/`;
+        a.innerHTML = `<span class="t">${it.title}</span><span class="d">${it.date_display_short || ''}</span>`;
+        list.appendChild(a);
       });
       return;
     }
 
-    const actionLinks = Array.from(mega.querySelectorAll('.mega-actions a'));
-    const terbaruLink = actionLinks.find(a => a.textContent.trim().toLowerCase().includes('terbaru'));
-    const semuaLink = actionLinks.find(a => a.textContent.trim().toLowerCase().includes('lihat'));
-    const infoLink = mega.querySelector('.mega-foot a');
+    // Replace the single "Berita" link with an accordion
+    const beritaLink = Array.from(drawerLinks.querySelectorAll('a'))
+      .find(a => a.textContent.trim().toLowerCase() === 'berita');
+    if (!beritaLink) return;
+
+    const items = await getLatestNews(4);
+    if (!items.length) return;
 
     const acc = document.createElement('div');
     acc.className = 'drawer-acc drawer-berita';
@@ -293,14 +333,11 @@ async function ensureBeritaMegaLoaded(){
     `;
 
     const list = acc.querySelector('.drawer-news-list');
-    cards.forEach(card => {
-      const title = (card.querySelector('.mega-card-title')?.textContent || 'Berita').trim();
-      const date = (card.querySelector('.mega-card-meta')?.textContent || '').trim();
-      const href = card.getAttribute('href') || '#';
+    items.forEach(it => {
       const a = document.createElement('a');
       a.className = 'drawer-news-item';
-      a.href = href;
-      a.innerHTML = `<span class="t">${title}</span><span class="d">${date}</span>`;
+      a.href = `${ROOT_PREFIX}berita/${it.slug}/`;
+      a.innerHTML = `<span class="t">${it.title}</span><span class="d">${it.date_display_short || ''}</span>`;
       list.appendChild(a);
     });
 
@@ -313,13 +350,11 @@ async function ensureBeritaMegaLoaded(){
       actions.appendChild(a);
     };
 
-    pushAction(terbaruLink?.getAttribute('href'), 'Terbaru');
-    pushAction(semuaLink?.getAttribute('href'), 'Lihat semua →');
-    pushAction(infoLink?.getAttribute('href'), 'Info Organisasi');
+    // Keep actions stable and independent from desktop markup
+    pushAction(`${ROOT_PREFIX}berita/`, 'Lihat semua →');
+    pushAction(`${ROOT_PREFIX}dokumen/`, 'Info Organisasi');
 
     beritaLink.replaceWith(acc);
-
-    // Ensure no embedded caret characters remain in accordion titles.
     stripDrawerCarets(acc);
   }
 

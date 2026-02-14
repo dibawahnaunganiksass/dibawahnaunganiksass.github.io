@@ -46,7 +46,7 @@ def build_all_berita() -> None:
 
     failed = 0
     for jf in json_files:
-        code = run_py("berita_generator.py", str(jf.as_posix()))
+        code = run_py("berita_generator.py", "--no-index", str(jf.as_posix()))
         if code != 0:
             failed += 1
             print(f"[WARN] gagal generate: {jf.name}")
@@ -59,6 +59,7 @@ def build_all_berita() -> None:
 
 def main():
     build_all_berita()
+    run_py("build_news_index.py")
     run_py("build_gallery.py")
     run_py("build_pages_index.py")
     print("\nOK: build_all selesai")
