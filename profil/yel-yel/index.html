@@ -53,7 +53,8 @@
 
   .page-yelyel .card{overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.06);transition:box-shadow .18s ease, transform .18s ease}
   .page-yelyel .card:hover{box-shadow:0 16px 34px rgba(0,0,0,.08);transform:translateY(-1px)}
-  .page-yelyel .card__title{margin:0 0 10px;font-size:18px}
+  /* Card titles follow site heading scale (match Tentang IKSASS) */
+  .page-yelyel .card__title{margin:0 0 10px;font-size:var(--text-2xl);line-height:var(--lh-tight);font-weight:600}
 
   /* Give key cards a subtle "brand" accent */
   .page-yelyel .yel-top > .card{border-top:4px solid rgba(16,185,129,.45)}
@@ -61,7 +62,7 @@
 
   /* Call & response */
   .page-yelyel .callresp{display:grid;gap:10px}
-  .page-yelyel .callresp__head{display:none;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:12px}
+  .page-yelyel .callresp__head{display:none;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:var(--text-xs)}
   /* Render as a true 2-column list (clean, table-like) */
   .page-yelyel .callresp__list{list-style:none;padding:0;margin:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff}
   .page-yelyel .callresp__item{padding:12px 14px;display:grid;gap:6px;min-width:0;transition:background .15s ease}
@@ -71,23 +72,64 @@
   /* Typography locked to site scale (match Tentang IKSASS) */
   .page-yelyel .callresp__call{font-weight:600;font-size:1rem;line-height:1.6}
     .page-yelyel .callresp__resp{font-weight:600;font-size:1rem;line-height:1.6}
-  .page-yelyel .callresp__note{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:75ch}
+  .page-yelyel .callresp__note{margin:10px 0 0;color:var(--muted);font-size:var(--text-sm);max-width:75ch}
 
   /* Moves */
   .page-yelyel .moves{margin:0;padding-left:18px;display:grid;gap:10px}
-  .page-yelyel .moves strong{font-weight:900}
+  .page-yelyel .moves strong{font-weight:600}
 
   /* Filosofi diagram (no images) */
   /* Center the section label exactly in the card */
   .page-yelyel #filosofi-title{display:flex;justify-content:center;margin-bottom:10px}
-  .page-yelyel .tag-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:12px;margin-inline:auto}
+  .page-yelyel .tag-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:var(--text-xs);margin-inline:auto}
   .page-yelyel .diagram{position:relative;display:grid;gap:12px;margin-top:12px}
   .page-yelyel .node{border:1px solid var(--border);border-radius:16px;background:#fff;padding:14px;min-width:0;box-shadow:0 10px 22px rgba(0,0,0,.06)}
-  .page-yelyel .node__num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:900;color:var(--primary);margin:0 auto 10px}
-  .page-yelyel .node__title{margin:0 0 6px;font-weight:900}
+  .page-yelyel .node__num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:700;color:var(--primary);margin:0 auto 10px}
+  .page-yelyel .node__title{margin:0 0 6px;font-weight:600}
   .page-yelyel .node__text{margin:0;color:var(--text);line-height:1.5}
   .page-yelyel .node--center{background:rgba(16,185,129,.10);border-color:rgba(16,185,129,.35)}
   .page-yelyel .node--center .node__title{letter-spacing:.06em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+
+  /* Mobile only: move "Konsekuensi" to the top + give it stronger emphasis */
+  @media (max-width: 640px){
+    /* Use a simple vertical flow on small screens so ordering is deterministic */
+    .page-yelyel .diagram{display:flex;flex-direction:column}
+    .page-yelyel .diagram .node--center{order:-1}
+
+    /* Visual emphasis: accent bar + subtle highlight + icon */
+    .page-yelyel .diagram .node--center{
+      position:relative;
+      padding:16px;
+      border-left:5px solid rgba(16,185,129,.70);
+      background:linear-gradient(180deg, rgba(16,185,129,.16), rgba(255,255,255,.96));
+      box-shadow:0 12px 26px rgba(0,0,0,.08);
+    }
+    .page-yelyel .diagram .node--center::before{
+      content:"⚖️";
+      position:absolute;
+      top:12px;
+      right:12px;
+      font-size:18px;
+      line-height:1;
+      opacity:.9;
+    }
+    .page-yelyel .diagram .node--center .node__title{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(16,185,129,.14);
+      border:1px solid rgba(16,185,129,.28);
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:var(--text-xs);
+      margin:0 0 10px;
+    }
+    .page-yelyel .diagram .node--center .node__text{color:var(--text);line-height:1.6}
+  }
 
   @media (min-width: 641px){
     .page-yelyel .yel-wrap{padding:16px 0 28px}
@@ -125,7 +167,7 @@
   }
 
   @media (min-width: 1025px){
-    .page-yelyel .card__title{font-size:19px}
+    .page-yelyel .card__title{font-size:var(--text-2xl)}
     .page-yelyel .callresp__resp{font-size:1rem}
 
     /* Make the right card feel premium on desktop (keeps reading context) */
