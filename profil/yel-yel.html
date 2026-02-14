@@ -68,8 +68,9 @@
   .page-yelyel .callresp__item + .callresp__item{border-top:1px solid var(--border)}
   .page-yelyel .callresp__item:nth-child(even){background:rgba(15,118,110,.03)}
   .page-yelyel .callresp__item:hover{background:rgba(15,118,110,.06)}
-  .page-yelyel .callresp__call{font-weight:900}
-  .page-yelyel .callresp__resp{font-weight:900;font-size:18px;line-height:1.25}
+  /* Typography locked to site scale (match Tentang IKSASS) */
+  .page-yelyel .callresp__call{font-weight:600;font-size:1rem;line-height:1.6}
+    .page-yelyel .callresp__resp{font-weight:600;font-size:1rem;line-height:1.6}
   .page-yelyel .callresp__note{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:75ch}
 
   /* Moves */
@@ -103,7 +104,7 @@
     .page-yelyel .callresp__resp{padding:2px 12px 2px 14px}
     .page-yelyel .callresp__call{color:var(--text)}
     .page-yelyel .callresp__resp{justify-self:start}
-    .page-yelyel .callresp__resp{font-size:18px}
+    .page-yelyel .callresp__resp{font-size:1rem}
 
     /* Diagram layout: clean modern (no arrows)
        02 (top-center)
@@ -125,7 +126,7 @@
 
   @media (min-width: 1025px){
     .page-yelyel .card__title{font-size:19px}
-    .page-yelyel .callresp__resp{font-size:19px}
+    .page-yelyel .callresp__resp{font-size:1rem}
 
     /* Make the right card feel premium on desktop (keeps reading context) */
     .page-yelyel .yel-top > .card{position:sticky;top:92px}
