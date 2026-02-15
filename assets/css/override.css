@@ -77,8 +77,11 @@ main.container {
   color:#fff;
   padding:72px 0 56px;
 }
+.news-hero .breadcrumb{color:rgba(255,255,255,.72)}
+.news-hero .page-sub{color:rgba(255,255,255,.82)}
+.news-hero .page-title{color:#fff}
 .news-hero h1{margin:0 0 10px;font-size:40px;line-height:1.1}
-.news-hero p{margin:0;max-width:640px;opacity:.92}
+.news-hero p{margin:0;max-width:640px;opacity:1}
 
 @media (max-width:768px){
   .news-hero{padding:56px 0 40px}
