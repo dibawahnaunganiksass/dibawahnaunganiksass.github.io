@@ -2271,3 +2271,49 @@ main{ padding-top: 0 !important; }
 /* Sharebar: ensure anchors without href are still visually clickable (JS sets href). */
 .post-sharebar .share-btn{ cursor:pointer; }
 .post-sharebar .share-toast{ margin-left:6px; font-size:13px; color: rgba(0,0,0,.72); }
+
+
+
+/* === HOMEPAGE HERO PREMIUM (lightweight, no heavy images) === */
+.hero{
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 420px at 15% 20%, rgba(255,255,255,.16), rgba(255,255,255,0) 60%),
+    radial-gradient(900px 420px at 85% 0%, rgba(34,197,94,.18), rgba(34,197,94,0) 55%),
+    linear-gradient(135deg, #0f3d2a 0%, #0b2f22 45%, #0f4b33 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,.06) 0px,
+      rgba(255,255,255,.06) 1px,
+      rgba(255,255,255,0) 1px,
+      rgba(255,255,255,0) 10px);
+  opacity:.25;
+  pointer-events:none;
+}
+.hero > .container,
+.hero .hero-inner{
+  position: relative;
+  z-index: 1;
+}
+.hero .h-title{ color:#fff; }
+.hero .h-sub{
+  color: rgba(255,255,255,.86);
+}
+.hero .h-sub strong{ color: rgba(255,255,255,.96); }
+
+.hero .btn.ghost{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  color:#fff;
+}
+.hero .btn.ghost:hover{
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.30);
+}
+
