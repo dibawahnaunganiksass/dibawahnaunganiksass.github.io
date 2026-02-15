@@ -2266,3 +2266,8 @@ main{ padding-top: 0 !important; }
   opacity:.9;
   font-weight:600;
 }
+
+
+/* Sharebar: ensure anchors without href are still visually clickable (JS sets href). */
+.post-sharebar .share-btn{ cursor:pointer; }
+.post-sharebar .share-toast{ margin-left:6px; font-size:13px; color: rgba(0,0,0,.72); }
