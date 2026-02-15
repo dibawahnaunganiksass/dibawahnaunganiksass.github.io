@@ -1,47 +1,40 @@
-/*
-  Premium share buttons for berita detail pages.
-  - Uses Web Share API when available (mobile).
-  - Provides Copy Link + platform share fallbacks.
-  - Works with the .post-sharebar block.
-*/
 (function () {
-  const bar = document.querySelector('.post-sharebar');
+  const root = document;
+  const url = window.location.href;
+  const title = (root.querySelector('meta[property="og:title"]')?.content || document.title || '').trim();
+
+  const shareText = title
+    ? `Berita IKSASS: ${title}\n${url}`
+    : url;
+
+  const bar = root.querySelector('.post-meta-bar');
   if (!bar) return;
 
-  const pageUrl = window.location.href;
-  const ogTitle = document.querySelector('meta[property="og:title"]')?.content;
-  const ogDesc = document.querySelector('meta[property="og:description"]')?.content;
-  const title = (ogTitle || document.title || '').trim();
-  const desc = (ogDesc || '').trim();
-
-  const btnNative = bar.querySelector('[data-share="native"]');
-  const btnCopy = bar.querySelector('[data-share="copy"]');
-  const aWA = bar.querySelector('[data-share="wa"]');
-  const aFB = bar.querySelector('[data-share="fb"]');
-  const aX = bar.querySelector('[data-share="x"]');
+  const btnNative = bar.querySelector('.share-native');
+  const btnCopy = bar.querySelector('.share-copy');
   const toast = bar.querySelector('.share-toast');
+
+  const aWA = bar.querySelector('.share-wa');
+  const aFB = bar.querySelector('.share-fb');
+  const aX  = bar.querySelector('.share-x');
 
   const enc = encodeURIComponent;
 
-  // Build safe share URLs
-  if (aWA) aWA.href = `https://wa.me/?text=${enc(title ? `${title} - ${pageUrl}` : pageUrl)}`;
-  if (aFB) aFB.href = `https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}`;
-  if (aX) aX.href = `https://twitter.com/intent/tweet?text=${enc(title || '')}&url=${enc(pageUrl)}`;
+  if (aWA) aWA.href = `https://wa.me/?text=${enc(shareText)}`;
+  if (aFB) aFB.href = `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`;
+  if (aX)  aX.href  = `https://twitter.com/intent/tweet?text=${enc(shareText)}`;
 
-  function showToast(message) {
+  function showToast(msg) {
     if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add('is-visible');
+    toast.textContent = msg;
     clearTimeout(showToast._t);
     showToast._t = setTimeout(() => {
-      toast.classList.remove('is-visible');
       toast.textContent = '';
-    }, 1800);
+    }, 2000);
   }
 
-  // Web Share API
-  if (!navigator.share && btnNative) {
-    // Hide native button on unsupported browsers to keep UI clean.
+  const canShare = !!navigator.share;
+  if (!canShare && btnNative) {
     btnNative.style.display = 'none';
   }
 
@@ -49,22 +42,19 @@
     try {
       await navigator.share({
         title: title || document.title,
-        text: desc || '',
-        url: pageUrl,
+        text: shareText,
+        url
       });
-    } catch (e) {
-      // User cancelled or unsupported — ignore.
-    }
+    } catch (e) {}
   });
 
-  // Copy link
   btnCopy?.addEventListener('click', async () => {
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(pageUrl);
+        await navigator.clipboard.writeText(url);
       } else {
         const tmp = document.createElement('textarea');
-        tmp.value = pageUrl;
+        tmp.value = url;
         tmp.setAttribute('readonly', '');
         tmp.style.position = 'absolute';
         tmp.style.left = '-9999px';
