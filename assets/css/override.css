@@ -2726,10 +2726,41 @@ main{ padding-top: 0 !important; }
 }
 
 /* ULTRA PREMIUM INTERACTIONS + ACCESSIBILITY */
-:focus-visible{
-  outline: 3px solid rgba(16, 126, 72, .35);
-  outline-offset: 3px;
-  border-radius: 12px;
+/*
+  Global focus ring normalization
+  - Avoid mixed outline/box-shadow focus styles across components.
+  - Use the design-system token (--focus-ring) everywhere for consistency.
+  - Apply only to interactive controls (safe for layout).
+*/
+/* Reset any previous global outline so component rings don't double-stack */
+:focus-visible{ outline: none; }
+
+/* Consistent ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible{
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-md, 14px);
+}
+
+/* Ensure links are visually distinguishable inside reading content */
+.content-text a:not(.btn):not(.icon-btn),
+.prose a:not(.btn):not(.icon-btn),
+.text-content a:not(.btn):not(.icon-btn){
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.content-text a:hover,
+.prose a:hover,
+.text-content a:hover{
+  text-decoration-thickness: 2px;
 }
 
 .btn, .icon-btn, .share-btn, .cta-btn{
