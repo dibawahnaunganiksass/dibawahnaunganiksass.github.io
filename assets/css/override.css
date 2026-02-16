@@ -2884,3 +2884,36 @@ summary:focus-visible,
     margin: 0 !important;
   }
 }
+
+
+
+/* === V35: Mobile hero width matches K-card + keep social icons vertical + center K-card arrow === */
+@media (max-width: 991px){
+  /* Ensure hero card uses full container width (no odd shrink on some mobile browsers) */
+  .hero .hero-card,
+  .hero .hero-card.disclaimer{
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Keep FB/IG stacked (vertical), so they don't become horizontal when actions row is tight */
+  .hero-card.disclaimer .disclaimer-social{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 520px){
+  /* Match padding/width feel with K-card list on very small screens */
+  .hero{ padding-left: 0; padding-right: 0; }
+}
+
+/* Center arrow vertically even when title wraps */
+.k-card-arrow{
+  display: block;
+  align-self: center;
+}

@@ -3,3 +3,38 @@ body{display:block !important;margin:0}body>*{max-width:none !important;align-se
 
 
 /* v30 kelembagaan arrow align */.k-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.k-card-head .title{margin:0;flex:1;min-width:0}.k-card-arrow{flex:0 0 auto;opacity:.7;transition:transform .18s cubic-bezier(.2,.8,.2,1),opacity .18s cubic-bezier(.2,.8,.2,1)}@media(hover:hover) and (pointer:fine){.k-card:hover .k-card-arrow{transform:translateX(3px);opacity:1}}
+
+@media (max-width:991px){.header .navbar>.wrap{justify-content:space-between !important}.nav-left{justify-content:flex-start !important;margin:0 !important}.nav-left .brand{margin:0 !important}}
+
+
+
+/* === V35: Mobile hero width matches K-card + keep social icons vertical + center K-card arrow === */
+@media (max-width: 991px){
+  /* Ensure hero card uses full container width (no odd shrink on some mobile browsers) */
+  .hero .hero-card,
+  .hero .hero-card.disclaimer{
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Keep FB/IG stacked (vertical), so they don't become horizontal when actions row is tight */
+  .hero-card.disclaimer .disclaimer-social{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 520px){
+  /* Match padding/width feel with K-card list on very small screens */
+  .hero{ padding-left: 0; padding-right: 0; }
+}
+
+/* Center arrow vertically even when title wraps */
+.k-card-arrow{
+  display: block;
+  align-self: center;
+}
