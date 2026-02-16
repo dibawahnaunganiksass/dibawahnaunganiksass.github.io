@@ -180,6 +180,26 @@ main{ padding-top: 0 !important; }
   box-sizing: border-box;
 }
 
+/* Mobile header symmetry (iPhone 13, etc.)
+   Center the brand on the viewport while keeping left (apps) and right (actions) intact.
+   This fixes the visual imbalance caused by the brand living in the left cluster. */
+@media (max-width: 991px){
+  .header .navbar > .wrap{ position: relative; }
+  /* keep only the apps button occupying the left edge */
+  .header .nav-left{ gap: 0; }
+  /* center brand regardless of left/right cluster widths */
+  .header .brand{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    max-width: calc(100% - (var(--ctrl-h) * 4) - 28px);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .header .brand-text{ overflow: hidden; text-overflow: ellipsis; }
+}
+
 /* Left cluster: Aplikasi + Brand (so logo is NOT centered on mobile) */
 .header .nav-left{
   display:flex;
