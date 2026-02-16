@@ -2,7 +2,7 @@
   // Bump this version whenever shared partial markup changes.
   // This prevents stale header/footer HTML from persisting via localStorage.
   // NOTE: bumping to force refresh of header/footer across pages (fixes stale drawer header markup)
-  const CACHE_VERSION="1771208097";
+  const CACHE_VERSION="1771210001";
 
   const getRootPrefix = () => {
     const parts = (location.pathname || "/").split("/").filter(Boolean);
