@@ -2878,10 +2878,21 @@ summary:focus-visible,
    ============================= */
 
 .header{
+  /* iOS safe-area top (notch) support: keep header content below status bar
+     and keep body offset in sync via --iksass-header-h */
+  padding-top: env(safe-area-inset-top);
+  height: var(--iksass-header-h, var(--header-h));
   box-shadow:0 2px 14px rgba(0,0,0,.05);
   border-bottom:1px solid rgba(0,0,0,.06);
 }
 .header a,.header button{-webkit-tap-highlight-color:transparent}
+
+/* Header CTA icons (avoid emoji glyph optical drift on iOS) */
+.ico-search{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27currentColor%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2711%27%20cy%3D%2711%27%20r%3D%277%27/%3E%3Cpath%20d%3D%27M20%2020l-3.5-3.5%27/%3E%3C/svg%3E");}
+.ico-menu{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27currentColor%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M4%207h16%27/%3E%3Cpath%20d%3D%27M4%2012h16%27/%3E%3Cpath%20d%3D%27M4%2017h16%27/%3E%3C/svg%3E");}
+
+/* Keep page content offset aligned with actual header height (incl. safe-area top) */
+:root{--iksass-header-h:calc(var(--header-h,64px) + env(safe-area-inset-top))}
 
 @media (max-width:520px){
   :root{--container-pad:20px;--ctrl-h:42px;--header-h:68px}
@@ -2891,6 +2902,11 @@ summary:focus-visible,
     padding-right:calc(var(--container-pad) + env(safe-area-inset-right));
     gap:12px;
   }
+
+  /* Prevent brand from visually drifting / wrapping on narrow widths */
+  .header .nav-left{min-width:0}
+  .header .brand{min-width:0}
+  .header .brand-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw}
 
   .header .brand{gap:9px}
   .header .brand-text{font-size:16px;line-height:1.1;letter-spacing:.15px}
