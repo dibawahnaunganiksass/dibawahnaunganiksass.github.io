@@ -2887,7 +2887,7 @@ summary:focus-visible,
 
 
 
-/* === V35: Mobile hero width matches K-card + keep social icons vertical + center K-card arrow === */
+/* === V35: Mobile hero width matches K-card + keep social icons horizontal + center K-card arrow === */
 @media (max-width: 991px){
   /* Ensure hero card uses full container width (no odd shrink on some mobile browsers) */
   .hero .hero-card,
@@ -2899,11 +2899,13 @@ summary:focus-visible,
     box-sizing: border-box;
   }
 
-  /* Keep FB/IG stacked (vertical), so they don't become horizontal when actions row is tight */
+  /* Keep FB/IG horizontal and aligned with CTA (icons left, button right) */
   .hero-card.disclaimer .disclaimer-social{
-    flex-direction: column !important;
+    display:flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     gap: 10px !important;
+    flex-wrap: nowrap !important;
   }
 }
 
@@ -2978,14 +2980,27 @@ summary:focus-visible,
   .cta-row{ flex-direction:column !important; }
   .cta-row .btn{ width:100% !important; }
 
-  /* Disclaimer actions: keep social icons vertical (NOT horizontal) on ultra-small */
-  .disclaimer-actions{ flex-wrap:wrap !important; gap:16px !important; }
-  .disclaimer-social{
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:8px !important;
+  /* Disclaimer actions: keep social icons horizontal and stay on the same row as CTA */
+  .hero-card.disclaimer .disclaimer-actions{
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    gap:12px !important;
   }
-  .disclaimer-actions .disclaimer-btn{ width:100% !important; justify-content:center !important; }
+  .hero-card.disclaimer .disclaimer-social{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    gap:8px !important;
+    flex-wrap:nowrap !important;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    justify-content:center !important;
+  }
 }
 
 /* Visual consistency: ensure k-card arrow is truly centered (cross-browser) */
