@@ -108,8 +108,8 @@
 
   // Integrity check (warn if lyrics differ from official snapshot)
   const OFFICIAL_SHA = {
-    mars: '2b0ce49e5422b925c525824973bcb4636f2f0b49dedf70ce34de955e71ad6f79',
-    hymne: '74cd856930163ecea8b8cc96b41acf33cb7c17cf9f49ff343ae1cec76f3b78d4',
+    mars: '46474650f2825d51525a00edf0aec2d877e5be2edf368882b616173328dbc88d',
+    hymne: 'b1d9b80d7726b4a1cb914111ce3db35b72b804bfe4a5aed8ab22b39f0bc454ea',
   };
 
   const checkIntegrity = async () => {
@@ -195,6 +195,35 @@
     if (!audioBar) return;
     audioBar.hidden = false;
   };
+
+  // Ensure sticky audio bar never blocks clicks on content below (mobile can wrap to 2 rows).
+  const adjustBottomPadding = () => {
+    try {
+      const konten = document.getElementById('konten');
+      if (!konten) return;
+      if (!audioBar || audioBar.hidden) {
+        konten.style.paddingBottom = '';
+        return;
+      }
+      // Add safe spacing: audio height + bottom gap.
+      const h = audioBar.getBoundingClientRect().height || 0;
+      const safe = Math.ceil(h + 28);
+      // Keep at least the original 110px, but expand when bar is taller.
+      konten.style.paddingBottom = `${Math.max(110, safe)}px`;
+    } catch {
+      // ignore
+    }
+  };
+
+  // Recalculate when layout changes.
+  window.addEventListener('resize', () => adjustBottomPadding(), { passive: true });
+  window.addEventListener('orientationchange', () => adjustBottomPadding(), { passive: true });
+  if (window.ResizeObserver && audioBar) {
+    try {
+      const ro = new ResizeObserver(() => adjustBottomPadding());
+      ro.observe(audioBar);
+    } catch {}
+  }
 
   const setAudioUi = (a, label) => {
     if (!aToggle || !aTitle || !aSub || !aSeek || !aTime) return;
@@ -390,5 +419,6 @@
   if (audioMars || audioHymne) {
     syncAudioToTab(false);
     showAudioBar();
+    adjustBottomPadding();
   }
 })();
