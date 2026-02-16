@@ -3002,23 +3002,76 @@ footer a:focus-visible{
 }
 
 
-/* Equal height for disclaimer action buttons */
-.disclaimer-row,
-.disclaimer-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* === Disclaimer actions: icon kiri + CTA kanan (sejajar dengan narasi) === */
+.disclaimer-content{flex:1;min-width:0;}
+
+.disclaimer-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:14px;
 }
 
-.disclaimer-row a,
-.disclaimer-row button,
-.disclaimer-row .btn,
-.disclaimer-row .icon-btn {
-    height: 42px !important;
-    min-height: 42px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 16px !important;
-    border-radius: 10px !important;
+.disclaimer-social{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* tombol ikon (square, nyaman disentuh) */
+.disclaimer-actions .icon-btn{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+}
+
+/* CTA tetap dominan */
+.disclaimer-actions .disclaimer-btn{
+  height:42px;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 18px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
+/* Mobile: tetap 1 baris selama masih muat (seperti mockup). */
+@media (max-width: 768px){
+  /* override legacy rules yg dulu memaksa tombol full-width */
+  .hero-card.disclaimer .disclaimer-actions{
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    width:auto;
+    padding:0 14px;
+    font-size:14px;
+  }
+}
+
+/* Layar sangat kecil: tetap 1 baris (sesuai request).
+   Ukuran ikon & padding CTA diperkecil agar muat tanpa wrap. */
+@media (max-width: 420px){
+  .hero-card.disclaimer .disclaimer-actions{flex-wrap:nowrap;gap:10px;}
+  .hero-card.disclaimer .disclaimer-actions .icon-btn{
+    width:40px;height:40px;min-width:40px;min-height:40px;
+    border-radius:12px;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    height:40px;min-height:40px;
+    padding:0 12px;
+    font-size:13px;
+    /* biar tombol bisa mengecil tanpa memaksa overflow layout */
+    flex:1;
+    min-width:0;
+  }
 }
