@@ -23,29 +23,13 @@ main.container {
   margin-right: 0 !important;
 }
 
-/* Rebuild container safely (single source of truth)
-   Root issue (iPhone 13): perceived left/right mismatch happens when
-   different blocks end up with different horizontal insets.
-   We lock ONE padding value for all containers and make it iOS-safe.
-*/
-:root{
-  --iksass-page-pad: 16px;
-}
-
-/* === MOBILE CONTAINER PAD LOCK (ALIGN HERO & SECTIONS) === */
-@media (max-width: 520px){
-  :root{
-    --container-pad: 16px;
-  }
-}
-
+/* Rebuild container safely */
 .container {
   max-width: 1200px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  /* keep perfectly symmetric left/right insets, including iOS safe-area */
-  padding-left: max(var(--iksass-page-pad), env(safe-area-inset-left)) !important;
-  padding-right: max(var(--iksass-page-pad), env(safe-area-inset-right)) !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
 }
 
 /* NEWS LAYOUT — HARD LOCK */
@@ -194,26 +178,6 @@ main{ padding-top: 0 !important; }
   justify-content: space-between;
   gap: 14px;
   box-sizing: border-box;
-}
-
-/* Mobile header symmetry (iPhone 13, etc.)
-   Center the brand on the viewport while keeping left (apps) and right (actions) intact.
-   This fixes the visual imbalance caused by the brand living in the left cluster. */
-@media (max-width: 991px){
-  .header .navbar > .wrap{ position: relative; }
-  /* keep only the apps button occupying the left edge */
-  .header .nav-left{ gap: 0; }
-  /* center brand regardless of left/right cluster widths */
-  .header .brand{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    max-width: calc(100% - (var(--ctrl-h) * 4) - 28px);
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .header .brand-text{ overflow: hidden; text-overflow: ellipsis; }
 }
 
 /* Left cluster: Aplikasi + Brand (so logo is NOT centered on mobile) */
@@ -2408,30 +2372,6 @@ main{ padding-top: 0 !important; }
   .hero{ padding:16px 0 28px !important; }
 }
 
-/* === HOMEPAGE HERO: MOBILE ALIGNMENT (iPhone 13 etc.) ===
-   Goal: CTA "kotak" (Kelembagaan/Info/Struktur) + Disclaimer card
-   align with section cards (Kelembagaan) on narrow screens.
-   Root cause: CTA buttons stay inline, so their visual edges differ from
-   full-width cards once layout collapses to 1 column.
-*/
-@media (max-width: 520px){
-  .hero .cta-row{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-  .hero .cta-row .btn{
-    width:100%;
-    justify-content:center;
-    text-align:center;
-  }
-  .hero .hero-card,
-  .hero .disclaimer-card{
-    width:100%;
-    box-sizing:border-box;
-  }
-}
-
 
 /* ORGANISASI NASIONAL MODERN - SOCIAL HANDLE */
 .social-handle{
@@ -2927,32 +2867,4 @@ summary:focus-visible,
     overflow:hidden !important;
     text-overflow:ellipsis !important;
   }
-}
-
-/* ===============================
-   HOTFIX: iPhone 13 alignment (Beranda)
-   - Disclaimer: ikon FB/IG harus sejajar (horizontal)
-   - Kelembagaan cards: arrow harus sejajar dengan judul (kanan, center)
-   Ditaruh paling bawah agar mengalahkan rule legacy.
-================================ */
-
-/* Kelembagaan card header: title + arrow satu baris */
-.k-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.k-card-head .title{margin:0;flex:1;min-width:0}
-.k-card-arrow{flex:0 0 auto;align-self:center;display:block;opacity:.7}
-
-@media (max-width:520px){
-  /* Disclaimer actions: FB/IG sejajar + tombol tetap rapi */
-  .hero-card.disclaimer .disclaimer-actions{display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-between !important;flex-wrap:nowrap !important;gap:10px !important;min-width:0 !important}
-  .hero-card.disclaimer .disclaimer-social{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;align-items:center !important;gap:12px !important;flex:0 0 auto !important}
-  .hero-card.disclaimer .disclaimer-actions .icon-btn{flex:0 0 auto !important}
-  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{flex:1 1 auto !important;min-width:0 !important;max-width:100% !important;white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis !important}
-}
-
-/* === HERO EDGE LOCK (prevent hidden horizontal offset) === */
-@media (max-width: 520px){
-  .hero{ padding-left: 0 !important; padding-right: 0 !important; }
-  .hero .container{ padding-left: var(--container-pad) !important; padding-right: var(--container-pad) !important; }
-  .hero .hero-inner{ margin-left: 0 !important; margin-right: 0 !important; }
-  .hero .cta-row, .hero .hero-card{ margin-left: 0 !important; margin-right: 0 !important; }
 }
