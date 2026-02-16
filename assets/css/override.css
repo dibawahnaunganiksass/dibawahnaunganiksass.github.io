@@ -2868,3 +2868,40 @@ summary:focus-visible,
     text-overflow:ellipsis !important;
   }
 }
+
+/* =============================
+   Premium Mobile Header Polish
+   - spacing rhythm
+   - optical alignment
+   - subtle elevation (retina-friendly)
+   - safe-area padding on iOS
+   ============================= */
+
+.header{
+  box-shadow:0 2px 14px rgba(0,0,0,.05);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.header a,.header button{-webkit-tap-highlight-color:transparent}
+
+@media (max-width:520px){
+  :root{--container-pad:20px;--ctrl-h:42px;--header-h:68px}
+
+  .header .navbar>.wrap{
+    padding-left:calc(var(--container-pad) + env(safe-area-inset-left));
+    padding-right:calc(var(--container-pad) + env(safe-area-inset-right));
+    gap:12px;
+  }
+
+  .header .brand{gap:9px}
+  .header .brand-text{font-size:16px;line-height:1.1;letter-spacing:.15px}
+
+  .header .brand-mark{width:42px;height:42px;border-radius:14px}
+  .header .brand-mark img{width:28px;height:28px}
+
+  .header .nav-cta{gap:10px}
+  .header .nav-search-btn,
+  .header .iconbtn,
+  .header .userbtn,
+  .header .hamburger,
+  .header .appsbtn{width:42px;height:42px;border-radius:14px}
+}
