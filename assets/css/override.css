@@ -2807,3 +2807,20 @@ main{ padding-top: 0 !important; }
   justify-content:center !important;
   border-radius:12px !important;
 }
+
+/* iPhone 13 / small mobile: keep [handle][FB][IG] in one row (no wrap) */
+@media (max-width: 430px){
+  .disclaimer-row{
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .disclaimer-row .handle-pill{
+    padding: 7px 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+  .disclaimer-row .icon-btn{
+    flex: 0 0 auto !important;
+  }
+}

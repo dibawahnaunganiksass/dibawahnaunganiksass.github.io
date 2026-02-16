@@ -22,3 +22,5 @@ body{display:block !important;margin:0;}body > *{max-width:none !important;align
 }
 
 .disclaimer-row .icon-btn{width:42px!important;height:42px!important;padding:0!important;border-radius:12px!important}.disclaimer-row .icon-btn .ic{width:20px!important;height:20px!important;display:block!important}.disclaimer-actions .disclaimer-btn{height:42px!important;min-height:42px!important;padding:0 18px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:12px!important}
+
+@media (max-width:430px){.disclaimer-row{flex-wrap:nowrap!important;justify-content:center!important;gap:8px!important}.disclaimer-row .handle-pill{padding:7px 12px!important;font-size:13px!important;white-space:nowrap!important}.disclaimer-row .icon-btn{flex:0 0 auto!important}}
