@@ -196,35 +196,6 @@
     audioBar.hidden = false;
   };
 
-  // Ensure sticky audio bar never blocks clicks on content below (mobile can wrap to 2 rows).
-  const adjustBottomPadding = () => {
-    try {
-      const konten = document.getElementById('konten');
-      if (!konten) return;
-      if (!audioBar || audioBar.hidden) {
-        konten.style.paddingBottom = '';
-        return;
-      }
-      // Add safe spacing: audio height + bottom gap.
-      const h = audioBar.getBoundingClientRect().height || 0;
-      const safe = Math.ceil(h + 28);
-      // Keep at least the original 110px, but expand when bar is taller.
-      konten.style.paddingBottom = `${Math.max(110, safe)}px`;
-    } catch {
-      // ignore
-    }
-  };
-
-  // Recalculate when layout changes.
-  window.addEventListener('resize', () => adjustBottomPadding(), { passive: true });
-  window.addEventListener('orientationchange', () => adjustBottomPadding(), { passive: true });
-  if (window.ResizeObserver && audioBar) {
-    try {
-      const ro = new ResizeObserver(() => adjustBottomPadding());
-      ro.observe(audioBar);
-    } catch {}
-  }
-
   const setAudioUi = (a, label) => {
     if (!aToggle || !aTitle || !aSub || !aSeek || !aTime) return;
     aTitle.textContent = label;
@@ -419,6 +390,5 @@
   if (audioMars || audioHymne) {
     syncAudioToTab(false);
     showAudioBar();
-    adjustBottomPadding();
   }
 })();

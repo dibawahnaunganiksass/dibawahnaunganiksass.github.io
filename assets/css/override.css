@@ -150,21 +150,26 @@ main.container {
   --container-pad: 20px;
   --header-h: 64px;
   --ctrl-h: 40px;
+  /* canonical header tokens (avoid mismatch across files) */
+  --iksass-header-h: 64px;
+  --iksass-header-bg: #fff;
+  --iksass-header-border: rgba(0,0,0,.06);
 }
 
 .header{
   position: fixed !important;
   top: 0; left: 0; right: 0;
   z-index: 2000;
-  background: #fff;
+  background: var(--iksass-header-bg);
+  border-bottom: 1px solid var(--iksass-header-border);
 }
-body{ padding-top: var(--iksass-header-h, 64px); }
+body{ padding-top: var(--iksass-header-h); }
 main{ padding-top: 0 !important; }
 
 /* header wrapper uses same max-width as content */
 .header .navbar{
   width: 100%;
-  background: #fff;
+  background: var(--iksass-header-bg);
 }
 .header .navbar > .wrap{
   max-width: var(--container-width);
@@ -172,7 +177,7 @@ main{ padding-top: 0 !important; }
   margin-right: auto;
   padding-left: var(--container-pad);
   padding-right: var(--container-pad);
-  height: var(--header-h);
+  height: var(--iksass-header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2867,57 +2872,4 @@ summary:focus-visible,
     overflow:hidden !important;
     text-overflow:ellipsis !important;
   }
-}
-
-/* =============================
-   Premium Mobile Header Polish
-   - spacing rhythm
-   - optical alignment
-   - subtle elevation (retina-friendly)
-   - safe-area padding on iOS
-   ============================= */
-
-.header{
-  /* iOS safe-area top (notch) support: keep header content below status bar
-     and keep body offset in sync via --iksass-header-h */
-  padding-top: env(safe-area-inset-top);
-  height: var(--iksass-header-h, var(--header-h));
-  box-shadow:0 2px 14px rgba(0,0,0,.05);
-  border-bottom:1px solid rgba(0,0,0,.06);
-}
-.header a,.header button{-webkit-tap-highlight-color:transparent}
-
-/* Header CTA icons (avoid emoji glyph optical drift on iOS) */
-.ico-search{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27currentColor%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2711%27%20cy%3D%2711%27%20r%3D%277%27/%3E%3Cpath%20d%3D%27M20%2020l-3.5-3.5%27/%3E%3C/svg%3E");}
-.ico-menu{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27currentColor%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M4%207h16%27/%3E%3Cpath%20d%3D%27M4%2012h16%27/%3E%3Cpath%20d%3D%27M4%2017h16%27/%3E%3C/svg%3E");}
-
-/* Keep page content offset aligned with actual header height (incl. safe-area top) */
-:root{--iksass-header-h:calc(var(--header-h,64px) + env(safe-area-inset-top))}
-
-@media (max-width:520px){
-  :root{--container-pad:20px;--ctrl-h:42px;--header-h:68px}
-
-  .header .navbar>.wrap{
-    padding-left:calc(var(--container-pad) + env(safe-area-inset-left));
-    padding-right:calc(var(--container-pad) + env(safe-area-inset-right));
-    gap:12px;
-  }
-
-  /* Prevent brand from visually drifting / wrapping on narrow widths */
-  .header .nav-left{min-width:0}
-  .header .brand{min-width:0}
-  .header .brand-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw}
-
-  .header .brand{gap:9px}
-  .header .brand-text{font-size:16px;line-height:1.1;letter-spacing:.15px}
-
-  .header .brand-mark{width:42px;height:42px;border-radius:14px}
-  .header .brand-mark img{width:28px;height:28px}
-
-  .header .nav-cta{gap:10px}
-  .header .nav-search-btn,
-  .header .iconbtn,
-  .header .userbtn,
-  .header .hamburger,
-  .header .appsbtn{width:42px;height:42px;border-radius:14px}
 }
