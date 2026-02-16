@@ -3000,3 +3000,25 @@ footer a:focus-visible{
     flex-wrap:wrap;
   }
 }
+
+
+/* Equal height for disclaimer action buttons */
+.disclaimer-row,
+.disclaimer-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.disclaimer-row a,
+.disclaimer-row button,
+.disclaimer-row .btn,
+.disclaimer-row .icon-btn {
+    height: 42px !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+    border-radius: 10px !important;
+}

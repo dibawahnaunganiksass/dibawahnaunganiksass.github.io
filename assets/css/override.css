@@ -2762,3 +2762,48 @@ main{ padding-top: 0 !important; }
     100%{ background-position: 0% 0%; opacity:.18; }
   }
 }
+
+
+/* Equal height for disclaimer action buttons */
+.disclaimer-row,
+.disclaimer-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.disclaimer-row a,
+.disclaimer-row button,
+.disclaimer-row .btn,
+.disclaimer-row .icon-btn {
+    height: 42px !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+    border-radius: 10px !important;
+}
+
+/* FIX: icon FB/IG terlihat normal (jangan mengecil) */
+.disclaimer-row .icon-btn{
+  width:42px !important;
+  height:42px !important;
+  padding:0 !important;
+  border-radius:12px !important;
+}
+.disclaimer-row .icon-btn .ic{
+  width:20px !important;
+  height:20px !important;
+  display:block !important;
+}
+/* tombol baca selengkapnya tetap sama tinggi */
+.disclaimer-actions .disclaimer-btn{
+  height:42px !important;
+  min-height:42px !important;
+  padding:0 18px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:12px !important;
+}
