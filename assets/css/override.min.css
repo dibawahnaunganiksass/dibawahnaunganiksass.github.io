@@ -58,3 +58,31 @@ body{display:block !important;margin:0;}body > *{max-width:none !important;align
   .hero-card.disclaimer .disclaimer-actions .icon-btn{width:40px !important;height:40px !important;min-width:40px !important;min-height:40px !important;}
   .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{height:40px !important;min-height:40px !important;padding:0 12px !important;font-size:13px !important;}
 }
+
+/* Mobile one-row: prevent horizontal overflow while keeping 1 line */
+@media (max-width:520px){
+  .hero-card.disclaimer .disclaimer-actions{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+    min-width:0 !important;
+  }
+  .hero-card.disclaimer .disclaimer-row{
+    display:flex !important;
+    flex:0 0 auto !important;
+    align-items:center !important;
+    gap:10px !important;
+    flex-wrap:nowrap !important;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+}

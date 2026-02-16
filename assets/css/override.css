@@ -2807,3 +2807,33 @@ main{ padding-top: 0 !important; }
   justify-content:center !important;
   border-radius:12px !important;
 }
+
+/* ------------------------------------------------------------
+   Disclaimer actions: keep 1 row on mobile without overflow
+------------------------------------------------------------ */
+@media (max-width:520px){
+  .hero-card.disclaimer .disclaimer-actions{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+    min-width:0 !important;
+  }
+  .hero-card.disclaimer .disclaimer-row{
+    display:flex !important;
+    flex:0 0 auto !important;
+    align-items:center !important;
+    gap:10px !important;
+    flex-wrap:nowrap !important;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+}
