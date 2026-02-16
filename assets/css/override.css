@@ -156,30 +156,6 @@ main.container {
   --iksass-header-border: rgba(0,0,0,.06);
 }
 
-/* Small phones (e.g. iPhone 13: 390px) can overflow because left+right clusters are tight.
-   Keep padding, but slightly reduce control size/gaps and allow brand text to truncate. */
-@media (max-width: 420px){
-  :root{
-    --container-pad: 14px;
-    --ctrl-h: 36px;
-    --iksass-header-h: 60px;
-  }
-  .header .navbar > .wrap{ gap: 10px; }
-  .header .nav-cta{ gap: 8px; }
-  .header .nav-left{ gap: 8px; }
-  .header .brand{ min-width: 0; }
-  .header .brand-text{
-    max-width: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .header .iconbtn,
-  .header .userbtn,
-  .header .hamburger,
-  .header .appsbtn{ font-size: 18px; }
-}
-
 .header{
   position: fixed !important;
   top: 0; left: 0; right: 0;
@@ -202,12 +178,22 @@ main{ padding-top: 0 !important; }
   padding-left: var(--container-pad);
   padding-right: var(--container-pad);
   height: var(--iksass-header-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
   box-sizing: border-box;
+
+  /* Grid = stable symmetry on mobile (iPhone 13, etc) */
+  display: grid;
+  align-items: center;
+  gap: 14px;
+
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "brand nav cta";
 }
+
+/* assign areas */
+.header .nav-left{ grid-area: left; }
+.header .brand{ grid-area: brand; justify-self: start; }
+.header .navlinks{ grid-area: nav; justify-self: center; }
+.header .nav-cta{ grid-area: cta; justify-self: end; }
 
 /* Left cluster: Aplikasi + Brand (so logo is NOT centered on mobile) */
 .header .nav-left{
@@ -2897,3 +2883,29 @@ summary:focus-visible,
     text-overflow:ellipsis !important;
   }
 }
+
+@media (max-width: 991px){
+  /* Mobile: 3 columns (apps | brand centered | cta) */
+  .header .navbar > .wrap{
+    grid-template-columns: var(--ctrl-h) 1fr auto;
+    grid-template-areas: "left brand cta";
+  }
+  .header .brand{
+    justify-self: center;
+  }
+  /* allow brand text to shrink/truncate instead of pushing buttons */
+  .header .brand-text{
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px){
+  /* iPhone 13 (390px) comfort: slightly tighter */
+  .header{ --container-pad: 16px; --ctrl-h: 38px; }
+  .header .navbar > .wrap{ gap: 10px; }
+  .header .nav-cta{ gap: 10px; }
+}
+
