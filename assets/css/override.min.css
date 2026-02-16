@@ -38,28 +38,3 @@ body{display:block !important;margin:0}body>*{max-width:none !important;align-se
   display: block;
   align-self: center;
 }
-
-
-
-/* === V36 MOBILE CLEAN FIX: Hero padding align with k-card === */
-@media (max-width: 991px){
-
-  /* Remove extra horizontal padding from hero wrapper */
-  .hero{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  /* Align hero-inner with standard container padding */
-  .hero .hero-inner{
-    padding-left: var(--container-pad) !important;
-    padding-right: var(--container-pad) !important;
-  }
-
-  /* Ensure disclaimer card matches full container width */
-  .hero-card.disclaimer{
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-}
