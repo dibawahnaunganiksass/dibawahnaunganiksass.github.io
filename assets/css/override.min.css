@@ -38,3 +38,140 @@ body{display:block !important;margin:0}body>*{max-width:none !important;align-se
   display: block;
   align-self: center;
 }
+
+
+
+/* === V36 MOBILE CLEAN FIX: Hero padding align with k-card === */
+@media (max-width: 991px){
+
+  /* Remove extra horizontal padding from hero wrapper */
+  .hero{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Align hero-inner with standard container padding */
+  .hero .hero-inner{
+    padding-left: var(--container-pad) !important;
+    padding-right: var(--container-pad) !important;
+  }
+
+  /* Ensure disclaimer card matches full container width */
+  .hero-card.disclaimer{
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+
+/* === V37: Micro-spacing (8px grid) + Ultra-small (<=360px) + Visual consistency audit === */
+
+/* Mobile: normalize gaps to 8/16 without changing structure */
+@media (max-width: 991px){
+  /* Navbar spacing */
+  .header .navbar > .wrap{ gap:16px !important; }
+  .nav-left{ gap:8px !important; }
+  .nav-left .brand{ gap:8px !important; }
+  .nav-cta{ gap:8px !important; }
+
+  /* Hero CTA spacing */
+  .cta-row{ gap:16px !important; }
+
+  /* Common card padding consistency */
+  .hero-card,
+  .card,
+  .k-card{
+    padding:16px !important;
+  }
+}
+
+/* Ultra small devices: keep layout stable, prevent wrap/overflow */
+@media (max-width: 360px){
+  /* Slightly tighter navbar controls (more room, less risk of overlap) */
+  .iconbtn{ padding:8px !important; border-radius:12px; }
+  .brand-mark{ width:36px !important; height:36px !important; }
+  .brand-mark img{ width:24px !important; height:24px !important; }
+  .brand-text{ font-size:15px !important; }
+
+  /* Hero CTA buttons: stack for readability */
+  .cta-row{ flex-direction:column !important; }
+  .cta-row .btn{ width:100% !important; }
+
+  /* Disclaimer actions: keep social icons vertical (NOT horizontal) on ultra-small */
+  .disclaimer-actions{ flex-wrap:wrap !important; gap:16px !important; }
+  .disclaimer-social{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:8px !important;
+  }
+  .disclaimer-actions .disclaimer-btn{ width:100% !important; justify-content:center !important; }
+}
+
+/* Visual consistency: ensure k-card arrow is truly centered (cross-browser) */
+.k-card-arrow{
+  display:block !important;
+  align-self:center !important;
+  line-height:0 !important;
+}
+
+
+
+/* === V38: Disclaimer CTA single aligned grid (FB | IG | Baca Selengkapnya) === */
+@media (max-width: 991px){
+
+  .disclaimer-actions{
+    display:grid !important;
+    grid-template-columns:auto auto 1fr !important;
+    align-items:center !important;
+    gap:12px !important;
+  }
+
+  .disclaimer-social{
+    display:contents !important; /* flatten so icons follow grid */
+  }
+
+  .disclaimer-actions .icon-btn{
+    justify-self:start !important;
+  }
+
+  .disclaimer-actions .disclaimer-btn{
+    justify-self:end !important;
+    width:auto !important;
+  }
+
+}
+
+
+
+/* === V39 FIX: Force Disclaimer CTA horizontal (FB | IG | Baca) === */
+@media (max-width: 991px){
+
+  .hero-card.disclaimer .disclaimer-actions{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:16px !important;
+  }
+
+  .hero-card.disclaimer .disclaimer-social{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    gap:12px !important;
+  }
+
+  /* Prevent ultra-small rule from stacking icons */
+  @media (max-width: 360px){
+    .hero-card.disclaimer .disclaimer-social{
+      flex-direction:row !important;
+    }
+  }
+
+  .hero-card.disclaimer .disclaimer-btn{
+    margin-left:auto !important;
+    width:auto !important;
+  }
+}
