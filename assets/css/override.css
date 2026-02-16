@@ -32,6 +32,13 @@ main.container {
   --iksass-page-pad: 16px;
 }
 
+/* === MOBILE CONTAINER PAD LOCK (ALIGN HERO & SECTIONS) === */
+@media (max-width: 520px){
+  :root{
+    --container-pad: 16px;
+  }
+}
+
 .container {
   max-width: 1200px !important;
   margin-left: auto !important;
@@ -2940,4 +2947,12 @@ summary:focus-visible,
   .hero-card.disclaimer .disclaimer-social{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;align-items:center !important;gap:12px !important;flex:0 0 auto !important}
   .hero-card.disclaimer .disclaimer-actions .icon-btn{flex:0 0 auto !important}
   .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{flex:1 1 auto !important;min-width:0 !important;max-width:100% !important;white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis !important}
+}
+
+/* === HERO EDGE LOCK (prevent hidden horizontal offset) === */
+@media (max-width: 520px){
+  .hero{ padding-left: 0 !important; padding-right: 0 !important; }
+  .hero .container{ padding-left: var(--container-pad) !important; padding-right: var(--container-pad) !important; }
+  .hero .hero-inner{ margin-left: 0 !important; margin-right: 0 !important; }
+  .hero .cta-row, .hero .hero-card{ margin-left: 0 !important; margin-right: 0 !important; }
 }
