@@ -2317,3 +2317,448 @@ main{ padding-top: 0 !important; }
   border-color: rgba(255,255,255,.30);
 }
 
+/* HERO polish: typography + CTA + subtle motion (respects reduced motion) */
+.hero .h-title{
+  max-width: 18ch;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.hero .h-sub{
+  max-width: 58ch;
+  color: rgba(255,255,255,.86);
+}
+.hero .cta-row{ gap:12px; flex-wrap:wrap; }
+.hero .btn{
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease, border-color .14s ease, color .14s ease;
+}
+.hero .btn.primary{
+  background: rgba(255,255,255,.96);
+  color: #0b3a2e;
+  border: 1px solid rgba(255,255,255,.30);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+}
+.hero .btn.primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.14);
+}
+.hero .btn.ghost{
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(6px);
+}
+.hero .btn.ghost:hover{
+  background: rgba(255,255,255,.14);
+  transform: translateY(-1px);
+}
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference){
+  .hero .hero-inner{ animation: heroIn .55s cubic-bezier(.2,.9,.2,1) both; }
+  @keyframes heroIn{
+    from{ opacity:0; transform: translateY(10px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+}
+
+/* HERO LAYOUT MATCH (soft_glow_pattern): compact height + same text position */
+.hero{ padding:16px 0 28px !important; }
+.hero-inner{ align-items:start !important; }
+@media (max-width: 768px){
+  .hero{ padding:16px 0 28px !important; }
+}
+
+
+/* ORGANISASI NASIONAL MODERN - SOCIAL HANDLE */
+.social-handle{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:24px;
+  background:linear-gradient(135deg,#e8f7ef,#d1f3e3);
+  color:#0f5132;
+  font-weight:600;
+  letter-spacing:0.3px;
+}
+
+/* HERO ACCENT */
+.hero-accent{ opacity:.88; font-weight:700; }
+
+/* DISCLAIMER SOCIAL ROW (nasional modern) */
+.social-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.social-handle{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#e8f7ef,#d1f3e3);
+  color:#0f5132;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.verified-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  border-radius:999px;
+  background:rgba(15,81,50,.12);
+  color:#0f5132;
+}
+.verified-ic{ width:18px; height:18px; display:block; }
+
+.social-link{
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.10);
+  background:#fff;
+  color:rgba(0,0,0,.72);
+  text-decoration:none;
+  transition: transform .16s cubic-bezier(.2,.8,.2,1), box-shadow .16s cubic-bezier(.2,.8,.2,1), border-color .16s cubic-bezier(.2,.8,.2,1);
+}
+.social-link:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  border-color: rgba(0,0,0,.18);
+}
+.social-ic{ width:18px; height:18px; display:block; }
+.social-link.ig{ color:#b12a7c; }
+.social-link.fb{ color:#1b4fb8; }
+
+/* MICRO INTERACTIONS (respect reduce motion) */
+@media (prefers-reduced-motion: no-preference){
+  .hero .container, .hero .hero-inner, .hero .hero-content{
+    animation: heroIn .55s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes heroIn{
+    from{ opacity:0; transform: translateY(10px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  .disclaimer-card, .hero-card{
+    transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s cubic-bezier(.2,.8,.2,1);
+  }
+  .disclaimer-card:hover, .hero-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 18px 42px rgba(0,0,0,.12);
+  }
+}
+
+/* DISCLAIMER layout fix (no word-per-line) */
+.disclaimer-text{
+  margin: 0;
+  line-height: 1.55;
+}
+/* If disclaimer card uses a media layout, keep text block flexible */
+.disclaimer-card__content, .disclaimer-content, .about-card__content{
+  min-width: 0;
+}
+/* Ensure the icon/thumbnail doesn't force extreme narrow text */
+.disclaimer-card, .about-card{
+  align-items: flex-start;
+}
+.social-row{
+  margin-top: 12px;
+}
+.social-handle{
+  white-space: nowrap;
+}
+
+/* Disclaimer actions alignment: handle left, button right */
+.disclaimer-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.social-row--compact{
+  margin-top:0 !important;
+  gap:8px;
+}
+.social-row--compact .social-link{
+  width:34px;height:34px;border-radius:10px;
+}
+.social-row--compact .social-handle{
+  padding:6px 12px;
+}
+@media (max-width: 520px){
+  .disclaimer-actions{justify-content:flex-start}
+}
+
+/* Disclaimer actions: row + button on one line */
+.disclaimer-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.disclaimer-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:nowrap;
+}
+.handle-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 14px;
+  border-radius:999px;
+  background:rgba(15,81,50,.10);
+  color:#0f5132;
+  font-weight:700;
+  letter-spacing:.2px;
+  white-space:nowrap;
+}
+.icon-btn{
+  width:38px;
+  height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.10);
+  background:#fff;
+  color:rgba(0,0,0,.75);
+  text-decoration:none;
+  transition: transform .16s cubic-bezier(.2,.8,.2,1), box-shadow .16s cubic-bezier(.2,.8,.2,1);
+}
+.icon-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+.icon-btn .ic{ width:18px; height:18px; display:block; }
+.icon-btn.fb{ color:#1b4fb8; }
+.icon-btn.ig{ color:#b12a7c; }
+
+@media (max-width: 520px){
+  .disclaimer-actions{ align-items:flex-start; }
+  .disclaimer-row{ flex-wrap:wrap; }
+}
+
+/* HERO: exactly 2 lines (desktop) */
+.hero-line2{ white-space: nowrap; }
+@media (max-width: 420px){
+  .hero-line2{ white-space: normal; }
+}
+
+/* Disclaimer: [handle][fb][ig] left, [button] right */
+.disclaimer-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.disclaimer-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:nowrap;
+}
+.handle-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 14px;
+  border-radius:999px;
+  background:rgba(15,81,50,.10);
+  color:#0f5132;
+  font-weight:700;
+  letter-spacing:.2px;
+  white-space:nowrap;
+}
+.icon-btn{
+  width:38px;
+  height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.10);
+  background:#fff;
+  color:rgba(0,0,0,.75);
+  text-decoration:none;
+  transition: transform .16s cubic-bezier(.2,.8,.2,1), box-shadow .16s cubic-bezier(.2,.8,.2,1);
+}
+.icon-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.10); }
+.icon-btn .ic{ width:18px; height:18px; display:block; }
+.icon-btn.fb{ color:#1b4fb8; }
+.icon-btn.ig{ color:#b12a7c; }
+
+.disclaimer-btn{ white-space:nowrap; }
+
+@media (max-width: 520px){
+  .disclaimer-row{ flex-wrap:wrap; }
+}
+
+/* DISCLAIMER CLEAN BODY+ROW */
+.disclaimer-body{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-top:12px;
+}
+.disclaimer-logo{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  background:rgba(255,255,255,.55);
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.disclaimer-text{
+  margin:0;
+  line-height:1.55;
+}
+.disclaimer-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.disclaimer-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:nowrap;
+}
+@media (max-width: 520px){
+  .disclaimer-row{ flex-wrap:wrap; }
+}
+
+/* Disclaimer alignment fix: keep handle+icons and button in one row on desktop */
+.disclaimer-actions{
+  flex-wrap: nowrap !important;
+}
+.disclaimer-row{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.disclaimer-btn{
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 640px){
+  .disclaimer-actions{ flex-wrap: wrap !important; }
+  .disclaimer-btn{ margin-left: 0; }
+}
+
+/* Disclaimer polish: button height match icons + mobile layout */
+.disclaimer-actions .disclaimer-btn{
+  height:38px;
+  padding:0 18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+}
+/* ensure button baseline aligns with icon buttons */
+.disclaimer-actions{ align-items:center; }
+
+@media (max-width: 520px){
+  .disclaimer-actions{
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+  }
+  .disclaimer-row{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+  .disclaimer-actions .disclaimer-btn{
+    width:100%;
+  }
+}
+
+/* Mobile center alignment for disclaimer */
+@media (max-width: 520px){
+  .disclaimer-actions{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .disclaimer-row{
+    justify-content:center;
+    width:100%;
+  }
+  .disclaimer-actions .disclaimer-btn{
+    width:auto;
+    min-width:220px;
+  }
+}
+
+/* Mobile: center row, full-width button like previous */
+@media (max-width: 520px){
+  .disclaimer-actions{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .disclaimer-row{
+    justify-content:center;
+    width:100%;
+  }
+  .disclaimer-actions .disclaimer-btn{
+    width:100%;
+    max-width:100%;
+  }
+}
+
+/* ULTRA PREMIUM INTERACTIONS + ACCESSIBILITY */
+:focus-visible{
+  outline: 3px solid rgba(16, 126, 72, .35);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+.btn, .icon-btn, .share-btn, .cta-btn{
+  transition: transform .16s cubic-bezier(.2,.8,.2,1), box-shadow .16s cubic-bezier(.2,.8,.2,1), filter .16s cubic-bezier(.2,.8,.2,1);
+}
+.btn:active, .icon-btn:active, .share-btn:active, .cta-btn:active{
+  transform: translateY(1px) scale(.99);
+  filter: brightness(.98);
+}
+
+.card, .news-card, .feature-card, .hero-card, .disclaimer-card{
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s cubic-bezier(.2,.8,.2,1);
+}
+@media (prefers-reduced-motion: no-preference){
+  .card:hover, .news-card:hover, .feature-card:hover, .hero-card:hover, .disclaimer-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 18px 42px rgba(0,0,0,.12);
+  }
+}
+
+/* Subtle hero motion pattern (safe) */
+@media (prefers-reduced-motion: no-preference){
+  .hero::before{
+    animation: heroSheen 10s ease-in-out infinite;
+    will-change: background-position, opacity;
+  }
+  @keyframes heroSheen{
+    0%{ background-position: 0% 0%; opacity:.18; }
+    50%{ background-position: 100% 100%; opacity:.22; }
+    100%{ background-position: 0% 0%; opacity:.18; }
+  }
+}
