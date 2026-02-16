@@ -2892,3 +2892,23 @@ summary:focus-visible,
     text-overflow:ellipsis !important;
   }
 }
+
+/* ===============================
+   HOTFIX: iPhone 13 alignment (Beranda)
+   - Disclaimer: ikon FB/IG harus sejajar (horizontal)
+   - Kelembagaan cards: arrow harus sejajar dengan judul (kanan, center)
+   Ditaruh paling bawah agar mengalahkan rule legacy.
+================================ */
+
+/* Kelembagaan card header: title + arrow satu baris */
+.k-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.k-card-head .title{margin:0;flex:1;min-width:0}
+.k-card-arrow{flex:0 0 auto;align-self:center;display:block;opacity:.7}
+
+@media (max-width:520px){
+  /* Disclaimer actions: FB/IG sejajar + tombol tetap rapi */
+  .hero-card.disclaimer .disclaimer-actions{display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-between !important;flex-wrap:nowrap !important;gap:10px !important;min-width:0 !important}
+  .hero-card.disclaimer .disclaimer-social{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;align-items:center !important;gap:12px !important;flex:0 0 auto !important}
+  .hero-card.disclaimer .disclaimer-actions .icon-btn{flex:0 0 auto !important}
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{flex:1 1 auto !important;min-width:0 !important;max-width:100% !important;white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis !important}
+}
