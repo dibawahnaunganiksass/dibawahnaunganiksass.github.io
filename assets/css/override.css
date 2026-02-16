@@ -23,13 +23,22 @@ main.container {
   margin-right: 0 !important;
 }
 
-/* Rebuild container safely */
+/* Rebuild container safely (single source of truth)
+   Root issue (iPhone 13): perceived left/right mismatch happens when
+   different blocks end up with different horizontal insets.
+   We lock ONE padding value for all containers and make it iOS-safe.
+*/
+:root{
+  --iksass-page-pad: 16px;
+}
+
 .container {
   max-width: 1200px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  /* keep perfectly symmetric left/right insets, including iOS safe-area */
+  padding-left: max(var(--iksass-page-pad), env(safe-area-inset-left)) !important;
+  padding-right: max(var(--iksass-page-pad), env(safe-area-inset-right)) !important;
 }
 
 /* NEWS LAYOUT — HARD LOCK */
