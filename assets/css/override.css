@@ -2868,3 +2868,19 @@ summary:focus-visible,
     text-overflow:ellipsis !important;
   }
 }
+
+
+
+/* === FIX MOBILE NAVBAR LEFT ALIGN (Apps + Logo + Text) === */
+@media (max-width: 991px){
+  .header .navbar > .wrap{
+    justify-content: space-between !important;
+  }
+  .nav-left{
+    justify-content: flex-start !important;
+    margin: 0 !important;
+  }
+  .nav-left .brand{
+    margin: 0 !important;
+  }
+}
