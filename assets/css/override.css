@@ -150,58 +150,37 @@ main.container {
   --container-pad: 20px;
   --header-h: 64px;
   --ctrl-h: 40px;
-  /* canonical header tokens (avoid mismatch across files) */
-  --iksass-header-h: 64px;
-  --iksass-header-bg: #fff;
-  --iksass-header-border: rgba(0,0,0,.06);
 }
 
 .header{
   position: fixed !important;
   top: 0; left: 0; right: 0;
   z-index: 2000;
-  background: var(--iksass-header-bg);
-  border-bottom: 1px solid var(--iksass-header-border);
+  background: #fff;
 }
-body{ padding-top: var(--iksass-header-h); }
+body{ padding-top: var(--iksass-header-h, 64px); }
 main{ padding-top: 0 !important; }
 
 /* header wrapper uses same max-width as content */
 .header .navbar{
   width: 100%;
-  background: var(--iksass-header-bg);
+  background: #fff;
 }
 .header .navbar > .wrap{
-  /* follow the global .wrap tokens from main.css to keep edges identical to sections like "Kelembagaan" */
-  max-width: var(--wrap-width, var(--container-width));
+  max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--wrap-pad, var(--container-pad));
-  padding-right: var(--wrap-pad, var(--container-pad));
-  height: var(--iksass-header-h);
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
   box-sizing: border-box;
 }
 
-/* Mobile-only: true symmetric 3-column header (left | centered brand | right) */
-@media (max-width: 991px){
-  .header .navbar > .wrap{
-    display: grid;
-    align-items: center;
-    gap: 12px;
-    /* 1fr | auto | 1fr => brand truly centered in viewport even if left/right clusters differ */
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-areas: "left brand cta";
-  }
-
-  .header .nav-left{ grid-area: left; justify-self: start; }
-  .header .brand{ grid-area: brand; justify-self: center; }
-  .header .nav-cta{ grid-area: cta; justify-self: end; }
-}
-
-/* Desktop area assignments (navlinks visible on desktop) */
-.header .navlinks{ grid-area: nav; justify-self: center; }
-
-/* Left cluster: Aplikasi button */
+/* Left cluster: Aplikasi + Brand (so logo is NOT centered on mobile) */
 .header .nav-left{
   display:flex;
   align-items:center;
@@ -216,17 +195,6 @@ main{ padding-top: 0 !important; }
   gap: 10px;
 }
 .header .brand img{ height: var(--ctrl-h); width: auto; }
-
-/* iPhone 13 and smaller: keep brand from pushing edges */
-@media (max-width: 420px){
-  .header .brand{ min-width: 0; }
-  .header .brand-text{
-    max-width: 12ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
 
 .header .header .navlinks a,
 .header .navlinks .dropbtn{
@@ -2404,6 +2372,30 @@ main{ padding-top: 0 !important; }
   .hero{ padding:16px 0 28px !important; }
 }
 
+/* === HOMEPAGE HERO: MOBILE ALIGNMENT (iPhone 13 etc.) ===
+   Goal: CTA "kotak" (Kelembagaan/Info/Struktur) + Disclaimer card
+   align with section cards (Kelembagaan) on narrow screens.
+   Root cause: CTA buttons stay inline, so their visual edges differ from
+   full-width cards once layout collapses to 1 column.
+*/
+@media (max-width: 520px){
+  .hero .cta-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .hero .cta-row .btn{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+  .hero .hero-card,
+  .hero .disclaimer-card{
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+
 
 /* ORGANISASI NASIONAL MODERN - SOCIAL HANDLE */
 .social-handle{
@@ -2900,29 +2892,3 @@ summary:focus-visible,
     text-overflow:ellipsis !important;
   }
 }
-
-@media (max-width: 991px){
-  /* Mobile: 3 columns (apps | brand centered | cta) */
-  .header .navbar > .wrap{
-    grid-template-columns: var(--ctrl-h) 1fr auto;
-    grid-template-areas: "left brand cta";
-  }
-  .header .brand{
-    justify-self: center;
-  }
-  /* allow brand text to shrink/truncate instead of pushing buttons */
-  .header .brand-text{
-    max-width: 140px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 420px){
-  /* iPhone 13 (390px) comfort: slightly tighter */
-  .header{ --container-pad: 16px; --ctrl-h: 38px; }
-  .header .navbar > .wrap{ gap: 10px; }
-  .header .nav-cta{ gap: 10px; }
-}
-

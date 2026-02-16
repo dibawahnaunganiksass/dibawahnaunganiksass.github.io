@@ -988,9 +988,9 @@ body{min-height:100vh;display:flex;flex-direction:column}
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--iksass-header-bg, #fff);
+  background: #fff;
   width: 100%;
-  border-bottom: 1px solid var(--iksass-header-border, rgba(0,0,0,.06));
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
 /* navbar = same container width as content sections */
@@ -1037,7 +1037,7 @@ body{min-height:100vh;display:flex;flex-direction:column}
   position: sticky;
   top: 0;
   z-index: 3000;
-  background: var(--iksass-header-bg, #fff);
+  background: #fff;
 }
 .header .header .navbar > *{
   box-sizing: border-box;
