@@ -2907,3 +2907,62 @@ summary:focus-visible,
 }
 .social-grid a:hover{ text-decoration:underline; }
 .social-grid .icon{ font-size:18px; }
+
+/* PROGRAM KERJA – beautify list with numbering (01,02,...) */
+.proker-box-single .proker-list{
+  list-style:none;
+  padding:0;
+  margin: 0;
+  counter-reset: prokerItem;
+}
+.proker-box-single .proker-list li{
+  z-index:0;
+  margin: 10px 0;
+  counter-increment: prokerItem;
+  position: relative;
+}
+.proker-box-single .proker-list li::before{
+  z-index:2;
+  pointer-events:none;
+  content: counter(prokerItem, decimal-leading-zero);
+  position:absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--muted);
+  opacity: .9;
+}
+.proker-box-single .proker-link{
+  position:relative;
+  z-index:1;
+  padding-left: 54px; /* space for number */
+  font-weight: 700;
+  line-height: 1.35;
+}
+.proker-box-single .proker-link:hover{
+  transform: translateY(-1px);
+}
+.proker-box-single .proker-hint{
+  opacity: .95;
+}
+@media (max-width: 560px){
+  .proker-box-single .proker-list li::before{
+  z-index:2;
+  pointer-events:none;
+    left: 12px;
+  }
+  .proker-box-single .proker-link{
+  position:relative;
+  z-index:1;
+    padding-left: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .proker-box-single .proker-hint{
+    white-space: normal;
+  }
+}
