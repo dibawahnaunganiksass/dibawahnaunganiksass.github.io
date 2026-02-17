@@ -227,6 +227,21 @@ a:hover{color:var(--accent)}
   opacity:.95;
 }
 
+/* Hero disclaimer (nuansa hijau) */
+.hero-card.disclaimer{
+  border-color:rgba(15,122,60,.28);
+  background:linear-gradient(180deg, rgba(15,122,60,.08), var(--bg-soft));
+}
+.hero-card.disclaimer .badge{color:var(--accent);font-weight:900}
+.hero-card.disclaimer .badge:before{background:var(--accent)}
+.hero-card.disclaimer .btn.ghost{
+  border-color:rgba(15,122,60,.35);
+  background:#fff;
+}
+.hero-card.disclaimer .btn.ghost:hover{
+  border-color:rgba(15,122,60,.55);
+  background:rgba(15,122,60,.06);
+}
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
 .badge:before{content:"";width:8px;height:8px;border-radius:999px;background:var(--warn)}
 
@@ -2604,12 +2619,250 @@ footer a:focus-visible{
 }
 
 
-
+/* === Disclaimer card (final) === */
 .hero-inner{
   align-items: stretch; /* make both columns equal height */
 }
 
 .hero-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between; /* align top/bottom with the card */
+}
+
+.hero-card-disclaimer{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border:1px solid #60b763;
+  background: linear-gradient(180deg, rgba(96,183,99,0.12), rgba(96,183,99,0.04));
+}
+
+.disclaimer-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.disclaimer-tag{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#60b763;
+  color:#fff;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.2px;
+}
+
+.disclaimer-title{
+  font-weight:800;
+  color:#0f172a;
+}
+
+.disclaimer-body{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-top:4px;
+  flex:1 1 auto;
+}
+
+.disclaimer-logo{
+  width:54px;
+  height:auto;
+  flex-shrink:0;
+}
+
+.disclaimer-narasi{
+  margin:0;
+  color:#475569;
+  line-height:1.6;
+}
+
+.disclaimer-footer{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:16px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .hero-left{justify-content:flex-start;}
+  .hero-card-disclaimer{height:auto;}
+  .disclaimer-logo{width:44px;}
+}
+
+
+/* === V8 logo-left fix === */
+.disclaimer-body{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+}
+
+.disclaimer-logo{
+  width:52px;
+  flex-shrink:0;
+}
+
+.disclaimer-text{
+  flex:1;
+}
+
+@media (max-width:768px){
+  .disclaimer-logo{width:44px;}
+}
+
+
+/* === Disclaimer hero card layout (logo kiri + tombol kanan bawah) === */
+.hero-inner{align-items:stretch;}
+.hero-left{display:flex;flex-direction:column;justify-content:space-between;}
+
+.hero-card.disclaimer{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.disclaimer-head{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+  font-size:12px;
+}
+
+.disclaimer-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:900;
+  color:var(--accent);
+}
+.disclaimer-tag:before{
+  content:"";
+  width:8px;height:8px;border-radius:999px;
+  background:var(--accent);
+}
+
+.disclaimer-sep{color:var(--muted);font-weight:700;}
+.disclaimer-title{font-weight:800;color:var(--text);}
+
+.disclaimer-row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+}
+
+.disclaimer-mini-logo{
+  width:54px;
+  height:auto;
+  flex-shrink:0;
+}
+
+.disclaimer-narasi{margin:0;line-height:1.6;}
+
+.disclaimer-actions{
+  margin-top:auto;
+  display:flex;
+  justify-content:flex-end;
+}
+
+@media (max-width: 768px){
+  .hero-left{justify-content:flex-start;}
+  .hero-card.disclaimer{height:auto;}
+  .disclaimer-mini-logo{width:44px;}
+  .disclaimer-actions{justify-content:stretch;}
+  .disclaimer-actions .btn{width:100%;}
+}
+
+
+/* === V10 adjustments (match Kelembagaan style) === */
+.hero-card.disclaimer{
+  background:#fff;                 /* sama seperti card kelembagaan */
+  border-color: var(--border);     /* border standar */
+  box-shadow:none;
+}
+
+/* buang dot/bulet pada label */
+.disclaimer-tag:before{content:none !important;}
+
+/* logo center atas-bawah (vertical align) */
+.disclaimer-row{align-items:center;}
+
+/* tombol kanan bawah (fix benar) */
+.hero-card.disclaimer .hero-card-actions,
+.hero-card.disclaimer .disclaimer-actions{
+  margin-top:auto;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-end;
+}
+
+/* pastikan tombol tidak ketarik kolom */
+.hero-card.disclaimer .hero-card-actions .btn{
+  width:auto;
+}
+
+
+/* === V11 Green Glossy UI === */
+
+/* Disclaimer label */
+.disclaimer-tag{
+  background: linear-gradient(180deg, #22c55e, #15803d);
+  color:#ffffff;
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:800;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+/* Button glossy */
+.hero-card.disclaimer .btn.ghost{
+  background: linear-gradient(180deg, #22c55e, #15803d);
+  color:#ffffff;
+  border:none;
+  font-weight:700;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    0 6px 16px rgba(21,128,61,.25);
+}
+
+.hero-card.disclaimer .btn.ghost:hover{
+  background: linear-gradient(180deg, #16a34a, #166534);
+  color:#ffffff;
+}
+
+
+/* === V12 Match Kelembagaan Green === */
+.disclaimer-tag,
+.hero-card.disclaimer .btn.ghost{
+  background:#107a3c;
+}
+
+.hero-card.disclaimer .btn.ghost:hover{
+  filter:brightness(.95);
+}
+
+
+/* === V13 Vertical centering fix === */
+.disclaimer-head{
+  display:flex;
+  align-items:center; /* vertical center */
+}
+
+.disclaimer-tag{
+  display:inline-flex;
+  align-items:center; /* center text inside pill */
+  justify-content:center;
+  line-height:1;      /* prevent text drifting */
+  padding:8px 14px;   /* balanced top-bottom */
+}
+
 /* ===== FORCE ACTIVE MENU (FINAL FIX) ===== */
 .navlinks a.active,
 .navlinks .dropbtn.active {
@@ -2744,10 +2997,81 @@ footer a:focus-visible{
     align-items:flex-start;
   }
   .footer-social{
+    flex-wrap:wrap;
+  }
+}
+
+
+/* === Disclaimer actions: icon kiri + CTA kanan (sejajar dengan narasi) === */
+.disclaimer-content{flex:1;min-width:0;}
+
+.disclaimer-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:14px;
+}
+
+.disclaimer-social{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* tombol ikon (square, nyaman disentuh) */
+.disclaimer-actions .icon-btn{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+}
+
+/* CTA tetap dominan */
+.disclaimer-actions .disclaimer-btn{
+  height:42px;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 18px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
 /* Mobile: tetap 1 baris selama masih muat (seperti mockup). */
 @media (max-width: 768px){
+  /* override legacy rules yg dulu memaksa tombol full-width */
+  .hero-card.disclaimer .disclaimer-actions{
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    width:auto;
+    padding:0 14px;
+    font-size:14px;
+  }
 }
 
 /* Layar sangat kecil: tetap 1 baris (sesuai request).
    Ukuran ikon & padding CTA diperkecil agar muat tanpa wrap. */
 @media (max-width: 420px){
+  .hero-card.disclaimer .disclaimer-actions{flex-wrap:nowrap;gap:10px;}
+  .hero-card.disclaimer .disclaimer-actions .icon-btn{
+    width:40px;height:40px;min-width:40px;min-height:40px;
+    border-radius:12px;
+  }
+  .hero-card.disclaimer .disclaimer-actions .disclaimer-btn{
+    height:40px;min-height:40px;
+    padding:0 12px;
+    font-size:13px;
+    /* biar tombol bisa mengecil tanpa memaksa overflow layout */
+    flex:1;
+    min-width:0;
+  }
+}

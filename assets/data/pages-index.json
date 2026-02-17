@@ -67,17 +67,6 @@
     ]
   },
   {
-    "title": "Dawuh-nya",
-    "url": "galeri/dawuhnya.html",
-    "excerpt": "Pendidikan dan nilai-nilai Ke-NU-an menjadi fondasi utama gerak IKSASS dalam membentuk insan yang berilmu, berakhlak, dan berkeadaban. Melalui pengajian, forum keilmuan, serta peng…",
-    "category": "Galeri",
-    "tags": [
-      "galeri",
-      "dawuhnya",
-      "dawuh-nya"
-    ]
-  },
-  {
     "title": "Galeri IKSASS",
     "url": "galeri/",
     "excerpt": "Galeri IKSASS: Jejak perjuangan, khidmah, ukhuwah, pendidikan, dan Ke-NU-an.",
@@ -86,44 +75,6 @@
       "galeri",
       "index",
       "iksass"
-    ]
-  },
-  {
-    "title": "Ke-IKSASS-an",
-    "url": "galeri/ke-iksass-an.html",
-    "excerpt": "Silaturahim alumni bukan hanya tentang pertemuan, tetapi tentang merawat ikatan batin yang terjalin sejak di pesantren. Dalam suasana sederhana dan penuh kehangatan, para alumni sa…",
-    "category": "Galeri",
-    "tags": [
-      "galeri",
-      "ke",
-      "iksass",
-      "an",
-      "ke-iksass-an"
-    ]
-  },
-  {
-    "title": "Ke-Ilmu-an",
-    "url": "galeri/ke-ilmu-an.html",
-    "excerpt": "IKSASS hadir di tengah masyarakat melalui gerakan khidmah sosial yang berangkat dari nilai kepedulian dan kemanusiaan. Dalam kebersamaan para alumni dan relawan, setiap langkah kec…",
-    "category": "Galeri",
-    "tags": [
-      "galeri",
-      "ke",
-      "ilmu",
-      "an",
-      "ke-ilmu-an"
-    ]
-  },
-  {
-    "title": "Ke-Pesantrenan",
-    "url": "galeri/ke-pesantrenan.html",
-    "excerpt": "Muktamar Besar IKSASS 2025 menjadi ruang pertemuan lintas generasi alumni Pondok Pesantren Salafiyah Syafi’iyah Sukorejo. Bukan sekadar forum pengambilan keputusan, momen ini mempe…",
-    "category": "Galeri",
-    "tags": [
-      "galeri",
-      "ke",
-      "pesantrenan",
-      "ke-pesantrenan"
     ]
   },
   {
@@ -231,17 +182,6 @@
     ]
   },
   {
-    "title": "Prinsip Perjuangan",
-    "url": "profil/prinsip-perjuangan.html",
-    "excerpt": "4 Pilar Prinsip Perjuangan IKSASS: komitmen dan keyakinan, hubungan manusia dengan Allah, hubungan manusia dengan manusia, dan hubungan manusia dengan lingkungannya.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "prinsip",
-      "perjuangan"
-    ]
-  },
-  {
     "title": "Program Kerja",
     "url": "profil/program-kerja.html",
     "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
@@ -261,18 +201,6 @@
       "profil",
       "struktur",
       "organisasi"
-    ]
-  },
-  {
-    "title": "Yel-Yel IKSASS",
-    "url": "profil/yel-yel.html",
-    "excerpt": "Slogan dan yel-yel IKSASS: seruan kebersamaan dan salam perjuangan.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "yel",
-      "yel-yel",
-      "iksass"
     ]
   },
   {
@@ -300,20 +228,6 @@
     ]
   },
   {
-    "title": "Design System IKSASS",
-    "url": "styleguide/",
-    "excerpt": "Informasi resmi IKSASS — Panduan UI | IKSASS.",
-    "category": "Halaman",
-    "tags": [
-      "styleguide",
-      "index",
-      "design",
-      "system",
-      "iksass",
-      "halaman"
-    ]
-  },
-  {
     "title": "Arah Gerak & Perjuangan",
     "url": "tentang/arah-gerak-perjuangan.html",
     "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
@@ -336,16 +250,16 @@
     ]
   },
   {
-    "title": "Pesantren, Pengasuh, dan IKSASS",
-    "url": "tentang/pesantren-pengasuh-dan-iksass.html",
-    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
+    "title": "Pesantren & Pengasuh",
+    "url": "tentang/pendiri-dan-pengasuh.html",
+    "excerpt": "Pesantren dan pengasuh sebagai pusat nilai, adab, dan rujukan utama dalam perjalanan santri dan alumni Salafiyah Syafi’iyah.",
     "category": "Tentang",
     "tags": [
       "tentang",
-      "pesantren",
-      "pengasuh",
+      "pendiri",
       "dan",
-      "iksass"
+      "pengasuh",
+      "pesantren"
     ]
   },
   {
@@ -395,13 +309,15 @@
     ]
   },
   {
-    "title": "Wasiat",
+    "title": "IKSASS — Beranda",
     "url": "wasiat/",
-    "excerpt": "Ruhul Jihad dan 5 Wasiat K.H.R. As’ad Syamsul Arifin sebagai pedoman nilai perjuangan. Dibaca, dipelajari, dan diamalkan dalam khidmah.",
+    "excerpt": "IKSASS — IKSASS — Beranda. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Wasiat",
     "tags": [
       "wasiat",
-      "index"
+      "index",
+      "iksass",
+      "beranda"
     ]
   },
   {
@@ -429,32 +345,17 @@
     ]
   },
   {
-    "title": "Pondok Pesantren Salafiyah Syafi’iyah Sukorejo",
-    "url": "tentang/pesantren/",
-    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
+    "title": "Pesantren & Pengasuh",
+    "url": "tentang/pendiri-dan-pengasuh/",
+    "excerpt": "Pesantren dan pengasuh sebagai pusat nilai, adab, dan rujukan utama dalam perjalanan santri dan alumni Salafiyah Syafi’iyah.",
     "category": "Tentang",
     "tags": [
       "tentang",
-      "pesantren",
-      "index",
-      "pondok",
-      "salafiyah",
-      "syafi-iyah",
-      "sukorejo"
-    ]
-  },
-  {
-    "title": "Pesantren, Pengasuh, dan IKSASS",
-    "url": "tentang/pesantren-pengasuh-dan-iksass/",
-    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "pesantren",
-      "pengasuh",
+      "pendiri",
       "dan",
-      "iksass",
-      "index"
+      "pengasuh",
+      "index",
+      "pesantren"
     ]
   },
   {
@@ -491,31 +392,6 @@
       "tentang",
       "website",
       "ini",
-      "index"
-    ]
-  },
-  {
-    "title": "Mars & Hymne IKSASS",
-    "url": "profil/mars-hymne/",
-    "excerpt": "Mars dan Hymne IKSASS (dokumen resmi organisasi) untuk dibaca dan dihafal bersama.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "mars",
-      "hymne",
-      "index",
-      "iksass"
-    ]
-  },
-  {
-    "title": "Prinsip Perjuangan",
-    "url": "profil/prinsip-perjuangan/",
-    "excerpt": "4 Pilar Prinsip Perjuangan IKSASS: komitmen dan keyakinan, hubungan manusia dengan Allah, hubungan manusia dengan manusia, dan hubungan manusia dengan lingkungannya.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "prinsip",
-      "perjuangan",
       "index"
     ]
   },
@@ -649,19 +525,6 @@
       "struktur",
       "organisasi",
       "index"
-    ]
-  },
-  {
-    "title": "Yel-Yel IKSASS",
-    "url": "profil/yel-yel/",
-    "excerpt": "Slogan dan yel-yel IKSASS: seruan kebersamaan dan salam perjuangan.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "yel",
-      "index",
-      "yel-yel",
-      "iksass"
     ]
   },
   {
@@ -835,7 +698,7 @@
     ]
   },
   {
-    "title": "Pengurus Pusat IKSASS",
+    "title": "IKSASS — Pengurus Pusat IKSASS",
     "url": "kelembagaan/pengurus-pusat-iksass/",
     "excerpt": "IKSASS — IKSASS — Pengurus Pusat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Kelembagaan",
@@ -1093,32 +956,6 @@
       "iksass",
       "2022",
       "2026",
-      "pdf",
-      "buka"
-    ]
-  },
-  {
-    "title": "Buka",
-    "url": "dokumen/mars-iksass.pdf",
-    "excerpt": "Dokumen PDF (klik untuk membuka).",
-    "category": "Dokumen",
-    "tags": [
-      "dokumen",
-      "mars",
-      "iksass",
-      "pdf",
-      "buka"
-    ]
-  },
-  {
-    "title": "Buka",
-    "url": "dokumen/hymne-iksass.pdf",
-    "excerpt": "Dokumen PDF (klik untuk membuka).",
-    "category": "Dokumen",
-    "tags": [
-      "dokumen",
-      "hymne",
-      "iksass",
       "pdf",
       "buka"
     ]
