@@ -2544,8 +2544,6 @@ main{ padding-top: 0 !important; }
   box-shadow: 0 10px 22px rgba(0,0,0,.10);
 }
 .icon-btn .ic{ width:18px; height:18px; display:block; }
-.icon-btn.fb{ color:#1b4fb8; }
-.icon-btn.ig{ color:#b12a7c; }
 
 @media (max-width: 520px){
   .disclaimer-actions{ align-items:flex-start; }
@@ -2599,8 +2597,6 @@ main{ padding-top: 0 !important; }
 }
 .icon-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.10); }
 .icon-btn .ic{ width:18px; height:18px; display:block; }
-.icon-btn.fb{ color:#1b4fb8; }
-.icon-btn.ig{ color:#b12a7c; }
 
 .disclaimer-btn{ white-space:nowrap; }
 
@@ -2868,3 +2864,46 @@ summary:focus-visible,
     text-overflow:ellipsis !important;
   }
 }
+
+/* Subtle site note under hero (Home) */
+.site-note{ padding: 10px 0 6px; }
+.site-note__text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.site-note__text strong{ font-weight: 700; }
+.site-note__link{
+  margin-left: 8px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-note__link:hover,
+.site-note__link:focus-visible{ text-decoration: underline; }
+@media (max-width: 480px){
+  .site-note__link{ display: inline-block; margin-left: 0; margin-top: 6px; }
+}
+
+
+/* Social Section - Tentang Website */
+.social-section{ padding:40px 0 10px; }
+.social-section h2{ margin-bottom:10px; }
+.social-intro{ color:var(--muted); font-size:14px; margin-bottom:18px; }
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+}
+.social-grid a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:inherit;
+  font-weight:500;
+}
+.social-grid a:hover{ text-decoration:underline; }
+.social-grid .icon{ font-size:18px; }
