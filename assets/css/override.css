@@ -2966,3 +2966,216 @@ summary:focus-visible,
     white-space: normal;
   }
 }
+
+/* Tentang: Pesantren, Pengasuh, dan IKSASS */
+.ppi-panels{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin: 16px 0 22px;
+}
+.ppi-panel{
+  background:#f8fafc;
+  border:1px solid rgba(2,6,23,.08);
+  border-radius:14px;
+  padding:16px 16px 14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+.ppi-panel h2{
+  margin-top:0;
+  margin-bottom:10px;
+}
+.ppi-panel p:last-child{ margin-bottom:0; }
+
+.ppi-tokoh-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin: 10px 0 20px;
+}
+.ppi-tokoh{
+  display:grid;
+  grid-template-columns: 140px 1fr;
+  gap:14px;
+  align-items:start;
+  padding:14px;
+  border:1px solid rgba(2,6,23,.10);
+  border-radius:16px;
+  background:#ffffff;
+  box-shadow:0 10px 26px rgba(0,0,0,.06);
+}
+.ppi-tokoh__media img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+.ppi-tokoh__name{
+  margin:0 0 2px;
+}
+.ppi-tokoh__meta{
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:.08em;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.ppi-tokoh__role{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:10px;
+  line-height:1.35;
+}
+
+.ppi-hubungan{
+  margin-top: 18px;
+  padding-top: 4px;
+}
+.ppi-quote{
+  margin: 12px 0 10px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fafc;
+  border-radius: 12px;
+}
+.ppi-quote blockquote{
+  margin:0;
+  font-weight:800;
+}
+.ppi-quote figcaption{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+@media (max-width: 820px){
+  .ppi-panels{ grid-template-columns:1fr; }
+}
+@media (max-width: 560px){
+  .ppi-tokoh{
+    grid-template-columns:1fr;
+  }
+  .ppi-tokoh__media img{
+    height:220px;
+  }
+}
+
+
+/* Zig-zag: swap columns on alternating items */
+.ppi-tokoh.is-alt{
+  grid-template-columns: 1fr 180px;
+}
+.ppi-tokoh.is-alt .ppi-tokoh__media{
+  grid-column: 2;
+}
+.ppi-tokoh.is-alt .ppi-tokoh__body{
+  grid-column: 1;
+}
+/* Mobile: stack */
+@media (max-width: 720px){
+  .ppi-tokoh,
+  .ppi-tokoh.is-alt{
+    grid-template-columns: 1fr;
+  }
+  .ppi-tokoh.is-alt .ppi-tokoh__media,
+  .ppi-tokoh.is-alt .ppi-tokoh__body{
+    grid-column: auto;
+  }
+  .ppi-tokoh__media{ max-width: 320px; }
+}
+
+
+/* Default body alignment */
+.ppi-tokoh__body{
+  text-align: left;
+}
+/* Zig-zag: swap columns on alternating items */
+.ppi-tokoh.is-alt{
+  grid-template-columns: 1fr 180px;
+}
+.ppi-tokoh.is-alt .ppi-tokoh__media{
+  grid-column: 2;
+}
+.ppi-tokoh.is-alt .ppi-tokoh__body{
+  grid-column: 1;
+  justify-self: end;      /* push text block near the image */
+  max-width: 640px;       /* keep readable line length */
+  text-align: right;      /* align typography with right photo */
+}
+.ppi-tokoh.is-alt .ppi-tokoh__body p{
+  margin-left: 0;
+  margin-right: 0;
+}
+/* Mobile: stack */
+@media (max-width: 720px){
+  .ppi-tokoh,
+  .ppi-tokoh.is-alt{
+    grid-template-columns: 1fr;
+  }
+  .ppi-tokoh.is-alt .ppi-tokoh__media,
+  .ppi-tokoh.is-alt .ppi-tokoh__body{
+    grid-column: auto;
+    justify-self: start;
+    max-width: none;
+    text-align: left;
+  }
+  .ppi-tokoh__media{ max-width: 320px; }
+}
+
+
+/* Zig-zag: foto di kanan, kolom teks tetap 640px dan nempel ke foto */
+.ppi-tokoh.is-alt{
+  grid-template-columns: minmax(0, 640px) 180px;
+  justify-content: end;
+}
+.ppi-tokoh.is-alt .ppi-tokoh__media{ grid-column: 2; }
+.ppi-tokoh.is-alt .ppi-tokoh__body{
+  grid-column: 1;
+  text-align: right;
+}
+/* Mobile: stack */
+@media (max-width: 720px){
+  .ppi-tokoh,
+  .ppi-tokoh.is-alt{
+    grid-template-columns: 1fr;
+    justify-content: start;
+  }
+  .ppi-tokoh.is-alt .ppi-tokoh__media,
+  .ppi-tokoh.is-alt .ppi-tokoh__body{
+    grid-column: auto;
+    text-align: left;
+  }
+  .ppi-tokoh__media{ max-width: 320px; }
+}
+
+/* Pesantren, Pengasuh, dan IKSASS – Tokoh (rata kiri, foto kiri – teks kanan) */
+.ppi-tokoh{
+  display:grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.ppi-tokoh__media{
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(2,6,23,.04);
+}
+.ppi-tokoh__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+.ppi-tokoh__body{
+  text-align: left;
+}
+@media (max-width: 720px){
+  .ppi-tokoh{
+    grid-template-columns: 1fr;
+  }
+  .ppi-tokoh__media{ max-width: 320px; }
+}
