@@ -157,7 +157,16 @@
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
   };
 
-  btnFull?.addEventListener('click', openFs);
+  // Some mobile browsers can be finicky with click on custom-styled controls.
+  // Bind click + pointer/touch to make tabs/fullscreen reliable across devices.
+  const bindTap = (el, fn) => {
+    if (!el) return;
+    el.addEventListener('click', (e) => { e.preventDefault(); fn(e); });
+    el.addEventListener('pointerup', (e) => { e.preventDefault(); fn(e); });
+    el.addEventListener('touchend', (e) => { try { e.preventDefault(); } catch {} fn(e); }, { passive: false });
+  };
+
+  bindTap(btnFull, openFs);
   fsClose?.addEventListener('click', closeFs);
   fsWrap?.addEventListener('click', (e) => {
     if (e.target === fsWrap) closeFs();
@@ -273,8 +282,8 @@
     audioState.seeking = false;
   });
 
-  tabMars.addEventListener('click', () => select('mars', true));
-  tabHymne.addEventListener('click', () => select('hymne', true));
+  bindTap(tabMars, () => select('mars', true));
+  bindTap(tabHymne, () => select('hymne', true));
 
   // keyboard support
   [tabMars, tabHymne].forEach((t) => {
