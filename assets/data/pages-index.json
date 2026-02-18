@@ -1,27 +1,5 @@
 [
   {
-    "title": "Doktrinasi IKSASS",
-    "url": "doktrinasi.html",
-    "excerpt": "Doktrinasi IKSASS merupakan nilai dasar dan arah gerak organisasi dalam menjaga tradisi pesantren dan kesinambungan perjuangan.",
-    "category": "Halaman",
-    "tags": [
-      "doktrinasi",
-      "iksass",
-      "halaman"
-    ]
-  },
-  {
-    "title": "Program Kerja",
-    "url": "program-kerja.html",
-    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Halaman",
-    "tags": [
-      "program",
-      "kerja",
-      "halaman"
-    ]
-  },
-  {
     "title": "Agenda",
     "url": "agenda/",
     "excerpt": "IKSASS — IKSASS — Agenda. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
@@ -127,6 +105,21 @@
     ]
   },
   {
+    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
+    "url": "galeri/mubes-iksass-2025.html",
+    "excerpt": "Muktamar Besar IKSASS 2025 menjadi ruang pertemuan lintas generasi alumni Pondok Pesantren Salafiyah Syafi’iyah Sukorejo. Bukan sekadar forum pengambilan keputusan, momen ini mempe…",
+    "category": "Galeri",
+    "tags": [
+      "galeri",
+      "mubes",
+      "iksass",
+      "2025",
+      "konsolidasi",
+      "arah",
+      "baru"
+    ]
+  },
+  {
     "title": "Khidmah Sosial — Hadir untuk Umat",
     "url": "galeri/khidmah-sosial.html",
     "excerpt": "IKSASS hadir di tengah masyarakat melalui gerakan khidmah sosial yang berangkat dari nilai kepedulian dan kemanusiaan. Dalam kebersamaan para alumni dan relawan, setiap langkah kec…",
@@ -141,18 +134,18 @@
     ]
   },
   {
-    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
-    "url": "galeri/mubes-iksass-2025.html",
-    "excerpt": "Muktamar Besar IKSASS 2025 menjadi ruang pertemuan lintas generasi alumni Pondok Pesantren Salafiyah Syafi’iyah Sukorejo. Bukan sekadar forum pengambilan keputusan, momen ini mempe…",
+    "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
+    "url": "galeri/silaturahim-alumni.html",
+    "excerpt": "Silaturahim alumni bukan hanya tentang pertemuan, tetapi tentang merawat ikatan batin yang terjalin sejak di pesantren. Dalam suasana sederhana dan penuh kehangatan, para alumni sa…",
     "category": "Galeri",
     "tags": [
       "galeri",
-      "mubes",
-      "iksass",
-      "2025",
-      "konsolidasi",
-      "arah",
-      "baru"
+      "silaturahim",
+      "alumni",
+      "menjaga",
+      "ikatan",
+      "merawat",
+      "kebersamaan"
     ]
   },
   {
@@ -173,14 +166,64 @@
     ]
   },
   {
+    "title": "Khidmah Sosial — Hadir untuk Umat",
+    "url": "galeri/khidmah-sosial/",
+    "excerpt": "IKSASS — Khidmah Sosial — Hadir untuk Umat | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Galeri",
+    "tags": [
+      "galeri",
+      "khidmah",
+      "sosial",
+      "index",
+      "hadir",
+      "untuk",
+      "umat"
+    ]
+  },
+  {
+    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
+    "url": "galeri/mubes-iksass-2025/",
+    "excerpt": "IKSASS — Mubes IKSASS 2025 — Konsolidasi & Arah Baru | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Galeri",
+    "tags": [
+      "galeri",
+      "mubes",
+      "iksass",
+      "2025",
+      "index",
+      "konsolidasi",
+      "arah",
+      "baru"
+    ]
+  },
+  {
+    "title": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
+    "url": "galeri/pendidikan-ke-nuan/",
+    "excerpt": "IKSASS — Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Galeri",
+    "tags": [
+      "galeri",
+      "pendidikan",
+      "ke",
+      "nuan",
+      "index",
+      "ke-nu-an",
+      "merawat",
+      "ilmu",
+      "menjaga",
+      "tradisi"
+    ]
+  },
+  {
     "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
-    "url": "galeri/silaturahim-alumni.html",
-    "excerpt": "Silaturahim alumni bukan hanya tentang pertemuan, tetapi tentang merawat ikatan batin yang terjalin sejak di pesantren. Dalam suasana sederhana dan penuh kehangatan, para alumni sa…",
+    "url": "galeri/silaturahim-alumni/",
+    "excerpt": "IKSASS — Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
     "category": "Galeri",
     "tags": [
       "galeri",
       "silaturahim",
       "alumni",
+      "index",
       "menjaga",
       "ikatan",
       "merawat",
@@ -220,6 +263,146 @@
     ]
   },
   {
+    "title": "Pengurus Komisariat IKSASS",
+    "url": "kelembagaan/pengurus-komisariat-iksass/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "komisariat",
+      "iksass",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Komisariat IKSASS",
+    "url": "kelembagaan/pengurus-komisariat-iksass/detail/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "komisariat",
+      "iksass",
+      "detail",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Komisariat IKSASS Sukorejo",
+    "url": "kelembagaan/pengurus-komisariat-iksass/sukorejo/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS Sukorejo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "komisariat",
+      "iksass",
+      "sukorejo",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Pusat IKSASS",
+    "url": "kelembagaan/pengurus-pusat-iksass/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Pusat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "pusat",
+      "iksass",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Rayon IKSASS",
+    "url": "kelembagaan/pengurus-rayon-iksass/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "rayon",
+      "iksass",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Rayon IKSASS",
+    "url": "kelembagaan/pengurus-rayon-iksass/detail/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "rayon",
+      "iksass",
+      "detail",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Rayon IKSASS Jawa Timur",
+    "url": "kelembagaan/pengurus-rayon-iksass/jawa-timur/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS Jawa Timur. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "rayon",
+      "iksass",
+      "jawa",
+      "timur",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Sub Rayon IKSASS",
+    "url": "kelembagaan/pengurus-sub-rayon-iksass/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "sub",
+      "rayon",
+      "iksass",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Sub Rayon IKSASS",
+    "url": "kelembagaan/pengurus-sub-rayon-iksass/detail/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "sub",
+      "rayon",
+      "iksass",
+      "detail",
+      "index"
+    ]
+  },
+  {
+    "title": "Pengurus Sub Rayon IKSASS Situbondo",
+    "url": "kelembagaan/pengurus-sub-rayon-iksass/situbondo/",
+    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS Situbondo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Kelembagaan",
+    "tags": [
+      "kelembagaan",
+      "pengurus",
+      "sub",
+      "rayon",
+      "iksass",
+      "situbondo",
+      "index"
+    ]
+  },
+  {
     "title": "Kontak IKSASS",
     "url": "kontak/",
     "excerpt": "Informasi kontak dan sekretariat resmi IKSASS sebagai sarana komunikasi dan koordinasi organisasi.",
@@ -228,270 +411,6 @@
       "kontak",
       "index",
       "iksass"
-    ]
-  },
-  {
-    "title": "Prinsip Perjuangan",
-    "url": "profil/prinsip-perjuangan.html",
-    "excerpt": "4 Pilar Prinsip Perjuangan IKSASS: komitmen dan keyakinan, hubungan manusia dengan Allah, hubungan manusia dengan manusia, dan hubungan manusia dengan lingkungannya.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "prinsip",
-      "perjuangan"
-    ]
-  },
-  {
-    "title": "Program Kerja",
-    "url": "profil/program-kerja.html",
-    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja"
-    ]
-  },
-  {
-    "title": "Struktur Organisasi",
-    "url": "profil/struktur-organisasi.html",
-    "excerpt": "IKSASS — Ikatan Santri Alumni Salafiyah Syafi’iyah: wadah silaturahmi, khidmah, dan pengabdian alumni untuk umat dan bangsa.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "struktur",
-      "organisasi"
-    ]
-  },
-  {
-    "title": "Yel-Yel IKSASS",
-    "url": "profil/yel-yel.html",
-    "excerpt": "Slogan dan yel-yel IKSASS: seruan kebersamaan dan salam perjuangan.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "yel",
-      "yel-yel",
-      "iksass"
-    ]
-  },
-  {
-    "title": "Program Kerja",
-    "url": "program-kerja/",
-    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Halaman",
-    "tags": [
-      "program",
-      "kerja",
-      "index",
-      "halaman"
-    ]
-  },
-  {
-    "title": "Pencarian",
-    "url": "search/",
-    "excerpt": "IKSASS — IKSASS — Pencarian. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Halaman",
-    "tags": [
-      "search",
-      "index",
-      "pencarian",
-      "halaman"
-    ]
-  },
-  {
-    "title": "Design System IKSASS",
-    "url": "styleguide/",
-    "excerpt": "Informasi resmi IKSASS — Panduan UI | IKSASS.",
-    "category": "Halaman",
-    "tags": [
-      "styleguide",
-      "index",
-      "design",
-      "system",
-      "iksass",
-      "halaman"
-    ]
-  },
-  {
-    "title": "Arah Gerak & Perjuangan",
-    "url": "tentang/arah-gerak-perjuangan.html",
-    "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "arah",
-      "gerak",
-      "perjuangan"
-    ]
-  },
-  {
-    "title": "Tentang IKSASS",
-    "url": "tentang/iksass.html",
-    "excerpt": "Mengenal IKSASS sebagai rumah besar santri dan alumni Salafiyah Syafi’iyah dalam merawat khidmah dan meneruskan perjuangan pesantren.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "iksass"
-    ]
-  },
-  {
-    "title": "Pesantren, Pengasuh, dan IKSASS",
-    "url": "tentang/pesantren-pengasuh-dan-iksass.html",
-    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "pesantren",
-      "pengasuh",
-      "dan",
-      "iksass"
-    ]
-  },
-  {
-    "title": "Sejarah Singkat IKSASS",
-    "url": "tentang/sejarah.html",
-    "excerpt": "IKSASS — IKSASS — Sejarah. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "sejarah",
-      "singkat",
-      "iksass"
-    ]
-  },
-  {
-    "title": "Visi & Misi",
-    "url": "tentang/visi-misi.html",
-    "excerpt": "IKSASS — IKSASS — Visi dan Misi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "visi",
-      "misi"
-    ]
-  },
-  {
-    "title": "Tentang Website Ini",
-    "url": "tentang/website-ini.html",
-    "excerpt": "IKSASS — Di bawah Naungan IKSASS — Tentang Website Ini. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "website",
-      "ini"
-    ]
-  },
-  {
-    "title": "Terima kasih!",
-    "url": "terima-kasih/",
-    "excerpt": "IKSASS — IKSASS — Terima Kasih. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Halaman",
-    "tags": [
-      "terima",
-      "kasih",
-      "index",
-      "halaman"
-    ]
-  },
-  {
-    "title": "Wasiat",
-    "url": "wasiat/",
-    "excerpt": "Ruhul Jihad dan 5 Wasiat K.H.R. As’ad Syamsul Arifin sebagai pedoman nilai perjuangan. Dibaca, dipelajari, dan diamalkan dalam khidmah.",
-    "category": "Wasiat",
-    "tags": [
-      "wasiat",
-      "index"
-    ]
-  },
-  {
-    "title": "Arah Gerak & Perjuangan",
-    "url": "tentang/arah-gerak-perjuangan/",
-    "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "arah",
-      "gerak",
-      "perjuangan",
-      "index"
-    ]
-  },
-  {
-    "title": "Tentang IKSASS",
-    "url": "tentang/iksass/",
-    "excerpt": "Mengenal IKSASS sebagai rumah besar santri dan alumni Salafiyah Syafi’iyah dalam merawat khidmah dan meneruskan perjuangan pesantren.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "iksass",
-      "index"
-    ]
-  },
-  {
-    "title": "Pondok Pesantren Salafiyah Syafi’iyah Sukorejo",
-    "url": "tentang/pesantren/",
-    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "pesantren",
-      "index",
-      "pondok",
-      "salafiyah",
-      "syafi-iyah",
-      "sukorejo"
-    ]
-  },
-  {
-    "title": "Pesantren, Pengasuh, dan IKSASS",
-    "url": "tentang/pesantren-pengasuh-dan-iksass/",
-    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "pesantren",
-      "pengasuh",
-      "dan",
-      "iksass",
-      "index"
-    ]
-  },
-  {
-    "title": "Sejarah Singkat IKSASS",
-    "url": "tentang/sejarah/",
-    "excerpt": "IKSASS — IKSASS — Sejarah. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "sejarah",
-      "index",
-      "singkat",
-      "iksass"
-    ]
-  },
-  {
-    "title": "Visi & Misi",
-    "url": "tentang/visi-misi/",
-    "excerpt": "IKSASS — IKSASS — Visi dan Misi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "visi",
-      "misi",
-      "index"
-    ]
-  },
-  {
-    "title": "Tentang Website Ini",
-    "url": "tentang/website-ini/",
-    "excerpt": "IKSASS — Di bawah Naungan IKSASS — Tentang Website Ini. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Tentang",
-    "tags": [
-      "tentang",
-      "website",
-      "ini",
-      "index"
     ]
   },
   {
@@ -520,37 +439,6 @@
     ]
   },
   {
-    "title": "Ekonomi dan kewirausahaan",
-    "url": "profil/program-kerja/ekonomi-dan-kewirausahaan.html",
-    "excerpt": "index, follow",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "ekonomi",
-      "dan",
-      "kewirausahaan"
-    ]
-  },
-  {
-    "title": "Hubungan antar organisasi dan lembaga eksternal",
-    "url": "profil/program-kerja/hubungan-antar-organisasi-dan-lembaga-eksternal.html",
-    "excerpt": "index, follow",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "hubungan",
-      "antar",
-      "organisasi",
-      "dan",
-      "lembaga",
-      "eksternal"
-    ]
-  },
-  {
     "title": "Program Kerja",
     "url": "profil/program-kerja/",
     "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
@@ -560,108 +448,6 @@
       "program",
       "kerja",
       "index"
-    ]
-  },
-  {
-    "title": "Kesehatan dan kesejahteraan sosial",
-    "url": "profil/program-kerja/kesehatan-dan-kesejahteraan-sosial.html",
-    "excerpt": "index, follow",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "kesehatan",
-      "dan",
-      "kesejahteraan",
-      "sosial"
-    ]
-  },
-  {
-    "title": "Pemberdayaan, perlindungan perempuan dan anak",
-    "url": "profil/program-kerja/pemberdayaan-perlindungan-perempuan-dan-anak.html",
-    "excerpt": "index, follow",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "pemberdayaan",
-      "perlindungan",
-      "perempuan",
-      "dan",
-      "anak"
-    ]
-  },
-  {
-    "title": "Pendidikan, kajian dan dakwah",
-    "url": "profil/program-kerja/pendidikan-kajian-dan-dakwah.html",
-    "excerpt": "index, follow",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "pendidikan",
-      "kajian",
-      "dan",
-      "dakwah"
-    ]
-  },
-  {
-    "title": "Pengembangan organisasi dan penguatan SDM",
-    "url": "profil/program-kerja/pengembangan-organisasi-dan-penguatan-sdm.html",
-    "excerpt": "index, follow",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "pengembangan",
-      "organisasi",
-      "dan",
-      "penguatan",
-      "sdm"
-    ]
-  },
-  {
-    "title": "Publikasi dan Teknologi dan Informasi",
-    "url": "profil/program-kerja/publikasi-teknologi-dan-informasi.html",
-    "excerpt": "IKSASS — IKSASS — Publikasi dan Teknologi dan Informasi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "program",
-      "kerja",
-      "publikasi",
-      "teknologi",
-      "dan",
-      "informasi"
-    ]
-  },
-  {
-    "title": "Struktur Organisasi",
-    "url": "profil/struktur-organisasi/",
-    "excerpt": "Struktur organisasi IKSASS sebagai landasan kerja santri dan alumni dalam khidmah bersama pesantren dan <strong>pengasuh</strong>.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "struktur",
-      "organisasi",
-      "index"
-    ]
-  },
-  {
-    "title": "Yel-Yel IKSASS",
-    "url": "profil/yel-yel/",
-    "excerpt": "Slogan dan yel-yel IKSASS: seruan kebersamaan dan salam perjuangan.",
-    "category": "Profil",
-    "tags": [
-      "profil",
-      "yel",
-      "index",
-      "yel-yel",
-      "iksass"
     ]
   },
   {
@@ -796,289 +582,178 @@
     ]
   },
   {
-    "title": "Pengurus Komisariat IKSASS",
-    "url": "kelembagaan/pengurus-komisariat-iksass/detail.html",
-    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
+    "title": "Struktur Organisasi",
+    "url": "profil/struktur-organisasi/",
+    "excerpt": "Struktur organisasi IKSASS sebagai landasan kerja santri dan alumni dalam khidmah bersama pesantren dan <strong>pengasuh</strong>.",
+    "category": "Profil",
     "tags": [
-      "kelembagaan",
-      "pengurus",
-      "komisariat",
-      "iksass",
-      "detail"
+      "profil",
+      "struktur",
+      "organisasi",
+      "index"
     ]
   },
   {
-    "title": "Pengurus Komisariat IKSASS",
-    "url": "kelembagaan/pengurus-komisariat-iksass/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
+    "title": "Yel-Yel IKSASS",
+    "url": "profil/yel-yel/",
+    "excerpt": "Slogan dan yel-yel IKSASS: seruan kebersamaan dan salam perjuangan.",
+    "category": "Profil",
     "tags": [
-      "kelembagaan",
-      "pengurus",
-      "komisariat",
+      "profil",
+      "yel",
+      "index",
+      "yel-yel",
+      "iksass"
+    ]
+  },
+  {
+    "title": "Program Kerja",
+    "url": "program-kerja/",
+    "excerpt": "IKSASS — IKSASS — Program Kerja. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Halaman",
+    "tags": [
+      "program",
+      "kerja",
+      "index",
+      "halaman"
+    ]
+  },
+  {
+    "title": "Pencarian",
+    "url": "search/",
+    "excerpt": "IKSASS — IKSASS — Pencarian. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Halaman",
+    "tags": [
+      "search",
+      "index",
+      "pencarian",
+      "halaman"
+    ]
+  },
+  {
+    "title": "Design System IKSASS",
+    "url": "styleguide/",
+    "excerpt": "Informasi resmi IKSASS — Panduan UI | IKSASS.",
+    "category": "Halaman",
+    "tags": [
+      "styleguide",
+      "index",
+      "design",
+      "system",
+      "iksass",
+      "halaman"
+    ]
+  },
+  {
+    "title": "Arah Gerak & Perjuangan",
+    "url": "tentang/arah-gerak-perjuangan/",
+    "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Tentang",
+    "tags": [
+      "tentang",
+      "arah",
+      "gerak",
+      "perjuangan",
+      "index"
+    ]
+  },
+  {
+    "title": "Tentang IKSASS",
+    "url": "tentang/iksass/",
+    "excerpt": "Mengenal IKSASS sebagai rumah besar santri dan alumni Salafiyah Syafi’iyah dalam merawat khidmah dan meneruskan perjuangan pesantren.",
+    "category": "Tentang",
+    "tags": [
+      "tentang",
       "iksass",
       "index"
     ]
   },
   {
-    "title": "Pengurus Komisariat IKSASS Sukorejo",
-    "url": "kelembagaan/pengurus-komisariat-iksass/sukorejo.html",
-    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS Sukorejo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
+    "title": "Pondok Pesantren Salafiyah Syafi’iyah Sukorejo",
+    "url": "tentang/pesantren/",
+    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
+    "category": "Tentang",
     "tags": [
-      "kelembagaan",
-      "pengurus",
-      "komisariat",
-      "iksass",
+      "tentang",
+      "pesantren",
+      "index",
+      "pondok",
+      "salafiyah",
+      "syafi-iyah",
       "sukorejo"
     ]
   },
   {
-    "title": "Pengurus Pusat IKSASS",
-    "url": "kelembagaan/pengurus-pusat-iksass/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Pusat IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
+    "title": "Pesantren, Pengasuh, dan IKSASS",
+    "url": "tentang/pesantren-pengasuh-dan-iksass/",
+    "excerpt": "Mengenal hubungan Pesantren Salafiyah Syafi’iyah Sukorejo, pengasuh, dan IKSASS dalam menjaga adab, marwah, dan kesinambungan perjuangan pesantren.",
+    "category": "Tentang",
     "tags": [
-      "kelembagaan",
-      "pengurus",
-      "pusat",
+      "tentang",
+      "pesantren",
+      "pengasuh",
+      "dan",
       "iksass",
       "index"
     ]
   },
   {
-    "title": "Pengurus Rayon IKSASS",
-    "url": "kelembagaan/pengurus-rayon-iksass/detail.html",
-    "excerpt": "IKSASS — IKSASS — Pengurus Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
+    "title": "Sejarah Singkat IKSASS",
+    "url": "tentang/sejarah/",
+    "excerpt": "IKSASS — IKSASS — Sejarah. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Tentang",
     "tags": [
-      "kelembagaan",
-      "pengurus",
-      "rayon",
-      "iksass",
-      "detail"
-    ]
-  },
-  {
-    "title": "Pengurus Rayon IKSASS",
-    "url": "kelembagaan/pengurus-rayon-iksass/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "rayon",
-      "iksass",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Rayon IKSASS Jawa Timur",
-    "url": "kelembagaan/pengurus-rayon-iksass/jawa-timur.html",
-    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS Jawa Timur. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "rayon",
-      "iksass",
-      "jawa",
-      "timur"
-    ]
-  },
-  {
-    "title": "Pengurus Sub Rayon IKSASS",
-    "url": "kelembagaan/pengurus-sub-rayon-iksass/detail.html",
-    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "sub",
-      "rayon",
-      "iksass",
-      "detail"
-    ]
-  },
-  {
-    "title": "Pengurus Sub Rayon IKSASS",
-    "url": "kelembagaan/pengurus-sub-rayon-iksass/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "sub",
-      "rayon",
-      "iksass",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Sub Rayon IKSASS Situbondo",
-    "url": "kelembagaan/pengurus-sub-rayon-iksass/situbondo.html",
-    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS Situbondo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "sub",
-      "rayon",
-      "iksass",
-      "situbondo"
-    ]
-  },
-  {
-    "title": "Pengurus Sub Rayon IKSASS",
-    "url": "kelembagaan/pengurus-sub-rayon-iksass/detail/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "sub",
-      "rayon",
-      "iksass",
-      "detail",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Sub Rayon IKSASS Situbondo",
-    "url": "kelembagaan/pengurus-sub-rayon-iksass/situbondo/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Sub Rayon IKSASS Situbondo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "sub",
-      "rayon",
-      "iksass",
-      "situbondo",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Rayon IKSASS",
-    "url": "kelembagaan/pengurus-rayon-iksass/detail/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Rayon. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "rayon",
-      "iksass",
-      "detail",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Rayon IKSASS Jawa Timur",
-    "url": "kelembagaan/pengurus-rayon-iksass/jawa-timur/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Rayon IKSASS Jawa Timur. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "rayon",
-      "iksass",
-      "jawa",
-      "timur",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Komisariat IKSASS",
-    "url": "kelembagaan/pengurus-komisariat-iksass/detail/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "komisariat",
-      "iksass",
-      "detail",
-      "index"
-    ]
-  },
-  {
-    "title": "Pengurus Komisariat IKSASS Sukorejo",
-    "url": "kelembagaan/pengurus-komisariat-iksass/sukorejo/",
-    "excerpt": "IKSASS — IKSASS — Pengurus Komisariat IKSASS Sukorejo. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Kelembagaan",
-    "tags": [
-      "kelembagaan",
-      "pengurus",
-      "komisariat",
-      "iksass",
-      "sukorejo",
-      "index"
-    ]
-  },
-  {
-    "title": "Khidmah Sosial — Hadir untuk Umat",
-    "url": "galeri/khidmah-sosial/",
-    "excerpt": "IKSASS — Khidmah Sosial — Hadir untuk Umat | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Galeri",
-    "tags": [
-      "galeri",
-      "khidmah",
-      "sosial",
+      "tentang",
+      "sejarah",
       "index",
-      "hadir",
-      "untuk",
-      "umat"
+      "singkat",
+      "iksass"
     ]
   },
   {
-    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
-    "url": "galeri/mubes-iksass-2025/",
-    "excerpt": "IKSASS — Mubes IKSASS 2025 — Konsolidasi & Arah Baru | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Galeri",
+    "title": "Visi & Misi",
+    "url": "tentang/visi-misi/",
+    "excerpt": "IKSASS — IKSASS — Visi dan Misi. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Tentang",
     "tags": [
-      "galeri",
-      "mubes",
-      "iksass",
-      "2025",
-      "index",
-      "konsolidasi",
-      "arah",
-      "baru"
+      "tentang",
+      "visi",
+      "misi",
+      "index"
     ]
   },
   {
-    "title": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
-    "url": "galeri/pendidikan-ke-nuan/",
-    "excerpt": "IKSASS — Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Galeri",
+    "title": "Tentang Website Ini",
+    "url": "tentang/website-ini/",
+    "excerpt": "IKSASS — Di bawah Naungan IKSASS — Tentang Website Ini. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Tentang",
     "tags": [
-      "galeri",
-      "pendidikan",
-      "ke",
-      "nuan",
-      "index",
-      "ke-nu-an",
-      "merawat",
-      "ilmu",
-      "menjaga",
-      "tradisi"
+      "tentang",
+      "website",
+      "ini",
+      "index"
     ]
   },
   {
-    "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
-    "url": "galeri/silaturahim-alumni/",
-    "excerpt": "IKSASS — Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan | Galeri IKSASS. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
-    "category": "Galeri",
+    "title": "Terima kasih!",
+    "url": "terima-kasih/",
+    "excerpt": "IKSASS — IKSASS — Terima Kasih. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
+    "category": "Halaman",
     "tags": [
-      "galeri",
-      "silaturahim",
-      "alumni",
+      "terima",
+      "kasih",
       "index",
-      "menjaga",
-      "ikatan",
-      "merawat",
-      "kebersamaan"
+      "halaman"
+    ]
+  },
+  {
+    "title": "Wasiat",
+    "url": "wasiat/",
+    "excerpt": "Ruhul Jihad dan 5 Wasiat K.H.R. As’ad Syamsul Arifin sebagai pedoman nilai perjuangan. Dibaca, dipelajari, dan diamalkan dalam khidmah.",
+    "category": "Wasiat",
+    "tags": [
+      "wasiat",
+      "index"
     ]
   },
   {
