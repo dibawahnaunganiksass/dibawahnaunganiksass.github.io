@@ -26,7 +26,6 @@ JSON schema (example):
 """
 from __future__ import annotations
 import json, os, sys, re
-import html as html_lib
 from pathlib import Path
 
 try:
@@ -123,100 +122,76 @@ def main():
   description = data.get("description","").strip() or (title + " — informasi resmi dari IKSASS.")
   body = data.get("body",[])
   if not isinstance(body, list) or not body:
-    raise SystemExit("body wajib berupa array, minimal 1 item")
-
-  def normalize_body_items(items: list) -> list[str]:
-    """Normalize body blocks into a list of paragraph strings.
-
-    Supported formats:
-    - ["Paragraf 1", "Paragraf 2", ...]
-    - [{"type":"paragraph","content":"..."}, ...]
-
-    Unknown block types will fail the build to prevent raw JSON leaking into HTML.
-    """
-    out: list[str] = []
-    for i, it in enumerate(items):
-      if isinstance(it, str):
-        t = it.strip()
-        if t:
-          out.append(t)
-        continue
-
-      if isinstance(it, dict):
-        btype = str(it.get("type") or "").strip().lower()
-        content = it.get("content")
-        if btype in ("paragraph", "p", "text"):
-          t = ("" if content is None else str(content)).strip()
-          if t:
-            out.append(t)
-          continue
-        raise SystemExit(f"body[{i}] type tidak didukung: {btype!r}. Gunakan type 'paragraph'.")
-
-      raise SystemExit(f"body[{i}] format tidak valid: {type(it).__name__}. Gunakan string atau object paragraph.")
-
-    if not out:
-      raise SystemExit("body kosong setelah normalisasi (pastikan ada paragraf)")
-    return out
-
-  body_paras = normalize_body_items(body)
+    raise SystemExit("body wajib berupa array paragraf, minimal 1 paragraf")
   # Image (OG banner generated) + featured image (optional)
   og_rel = f"/assets/img/berita/{slug}.png"
   img_out = OUT_IMG_DIR / f"{slug}.png"
   make_banner(title, subtitle, img_out)
   featured_raw = (data.get("featured_image","") or data.get("image","")).strip()
-
-  def norm_featured(p: str) -> str:
-    p = (p or "").strip()
-    if not p:
-      return ""
-    if p.startswith("http://") or p.startswith("https://") or p.startswith("data:"):
-      return p
-    if p.startswith("/"):
-      return p
-    if p.startswith("assets/"):
-      return "/" + p
-    if p.startswith("./assets/"):
-      return "/" + p.replace("./", "")
-    cleaned = p.lstrip("./").lstrip("/")
-    return f"/assets/img/berita/{Path(cleaned).name}"
-
-  featured_rel = norm_featured(featured_raw) or og_rel
+  featured_rel = ""
+  if featured_raw:
+    cleaned = featured_raw.lstrip("./")
+    # If already a project-relative path like assets/..., keep it.
+    if cleaned.startswith("assets/"):
+      featured_rel = "/" + cleaned
+    elif cleaned.startswith("/assets/"):
+      featured_rel = cleaned
+    elif cleaned.startswith("http://") or cleaned.startswith("https://"):
+      featured_rel = cleaned
+    else:
+      # treat as filename within assets/img/berita
+      featured_rel = f"/assets/img/berita/{cleaned}"
+  if not featured_rel:
+    featured_rel = og_rel
   # HTML from template
   tpl = TEMPLATE.read_text(encoding="utf-8")
-  page_html = tpl
-  page_html = page_html.replace("[JUDUL BERITA]", title)
-  page_html = page_html.replace("[Ringkasan 150–160 karakter untuk SEO dan preview share]", description)
-  page_html = page_html.replace("[Ringkasan singkat untuk share]", description)
-  page_html = page_html.replace("/assets/img/berita/[slug].png", og_rel)
-  page_html = page_html.replace("[FEATURED_IMAGE]", featured_rel)
-  page_html = page_html.replace("[slug]", slug)
-  page_html = page_html.replace("[Subjudul/lead pendek]", subtitle)
-  page_html = page_html.replace("[Judul Berita]", title)
+  html = tpl
+  html = html.replace("[JUDUL BERITA]", title)
+  html = html.replace("[Ringkasan 150–160 karakter untuk SEO dan preview share]", description)
+  html = html.replace("[Ringkasan singkat untuk share]", description)
+  html = html.replace("/assets/img/berita/[slug].png", og_rel)
+  html = html.replace("[FEATURED_IMAGE]", featured_rel)
+  html = html.replace("[slug]", slug)
+  html = html.replace("[Subjudul/lead pendek]", subtitle)
+  html = html.replace("[Judul Berita]", title)
   meta_line = f"{location} — {date_display}".strip(" —")
-  page_html = page_html.replace("[Lokasi] — [Tanggal, mis: Sabtu (19/4/2026)]", meta_line)
-  page_html = page_html.replace("[alt text gambar]", title)
-  page_html = page_html.replace("[Caption singkat: waktu/tempat/dokumentasi]", caption)
+  html = html.replace("[Lokasi] — [Tanggal, mis: Sabtu (19/4/2026)]", meta_line)
+  html = html.replace("[alt text gambar]", title)
+  html = html.replace("[Caption singkat: waktu/tempat/dokumentasi]", caption)
 
   # body paragraphs insertion
-  # Escape paragraph text to avoid breaking HTML if content contains angle brackets
-  paras = "\n".join([f'            <p>{html_lib.escape(p)}</p>' for p in body_paras])
+  def _norm_paragraph(item):
+    # Support both legacy string paragraphs and structured blocks.
+    if isinstance(item, str):
+      return item
+    if isinstance(item, dict):
+      t = (item.get("type") or "").strip().lower()
+      if t in ("paragraph","p","text",""):
+        return str(item.get("content","") or "")
+      if t in ("html","raw"):
+        return str(item.get("content","") or "")
+      # Unknown block type: fail early so we don't leak dicts into HTML.
+      raise SystemExit(f"Unsupported body block type: {t!r} in {slug}. Tambahkan dukungan di berita_generator.py")
+    raise SystemExit(f"Unsupported body item type: {type(item)} in {slug}. body harus string atau dict block.")
+  body_texts = [_norm_paragraph(x) for x in body]
+  paras = "\n".join([f'            <p>{p}</p>' for p in body_texts])
 
   # Prefer marker replacement (robust across indentation)
-  if "<!-- BODY_PARAGRAPHS -->" in page_html:
-    page_html = page_html.replace("<!-- BODY_PARAGRAPHS -->", paras)
+  if "<!-- BODY_PARAGRAPHS -->" in html:
+    html = html.replace("<!-- BODY_PARAGRAPHS -->", paras)
   else:
     # Backward compat: replace old placeholder block using regex
-    page_html = re.sub(r"<p>\[Paragraf 1: lead\]</p>\s*<p>\[Paragraf 2: detail\]</p>\s*<p>\[Paragraf 3: konteks\]</p>\s*<p>\[Paragraf 4: penutup\]</p>", paras, page_html, count=1)
+    html = re.sub(r"<p>\[Paragraf 1: lead\]</p>\s*<p>\[Paragraf 2: detail\]</p>\s*<p>\[Paragraf 3: konteks\]</p>\s*<p>\[Paragraf 4: penutup\]</p>", paras, html, count=1)
 
   # Ensure CTA exists (inline, non-floating)
-  if 'class="news-cta__btn"' not in page_html:
+  if 'class="news-cta__btn"' not in html:
     cta = """\n\n<!-- CTA (inline, non-floating) -->\n<div class=\"news-cta\" aria-label=\"Ajakan bergabung channel IKSASS\">\n  <div class=\"news-cta__content\">\n    <h3>Gabung Channel IKSASS</h3>\n    <p>Dapatkan update kegiatan, agenda, dan berita terbaru langsung dari IKSASS.</p>\n  </div>\n  <a class=\"news-cta__btn\" href=\"https://whatsapp.com/channel/0029Vb6q9hnKLaHnmhqaR53G\" rel=\"noopener\" target=\"_blank\">\n    <span class=\"news-cta__icon\" aria-hidden=\"true\">WA</span>\n    Gabung Sekarang\n  </a>\n</div>\n"""
-    page_html = re.sub(r"\s*</article>", cta + "</article>", page_html, count=1)
+    html = re.sub(r"\s*</article>", cta + "</article>", html, count=1)
 
 
   out_dir = ROOT / "berita" / slug
   out_dir.mkdir(parents=True, exist_ok=True)
-  (out_dir / "index.html").write_text(page_html, encoding="utf-8")
+  (out_dir / "index.html").write_text(html, encoding="utf-8")
 
 
   # Rebuild berita/news-index.json (single source of truth: berita/data/*.json)

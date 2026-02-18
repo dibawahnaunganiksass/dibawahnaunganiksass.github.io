@@ -110,17 +110,7 @@ def norm_image(path: str) -> str:
 
 def excerpt_from_body(body) -> str:
     if isinstance(body, list) and body:
-        first_item = body[0]
-        # Support both legacy list[str] and block list[dict]
-        if isinstance(first_item, dict):
-            if str(first_item.get("type") or "").strip().lower() in ("paragraph", "p", "text"):
-                first = str(first_item.get("content") or "").strip()
-            else:
-                first = ""
-        else:
-            first = str(first_item).strip()
-        if not first:
-            return ""
+        first = str(body[0]).strip()
         return first if len(first) <= 180 else first[:177].rstrip() + "…"
     if isinstance(body, str) and body.strip():
         s = body.strip()
