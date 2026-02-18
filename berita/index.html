@@ -116,7 +116,11 @@
         if(!slug || !title) return;
 
         const href = `./${slug}/`;
-        const imgSrc = escapeText(item.image).trim() || '/assets/img/og-default.png';
+        let imgSrc = escapeText(item.image).trim() || '/assets/img/og-default.png';
+        // Normalize path so entries like "assets/..." work from /berita/ on GitHub Pages
+        if (imgSrc && !/^(https?:)?\//.test(imgSrc)) {
+          imgSrc = '/' + imgSrc.replace(/^\.?\//, '');
+        }
         const excerpt = escapeText(item.excerpt).trim();
         const loc = escapeText(item.location).trim();
         const dateText = fmtDate(escapeText(item.date_iso).trim());
