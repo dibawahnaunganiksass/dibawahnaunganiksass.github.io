@@ -725,43 +725,6 @@ body{min-height:100vh;display:flex;flex-direction:column}
   .bbmtb-grid{grid-template-columns:1fr}
 }
 
-/* ===== FINAL NEWS LAYOUT ===== */
-.news-layout {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.news-article {
-  max-width: 100%;
-}
-
-.related-news {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 2px solid #e5e7eb;
-}
-
-.popular-news {
-  position: static;
-  top: auto;
-  padding: 20px;
-  background: #f9fafb;
-  border-radius: 10px;
-}
-
-@media (max-width: 900px) {
-  .news-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .popular-news {
-    position: static;
-    margin-top: auto;
-  }
-}
-
 /* ===== FINAL CONTAINER FIX ===== */
 /* ===== FINAL NEWS LAYOUT ===== */
 .news-layout {

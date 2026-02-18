@@ -3,35 +3,6 @@
    This file MUST be loaded LAST
    ===================================================== */
 
-/* Neutralize global centering */
-body {
-  display: block !important;
-  margin: 0;
-}
-
-body > * {
-  max-width: none !important;
-  align-self: stretch !important;
-}
-
-/* Force main container */
-main,
-main.container {
-  display: block !important;
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Rebuild container safely */
-.container {
-  max-width: 1200px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-}
-
 /* NEWS LAYOUT — HARD LOCK */
 .news-layout {
   display: grid !important;

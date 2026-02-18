@@ -46,15 +46,61 @@
 <!-- SEO:END -->
 <link rel="canonical" href="https://dibawahnaunganiksass.github.io/profil/struktur-organisasi.html">
 <link rel="manifest" href="/site.webmanifest">
+
+<style id="struktur-card-enhancement">
+/* Scoped: only Struktur Organisasi page */
+.page-struktur .struktur-cards { gap: 16px; }
+.page-struktur .struktur-cards .card{
+  position:relative;
+  display:block;
+  padding:20px 20px 18px;
+  border-radius:16px;
+  background: linear-gradient(145deg,#ffffff,#f6f8fb);
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  text-decoration:none;
+}
+.page-struktur .struktur-cards .card::before{
+  content:"";
+  position:absolute; left:0; top:0; height:6px; width:100%;
+  border-top-left-radius:16px; border-top-right-radius:16px;
+  background: linear-gradient(90deg, #198754, #0d6efd);
+}
+.page-struktur .struktur-cards .card:nth-child(2)::before{ background: linear-gradient(90deg, #0d6efd, #6610f2); }
+.page-struktur .struktur-cards .card:nth-child(3)::before{ background: linear-gradient(90deg, #fd7e14, #dc3545); }
+.page-struktur .struktur-cards .card:nth-child(4)::before{ background: linear-gradient(90deg, #20c997, #198754); }
+
+.page-struktur .struktur-cards .card::after{
+  content:"›";
+  position:absolute; right:16px; top:16px;
+  font-size:22px; line-height:1;
+  opacity:.55;
+}
+.page-struktur .struktur-cards .card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.12);
+  border-color: rgba(13,110,253,.25);
+}
+.page-struktur .struktur-cards .card:focus-visible{
+  outline: 3px solid rgba(13,110,253,.6);
+  outline-offset: 4px;
+}
+.page-struktur .struktur-cards .title{ font-weight: 750; }
+.page-struktur .struktur-cards .desc{ margin-top:6px; opacity:.9; }
+@media (max-width: 768px){
+  .page-struktur .struktur-cards .card{ padding:18px 16px 16px; }
+  .page-struktur .struktur-cards .card::after{ right:14px; top:14px; }
+}
+</style>
+
 </head>
 <body class="page-struktur">
 <div data-include="header"></div>
-<main class="page" id="konten" tabindex="-1"><div class="container"><div class="breadcrumb">Profil Organisasi</div><h1 class="page-title">Struktur Organisasi</h1><p class="page-sub">Struktur organisasi ini disusun untuk memastikan pelaksanaan khidmah berjalan terarah, tertib, dan selaras dengan nilai serta arahan pesantren dan pengasuh .</p><div class="content-text">
-<div class="struktur-intro">
-<p>Struktur organisasi ini menjadi landasan kerja bersama santri dan alumni dalam menjalankan program dan kegiatan IKSASS di berbagai bidang, khususnya dalam mendukung dan membantu pesantren.</p></div>
+<main class="page" id="konten" tabindex="-1"><div class="container"><div class="breadcrumb">Profil Organisasi</div><h1 class="page-title">Struktur Organisasi</h1><p class="page-sub">Struktur organisasi ini menjadi landasan kerja bersama santri dan alumni dalam menjalankan program dan kegiatan IKSASS di berbagai bidang, khususnya dalam mendukung dan membantu pesantren.</p><div class="content-text">
+
 <section class="section section-tight">
-<div class="container">
-<div class="grid4">
+<div class="grid4 struktur-cards">
 <a class="card" href="../kelembagaan/pengurus-pusat-iksass/">
 <p class="title">Pengurus Pusat IKSASS</p>
 <p class="desc">Profil, struktur, dan sekretariat pusat.</p>
@@ -71,7 +117,6 @@
 <p class="title">Pengurus Komisariat IKSASS</p>
 <p class="desc">Daftar komisariat dan informasi dasar.</p>
 </a>
-</div>
 </div>
 </section><section class="section">
 <div class="container">
