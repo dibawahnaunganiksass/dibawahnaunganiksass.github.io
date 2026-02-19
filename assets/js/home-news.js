@@ -10,6 +10,8 @@
   const rootEl = document.querySelector('[data-home-news]');
   if (!rootEl) return;
 
+  const metaEl = document.querySelector('[data-home-news-meta]');
+
   const esc = (s = '') => String(s)
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
@@ -69,18 +71,39 @@
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error('Gagal memuat news-index.json'))))
     .then((list) => {
       const safeList = Array.isArray(list) ? list : [];
-      const top = safeList
+      const normalized = safeList
         .filter((x) => x && typeof x === 'object' && x.slug && x.title)
-        .slice(0, 4);
+        .map((x) => ({
+          ...x,
+          _dateMs: x.date_iso ? Date.parse(String(x.date_iso) + 'T00:00:00Z') : 0,
+          _pop: Number(x.popular_score || 0) || 0,
+        }));
+
+      // Sort by newest date, fallback to popular_score
+      normalized.sort((a, b) => (b._dateMs - a._dateMs) || (b._pop - a._pop));
+
+      const top = normalized.slice(0, 4);
 
       if (!top.length) {
         rootEl.innerHTML = '<p class="news-snippet">Berita belum tersedia.</p>';
+        if (metaEl) metaEl.textContent = 'Belum ada pembaruan.';
         return;
       }
 
       rootEl.innerHTML = top.map(renderCard).join('');
+
+      if (metaEl) {
+        const newest = top[0];
+        const total = normalized.length;
+        const d = newest && newest._dateMs ? new Date(newest._dateMs) : null;
+        const dateText = d
+          ? new Intl.DateTimeFormat('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }).format(d)
+          : (newest.date_display || '—');
+        metaEl.textContent = `Terakhir diperbarui: ${dateText} • Total publikasi: ${total} berita`;
+      }
     })
     .catch(() => {
       rootEl.innerHTML = '<p class="news-snippet">Berita belum tersedia.</p>';
+      if (metaEl) metaEl.textContent = 'Gagal memuat pembaruan.';
     });
 })();
