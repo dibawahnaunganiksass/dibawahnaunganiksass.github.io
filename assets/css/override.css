@@ -3142,6 +3142,30 @@ text-decoration:underline;
 }
 
 /* Pesantren page – profil resmi */
+/* v30 kelembagaan arrow align (dipindah ke source agar tidak hilang saat minify) */
+.k-card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.k-card-head .title{
+  margin:0;
+  flex:1;
+  min-width:0;
+}
+.k-card-arrow{
+  flex:0 0 auto;
+  opacity:.7;
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), opacity .18s cubic-bezier(.2,.8,.2,1);
+}
+@media (hover:hover) and (pointer:fine){
+  .k-card:hover .k-card-arrow{
+    transform: translateX(3px);
+    opacity: 1;
+  }
+}
+
 .ppi-profil-head{ padding-top: 22px; padding-bottom: 8px; }
 .ppi-profil-hero{
   display:flex;
@@ -3213,6 +3237,105 @@ text-decoration:underline;
 }
 @media (max-width: 560px){
   .ppi-profil-hero{ flex-direction: column; align-items: flex-start; }
+}
+
+/* Pesantren page – Semboyan (scoped, compact spacing) */
+.ppi-profil--pesantren .ppi-profil-band{ margin: 12px 0; }
+.ppi-profil--pesantren .ppi-profil-section{ padding-top: 14px; padding-bottom: 4px; }
+.ppi-profil--pesantren .ppi-profil-head{ padding-top: 20px; padding-bottom: 6px; }
+
+/* Pesantren page – Tagline (Mondhuk entar ngabdi ben ngaji)
+   Catatan: styling ini dibuat spesifik untuk komponen ppi-tagline agar tidak mempengaruhi card lain. */
+.ppi-tagline-badge{
+  display:inline-flex;
+  align-items:center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(2,6,23,.92);
+  background: linear-gradient(90deg, rgba(255,215,128,.95), rgba(255,245,157,.95), rgba(255,215,128,.95));
+  box-shadow: 0 10px 26px rgba(2,6,23,.10);
+}
+.ppi-tagline-quote{
+  margin-top: 12px;
+  font-size: 15px;
+}
+.ppi-tagline-lead{
+  margin: 12px 0 0;
+  color: rgba(2,6,23,.82);
+}
+.ppi-tagline-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.ppi-tagline-item{
+  position:relative;
+  border-radius: 18px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(2,6,23,.08);
+  padding: 16px 14px;
+  box-shadow: 0 16px 40px rgba(2,6,23,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ppi-tagline-item::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height: 4px;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(90deg, rgba(255,215,128,.95), rgba(15,122,60,.65), rgba(255,215,128,.95));
+  opacity: .85;
+}
+.ppi-tagline-item:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 56px rgba(2,6,23,.10);
+}
+.ppi-tagline-icon{
+  font-size: 26px;
+  line-height: 1;
+  margin: 2px 0 10px;
+}
+.ppi-tagline-title{
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(15,122,60,.95);
+}
+.ppi-tagline-text{
+  margin: 0;
+  color: rgba(2,6,23,.82);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.ppi-tagline-quote2{
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(2,6,23,.08);
+  box-shadow: 0 16px 40px rgba(2,6,23,.06);
+  font-weight: 900;
+  text-align: center;
+  color: rgba(2,6,23,.90);
+}
+.ppi-tagline-quote2 span{ color: rgba(15,122,60,.95); }
+
+@media (max-width: 1000px){
+  .ppi-tagline-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .ppi-profil--pesantren .ppi-profil-band{ margin: 10px 0; }
+  .ppi-profil--pesantren .ppi-profil-section{ padding-top: 12px; padding-bottom: 4px; }
+  .ppi-tagline-grid{ grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce){
+  .ppi-tagline-item{ transition: none; }
+  .ppi-tagline-item:hover{ transform: none; }
 }
 
 /* Badge link Profil Pesantren (subtle, kanan bawah section) */

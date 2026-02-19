@@ -1,38 +1,38 @@
 [
   {
-    "album_slug": "mubes-iksass-2025",
-    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
-    "tag": "Perjuangan",
-    "folder": "assets/img/galeri/mubes-iksass-2025/",
-    "cover": "assets/img/galeri/mubes-iksass-2025/mubes-iksass-2025-01.jpg",
+    "album_slug": "ke-pesantrenan",
+    "title": "Ke-Pesantrenan",
+    "tag": "Akar",
+    "folder": "assets/img/galeri/ke-pesantrenan/",
+    "cover": "assets/img/galeri/ke-pesantrenan/ke-pesantrenan-01.jpg",
     "images": [],
-    "generated_at": "2026-02-19T00:49:01.141076Z"
+    "generated_at": "2026-02-19T07:27:35Z"
   },
   {
-    "album_slug": "khidmah-sosial",
-    "title": "Khidmah Sosial — Hadir untuk Umat",
-    "tag": "Sosial",
-    "folder": "assets/img/galeri/khidmah-sosial/",
-    "cover": "assets/img/galeri/khidmah-sosial/khidmah-sosial-01.jpg",
+    "album_slug": "ke-ilmu-an",
+    "title": "Ke-Ilmu-an",
+    "tag": "Proses",
+    "folder": "assets/img/galeri/ke-ilmu-an/",
+    "cover": "assets/img/galeri/ke-ilmu-an/ke-ilmu-an-01.jpg",
     "images": [],
-    "generated_at": "2026-02-19T00:49:01.142865Z"
+    "generated_at": "2026-02-19T07:27:35Z"
   },
   {
-    "album_slug": "silaturahim-alumni",
-    "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
-    "tag": "Ukhuwah",
-    "folder": "assets/img/galeri/silaturahim-alumni/",
-    "cover": "assets/img/galeri/silaturahim-alumni/silaturahim-alumni-01.jpg",
+    "album_slug": "ke-iksass-an",
+    "title": "Ke-IKSASS-an",
+    "tag": "Wadah",
+    "folder": "assets/img/galeri/ke-iksass-an/",
+    "cover": "assets/img/galeri/ke-iksass-an/ke-iksass-an-01.jpg",
     "images": [],
-    "generated_at": "2026-02-19T00:49:01.146882Z"
+    "generated_at": "2026-02-19T07:27:35Z"
   },
   {
-    "album_slug": "pendidikan-ke-nuan",
-    "title": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
-    "tag": "Pendidikan",
-    "folder": "assets/img/galeri/pendidikan-ke-nuan/",
-    "cover": "assets/img/galeri/pendidikan-ke-nuan/pendidikan-ke-nuan-01.jpg",
+    "album_slug": "dawuhnya",
+    "title": "Dawuh",
+    "tag": "Hikmah",
+    "folder": "assets/img/galeri/dawuhnya/",
+    "cover": "assets/img/galeri/dawuhnya/dawuhnya-01.jpg",
     "images": [],
-    "generated_at": "2026-02-19T00:49:01.149145Z"
+    "generated_at": "2026-02-19T07:27:35Z"
   }
 ]

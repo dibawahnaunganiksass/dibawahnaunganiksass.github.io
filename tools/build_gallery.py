@@ -2,16 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 build_gallery.py
-Generate Galeri landing + album pages from images dropped into assets/img/galeri/<album-slug>/
+Generate Galeri landing + manifest untuk 4 kategori utama (Akar/Proses/Wadah/Hikmah).
 
 Rules:
-- Images named: <album-slug>-NN.jpg (NN 2-digit) but we also accept .jpeg .png .webp
+- Images named: <kategori-slug>-NN.jpg (NN 2-digit) but we also accept .jpeg .png .webp
 - Cover = -01 (preferred), else first image
-- Album pages render all matching images, sorted by NN, then filename.
 
 Outputs:
 - galeri/index.html
-- galeri/<album-slug>.html (detail pages)
 - assets/img/galeri/manifest.json
 """
 
@@ -27,30 +25,30 @@ GALERI_DIR = ROOT / "galeri"
 IMG_ROOT = ROOT / "assets" / "img" / "galeri"
 MANIFEST_PATH = IMG_ROOT / "manifest.json"
 
-ALBUMS = [
+CATEGORIES = [
   {
-    "slug": "mubes-iksass-2025",
-    "title": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
-    "tag": "Perjuangan",
-    "narrative": "Muktamar Besar IKSASS 2025 menjadi ruang pertemuan lintas generasi alumni Pondok Pesantren Salafiyah Syafi’iyah Sukorejo. Bukan sekadar forum pengambilan keputusan, momen ini mempertemukan gagasan, pengalaman, dan semangat kebersamaan untuk meneguhkan arah perjuangan organisasi ke depan."
+    "slug": "ke-pesantrenan",
+    "title": "Ke-Pesantrenan",
+    "tag": "Akar",
+    "narrative": "Akar tradisi, adab, dan suasana pesantren yang membentuk langkah."
   },
   {
-    "slug": "khidmah-sosial",
-    "title": "Khidmah Sosial — Hadir untuk Umat",
-    "tag": "Sosial",
-    "narrative": "IKSASS hadir di tengah masyarakat melalui gerakan khidmah sosial yang berangkat dari nilai kepedulian dan kemanusiaan. Dalam kebersamaan para alumni dan relawan, setiap langkah kecil menjadi wujud nyata kepedulian terhadap sesama, sekaligus penguatan peran sosial pesantren di tengah masyarakat."
+    "slug": "ke-ilmu-an",
+    "title": "Ke-Ilmu-an",
+    "tag": "Proses",
+    "narrative": "Proses belajar, ngaji, dan laku keilmuan yang menghidupkan makna."
   },
   {
-    "slug": "silaturahim-alumni",
-    "title": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
-    "tag": "Ukhuwah",
-    "narrative": "Silaturahim alumni bukan hanya tentang pertemuan, tetapi tentang merawat ikatan batin yang terjalin sejak di pesantren. Dalam suasana sederhana dan penuh kehangatan, para alumni saling berbagi cerita, pengalaman, dan harapan, memperkuat ukhuwah yang menjadi fondasi gerak IKSASS."
+    "slug": "ke-iksass-an",
+    "title": "Ke-IKSASS-an",
+    "tag": "Wadah",
+    "narrative": "Wadah ukhuwah, khidmah, dan kerja-kerja kolektif alumni."
   },
   {
-    "slug": "pendidikan-ke-nuan",
-    "title": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
-    "tag": "Pendidikan",
-    "narrative": "Pendidikan dan nilai-nilai Ke-NU-an menjadi fondasi utama gerak IKSASS dalam membentuk insan yang berilmu, berakhlak, dan berkeadaban. Melalui pengajian, forum keilmuan, serta penguatan tradisi Ahlussunnah wal Jama’ah, IKSASS terus merawat warisan pesantren agar tetap hidup, relevan, dan membumi di tengah perubahan zaman."
+    "slug": "dawuhnya",
+    "title": "Dawuh",
+    "tag": "Hikmah",
+    "narrative": "Dawuh dan petuah sebagai penuntun adab dan arah gerak."
   },
 ]
 
@@ -129,9 +127,9 @@ def render_shell(title: str, description: str, inner_html: str) -> str:
 </html>
 """
 
-def render_landing(albums_render: list[dict]) -> str:
+def render_landing(categories_render: list[dict]) -> str:
   cards = []
-  for a in albums_render:
+  for a in categories_render:
     cards.append(f"""
     <a class=\"gallery-card\" href=\"/galeri/{a['slug']}.html\">
       <div class=\"gallery-card__media\">
@@ -150,22 +148,21 @@ def render_landing(albums_render: list[dict]) -> str:
     <div class=\"breadcrumb\">Media</div>
     <h1 class=\"page-title\">Galeri IKSASS</h1>
     <p class=\"page-sub\">
-      Merekam perjalanan, merawat kenangan, menguatkan kebersamaan.
-      Setiap momen yang ditampilkan adalah kurasi—bukan sekadar arsip.
+      Galeri ini merangkum nilai, tradisi, dan jejak kebersamaan.
+      Pilih kategori untuk menelusuri dokumentasi dan hikmah.
     </p>
 
     <div class=\"hero-card\" style=\"margin:14px 0 0\">
-      <div class=\"pill\">Perjuangan</div>
-      <div class=\"pill\">Sosial</div>
-      <div class=\"pill\">Ukhuwah</div>
-      <div class=\"pill\">Pendidikan</div>
-      <div class=\"pill\">Ke-NU-an</div>
+      <div class=\"pill\">Akar</div>
+      <div class=\"pill\">Proses</div>
+      <div class=\"pill\">Wadah</div>
+      <div class=\"pill\">Hikmah</div>
     </div>
 
     <div class=\"prose\" style=\"margin-top:12px\">
       <p>
-        Berikut adalah highlight momen terpilih. Untuk menambah atau mengganti foto album, taruh foto di
-        <code>assets/img/galeri/&lt;album&gt;/</code> dengan pola <code>&lt;album&gt;-NN.jpg</code>,
+        Galeri disusun dalam 4 kategori utama. Untuk menambah atau mengganti foto, taruh foto di
+        <code>assets/img/galeri/&lt;kategori&gt;/</code> dengan pola <code>&lt;kategori&gt;-NN.jpg</code>,
         lalu jalankan <code>python tools/build_gallery.py</code>.
       </p>
     </div>
@@ -186,81 +183,32 @@ def render_landing(albums_render: list[dict]) -> str:
     </div>
   """.rstrip()
 
-  return render_shell("IKSASS — Galeri", "Galeri IKSASS: Jejak perjuangan, khidmah, ukhuwah, pendidikan, dan Ke-NU-an.", inner)
+  return render_shell("IKSASS — Galeri", "Galeri IKSASS: Ke-IKSASS-an, Ke-Pesantrenan, Ke-Ilmu-an, dan Dawuh.", inner)
 
-def render_album_page(album: dict, images: list[str]) -> str:
-  if images:
-    items = []
-    for fn in images:
-      src = f"/assets/img/galeri/{album['slug']}/{fn}"
-      items.append(f"""
-      <a class=\"album-item\" href=\"{src}\" target=\"_blank\" rel=\"noopener\">
-        <img src=\"{src}\" alt=\"{album['title']}\" loading=\"lazy\">
-      </a>
-      """.rstrip())
-    grid_html = "\n".join(items)
-  else:
-    grid_html = f"""
-      <div class=\"album-empty\">
-        <p><strong>Belum ada foto di album ini.</strong></p>
-        <p>Taruh foto di <code>assets/img/galeri/{album['slug']}/</code> dengan pola <code>{album['slug']}-NN.jpg</code>, lalu jalankan <code>python tools/build_gallery.py</code>.</p>
-      </div>
-    """.rstrip()
-
-  inner = f"""
-    <div class=\"breadcrumb\"><a href=\"/galeri/\" style=\"text-decoration:none;color:inherit;opacity:.9\">Galeri</a> <span style=\"opacity:.6\">/</span> {album['tag']}</div>
-    <h1 class=\"page-title\">{album['title']}</h1>
-    <p class=\"page-sub\">{album['narrative']}</p>
-
-    <div class=\"hero-card\" style=\"margin:14px 0 0\">
-      <div class=\"pill\">{album['tag']}</div>
-      <div class=\"pill\">IKSASS</div>
-      <div class=\"pill\">Dokumentasi</div>
-    </div>
-
-    <style>
-      .album-grid{{display:grid;gap:12px;margin-top:14px;grid-template-columns:repeat(2,minmax(0,1fr));}}
-      @media (min-width:768px){{.album-grid{{grid-template-columns:repeat(3,minmax(0,1fr));}}}}
-      @media (min-width:1100px){{.album-grid{{grid-template-columns:repeat(4,minmax(0,1fr));}}}}
-      .album-item{{display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:rgba(0,0,0,.03);}}
-      .album-item img{{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .2s ease;}}
-      .album-item:hover img{{transform:scale(1.03);}}
-      .album-empty{{border:1px dashed rgba(0,0,0,.18);border-radius:14px;padding:16px;background:rgba(0,0,0,.02);grid-column:1/-1;}}
-      .album-empty code{{background:rgba(0,0,0,.06);padding:2px 6px;border-radius:8px;}}
-    </style>
-
-    <section class=\"album-grid\" aria-label=\"Foto album\">
-{grid_html}
-    </section>
-  """.rstrip()
-
-  return render_shell(f"{album['title']} | Galeri IKSASS", album['narrative'], inner)
 
 def main():
   manifest = []
-  albums_render = []
+  categories_render = []
 
-  for album in ALBUMS:
-    images = discover_images(album["slug"])
-    cover = cover_for(album["slug"], images)
-    albums_render.append({**album, "images": images, "cover": cover})
+  for cat in CATEGORIES:
+    images = discover_images(cat["slug"])
+    cover = cover_for(cat["slug"], images)
+    categories_render.append({**cat, "images": images, "cover": cover})
 
     manifest.append({
-      "album_slug": album["slug"],
-      "title": album["title"],
-      "tag": album["tag"],
-      "folder": f"assets/img/galeri/{album['slug']}/",
+      "album_slug": cat["slug"],
+      "title": cat["title"],
+      "tag": cat["tag"],
+      "folder": f"assets/img/galeri/{cat['slug']}/",
       "cover": cover.lstrip("/"),
       "images": images,
       "generated_at": datetime.utcnow().isoformat() + "Z",
     })
 
-    GALERI_DIR.mkdir(parents=True, exist_ok=True)
-    (GALERI_DIR / f"{album['slug']}.html").write_text(render_album_page(album, images), encoding="utf-8")
-
-  (GALERI_DIR / "index.html").write_text(render_landing(albums_render), encoding="utf-8")
+  GALERI_DIR.mkdir(parents=True, exist_ok=True)
+  (GALERI_DIR / "index.html").write_text(render_landing(categories_render), encoding="utf-8")
   write_manifest(manifest)
-  print("OK: galeri generated:", len(ALBUMS))
+  print("OK: galeri generated:", len(CATEGORIES))
 
 if __name__ == "__main__":
   main()
