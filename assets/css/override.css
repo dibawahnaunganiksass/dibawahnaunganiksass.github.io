@@ -3166,6 +3166,102 @@ text-decoration:underline;
   }
 }
 
+/* v31 k-card modern (Beranda + Kelembagaan) */
+.card.k-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border-color: rgba(15,122,60,.18);
+  background: linear-gradient(180deg, rgba(15,122,60,.06), rgba(255,255,255,1) 55%);
+  box-shadow: 0 8px 26px rgba(2,6,23,.06);
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s cubic-bezier(.2,.8,.2,1), border-color .18s cubic-bezier(.2,.8,.2,1);
+}
+@supports (background: color-mix(in srgb, black, white)){
+  .card.k-card{
+    border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--accent) 10%, white),
+      white 58%
+    );
+  }
+}
+.card.k-card::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), rgba(15,122,60,.35));
+  opacity: .95;
+}
+.card.k-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px 140px at 18% 0%, rgba(15,122,60,.10), transparent 60%);
+  opacity: .8;
+}
+.card.k-card .k-card-head,
+.card.k-card .desc{
+  position: relative;
+  z-index: 1;
+}
+.card.k-card .title{
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: -.01em;
+}
+.card.k-card .desc{
+  margin-top: 10px;
+  font-size: 13px;
+}
+.card.k-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 46px rgba(2,6,23,.12);
+  border-color: rgba(15,122,60,.45);
+}
+@supports (border-color: color-mix(in srgb, black, white)){
+  .card.k-card:hover{
+    border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+  }
+}
+.k-card-arrow{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(15,122,60,.08);
+  border: 1px solid rgba(15,122,60,.14);
+  opacity: 1;
+  color: rgba(17,24,39,.70);
+}
+@supports (background: color-mix(in srgb, black, white)){
+  .k-card-arrow{
+    background: color-mix(in srgb, var(--accent) 10%, white);
+    border-color: color-mix(in srgb, var(--accent) 18%, var(--border));
+  }
+}
+@media (hover:hover) and (pointer:fine){
+  .card.k-card:hover .k-card-arrow{
+    background: rgba(15,122,60,.12);
+    border-color: rgba(15,122,60,.22);
+    color: rgba(17,24,39,.84);
+  }
+}
+.card.k-card:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(15,122,60,.16), 0 16px 46px rgba(2,6,23,.12);
+}
+@media (prefers-reduced-motion: reduce){
+  .card.k-card{ transition: none; }
+  .k-card-arrow{ transition: none; }
+  .card.k-card:hover{ transform: none; }
+}
+
+
 .ppi-profil-head{ padding-top: 22px; padding-bottom: 8px; }
 .ppi-profil-hero{
   display:flex;
