@@ -123,10 +123,13 @@ def main():
   body = data.get("body",[])
   if not isinstance(body, list) or not body:
     raise SystemExit("body wajib berupa array paragraf, minimal 1 paragraf")
-  # Image (OG banner generated) + featured image (optional)
+  # Featured image (preferred) + fallback OG banner (only when no featured image)
+  # IMPORTANT:
+  # - Never overwrite an existing real photo at assets/img/berita/<slug>.png.
+  #   Some articles legitimately use that path for featured images.
+  # - Only generate a banner to <slug>.png when the article has NO featured_image.
   og_rel = f"/assets/img/berita/{slug}.png"
   img_out = OUT_IMG_DIR / f"{slug}.png"
-  make_banner(title, subtitle, img_out)
   featured_raw = (data.get("featured_image","") or data.get("image","")).strip()
   featured_rel = ""
   if featured_raw:
@@ -141,7 +144,11 @@ def main():
     else:
       # treat as filename within assets/img/berita
       featured_rel = f"/assets/img/berita/{cleaned}"
+  # Fallback: if no featured image, use /assets/img/berita/<slug>.png
+  # Generate it only if missing so we don't clobber real photos.
   if not featured_rel:
+    if not img_out.exists():
+      make_banner(title, subtitle, img_out)
     featured_rel = og_rel
   # HTML from template
   tpl = TEMPLATE.read_text(encoding="utf-8")
