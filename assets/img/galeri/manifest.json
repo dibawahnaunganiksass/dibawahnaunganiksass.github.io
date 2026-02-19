@@ -5,8 +5,17 @@
     "tag": "Akar",
     "folder": "assets/img/galeri/ke-pesantrenan/",
     "cover": "assets/img/galeri/ke-pesantrenan/ke-pesantrenan-01.jpg",
-    "images": [],
-    "generated_at": "2026-02-19T07:27:35Z"
+    "images": [
+      "ke-pesantrenan-01.jpg",
+      "ke-pesantrenan-02.jpg",
+      "ke-pesantrenan-03.jpg",
+      "ke-pesantrenan-04.jpg",
+      "ke-pesantrenan-05.jpg",
+      "ke-pesantrenan-06.jpg",
+      "ke-pesantrenan-07.jpg",
+      "ke-pesantrenan-08.jpg"
+    ],
+    "generated_at": "2026-02-19T11:52:17.226696Z"
   },
   {
     "album_slug": "ke-ilmu-an",
@@ -14,8 +23,17 @@
     "tag": "Proses",
     "folder": "assets/img/galeri/ke-ilmu-an/",
     "cover": "assets/img/galeri/ke-ilmu-an/ke-ilmu-an-01.jpg",
-    "images": [],
-    "generated_at": "2026-02-19T07:27:35Z"
+    "images": [
+      "ke-ilmu-an-01.jpg",
+      "ke-ilmu-an-02.jpg",
+      "ke-ilmu-an-03.jpg",
+      "ke-ilmu-an-04.jpg",
+      "ke-ilmu-an-05.jpg",
+      "ke-ilmu-an-06.jpg",
+      "ke-ilmu-an-07.jpg",
+      "ke-ilmu-an-08.jpg"
+    ],
+    "generated_at": "2026-02-19T11:52:17.227386Z"
   },
   {
     "album_slug": "ke-iksass-an",
@@ -23,8 +41,15 @@
     "tag": "Wadah",
     "folder": "assets/img/galeri/ke-iksass-an/",
     "cover": "assets/img/galeri/ke-iksass-an/ke-iksass-an-01.jpg",
-    "images": [],
-    "generated_at": "2026-02-19T07:27:35Z"
+    "images": [
+      "ke-iksass-an-01.jpg",
+      "ke-iksass-an-02.jpg",
+      "ke-iksass-an-03.jpg",
+      "ke-iksass-an-04.jpg",
+      "ke-iksass-an-05.jpg",
+      "ke-iksass-an-06.jpg"
+    ],
+    "generated_at": "2026-02-19T11:52:17.227652Z"
   },
   {
     "album_slug": "dawuhnya",
@@ -32,7 +57,14 @@
     "tag": "Hikmah",
     "folder": "assets/img/galeri/dawuhnya/",
     "cover": "assets/img/galeri/dawuhnya/dawuhnya-01.jpg",
-    "images": [],
-    "generated_at": "2026-02-19T07:27:35Z"
+    "images": [
+      "dawuhnya-01.jpg",
+      "dawuhnya-02.jpg",
+      "dawuhnya-03.jpg",
+      "dawuhnya-04.jpg",
+      "dawuhnya-05.jpg",
+      "dawuhnya-06.jpg"
+    ],
+    "generated_at": "2026-02-19T11:52:17.228545Z"
   }
 ]
