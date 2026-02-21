@@ -232,12 +232,12 @@ a:hover{color:var(--accent)}
 
 .section{padding:28px 0}
 .section h2{margin:0 0 12px;font-size:20px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--card-gap)}
 
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .section-head .small-link{white-space:nowrap}
 
-.news-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.news-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--card-gap)}
 .news-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.15s}
 .news-card:hover{border-color:rgba(15,122,60,.55);transform:translateY(-1px)}
 .news-thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg-soft)}
@@ -249,8 +249,12 @@ a:hover{color:var(--accent)}
 .center{text-align:center}
 .card{
   border:1px solid var(--border);border-radius:var(--radius);
-  background:#fff;padding:14px;transition:.15s;
+  background:#fff;padding:var(--card-pad);transition:.15s;
 }
+@media (max-width: 768px){
+  .card{ padding: var(--card-pad-sm); }
+}
+
 .card:hover{border-color:rgba(15,122,60,.55);transform:translateY(-1px)}
 .card .title{margin:0 0 6px;font-size:14px;font-weight:800}
 .card .desc{margin:0;color:var(--muted);font-size:13px}
@@ -2714,3 +2718,9 @@ footer a:focus-visible{
 /* Layar sangat kecil: tetap 1 baris (sesuai request).
    Ukuran ikon & padding CTA diperkecil agar muat tanpa wrap. */
 @media (max-width: 420px){
+
+
+/* card gap responsive */
+@media (max-width: 768px){
+  .grid4, .news-grid{ gap: var(--card-gap-sm); }
+}

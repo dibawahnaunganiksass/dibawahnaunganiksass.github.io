@@ -37,6 +37,12 @@
   --space-12: 48px;
   --space-16: 64px;
 
+  /* Semantic spacing */
+  --card-gap: var(--space-6);
+  --card-gap-sm: var(--space-4);
+  --card-pad: var(--space-5);
+  --card-pad-sm: var(--space-4);
+
   /* Radius */
   --radius-sm: 10px;
   --radius-md: 14px;

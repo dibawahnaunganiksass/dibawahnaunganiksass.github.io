@@ -941,7 +941,7 @@ main{ padding-top: 0 !important; }
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
+  gap:var(--card-gap);
 }
 .info-card{
   display:block;
@@ -1303,7 +1303,7 @@ main{ padding-top: 0 !important; }
   margin-top:14px;
   display:grid;
   grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:12px;
+  gap:var(--card-gap);
 }
 .proker-item{
   padding:14px 14px 12px;
@@ -1474,7 +1474,7 @@ main{ padding-top: 0 !important; }
 /* 5 cards in one row (desktop). Falls back gracefully on smaller screens */
 .doktrinasi-grid{
   display:grid;
-  gap:14px;
+  gap:var(--card-gap);
   grid-template-columns:repeat(5,minmax(0,1fr));
   align-items:stretch;
 }
@@ -1664,7 +1664,7 @@ main{ padding-top: 0 !important; }
 .page-berita .news-grid{
   display:grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap:var(--card-gap);
 }
 @media (max-width: 1199px){
   .page-berita .news-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
@@ -1702,7 +1702,7 @@ main{ padding-top: 0 !important; }
 .doktrinasi-grid{
   display:grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 18px;
+  gap: var(--card-gap);
   align-items: stretch;
 }
 @media (max-width: 1200px){
@@ -1843,8 +1843,8 @@ main{ padding-top: 0 !important; }
   padding-bottom: 12px !important;
 }
 .page-struktur .grid4{ margin-top: 0 !important; }
-.page-struktur .content-text{ margin-top: 12px !important; }
-.page-struktur .content-text p{ margin: 0 0 10px; }
+.page-struktur .struktur-notes{ margin-top: 12px; }
+.page-struktur .struktur-notes p{ margin: 0 0 10px; }
 
 
 /* KONTAK LAYOUT HELPERS */
@@ -3594,7 +3594,7 @@ text-decoration:underline;
 .home-highlights__sub{margin:0;color:var(--muted);max-width:70ch}
 
 /* Highlights: elegant glass cards (homepage only) */
-.home-highlights__grid{margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.home-highlights__grid{margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--card-gap);}
 
 .hl-card{
   position:relative;
@@ -3680,7 +3680,7 @@ text-decoration:underline;
 .hl-card:focus-visible{outline:3px solid rgba(15,122,60,.22);outline-offset:2px}
 
 /* Stats: impact tiles (homepage only) */
-.home-stats__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.home-stats__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--card-gap);}
 
 .stat-card{
   position:relative;
@@ -3727,7 +3727,7 @@ text-decoration:underline;
 .home-stats__note{margin:10px 0 0;color:var(--muted);font-size:12px;opacity:.92}
 
 @media (max-width: 980px){
-  .home-highlights__grid{grid-template-columns:1fr;gap:10px}
+  .home-highlights__grid{grid-template-columns:1fr;gap:var(--card-gap);}
   .hl-card{min-height:auto}
   .home-stats__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -3925,7 +3925,7 @@ text-decoration:underline;
   display:grid;
   grid-template-columns:repeat(12,1fr);
   grid-auto-rows:minmax(118px, auto);
-  gap:14px;
+  gap:var(--card-gap);
   margin-top:16px;
   align-items:stretch;
 }
@@ -4526,5 +4526,23 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
     top: calc(var(--iksass-header-h, 72px) + 0px) !important;
     margin-top: 0 !important;
     max-height: calc(100vh - var(--iksass-header-h, 72px) - 12px) !important;
+  }
+}
+
+/* Share buttons: use real icons (SVG) */
+.sharebtn__ico{display:inline-flex;align-items:center;justify-content:center}
+.sharebtn__ico svg{width:18px;height:18px;display:block}
+
+
+/* global card grid gap */
+@media (max-width: 768px){
+  .home-impact__grid,
+  .home-highlights__grid,
+  .home-stats__grid,
+  .page-berita .news-grid,
+  .info-grid,
+  .proker-grid,
+  .doktrinasi-grid{
+    gap: var(--card-gap-sm) !important;
   }
 }
