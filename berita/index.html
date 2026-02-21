@@ -28,7 +28,7 @@
 <link href="../assets/css/news-premium.min.css" rel="stylesheet"/>
 <link href="../assets/css/override.min.css" rel="stylesheet"/>
 <script defer="" src="../assets/js/meta-url.min.js"></script>
-<link href="/assets/img/favicon.ico" rel="icon"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><meta content="id_ID" property="og:locale"/><style>/* Progressive enhancement for news listing */
+<link href="../assets/img/favicon.ico" rel="icon"/><link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><meta content="id_ID" property="og:locale"/><style>/* Progressive enhancement for news listing */
 .page-berita .news-loading{padding:14px;color:var(--muted)}
 .page-berita .news-error{padding:14px;color:var(--muted)}
 </style><!-- SEO:BEGIN -->
@@ -58,7 +58,7 @@
 }
 </script>
 <link href="https://dibawahnaunganiksass.github.io/berita/" rel="canonical"/>
-<link href="/site.webmanifest" rel="manifest"/>
+<link href="../site.webmanifest" rel="manifest"/>
 </head>
 <body class="page-berita">
 <div data-include="header"></div>
@@ -114,10 +114,21 @@
         if(!slug || !title) return;
 
         const href = `./${slug}/`;
-        let imgSrc = escapeText(item.image).trim() || '/assets/img/og-default.png';
-        // Normalize path so entries like "assets/..." work from /berita/ on GitHub Pages
-        if (imgSrc && !/^(https?:)?\//.test(imgSrc)) {
-          imgSrc = '/' + imgSrc.replace(/^\.?\//, '');
+        const SITE_BASE = new URL('../', document.baseURI || location.href).toString();
+        const resolveFromSite = (p) => new URL(String(p || '').replace(/^\/+/, ''), SITE_BASE).toString();
+
+        const imgSrcRaw = escapeText(item.image).trim();
+        let imgSrc = imgSrcRaw ? imgSrcRaw : 'assets/img/og-default.png';
+
+        // Normalize image source to be safe on domain-root and subfolder deployments.
+        if (/^(https?:)?\/\//.test(imgSrc) || imgSrc.startsWith('data:')) {
+          // keep absolute / data
+        } else if (imgSrc.startsWith('/')) {
+          // treat as site-root relative (not domain-root)
+          imgSrc = resolveFromSite(imgSrc.slice(1));
+        } else {
+          // relative like 'assets/...'
+          imgSrc = resolveFromSite(imgSrc.replace(/^\.\/?/, ''));
         }
         const excerpt = escapeText(item.excerpt).trim();
         const loc = escapeText(item.location).trim();

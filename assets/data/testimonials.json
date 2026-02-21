@@ -1,0 +1,29 @@
+{
+  "updated_at": "2026-02-20",
+  "items": [
+    {
+      "name": "Alumni Rayon Surabaya",
+      "role": "Koordinator Kegiatan",
+      "quote": "IKSASS membuat kami tetap terhubung dalam satu perjuangan. Saat ada agenda pesantren, kami bergerak cepat—tanpa banyak komando.",
+      "location": "Jawa Timur"
+    },
+    {
+      "name": "Alumni Komisariat Jakarta",
+      "role": "Bidang Publikasi",
+      "quote": "Yang paling terasa: budaya khidmah. Bukan sekadar kumpul, tapi ada arah kerja—dan ada dampak yang bisa dilihat.",
+      "location": "DKI Jakarta"
+    },
+    {
+      "name": "Alumni Sub Rayon Malang",
+      "role": "Penggerak Sosial",
+      "quote": "Berjuang bersama itu bukan slogan. Saat ada kebutuhan sosial, jaringan alumni saling menguatkan—ringan tapi konsisten.",
+      "location": "Jawa Timur"
+    },
+    {
+      "name": "Alumni PPSS Sukorejo",
+      "role": "Relawan Program",
+      "quote": "IKSASS mengajarkan: mengabdi tanpa batas itu dimulai dari hal kecil—tertib, hadir, dan menuntaskan amanah.",
+      "location": "Situbondo"
+    }
+  ]
+}
