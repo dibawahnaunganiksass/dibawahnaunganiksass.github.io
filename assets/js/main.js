@@ -658,8 +658,6 @@ function setupActiveNav(){
 }
 
 function init(){
-      setupHeaderScrollFX();
-      setupHeroEntrance();
       setupActiveNav();
 setupSkipLinkFocus();
     setupDesktopDropdowns();
@@ -678,66 +676,6 @@ setupSkipLinkFocus();
   document.addEventListener('DOMContentLoaded', init);
   document.addEventListener('partials:loaded', init);
 })();
-
-/* ===============================
-   Premium UI polish
-   - Navbar blur + elevation on scroll
-   - Hero text entrance (subtle)
-   =============================== */
-function setupHeaderScrollFX(){
-  window.__IKSASS_INIT = window.__IKSASS_INIT || {};
-  if (window.__IKSASS_INIT.headerScrollFX) return;
-
-  const header = document.querySelector('header.header');
-  // Header is injected via partials on many pages. Depending on script load order,
-  // main.js can run before the header exists. If we return early without setting
-  // up a watcher, the brandbar auto-hide and header height sync will never run.
-  if (!header) {
-    if (window.__IKSASS_INIT.headerScrollFXObserver) return;
-    const obs = new MutationObserver(() => {
-      const h = document.querySelector('header.header');
-      if (h) {
-        obs.disconnect();
-        window.__IKSASS_INIT.headerScrollFXObserver = false;
-        setupHeaderScrollFX();
-      }
-    });
-    obs.observe(document.documentElement, { childList: true, subtree: true });
-    window.__IKSASS_INIT.headerScrollFXObserver = true;
-    return;
-  }
-
-  const root = document.documentElement;
-  const syncHeaderHeight = () => {
-    // Keep CSS variable in sync so fixed-position mega menus and include placeholders
-    // can account for the real header height (including brandbar).
-    root.style.setProperty('--iksass-header-h', `${header.offsetHeight}px`);
-  };
-
-  const onScroll = () => {
-    const scrolled = (window.scrollY || 0) > 8;
-    header.classList.toggle('is-scrolled', scrolled);
-    syncHeaderHeight();
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', () => { syncHeaderHeight(); onScroll(); }, { passive: true });
-  // initial sync
-  syncHeaderHeight();
-  onScroll();
-  window.__IKSASS_INIT.headerScrollFX = true;
-}
-
-function setupHeroEntrance(){
-  window.__IKSASS_INIT = window.__IKSASS_INIT || {};
-  const hero = document.querySelector('.hero.hero--dramatic');
-  if (!hero) return;
-  if (hero.classList.contains('is-ready')) return;
-
-  // Defer one frame so CSS transitions can apply cleanly.
-  requestAnimationFrame(() => hero.classList.add('is-ready'));
-  window.__IKSASS_INIT.heroEntrance = true;
-}
 
 
 /* ===============================

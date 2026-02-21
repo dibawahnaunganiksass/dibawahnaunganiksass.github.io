@@ -13,8 +13,6 @@
 <meta content="#0f6b3d" name="theme-color"/>
 <link href="assets/img/logo-iksass.png" rel="icon"/>
 <link href="assets/img/logo-iksass.png" rel="apple-touch-icon"/>
-<!-- Performance: preload hero background image -->
-<link as="image" fetchpriority="high" href="assets/img/pesantren/hero.jpg" rel="preload"/>
 <!-- Social preview (Open Graph / Twitter) -->
 <link as="style" href="assets/css/main.min.css" rel="preload"/><link href="assets/css/main.min.css" rel="stylesheet"/>
 <link as="style" href="assets/css/design-system.min.css" rel="preload"/><link href="assets/css/design-system.min.css" rel="stylesheet"/>
@@ -31,10 +29,9 @@
 <body>
 <div data-include="header"></div>
 <main id="konten" tabindex="-1">
-<section class="hero hero--dramatic">
+<section class="hero">
 <div class="container hero-inner">
 <div class="hero-left">
-      <p class="hero-eyebrow">Berjuang Bersama • Mengabdi Tanpa Batas</p>
 <h1 class="h-title">Ikatan Santri Alumni<br/><span class="hero-line2">Salafiyah Syafi’iyah (IKSASS)</span></h1>
 <p class="h-sub">
 <strong>Rumah besar santri dan alumni Salafiyah Syafi’iyah</strong><br/>
@@ -45,36 +42,8 @@
 <a class="btn ghost" href="dokumen/">Info</a>
 <a class="btn ghost" href="profil/struktur-organisasi/">Struktur</a>
 </div>
-    </div>
-  </div>
-</section>
-<section class="trustbar" aria-label="Akses resmi IKSASS">
-  <div class="container trustbar-inner">
-    <div class="trustbar-item">
-      <span class="trust-ico" aria-hidden="true">📄</span>
-      <div class="trust-txt">
-        <div class="trust-title">Dokumen Resmi</div>
-        <div class="trust-sub">AD/ART, pedoman, dan arsip organisasi.</div>
-      </div>
-      <a class="trust-link" href="dokumen/" aria-label="Buka Dokumen Resmi">Buka →</a>
-    </div>
-    <div class="trustbar-item">
-      <span class="trust-ico" aria-hidden="true">🏛️</span>
-      <div class="trust-txt">
-        <div class="trust-title">Struktur Organisasi</div>
-        <div class="trust-sub">Pusat, rayon, komisariat, dan jaringan.</div>
-      </div>
-      <a class="trust-link" href="profil/struktur-organisasi/" aria-label="Buka Struktur Organisasi">Buka →</a>
-    </div>
-    <div class="trustbar-item">
-      <span class="trust-ico" aria-hidden="true">☎️</span>
-      <div class="trust-txt">
-        <div class="trust-title">Kontak Resmi</div>
-        <div class="trust-sub">Sekretariat dan kanal komunikasi.</div>
-      </div>
-      <a class="trust-link" href="kontak/" aria-label="Buka Kontak Resmi">Buka →</a>
-    </div>
-  </div>
+</div>
+</div>
 </section>
 <section aria-label="Tentang website ini" class="site-note">
 <div class="container">
@@ -92,14 +61,11 @@
         <p class="home-highlights__sub">Akses cepat ke informasi utama IKSASS.</p>
       </div>
     </div>
+
     <div class="home-highlights__grid">
       <a class="card hl-card" href="kelembagaan/">
         <div class="hl-card__head">
-          <span aria-hidden="true" class="hl-icon">
-            <svg class="hl-icon__svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-              <path d="M12 3l9 5v2H3V8l9-5zm-7 8h2v8H5v-8zm4 0h2v8H9v-8zm4 0h2v8h-2v-8zm4 0h2v8h-2v-8zM4 21v-2h16v2H4z"/>
-            </svg>
-          </span>
+          <span aria-hidden="true" class="hl-icon">🏛️</span>
           <p class="title">Kelembagaan</p>
         </div>
         <p class="desc">Lihat pengurus pusat, rayon, sub rayon, dan komisariat.</p>
@@ -108,12 +74,7 @@
 
       <a class="card hl-card" href="berita/">
         <div class="hl-card__head">
-          <span aria-hidden="true" class="hl-icon">
-            <svg class="hl-icon__svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-              <path d="M4 4h13a3 3 0 013 3v9a4 4 0 01-4 4H7a3 3 0 01-3-3V4zm2 2v11a1 1 0 001 1h9.5A2.5 2.5 0 0019 15.5V7a1 1 0 00-1-1H6zm3 2h7v2H9V8zm0 4h7v2H9v-2z"/>
-              <path d="M3 9H1v8a4 4 0 004 4h10v-2H5a2 2 0 01-2-2V9z"/>
-            </svg>
-          </span>
+          <span aria-hidden="true" class="hl-icon">📰</span>
           <p class="title">Berita Terbaru</p>
         </div>
         <p class="desc">Publikasi kegiatan, agenda, dan perkembangan terbaru.</p>
@@ -122,12 +83,7 @@
 
       <a class="card hl-card" href="dokumen/">
         <div class="hl-card__head">
-          <span aria-hidden="true" class="hl-icon">
-            <svg class="hl-icon__svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-              <path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 6H6v12h14V8z"/>
-              <path d="M8 11h4v4H8v-4zm6 0h4v2h-4v-2zm0 3h4v2h-4v-2z"/>
-            </svg>
-          </span>
+          <span aria-hidden="true" class="hl-icon">📅</span>
           <p class="title">Agenda</p>
         </div>
         <p class="desc">Jadwal kegiatan dan informasi agenda yang akan datang.</p>
@@ -156,37 +112,13 @@
         <p class="stat-value" data-home-stat="dokumen" aria-label="Jumlah halaman dokumen">—</p>
         <p class="stat-label">Dokumen &amp; Panduan</p>
       </div>
-    </div>    <p class="home-stats__note">Angka-angka ini diperbarui otomatis dari indeks data situs.</p>
+    </div>
+    <p class="home-stats__note">Angka-angka ini diperbarui otomatis dari indeks data situs.</p>
   </div>
 </section>
-
-<section aria-labelledby="home-impact-title" class="section home-impact">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <p class="home-impact__eyebrow">Sorotan Program</p>
-        <h2 id="home-impact-title">Program Unggulan</h2>
-        <p class="home-impact__sub">Arah kerja nyata IKSASS—dirancang untuk memperkuat alumni dan memperluas khidmah.</p>
-      </div>
-      <a class="small-link" href="profil/program-kerja/">Lihat program</a>
-    </div>
-    <div class="home-impact__grid" data-home-impact>
-      <!-- Diisi otomatis dari /assets/data/impact.json -->
-      <div class="card impact-card impact-skel" aria-hidden="true"></div>
-      <div class="card impact-card impact-skel" aria-hidden="true"></div>
-      <div class="card impact-card impact-skel" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
-<section class="section home-kelmbagaan">
+<section class="section">
 <div class="container">
-<div class="section-head">
-  <div>
-    <h2>Kelembagaan</h2>
-    <p class="home-kelmbagaan__sub">Struktur organisasi dari pusat hingga rayon—agar gerak khidmah lebih terarah.</p>
-  </div>
-  <a class="small-link" href="kelembagaan/">Lihat kelembagaan</a>
-</div>
+<h2>Kelembagaan</h2>
 <div class="grid4">
 <a aria-label="Buka halaman Pengurus Pusat IKSASS" class="card k-card" href="kelembagaan/pengurus-pusat-iksass/">
 <div class="k-card-head">
@@ -226,30 +158,6 @@
 </a>
 </div>
 </div>
-</section>
-
-<section aria-labelledby="home-testimonials-title" class="section home-testimonials">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2 id="home-testimonials-title">Suara Alumni</h2>
-        <p class="home-testimonials__sub">Potongan kisah singkat—tentang perjuangan bersama, dan khidmah tanpa batas.</p>
-      </div>
-      <a class="small-link" href="tentang/iksass/">Tentang IKSASS</a>
-    </div>
-    <div class="testi" data-home-testi>
-      <div class="testi__viewport" aria-live="polite">
-        <div class="testi__track" data-home-testi-track>
-          <!-- Diisi otomatis dari /assets/data/testimonials.json -->
-        </div>
-      </div>
-      <div class="testi__controls">
-        <button class="iconbtn" type="button" data-home-testi-prev aria-label="Sebelumnya">‹</button>
-        <div class="testi__dots" data-home-testi-dots aria-label="Indikator slide"></div>
-        <button class="iconbtn" type="button" data-home-testi-next aria-label="Berikutnya">›</button>
-      </div>
-    </div>
-  </div>
 </section>
 <section class="section" id="berita">
 <div class="container">
@@ -411,8 +319,6 @@
 <script defer src="assets/js/accordion.min.js"></script>
 <script defer="" src="assets/js/main.min.js"></script>
 <script defer="" src="assets/js/home-news.min.js"></script>
-<script defer="" src="assets/js/home-impact.min.js"></script>
-<script defer="" src="assets/js/home-testimonials.min.js"></script>
 <script defer="" src="assets/js/search-index.min.js"></script>
 <script defer="" src="assets/js/search.min.js"></script>
 </body>
