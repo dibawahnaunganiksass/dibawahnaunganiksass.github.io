@@ -155,7 +155,7 @@ main{ padding-top: 0 !important; }
 .header .nav-left{
   display:flex;
   align-items:center;
-  gap: var(--header-gap-mobile, var(--header-gap));
+  gap: 10px;
   min-width: 0;
 }
 
@@ -179,7 +179,7 @@ main{ padding-top: 0 !important; }
 .header .nav-cta{
   display: flex;
   align-items: center;
-  gap: var(--header-gap-mobile, var(--header-gap));
+  gap: var(--header-gap);
 }
 
 /* Mobile header CTA icons (SVG, consistent across platforms) */

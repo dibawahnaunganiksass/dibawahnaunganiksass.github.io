@@ -15,7 +15,6 @@
   --radius: 14px;
   /* Spasi ikon header (kiri & kanan) agar konsisten di mobile/desktop */
   --header-gap: 10px;
-  --header-gap-mobile: 8px;
   /* Lebar konten utama (dibuat lebih lega agar halaman terasa "utuh") */
   --max: 1320px;
 }
@@ -2726,9 +2725,4 @@ footer a:focus-visible{
 /* card gap responsive */
 @media (max-width: 768px){
   .grid4, .news-grid{ gap: var(--card-gap-sm); }
-}
-
-@media (max-width:991px){
-  .header .nav-left{gap:var(--header-gap-mobile, var(--header-gap));}
-  .header .nav-cta{gap:var(--header-gap-mobile, var(--header-gap));}
 }
