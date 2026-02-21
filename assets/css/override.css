@@ -155,7 +155,7 @@ main{ padding-top: 0 !important; }
 .header .nav-left{
   display:flex;
   align-items:center;
-  gap: var(--header-gap-mobile, var(--header-gap));
+  gap: var(--header-gap-left-mobile, var(--header-gap-mobile, var(--header-gap)));
   min-width: 0;
 }
 
@@ -179,7 +179,15 @@ main{ padding-top: 0 !important; }
 .header .nav-cta{
   display: flex;
   align-items: center;
-  gap: var(--header-gap-mobile, var(--header-gap));
+  /* Presisi mobile: gunakan margin antar tombol (lebih konsisten lintas engine)
+     agar jarak icon kanan = jarak kiri (Quick ↔ Brand). */
+  gap: 0;
+}
+
+/* Presisi: jarak antar icon kanan (Search/Login/Menu) = jarak kiri (Quick ↔ Brand) */
+.header .nav-cta .iconbtn{ margin: 0; }
+.header .nav-cta .iconbtn + .iconbtn{
+  margin-left: var(--header-gap-left-mobile, var(--header-gap-mobile, var(--header-gap)));
 }
 
 /* Mobile header CTA icons (SVG, consistent across platforms) */
