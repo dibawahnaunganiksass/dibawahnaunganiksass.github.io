@@ -179,7 +179,15 @@ main{ padding-top: 0 !important; }
 .header .nav-cta{
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+}
+
+/* Mobile header CTA icons (SVG, consistent across platforms) */
+.ico-search{
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27currentColor%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2711%27%20cy%3D%2711%27%20r%3D%277%27/%3E%3Cpath%20d%3D%27M20%2020l-3.5-3.5%27/%3E%3C/svg%3E");
+}
+.ico-menu{
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27currentColor%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M4%207h16%27/%3E%3Cpath%20d%3D%27M4%2012h16%27/%3E%3Cpath%20d%3D%27M4%2017h16%27/%3E%3C/svg%3E");
 }
 
 .header .nav-search{
