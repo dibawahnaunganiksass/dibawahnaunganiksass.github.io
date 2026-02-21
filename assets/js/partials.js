@@ -1,7 +1,8 @@
 (() => {
   // Bump this version whenever shared partial markup changes.
   // This prevents stale header/footer HTML from persisting via localStorage.
-  const CACHE_VERSION = "1771210001";
+  // Bump when partial markup/behavior changes to avoid stale cached header/footer.
+  const CACHE_VERSION = "1771211300";
 
   // ---
   // Root detection (subfolder-safe)
@@ -68,32 +69,50 @@
     fetch(indexUrl, { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((list) => {
-        const bySlug = new Map((list || []).map((it) => [String(it.slug || ''), it]));
-        mega.querySelectorAll('a.mega-card').forEach((card) => {
-          const href = card.getAttribute('href') || '';
-          const m = href.match(/berita\/([^\/]+)\/?$/);
-          const slug = m ? m[1] : '';
-          const item = bySlug.get(slug);
-          if (!item) return;
+        // Desktop mega menu layout is designed for 4 cards (like the original).
+        // We keep it to 4 latest items for completeness.
+        const items = Array.isArray(list) ? list.slice(0, 4) : [];
+        if (!items.length) return;
 
-          const body = card.querySelector('.mega-card-body');
-          if (!body) return;
+        const escapeHTML = (s) => String(s || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/\"/g, '&quot;')
+          .replace(/'/g, '&#039;');
 
-          if (!body.querySelector('.mega-card-snippet, .mega-card-excerpt') && item.excerpt) {
-            const ex = document.createElement('div');
-            ex.className = 'mega-card-snippet mega-card-excerpt';
-            ex.textContent = item.excerpt;
-            body.appendChild(ex);
-          }
+        const resolveImg = (imgPath) => {
+          const raw = String(imgPath || '').trim();
+          if (!raw) return `${rootPrefix}assets/img/og-default.png`;
+          if (/^https?:\/\//i.test(raw)) return raw;
+          if (raw.startsWith('/')) return `${rootPrefix}${raw.replace(/^\//, '')}`;
+          return `${rootPrefix}${raw.replace(/^\.\//, '')}`;
+        };
 
-          const meta = body.querySelector('.mega-card-meta');
-          if (meta && item.date_display) meta.textContent = item.date_display;
-        });
+        mega.innerHTML = items.map((it) => {
+          const slug = escapeHTML(it.slug);
+          const href = `${rootPrefix}berita/${slug}/`;
+          const img = resolveImg(it.image);
+          const title = escapeHTML(it.title);
+          const date = escapeHTML(it.date_display || '');
+          const excerpt = escapeHTML(it.excerpt || '');
+          return `
+            <a class="mega-card" href="${href}">
+              <img class="mega-thumb" src="${img}" alt="${title}" decoding="async" loading="lazy" fetchpriority="low" width="160" height="96"/>
+              <div class="mega-card-body">
+                <div class="mega-card-title">${title}</div>
+                <div class="mega-card-meta">${date}</div>
+                <div class="mega-card-snippet mega-card-excerpt">${excerpt}</div>
+              </div>
+            </a>
+          `.trim();
+        }).join('');
       })
       .catch(() => {
         // Silent fail: mega menu stays as-is
       });
   };
+
 
   // Cache key per partial name only. We cache the RAW partial (still containing
   // {root} tokens) and apply the correct root prefix per page at render time.
@@ -180,7 +199,32 @@
       injectAll('footer', siteBaseUrl, rootPrefix),
     ]);
 
-    ensureScript(`${rootPrefix}assets/js/main.js`, 'main');
+    // Pages already include main.min.js, but ensure it's present for pages that don't.
+    // IMPORTANT: Always load the same entrypoint (minified) to avoid double-init.
+    ensureScript(`${rootPrefix}assets/js/main.min.js`, 'main');
+
+    // Ensure brandbar Mode A works even when header/footer are injected asynchronously.
+    // main.js also sets this up, but depending on load order it can run before the header exists.
+    // This binder is idempotent and keeps the CSS var --iksass-header-h in sync.
+    (function bindHeaderScrollFX(){
+      if (window.__IKSASS_PARTIAL_SCROLL_FX) return;
+      const header = document.querySelector('header.header');
+      if (!header) return;
+      const root = document.documentElement;
+      const syncHeaderHeight = () => {
+        root.style.setProperty('--iksass-header-h', `${header.offsetHeight}px`);
+      };
+      const onScroll = () => {
+        const scrolled = (window.scrollY || 0) > 8;
+        header.classList.toggle('is-scrolled', scrolled);
+        syncHeaderHeight();
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', () => { syncHeaderHeight(); onScroll(); }, { passive: true });
+      requestAnimationFrame(() => { syncHeaderHeight(); onScroll(); });
+      window.__IKSASS_PARTIAL_SCROLL_FX = true;
+    })();
+
     document.dispatchEvent(new CustomEvent('partials:loaded'));
   })();
 })();

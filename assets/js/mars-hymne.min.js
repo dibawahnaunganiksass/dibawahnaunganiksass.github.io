@@ -336,7 +336,7 @@
 
     wrap.innerHTML = `
       <div class="mh-print-watermark" aria-hidden="true">
-        <img src="../../assets/img/logo-iksass.png" alt="" />
+        <img src="../../assets/img/logo-iksass.png" alt="" loading="lazy" decoding="async" />
       </div>
       <div class="mh-print-head">
         <div class="mh-print-brand">
