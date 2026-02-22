@@ -25,6 +25,9 @@ GALERI_DIR = ROOT / "galeri"
 IMG_ROOT = ROOT / "assets" / "img" / "galeri"
 MANIFEST_PATH = IMG_ROOT / "manifest.json"
 
+# Base URL for social sharing (Open Graph/Twitter cards)
+SITE_ORIGIN = "https://dibawahnaunganiksass.github.io"
+
 CATEGORIES = [
   {
     "slug": "ke-pesantrenan",
@@ -125,8 +128,13 @@ def write_manifest(items: list[dict]):
   with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
     json.dump(items, f, ensure_ascii=False, indent=2)
 
-def render_shell(title: str, description: str, inner_html: str) -> str:
-  """Shell HTML sesuai pola file galeri yang sudah ada (pakai minified assets)."""
+def render_shell(title: str, description: str, inner_html: str, url_path: str) -> str:
+  """Shell HTML sesuai pola file galeri yang sudah ada (pakai minified assets).
+  Termasuk meta Open Graph/Twitter agar saat di-share keluar thumbnail dan narasi.
+  """
+  abs_url = f"{SITE_ORIGIN}{url_path}"
+  og_image = f"{SITE_ORIGIN}/assets/img/og-default.png"
+
   return f"""<!DOCTYPE html>
 
 <html lang=\"id\">
@@ -137,29 +145,45 @@ def render_shell(title: str, description: str, inner_html: str) -> str:
 <meta content=\"{description}\" name=\"description\"/>
 <meta content=\"index, follow\" name=\"robots\"/>
 <meta content=\"#0f766e\" name=\"theme-color\"/>
+
+<meta content=\"website\" property=\"og:type\"/>
+<meta content=\"IKSASS | Ikatan Santri Alumni Salafiyah Syafi’iyah\" property=\"og:site_name\"/>
+<meta content=\"{title}\" property=\"og:title\"/>
+<meta content=\"{description}\" property=\"og:description\"/>
+<meta content=\"{og_image}\" property=\"og:image\"/>
+<meta content=\"{abs_url}\" property=\"og:url\"/>
+<meta content=\"1200\" property=\"og:image:width\"/>
+<meta content=\"630\" property=\"og:image:height\"/>
+<meta content=\"id_ID\" property=\"og:locale\"/>
+
+<meta content=\"summary_large_image\" name=\"twitter:card\"/>
+<meta content=\"{title}\" name=\"twitter:title\"/>
+<meta content=\"{description}\" name=\"twitter:description\"/>
+<meta content=\"{og_image}\" name=\"twitter:image\"/>
+
 <link href=\"../assets/img/logo-iksass.png\" rel=\"icon\"/>
 <link href=\"../assets/img/logo-iksass.png\" rel=\"apple-touch-icon\"/>
 
 <link as=\"style\" href=\"../assets/css/main.min.css\" rel=\"preload\"/><link href=\"../assets/css/main.min.css\" rel=\"stylesheet\"/>
 <link as=\"style\" href=\"../assets/css/design-system.min.css\" rel=\"preload\"/><link href=\"../assets/css/design-system.min.css\" rel=\"stylesheet\"/>
 <link href=\"../assets/css/override.min.css\" rel=\"stylesheet\"/>
-<script defer=\"\" src=\"../assets/js/meta-url.min.js\"></script>
+
 </head>
 <body>
-<div data-include=\"header\"></div>
-<main class=\"page\" id=\"konten\" tabindex=\"-1\">
-<div class=\"container\">
+  <header data-include=\"header\"></header>
+
+  <main class=\"page\">
 {inner_html}
-</div>
-</main>
-<div data-include=\"footer\"></div>
-<script defer=\"\" src=\"../assets/js/partials.min.js\"></script>
-<script defer=\"\" src=\"../assets/js/main.min.js\"></script>
-<script defer=\"\" src=\"../assets/js/search-index.min.js\"></script>
-<script defer=\"\" src=\"../assets/js/search.min.js\"></script>
+  </main>
+
+  <footer data-include=\"footer\"></footer>
+
+  <script src=\"../assets/js/include.js\"></script>
+  <script src=\"../assets/js/main.js\"></script>
 </body>
 </html>
-"""
+""".rstrip()
+
 
 def render_landing(categories_render: list[dict]) -> str:
   cards = []
@@ -208,7 +232,7 @@ def render_landing(categories_render: list[dict]) -> str:
     </div>
   """.rstrip()
 
-  return render_shell("IKSASS — Galeri", "Galeri IKSASS: Ke-IKSASS-an, Ke-Pesantrenan, Ke-Ilmu-an, dan Dawuh.", inner)
+  return render_shell("IKSASS — Galeri", "Galeri IKSASS: Ke-IKSASS-an, Ke-Pesantrenan, Ke-Ilmu-an, dan Dawuh.", inner, "/galeri/")
 
 
 def render_category_page(cat: dict) -> str:
@@ -259,7 +283,7 @@ def render_category_page(cat: dict) -> str:
 </section>
 """.strip()
 
-  return render_shell(title, description, inner)
+  return render_shell(title, description, inner, f"/galeri/{cat['slug']}.html")
 
 
 def main():
