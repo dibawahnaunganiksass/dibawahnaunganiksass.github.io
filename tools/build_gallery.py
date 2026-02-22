@@ -30,40 +30,84 @@ CATEGORIES = [
     "slug": "ke-pesantrenan",
     "title": "Ke-Pesantrenan",
     "tag": "Akar",
-    "narrative": "Akar tradisi, adab, dan suasana pesantren yang membentuk langkah."
+    "breadcrumb": "Perjuangan",
+    "narrative": "Akar tradisi, adab, dan suasana pesantren yang membentuk langkah.",
+    "description": "Jejak tradisi pesantren, adab, dan suasana yang membentuk langkah IKSASS.",
+    "alt": "Mubes IKSASS 2025 — Konsolidasi & Arah Baru",
   },
   {
     "slug": "ke-ilmu-an",
     "title": "Ke-Ilmu-an",
     "tag": "Proses",
-    "narrative": "Proses belajar, ngaji, dan laku keilmuan yang menghidupkan makna."
+    "breadcrumb": "Sosial",
+    "narrative": "Proses belajar, ngaji, dan laku keilmuan yang menghidupkan makna.",
+    "description": "Dokumentasi proses belajar, ngaji, dan laku keilmuan dalam IKSASS.",
+    "alt": "Khidmah Sosial — Hadir untuk Umat",
   },
   {
     "slug": "ke-iksass-an",
     "title": "Ke-IKSASS-an",
     "tag": "Wadah",
-    "narrative": "Wadah ukhuwah, khidmah, dan kerja-kerja kolektif alumni."
+    "breadcrumb": "Ukhuwah",
+    "narrative": "Wadah ukhuwah, khidmah, dan kerja-kerja kolektif alumni.",
+    "description": "Dokumentasi kebersamaan alumni: ukhuwah, khidmah, dan kerja kolektif IKSASS.",
+    "alt": "Silaturahim Alumni — Menjaga Ikatan, Merawat Kebersamaan",
   },
   {
     "slug": "dawuhnya",
     "title": "Dawuh",
     "tag": "Hikmah",
-    "narrative": "Dawuh dan petuah sebagai penuntun adab dan arah gerak."
+    "breadcrumb": "Pendidikan",
+    "narrative": "Dawuh dan petuah sebagai penuntun adab dan arah gerak.",
+    "description": "Dawuh dan petuah sebagai penuntun adab serta arah gerak IKSASS.",
+    "alt": "Pendidikan & Ke-NU-an — Merawat Ilmu, Menjaga Tradisi",
   },
 ]
 
 IMG_EXTS = (".jpg", ".jpeg", ".png", ".webp")
 
-def discover_images(album_slug: str) -> list[str]:
+# Strict naming: <slug>-NN.(jpg|jpeg|png|webp) with NN 2-digit.
+# We still *sort* by any -\d{2,3} we find for robustness, but validation enforces 2-digit.
+def _is_valid_name(slug: str, filename: str) -> bool:
+  return re.fullmatch(
+    rf"{re.escape(slug)}-(\d{{2}})\.(?:jpg|jpeg|png|webp)",
+    filename,
+    flags=re.IGNORECASE,
+  ) is not None
+
+
+def _extract_index(filename: str) -> int | None:
+  m = re.search(r"-(\d{2,3})\.", filename)
+  if not m:
+    return None
+  try:
+    return int(m.group(1))
+  except ValueError:
+    return None
+
+
+def validate_album(album_slug: str) -> tuple[list[str], list[str]]:
+  """Return (valid_files, invalid_files)."""
   folder = IMG_ROOT / album_slug
   if not folder.exists():
-    return []
-  files = [p.name for p in folder.iterdir() if p.is_file() and p.suffix.lower() in IMG_EXTS]
+    return ([], [])
+
+  all_files = [p.name for p in folder.iterdir() if p.is_file() and p.suffix.lower() in IMG_EXTS]
+  valid: list[str] = []
+  invalid: list[str] = []
+  for fn in all_files:
+    (valid if _is_valid_name(album_slug, fn) else invalid).append(fn)
+  return (sorted(valid), sorted(invalid))
+
+def discover_images(album_slug: str) -> list[str]:
+  # Only include VALID files in the gallery output.
+  valid, _invalid = validate_album(album_slug)
+  files = valid
 
   def key(name: str):
-    m = re.search(r"-(\d{2,3})\.", name)
-    if m:
-      return (0, int(m.group(1)), name.lower())
+    idx = _extract_index(name)
+    if idx is not None:
+      return (0, idx, name.lower())
     return (1, 10**9, name.lower())
 
   return sorted(files, key=key)
@@ -82,47 +126,37 @@ def write_manifest(items: list[dict]):
     json.dump(items, f, ensure_ascii=False, indent=2)
 
 def render_shell(title: str, description: str, inner_html: str) -> str:
-  # Keep head/meta consistent with site. Use relative CSS like other pages in /galeri/.
+  """Shell HTML sesuai pola file galeri yang sudah ada (pakai minified assets)."""
   return f"""<!DOCTYPE html>
+
 <html lang=\"id\">
 <head>
-  <meta charset=\"utf-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-  <title>{title}</title>
-  <meta name=\"description\" content=\"{description}\">
-  <meta name=\"robots\" content=\"index, follow\">
-  <meta name=\"theme-color\" content=\"#0f766e\">
-  <link rel=\"icon\" href=\"/assets/img/logo-iksass.png\">
-  <link rel=\"apple-touch-icon\" href=\"/assets/img/logo-iksass.png\">
+<meta charset=\"utf-8\"/>
+<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\"/>
+<title>{title}</title>
+<meta content=\"{description}\" name=\"description\"/>
+<meta content=\"index, follow\" name=\"robots\"/>
+<meta content=\"#0f766e\" name=\"theme-color\"/>
+<link href=\"../assets/img/logo-iksass.png\" rel=\"icon\"/>
+<link href=\"../assets/img/logo-iksass.png\" rel=\"apple-touch-icon\"/>
 
-  <meta property=\"og:type\" content=\"website\">
-  <meta property=\"og:site_name\" content=\"IKSASS\">
-  <meta property=\"og:title\" content=\"{title}\">
-  <meta property=\"og:description\" content=\"{description}\">
-  <meta property=\"og:image\" content=\"/assets/img/og-default.png\">
-  <meta property=\"og:image:width\" content=\"1200\">
-  <meta property=\"og:image:height\" content=\"630\">
-  <meta name=\"twitter:card\" content=\"summary_large_image\">
-  <meta name=\"twitter:title\" content=\"{title}\">
-  <meta name=\"twitter:description\" content=\"{description}\">
-  <meta name=\"twitter:image\" content=\"/assets/img/og-default.png\">
-
-  <link href=\"../assets/css/main.css\" rel=\"stylesheet\">
-  <link href=\"/assets/css/override.css\" rel=\"stylesheet\">
-  <script src=\"/assets/js/meta-url.js\"></script>
+<link as=\"style\" href=\"../assets/css/main.min.css\" rel=\"preload\"/><link href=\"../assets/css/main.min.css\" rel=\"stylesheet\"/>
+<link as=\"style\" href=\"../assets/css/design-system.min.css\" rel=\"preload\"/><link href=\"../assets/css/design-system.min.css\" rel=\"stylesheet\"/>
+<link href=\"../assets/css/override.min.css\" rel=\"stylesheet\"/>
+<script defer=\"\" src=\"../assets/js/meta-url.min.js\"></script>
 </head>
 <body>
 <div data-include=\"header\"></div>
 <main class=\"page\" id=\"konten\" tabindex=\"-1\">
-  <div class=\"container\">
+<div class=\"container\">
 {inner_html}
-  </div>
+</div>
 </main>
 <div data-include=\"footer\"></div>
-<script defer src=\"../assets/js/partials.js\"></script>
-<script src=\"../assets/js/main.js\"></script>
-<script src=\"../assets/js/search-index.js\"></script>
-<script src=\"../assets/js/search.js\"></script>
+<script defer=\"\" src=\"../assets/js/partials.min.js\"></script>
+<script defer=\"\" src=\"../assets/js/main.min.js\"></script>
+<script defer=\"\" src=\"../assets/js/search-index.min.js\"></script>
+<script defer=\"\" src=\"../assets/js/search.min.js\"></script>
 </body>
 </html>
 """
@@ -158,15 +192,6 @@ def render_landing(categories_render: list[dict]) -> str:
       <div class=\"pill\">Wadah</div>
       <div class=\"pill\">Hikmah</div>
     </div>
-
-    <div class=\"prose\" style=\"margin-top:12px\">
-      <p>
-        Galeri disusun dalam 4 kategori utama. Untuk menambah atau mengganti foto, taruh foto di
-        <code>assets/img/galeri/&lt;kategori&gt;/</code> dengan pola <code>&lt;kategori&gt;-NN.jpg</code>,
-        lalu jalankan <code>python tools/build_gallery.py</code>.
-      </p>
-    </div>
-
     <style>
       .gallery-grid--4{{display:grid;gap:18px;grid-template-columns:repeat(1,minmax(0,1fr));}}
       @media (min-width:768px){{.gallery-grid--4{{grid-template-columns:repeat(2,minmax(0,1fr));}}}}
@@ -186,12 +211,83 @@ def render_landing(categories_render: list[dict]) -> str:
   return render_shell("IKSASS — Galeri", "Galeri IKSASS: Ke-IKSASS-an, Ke-Pesantrenan, Ke-Ilmu-an, dan Dawuh.", inner)
 
 
+def render_category_page(cat: dict) -> str:
+  """Generate halaman kategori /galeri/<slug>.html secara otomatis dari folder images."""
+  title = f"{cat['title']} | Galeri | Ikatan Santri Alumni Salafiyah Syafi’iyah"
+  description = cat.get("description") or cat.get("narrative") or "Galeri IKSASS."
+
+  # Filters pills: keep same order and active state
+  pills = []
+  for c in CATEGORIES:
+    active = " is-active" if c["slug"] == cat["slug"] else ""
+    pills.append(f"<a class=\"pill{active}\" href=\"{c['slug']}.html\">{c['tag']}</a>")
+  pills_html = "".join(pills)
+
+  # Album items
+  items = []
+  if cat.get("images"):
+    for i, fn in enumerate(cat["images"]):
+      fetchpriority = " fetchpriority=\"high\"" if i == 0 else ""
+      items.append(
+        f"<a class=\"album-item\" href=\"../assets/img/galeri/{cat['slug']}/{fn}\" rel=\"noopener\" target=\"_blank\">\n"
+        f"<img alt=\"{cat['alt']}\" decoding=\"async\"{fetchpriority} loading=\"lazy\" src=\"../assets/img/galeri/{cat['slug']}/{fn}\"/>\n"
+        f"</a>"
+      )
+  else:
+    items.append(
+      f"<div class=\"album-empty\">Belum ada foto. Tambahkan file ke <code>assets/img/galeri/{cat['slug']}/</code> lalu jalankan <code>python tools/build_gallery.py</code>.</div>"
+    )
+  items_html = "\n".join(items)
+
+  inner = f"""
+<div class=\"breadcrumb\"><a href=\"../galeri/\" style=\"text-decoration:none;color:inherit;opacity:.9\">Galeri</a> <span style=\"opacity:.6\">/</span> {cat['breadcrumb']}</div>
+<h1 class=\"page-title\">{cat['title']}</h1>
+<p class=\"page-sub\">{cat['narrative']}</p>
+<div class=\"hero-card\" style=\"margin:14px 0 0\"><nav aria-label=\"Navigasi kategori galeri\" class=\"gallery-filters\">{pills_html}</nav></div>
+<style>
+      .album-grid{{display:grid;gap:12px;margin-top:14px;grid-template-columns:repeat(2,minmax(0,1fr));}}
+      @media (min-width:768px){{.album-grid{{grid-template-columns:repeat(3,minmax(0,1fr));}}}}
+      @media (min-width:1100px){{.album-grid{{grid-template-columns:repeat(4,minmax(0,1fr));}}}}
+      .album-item{{display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:rgba(0,0,0,.03);}}
+      .album-item img{{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .2s ease;}}
+      .album-item:hover img{{transform:scale(1.03);}}
+      .album-empty{{border:1px dashed rgba(0,0,0,.18);border-radius:14px;padding:16px;background:rgba(0,0,0,.02);grid-column:1/-1;}}
+      .album-empty code{{background:rgba(0,0,0,.06);padding:2px 6px;border-radius:8px;}}
+    </style>
+<section aria-label=\"Foto album\" class=\"album-grid\">
+{items_html}
+</section>
+""".strip()
+
+  return render_shell(title, description, inner)
+
+
 def main():
   manifest = []
   categories_render = []
 
+  # Validation (fail-fast): show invalid filenames clearly.
+  invalid_map: dict[str, list[str]] = {}
+  for cat in CATEGORIES:
+    _valid, invalid = validate_album(cat["slug"])
+    if invalid:
+      invalid_map[cat["slug"]] = invalid
+
+  if invalid_map:
+    print("\n[ERROR] Nama file galeri tidak sesuai format yang diwajibkan.")
+    print("Format benar: <kategori-slug>-NN.(jpg|jpeg|png|webp) (NN harus 2 digit, contoh: ke-iksass-an-01.jpg)\n")
+    for slug, files in invalid_map.items():
+      print(f"- {slug}:")
+      for fn in files:
+        print(f"  • {fn}")
+    print("\nPerbaiki nama file di atas, lalu jalankan ulang build.")
+    raise SystemExit(1)
+
+  counts: list[tuple[str, int]] = []
+
   for cat in CATEGORIES:
     images = discover_images(cat["slug"])
+    counts.append((cat["title"], len(images)))
     cover = cover_for(cat["slug"], images)
     categories_render.append({**cat, "images": images, "cover": cover})
 
@@ -207,8 +303,24 @@ def main():
 
   GALERI_DIR.mkdir(parents=True, exist_ok=True)
   (GALERI_DIR / "index.html").write_text(render_landing(categories_render), encoding="utf-8")
+  # Full-auto: generate each category page too
+  for cat in categories_render:
+    (GALERI_DIR / f"{cat['slug']}.html").write_text(render_category_page(cat), encoding="utf-8")
   write_manifest(manifest)
-  print("OK: galeri generated:", len(CATEGORIES))
+
+  # Summary
+  print("\n============================================")
+  print("GALLERY BUILD: SELESAI")
+  print("============================================")
+  total = 0
+  for title, n in counts:
+    total += n
+    print(f"✔ {title:<14}: {n} foto")
+  print("--------------------------------------------")
+  print(f"TOTAL FOTO         : {total}")
+  print(f"KATEGORI           : {len(CATEGORIES)}")
+  print("OUTPUT             : galeri/index.html + galeri/<kategori>.html + manifest.json")
+  print("============================================\n")
 
 if __name__ == "__main__":
   main()

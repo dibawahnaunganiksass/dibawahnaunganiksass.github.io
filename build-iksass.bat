@@ -59,11 +59,19 @@ if errorlevel 1 (
 )
 
 echo.
+echo [QUICK] Build galeri (manifest + index + kategori)...
+python tools\build_gallery.py
+if errorlevel 1 (
+  echo [ERROR] build_gallery gagal.
+  pause
+  exit /b 1
+)
+
+echo.
 echo ============================================
 echo DONE: QUICK build selesai.
 echo (Catatan: validate_site tidak dijalankan di mode QUICK)
 echo ============================================
-pause
 exit /b 0
 
 :FULL
@@ -89,5 +97,4 @@ echo.
 echo ============================================
 echo DONE: FULL build selesai.
 echo ============================================
-pause
 exit /b 0
