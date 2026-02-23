@@ -71,42 +71,22 @@
 </div>
 </section>
 <h2>Unduhan Dokumen</h2>
-<div class="list">
-<div class="row">
-<div>
-<div><b>Rancangan Program Kerja PP IKSASS 2022–2026</b></div>
-<div class="meta">PDF</div>
-</div>
-<div class="doc-actions"><a class="small-link" href="./RANCANGAN-PROKER-IKSASS-2022-2026.pdf" rel="noopener" target="_blank">Buka</a><a class="small-link" href="./RANCANGAN-PROKER-IKSASS-2022-2026.pdf">Unduh</a></div>
-</div>
-</div>
-<div class="list">
-<div class="row">
-<div>
-<div><b>Mars IKSASS (Resmi)</b></div>
-<div class="meta">PDF</div>
-</div>
-<div class="doc-actions"><a class="small-link" href="./mars-iksass.pdf" rel="noopener" target="_blank">Buka</a><a class="small-link" href="./mars-iksass.pdf">Unduh</a></div>
-</div>
-</div>
-<div class="list">
-<div class="row">
-<div>
-<div><b>Hymne IKSASS (Resmi)</b></div>
-<div class="meta">PDF</div>
-</div>
-<div class="doc-actions"><a class="small-link" href="./hymne-iksass.pdf" rel="noopener" target="_blank">Buka</a><a class="small-link" href="./hymne-iksass.pdf">Unduh</a></div>
-</div>
-</div>
-<div class="list">
-<div class="row">
-<div>
-<div><b>AD/ART IKSASS (MUBES X)</b></div>
-<div class="meta">PDF</div>
-</div>
-<div class="doc-actions"><a class="small-link" href="./AD-ART-IKSASS-MUBES-X.pdf" rel="noopener" target="_blank">Buka</a><a class="small-link" href="./AD-ART-IKSASS-MUBES-X.pdf">Unduh</a></div>
-</div>
-</div>
+
+<section class="docs-page" aria-label="Daftar dokumen unduhan">
+  <div class="docs-toolbar" role="region" aria-label="Filter dan pencarian dokumen">
+    <div class="docs-chips" id="docsChips" aria-label="Filter kategori"></div>
+    <div class="docs-search">
+      <label class="sr-only" for="docsSearchInput">Cari dokumen</label>
+      <input id="docsSearchInput" type="search" placeholder="Cari dokumen..." autocomplete="off" />
+    </div>
+  </div>
+
+  <div id="docsFeatured" class="docs-featured" hidden></div>
+  <div id="docsList" class="docs-list"></div>
+  <div id="docsEmpty" class="docs-empty" hidden>
+    <p>Tidak ada dokumen yang cocok dengan filter/pencarian Anda.</p>
+  </div>
+</section>
 </div>
 </main>
 <div data-include="footer"></div>
@@ -114,5 +94,6 @@
 <script defer="" src="../assets/js/main.min.js"></script>
 <script defer="" src="../assets/js/search-index.min.js"></script>
 <script defer="" src="../assets/js/search.min.js"></script>
+<script defer="" src="../assets/js/docs.min.js"></script>
 </body>
 </html>

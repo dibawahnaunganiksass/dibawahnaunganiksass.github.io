@@ -3,7 +3,6 @@
    Rules:
    - WhatsApp: opens wa.me with prefilled message (no page refresh)
    - Email: REAL submit (POST) to FormSubmit (NOT mailto). Values must be sent.
-   - After email submit: FormSubmit redirects to /terima-kasih.html via _next
    - Cross-mode safe: no layout hacks here.
    ===================================================== */
 
@@ -24,8 +23,7 @@
   const nextInput = document.getElementById('nextUrl');
 
   // Targets
-  const WA_NUMBER_INTL = '6285258252747'; // 085258252747
-  const THANK_YOU_PATH = ROOT_PREFIX + 'terima-kasih.html';
+  const WA_NUMBER_INTL = '6282111222333'; // 082111222333
 
   function setToast(msg) {
     if (!toast) return;
@@ -109,9 +107,7 @@
     // FormSubmit butuh URL penuh agar redirect konsisten (local / production)
     if (!nextInput) return;
     try {
-      nextInput.value = `${window.location.origin}${THANK_YOU_PATH}`;
     } catch (_) {
-      nextInput.value = THANK_YOU_PATH;
     }
   }
 
@@ -131,7 +127,6 @@
       const msg = buildMessage();
       openWhatsApp(msg);
       // optional: arahkan user ke halaman terima kasih juga
-      window.location.href = THANK_YOU_PATH;
     });
   }
 

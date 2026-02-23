@@ -1,0 +1,58 @@
+{
+  "updated_at": "2026-02-23",
+  "categories_order": [
+    "Pengumuman",
+    "Peraturan",
+    "Perencanaan",
+    "Lagu Resmi",
+    "Lainnya"
+  ],
+  "items": [
+    {
+      "id": "santri-baru-2026-2027",
+      "title": "Penerimaan Santri Baru Tahun Pelajaran 2026/2027",
+      "description": "Brosur resmi Penerimaan Santri Baru Pondok Pesantren Salafiyah Syafi’iyah Sukorejo Tahun Pelajaran 2026/2027.",
+      "category": "Pengumuman",
+      "date_display": "Februari 2026",
+      "date_iso": "2026-02-01",
+      "file": "santri-baru-2026-2027.pdf",
+      "featured": true
+    },
+    {
+      "id": "rancangan-proker-pp-iksass-2022-2026",
+      "title": "Rancangan Program Kerja PP IKSASS 2022–2026",
+      "description": "Dokumen rancangan program kerja Pengurus Pusat IKSASS periode 2022–2026.",
+      "category": "Perencanaan",
+      "date_display": "2022",
+      "date_iso": "2022-01-01",
+      "file": "RANCANGAN-PROKER-IKSASS-2022-2026.pdf"
+    },
+    {
+      "id": "mars-iksass-resmi",
+      "title": "Mars IKSASS (Resmi)",
+      "description": "Dokumen PDF mars resmi IKSASS.",
+      "category": "Lagu Resmi",
+      "date_display": "—",
+      "date_iso": "2020-01-01",
+      "file": "mars-iksass.pdf"
+    },
+    {
+      "id": "hymne-iksass-resmi",
+      "title": "Hymne IKSASS (Resmi)",
+      "description": "Dokumen PDF hymne resmi IKSASS.",
+      "category": "Lagu Resmi",
+      "date_display": "—",
+      "date_iso": "2020-01-01",
+      "file": "hymne-iksass.pdf"
+    },
+    {
+      "id": "ad-art-iksass-mubes-x",
+      "title": "AD/ART IKSASS (MUBES X)",
+      "description": "Dokumen Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) IKSASS hasil MUBES X.",
+      "category": "Peraturan",
+      "date_display": "—",
+      "date_iso": "2020-01-01",
+      "file": "AD-ART-IKSASS-MUBES-X.pdf"
+    }
+  ]
+}
