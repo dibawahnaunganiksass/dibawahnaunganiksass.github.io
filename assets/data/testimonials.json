@@ -2,27 +2,45 @@
   "updated_at": "2026-02-20",
   "items": [
     {
-      "name": "Alumni Rayon Surabaya",
+      "name": "Pak Yo",
       "role": "Koordinator Kegiatan",
       "quote": "IKSASS membuat kami tetap terhubung dalam satu perjuangan. Saat ada agenda pesantren, kami bergerak cepat—tanpa banyak komando.",
-      "location": "Jawa Timur"
+      "location": "Situbondo"
     },
     {
-      "name": "Alumni Komisariat Jakarta",
+      "name": "Dangdengdong Motret",
       "role": "Bidang Publikasi",
       "quote": "Yang paling terasa: budaya khidmah. Bukan sekadar kumpul, tapi ada arah kerja—dan ada dampak yang bisa dilihat.",
-      "location": "DKI Jakarta"
+      "location": "Situbondo"
     },
     {
-      "name": "Alumni Sub Rayon Malang",
-      "role": "Penggerak Sosial",
+      "name": "Awink Arya",
+      "role": "Bidang Hukum dan HAM",
       "quote": "Berjuang bersama itu bukan slogan. Saat ada kebutuhan sosial, jaringan alumni saling menguatkan—ringan tapi konsisten.",
-      "location": "Jawa Timur"
+      "location": "Situbondo"
     },
     {
-      "name": "Alumni PPSS Sukorejo",
-      "role": "Relawan Program",
+      "name": "Amie'",
+      "role": "Bidang sosial dan Kesejahteraan",
       "quote": "IKSASS mengajarkan: mengabdi tanpa batas itu dimulai dari hal kecil—tertib, hadir, dan menuntaskan amanah.",
+      "location": "Situbondo"
+    },
+    {
+      "name": "Rohikim'",
+      "role": "Bidang Kepemudaan",
+      "quote": "IKSASS Adalah kita yang menjadi tanggung jawab kita bersama.",
+      "location": "Sub Rayon IKSASS Banyuputih"
+    },
+    {
+      "name": "Fauzie",
+      "role": "Bidang Pemberdayaan",
+      "quote": "Berbuat semampu dan sebisa kita, selebihnya Allah yang akan memutuskan.",
+      "location": "Situbondo"
+    },
+    {
+      "name": "Aqiel",
+      "role": "Bidang Pendidikan dan Keagamaan",
+      "quote": "IKSASS adalah Rumah Besar kita bersama.",
       "location": "Situbondo"
     }
   ]
