@@ -5,7 +5,8 @@
   const format = (n) => new Intl.NumberFormat("id-ID").format(n);
 
   const countRowsFrom = async (url) => {
-    const res = await fetch(url, { cache: "no-store" });
+    // Performance: allow browser caching for static JSON (ETag/Cache-Control)
+    const res = await fetch(url, { cache: "force-cache" });
     if (!res.ok) throw new Error("Fetch failed");
     const html = await res.text();
     const doc = new DOMParser().parseFromString(html, "text/html");

@@ -50,7 +50,7 @@
     var x = q('[data-share="x"]', root);
 
     if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + '\n' + url);
-    if (fb) fb.href = 'https://www.facebook.com/dibawahnaunganiksass' + encodeURIComponent(url);
+    if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
     if (x) x.href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
 
     if (btnNative) {

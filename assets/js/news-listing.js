@@ -49,7 +49,8 @@
     `;
   };
 
-  fetch('./news-index.json', { cache: 'no-store' })
+// Performance: allow browser caching for static JSON (ETag/Cache-Control)
+fetch('./news-index.json', { cache: 'force-cache' })
     .then(r => r.ok ? r.json() : Promise.reject(new Error('Gagal memuat news-index.json')))
     .then(list => {
       rootEl.innerHTML = list.map(fmt).join('');

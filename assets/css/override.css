@@ -1153,6 +1153,12 @@ main{ padding-top: 0 !important; }
 .sharetoast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:rgba(0,0,0,.82);color:#fff;padding:10px 14px;border-radius:12px;opacity:0;pointer-events:none;transition:.2s;z-index:9999;}
 .sharetoast.show{opacity:1;}
 
+/* Brand colors for share icons */
+.sharebtn.share-wa{color:#25D366;}
+.sharebtn.share-fb{color:#1877F2;}
+.sharebtn.share-x{color:#111;}
+.sharebtn:focus-visible{outline:3px solid rgba(16,126,72,.35);outline-offset:3px;}
+
 
 
 /* === Mobile button height tuning (Index page) === */
@@ -4586,3 +4592,79 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
 .docs-cat{margin:18px 0 10px}
 .docs-section-title{margin:14px 0 10px;font-weight:700}
 .docs-empty{padding:16px;border:1px dashed rgba(0,0,0,.20);border-radius:14px}
+
+/* === UI polish: nav focus + berita cards consistency === */
+/* A11y: keyboard focus ring (scoped to header/nav & drawer only) */
+.header .navlinks a:focus-visible,
+.header .navlinks .dropbtn:focus-visible,
+.header .menu a:focus-visible,
+.drawer a:focus-visible,
+.drawer button:focus-visible{
+  outline: 2px solid rgba(15,122,60,.35);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Home / Mega news cards: clamp title & excerpt so grid height stays stable */
+.news-title{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+.news-snippet{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+}
+
+/* Slightly richer hover (keeps existing transform from main.css) */
+.news-card{box-shadow:0 6px 18px rgba(17,24,39,.04)}
+.news-card:hover{box-shadow:0 14px 28px rgba(17,24,39,.08)}
+
+/* =====================================================
+   POLISH PACK v2 — SPACING RHYTHM + READABILITY
+   Scoped to existing utility classes; no layout hacks.
+   ===================================================== */
+
+/* Consistent section rhythm (site-wide but predictable) */
+.section{
+  padding:44px 0;
+}
+.section-head{
+  margin-bottom:18px;
+}
+.section h2{
+  font-size:22px;
+  line-height:1.25;
+}
+
+@media (max-width:768px){
+  .section{padding:32px 0;}
+  .section-head{margin-bottom:14px;}
+  .section h2{font-size:20px;}
+}
+
+/* Improve long-form readability (news/detail pages) */
+.news-article .post-content,
+.news-article .news-content,
+.news-article article{
+  max-width:72ch;
+}
+
+/* Smooth anchor jumps under header */
+section[id]{scroll-margin-top:90px;}
+
+/* =====================================================
+   PERFORMANCE — fast render for below-the-fold content
+   Uses modern content-visibility (safe fallback)
+   ===================================================== */
+
+@supports (content-visibility: auto){
+  /* Most sections are below-the-fold; allow browser to skip work until needed */
+  .section{
+    content-visibility:auto;
+    contain-intrinsic-size:1px 900px;
+  }
+}

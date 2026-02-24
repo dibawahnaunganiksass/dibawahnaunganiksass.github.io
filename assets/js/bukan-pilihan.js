@@ -27,7 +27,8 @@
     `;
   };
 
-  fetch(ROOT_PREFIX + 'data/bukan-pilihan.json', { cache: 'no-store' })
+  // Performance: allow browser caching for static JSON
+  fetch(ROOT_PREFIX + 'data/bukan-pilihan.json', { cache: 'force-cache' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(list => {
       if (!Array.isArray(list) || list.length === 0) throw new Error('empty');

@@ -198,7 +198,8 @@
   }
 
   function init(){
-    fetch('docs-index.json', { cache: 'no-store' })
+    // Performance: allow browser caching for static JSON (ETag/Cache-Control)
+    fetch('docs-index.json', { cache: 'force-cache' })
       .then((r) => r.ok ? r.json() : Promise.reject(new Error('docs-index fetch failed')))
       .then((data) => {
         state.data = data || { items: [] };

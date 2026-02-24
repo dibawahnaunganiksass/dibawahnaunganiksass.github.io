@@ -27,7 +27,8 @@
     </li>
   `;
 
-  fetch(ROOT_PREFIX + 'data/founding-figures.json', { cache: 'no-store' })
+  // Performance: allow browser caching for static JSON
+  fetch(ROOT_PREFIX + 'data/founding-figures.json', { cache: 'force-cache' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(list => {
       root.innerHTML = `<ul class="founding-list" role="list">${list.map(card).join('')}</ul>`;
