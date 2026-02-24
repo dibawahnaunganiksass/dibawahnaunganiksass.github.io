@@ -23,28 +23,8 @@
 /* sections wrapper */
 .page-wasiat .wasiat-sections{
   padding: 28px 0 56px;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(1200px 600px at 12% 0%, rgba(21,128,61,.08), rgba(255,255,255,0) 60%),
-    radial-gradient(900px 520px at 92% 10%, rgba(21,128,61,.06), rgba(255,255,255,0) 58%),
-    #fff;
+  background: #fff;
 }
-
-/* subtle texture overlay (scoped to wasiat page only) */
-.page-wasiat .wasiat-sections::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: .22;
-  background-image:
-    radial-gradient(rgba(21,128,61,.18) 1px, transparent 1px);
-  background-size: 18px 18px;
-  transform: translateZ(0);
-}
-
-.page-wasiat .wasiat-sections > *{ position: relative; }
 
 .page-wasiat .wasiat-item{
   display: grid;
@@ -195,3 +175,112 @@
   .page-wasiat .slide-end__end{ font-size: 30px; }
   .page-wasiat .slide-big__line{ font-size: 16px; }
 }
+
+
+/* Soft background texture (scoped) */
+.page-wasiat .wasiat-sections{
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(21,128,61,.06), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(21,128,61,.05), transparent 55%),
+    #fff;
+}
+.page-wasiat .wasiat-sections::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image: radial-gradient(rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity:.08;
+}
+.page-wasiat .wasiat-sections{ position: relative; }
+
+/* Reveal animation (fail-open):
+   Only hide elements AFTER JS marks them as animatable.
+   This prevents content from disappearing if IntersectionObserver/JS fails. */
+.page-wasiat .anim-fade-up[data-animate]{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+  will-change: opacity, transform;
+}
+.page-wasiat .anim-fade-up.is-inview[data-animate]{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .page-wasiat .anim-fade-up[data-animate]{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Mantra block */
+.page-wasiat .slide-mantra{
+  margin: 14px 0 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(21,128,61,.20);
+  border-radius: 14px;
+  background: rgba(21,128,61,.05);
+}
+.page-wasiat .slide-mantra p{
+  margin: 8px 0;
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+.page-wasiat .slide-mantra .q{ opacity: .85; }
+.page-wasiat .slide-mantra .a{ color: var(--green); }
+
+.page-wasiat .slide-loyal{
+  margin: 10px 0 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  font-size: 16px;
+}
+.page-wasiat .slide-barisan{
+  margin: 6px 0 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  font-size: 16px;
+  color: var(--green);
+}
+
+/* PDF links */
+.page-wasiat .pdf-link{
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(21,128,61,.45);
+}
+.page-wasiat .pdf-link:hover{ border-bottom-style: solid; }
+
+/* Quote box + signature */
+.page-wasiat .slide-quote-box{
+  margin: 14px 0 14px;
+  padding: 14px 14px 10px;
+  border-left: 4px solid rgba(21,128,61,.55);
+  background: rgba(0,0,0,.03);
+  border-radius: 14px;
+}
+.page-wasiat .slide-quote-box blockquote{ margin: 0 0 8px; }
+.page-wasiat .slide-quote-box p{
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.page-wasiat .slide-quote-box figcaption{
+  font-size: 13px;
+  opacity: .75;
+}
+.page-wasiat .slide-quote-box .sig{
+  width: 180px;
+  height: auto;
+  margin-top: 8px;
+  color: var(--green);
+}
+
+/* (kept for backwards compatibility; actual rules defined above) */
