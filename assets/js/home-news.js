@@ -138,8 +138,7 @@
   setStat('dokumen', '—');
 
   const fetchJson = (url) =>
-    // Performance: allow browser caching for static JSON (ETag/Cache-Control)
-    fetch(url, { cache: 'force-cache' })
+    fetch(url, { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error('Gagal memuat ' + url))));
 
   const newsUrl = resolveUrl('berita/news-index.json');

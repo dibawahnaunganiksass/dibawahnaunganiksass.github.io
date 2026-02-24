@@ -91,8 +91,7 @@
   }
 
   async function loadJSON(path, errMsg){
-    // Performance: allow browser caching for static JSON (ETag/Cache-Control)
-    const res = await fetch(ROOT_PREFIX + path, { cache: 'force-cache' });
+    const res = await fetch(ROOT_PREFIX + path, { cache: 'no-store' });
     if (!res.ok) throw new Error(errMsg);
     return await res.json();
   }

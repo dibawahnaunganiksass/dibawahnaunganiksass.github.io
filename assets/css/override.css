@@ -4655,16 +4655,3 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
 
 /* Smooth anchor jumps under header */
 section[id]{scroll-margin-top:90px;}
-
-/* =====================================================
-   PERFORMANCE — fast render for below-the-fold content
-   Uses modern content-visibility (safe fallback)
-   ===================================================== */
-
-@supports (content-visibility: auto){
-  /* Most sections are below-the-fold; allow browser to skip work until needed */
-  .section{
-    content-visibility:auto;
-    contain-intrinsic-size:1px 900px;
-  }
-}

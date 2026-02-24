@@ -78,8 +78,7 @@ const normUrl = (u) => {
   }
 
   try{
-    // Performance: allow browser caching for static JSON (ETag/Cache-Control)
-    const res = await fetch(ROOT_PREFIX + 'berita/news-index.json', { cache: 'force-cache' });
+    const res = await fetch(ROOT_PREFIX + 'berita/news-index.json', { cache: 'no-store' });
     if (!res.ok) return;
     const data = await res.json();
     if (!Array.isArray(data)) return;

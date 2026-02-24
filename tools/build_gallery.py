@@ -178,7 +178,7 @@ def render_shell(title: str, description: str, inner_html: str, url_path: str) -
 
   <footer data-include=\"footer\"></footer>
 
-  <script src=\"../assets/js/include.js\"></script>
+  <script src=\"../assets/js/partials.min.js\"></script>
   <script src=\"../assets/js/main.js\"></script>
 </body>
 </html>

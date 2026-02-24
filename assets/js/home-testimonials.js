@@ -95,8 +95,7 @@
 
   async function init() {
     try {
-      // Performance: allow browser caching for static JSON (ETag/Cache-Control)
-      const res = await fetch(resolveUrl('assets/data/testimonials.json'), { cache: 'force-cache' });
+      const res = await fetch(resolveUrl('assets/data/testimonials.json'), { cache: 'no-store' });
       if (!res.ok) throw new Error(`testimonials.json: ${res.status}`);
       const json = await res.json();
       items = Array.isArray(json.items) ? json.items : [];
