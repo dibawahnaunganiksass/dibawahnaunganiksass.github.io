@@ -1,72 +1,110 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Halaman Tidak Ditemukan — IKSASS</title>
-  <meta name="robots" content="noindex" />
-  <link rel="icon" href="/assets/img/favicon.png" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/override.css" />
-  <style>
-    .err404{padding:56px 0}
-    .err404__card{max-width:760px;margin:0 auto;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:22px;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.06);text-align:center}
-    .err404__code{font-weight:900;letter-spacing:.6px;opacity:.6;font-size:12px;text-transform:uppercase}
-    .err404__title{margin:8px 0 6px;font-weight:900}
-    .err404__desc{margin:0 0 16px;opacity:.85;line-height:1.6}
-    .err404__meta{margin:14px auto 18px;text-align:left;background:rgba(0,0,0,.04);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.5;word-break:break-word}
-    .err404__actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .err404__btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);text-decoration:none}
-    .err404__btn--primary{background:#15803d;color:#fff;border-color:transparent}
-    .err404__btn--ghost{background:#fff;color:#111}
-    @media (max-width:576px){.err404{padding:40px 0}.err404__card{padding:18px}.err404__actions{gap:8px}.err404__btn{width:100%}}
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Halaman Tidak Ditemukan — IKSASS</title>
+    <meta name="robots" content="noindex,follow" />
+
+    <meta name="theme-color" content="#0f7a3c" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- CSS (ikuti urutan proyek: main -> design-system -> override) -->
+    <link rel="preload" href="/assets/css/main.min.css" as="style" />
+    <link rel="stylesheet" href="/assets/css/main.min.css" />
+
+    <link rel="preload" href="/assets/css/design-system.min.css" as="style" />
+    <link rel="stylesheet" href="/assets/css/design-system.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/override.min.css" />
+
+    <script src="/assets/js/meta-url.min.js"></script>
+
+    <!-- 404 page styles (scoped) -->
+    <style>
+        .err404{padding:56px 0}
+        .err404__card{max-width:760px;margin:0 auto;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:22px;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.06);text-align:center}
+        .err404__code{font-weight:900;letter-spacing:.6px;opacity:.6;font-size:12px;text-transform:uppercase}
+        .err404__title{margin:8px 0 6px;font-weight:900}
+        .err404__desc{margin:0 0 16px;opacity:.85;line-height:1.6}
+        .err404__meta{margin:14px auto 18px;text-align:left;background:rgba(0,0,0,.04);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.5;word-break:break-word}
+        .err404__actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+        .err404__btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);text-decoration:none;transition:.12s ease}
+        .err404__btn--primary{background:#15803d;color:#fff;border-color:transparent}
+        .err404__btn--ghost{background:#fff;color:#111}
+
+        /* Prevent global a:hover from leaking into these CTA pills */
+        .err404__btn:hover{color:inherit;text-decoration:none;border-color:rgba(0,0,0,.18);background:rgba(0,0,0,.02)}
+        .err404__btn--primary:hover{background:#0f7a3c;border-color:transparent;color:#fff}
+
+        .err404__btn:focus-visible{outline:none;box-shadow:var(--focus-ring, 0 0 0 4px rgba(15,122,60,.18))}
+
+        @media (max-width:576px){.err404{padding:40px 0}.err404__card{padding:18px}.err404__actions{gap:8px}.err404__btn{width:100%}}
+    </style>
 </head>
 <body>
-  <main class="err404">
-    <div class="container">
-      <div class="err404__card">
-        <div class="err404__code">404 — Not Found</div>
-        <h1 class="err404__title">Halaman tidak ditemukan</h1>
-        <p class="err404__desc">
-          Link yang Anda buka mungkin sudah dipindah atau salah ketik.
-          Anda bisa kembali ke beranda, atau laporkan agar kami perbaiki.
-        </p>
+    <a class="skip-link" href="#konten">Lewati ke konten</a>
 
-        <div class="err404__meta" id="errMeta">
-          <div><strong>URL:</strong> <span id="errUrl">-</span></div>
-          <div><strong>Dari:</strong> <span id="errRef">-</span></div>
-          <div><strong>Waktu:</strong> <span id="errTime">-</span></div>
+    <!-- Shared header/footer (partials) -->
+    <div data-include="header"></div>
+
+    <main id="konten" class="err404" tabindex="-1">
+        <div class="container">
+            <div class="err404__card">
+                <div class="err404__code">404 — Not Found</div>
+                <h1 class="err404__title">Halaman tidak ditemukan</h1>
+                <p class="err404__desc">
+                    Link yang Anda buka mungkin sudah dipindah atau salah ketik.
+                    Anda bisa kembali ke beranda, atau laporkan agar kami perbaiki.
+                </p>
+
+                <div class="err404__meta" id="errMeta">
+                    <div><strong>URL:</strong> <span id="errUrl">-</span></div>
+                    <div><strong>Dari:</strong> <span id="errRef">-</span></div>
+                    <div><strong>Waktu:</strong> <span id="errTime">-</span></div>
+                </div>
+
+                <div class="err404__actions">
+                    <a class="err404__btn err404__btn--ghost" href="/">Kembali ke Beranda</a>
+                    <a class="err404__btn err404__btn--ghost" href="/berita/">Buka Berita</a>
+                    <a class="err404__btn err404__btn--ghost" href="/dokumen/">Buka Dokumen</a>
+                    <a class="err404__btn err404__btn--primary" id="btnReport" href="https://wa.me/6282132278087" target="_blank" rel="noopener">Laporkan via WhatsApp</a>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <div class="err404__actions">
-          <a class="err404__btn err404__btn--ghost" href="/">Kembali ke Beranda</a>
-          <a class="err404__btn err404__btn--ghost" href="/berita/">Buka Berita</a>
-          <a class="err404__btn err404__btn--ghost" href="/dokumen/">Buka Dokumen</a>
-          <a class="err404__btn err404__btn--primary" id="btnReport" href="#">Laporkan via WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </main>
+    <div data-include="footer"></div>
 
-  <script>
-    (function () {
-      const WA_LOCAL = "082132278087";
-      const WA_INTL = "62" + WA_LOCAL.replace(/^0+/, "");
+    <!-- JS global -->
+    <script src="/assets/js/partials.min.js" defer></script>
+    <script src="/assets/js/main.min.js" defer></script>
 
-      const url = location.href;
-      const ref = document.referrer || "(langsung / tidak diketahui)";
-      const now = new Date();
-      const time = now.toLocaleString("id-ID", { hour12: false });
+    <!-- 404 helper (scoped) -->
+    <script>
+        (function () {
+            const WA_LOCAL = "082132278087";
+            const WA_INTL = "62" + WA_LOCAL.replace(/^0+/, "");
 
-      const elUrl = document.getElementById("errUrl");
-      const elRef = document.getElementById("errRef");
-      const elTime = document.getElementById("errTime");
-      if (elUrl) elUrl.textContent = url;
-      if (elRef) elRef.textContent = ref;
-      if (elTime) elTime.textContent = time;
+            const url = location.href;
+            const ref = document.referrer || "(langsung / tidak diketahui)";
+            const now = new Date();
+            const time = now.toLocaleString("id-ID", { hour12: false });
 
-      const msg =
+            const elUrl = document.getElementById("errUrl");
+            const elRef = document.getElementById("errRef");
+            const elTime = document.getElementById("errTime");
+            if (elUrl) elUrl.textContent = url;
+            if (elRef) elRef.textContent = ref;
+            if (elTime) elTime.textContent = time;
+
+            const msg =
 `Halo Admin IKSASS,
 Saya menemukan link error (404):
 
@@ -76,14 +114,10 @@ Waktu: ${time}
 
 Mohon dicek dan diperbaiki. Terima kasih.`;
 
-      const waLink = `https://wa.me/${WA_INTL}?text=${encodeURIComponent(msg)}`;
-      const btn = document.getElementById("btnReport");
-      if (btn) {
-        btn.href = waLink;
-        btn.target = "_blank";
-        btn.rel = "noopener";
-      }
-    })();
-  </script>
+            const waLink = `https://wa.me/${WA_INTL}?text=${encodeURIComponent(msg)}`;
+            const btn = document.getElementById("btnReport");
+            if (btn) btn.href = waLink;
+        })();
+    </script>
 </body>
 </html>
