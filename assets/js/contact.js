@@ -23,7 +23,7 @@
   const nextInput = document.getElementById('nextUrl');
 
   // Targets
-  const WA_NUMBER_INTL = '6282111222333'; // 082111222333
+  const WA_NUMBER_INTL = '6282132278087'; // 082132278087
 
   function setToast(msg) {
     if (!toast) return;
