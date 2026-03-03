@@ -753,7 +753,7 @@ main{ padding-top: 0 !important; }
 
   /* Neutral premium + subtle green tint */
   color: rgba(0,0,0,.86);
-  background: linear-gradient(135deg, rgba(15,118,110,.10), rgba(255,255,255,1) 45%, rgba(11,122,72,.08));
+  background: linear-gradient(135deg, rgba(15,122,60,.10), rgba(255,255,255,1) 45%, rgba(11,122,72,.08));
   border: 1px solid rgba(0,0,0,.10);
   box-shadow: 0 14px 28px rgba(0,0,0,.10);
   transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s cubic-bezier(.2,.8,.2,1);
@@ -763,7 +763,7 @@ main{ padding-top: 0 !important; }
   position: absolute;
   inset: -45% -25% auto -25%;
   height: 160%;
-  background: radial-gradient(circle at 20% 20%, rgba(15,118,110,.16), rgba(15,118,110,0) 58%);
+  background: radial-gradient(circle at 20% 20%, rgba(15,122,60,.16), rgba(15,122,60,0) 58%);
   transform: rotate(-10deg);
   pointer-events: none;
 }
@@ -821,7 +821,7 @@ main{ padding-top: 0 !important; }
 }
 .news-cta__btn:active{ transform: translateY(0); }
 .news-cta__btn:focus-visible{
-  outline: 3px solid rgba(15,118,110,.35);
+  outline: 3px solid rgba(15,122,60,.35);
   outline-offset: 3px;
 }
 .news-cta__icon{
@@ -894,7 +894,7 @@ main{ padding-top: 0 !important; }
 }
 .post-sharebar .share-btn:active{ transform: translateY(0); }
 .post-sharebar .share-btn:focus-visible{
-  outline: 2px solid rgba(15,118,110,.35);
+  outline: 2px solid rgba(15,122,60,.35);
   outline-offset: 2px;
 }
 .post-sharebar .share-ic{
@@ -1019,7 +1019,7 @@ main{ padding-top: 0 !important; }
 .pdf-wrap{
   border-radius:14px;
   overflow:hidden;
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
   background:#fff;
 }
 .pdf-viewer{
@@ -1050,7 +1050,9 @@ main{ padding-top: 0 !important; }
 /* PROGRAM KERJA: satu kotak bidang + badge detail (responsive, no cross-mode leak) */
 .proker-box-single{
   position:relative;
-  padding:16px 16px 52px;
+  display:flex;
+  flex-direction:column;
+  padding:16px 16px 72px; /* ruang aman untuk badge agar tidak menimpa teks */
   border-radius:14px;
   background:#ffffff;
   box-shadow:0 6px 18px rgba(0,0,0,.08);
@@ -1063,7 +1065,7 @@ main{ padding-top: 0 !important; }
 .proker-list{
   margin:0;
   padding-left:18px;
-  line-height:1.55;
+  line-height:1.6;
 }
 .proker-list a{ text-decoration:none; }
 .proker-list a:hover{ text-decoration:underline; }
@@ -1077,11 +1079,13 @@ main{ padding-top: 0 !important; }
   padding:8px 12px;
   border-radius:999px;
   font-size:13px;
-  background:rgba(15,118,110,.12);
-  color:#0f766e;
+  background:rgba(15,122,60,.12);
+  color:#0f7a3c;
+  text-decoration:none;
+  white-space:nowrap;
+  max-width:calc(100% - 24px);
 }
-.proker-badge:hover{background:rgba(15,118,110,.18)}
-
+.proker-badge:hover{background:rgba(15,122,60,.18)}
 .proker-dialog{
   width:min(980px, 92vw);
   border:0;
@@ -1111,7 +1115,8 @@ main{ padding-top: 0 !important; }
   background:#0b1320;
 }
 @media (max-width: 560px){
-  .proker-box-single{padding:14px 14px 56px}
+  .proker-box-single{padding:14px 14px 18px}
+  .proker-badge{position:static;margin-top:14px;align-self:flex-start;white-space:normal}
   .proker-pdf{height:75vh}
 }
 
@@ -1135,7 +1140,7 @@ main{ padding-top: 0 !important; }
   border-radius:999px;
   font-size:13px;
   font-weight:600;
-  background:#0f766e; /* warna logo */
+  background:#0f7a3c; /* warna logo */
   color:#ffffff !important;
   text-decoration:none;
   line-height:1;
@@ -1252,7 +1257,7 @@ main{ padding-top: 0 !important; }
   color:rgba(2,6,23,.72);
 }
 .proker-breadcrumb a{
-  color:#0f766e;
+  color:#0f7a3c;
   text-decoration:none;
   font-weight:700;
 }
@@ -1271,13 +1276,13 @@ main{ padding-top: 0 !important; }
   margin:0 0 12px;
   padding:8px 12px;
   border-radius:12px;
-  background:rgba(15,118,110,.08);
-  border:1px solid rgba(15,118,110,.18);
-  color:#0f766e;
+  background:rgba(15,122,60,.08);
+  border:1px solid rgba(15,122,60,.18);
+  color:#0f7a3c;
   font-weight:800;
   text-decoration:none;
 }
-.btn-back-proker:hover{ background:rgba(15,118,110,.12); }
+.btn-back-proker:hover{ background:rgba(15,122,60,.12); }
 
 .proker-list{
   list-style:none;
@@ -1306,7 +1311,7 @@ main{ padding-top: 0 !important; }
 }
 .proker-hint{
   font-weight:800;
-  color:#0f766e;
+  color:#0f7a3c;
   font-size:13px;
   white-space:nowrap;
 }
@@ -1315,8 +1320,8 @@ main{ padding-top: 0 !important; }
 .proker-intro{
   padding:14px 16px;
   border-radius:16px;
-  background:rgba(15,118,110,.06);
-  border:1px solid rgba(15,118,110,.14);
+  background:rgba(15,122,60,.06);
+  border:1px solid rgba(15,122,60,.14);
 }
 .proker-intro p{ margin:0 0 10px; line-height:1.65; }
 .proker-intro p:last-child{ margin-bottom:0; }
@@ -1339,7 +1344,7 @@ main{ padding-top: 0 !important; }
   line-height:1.35;
   margin:0 0 6px;
   font-weight:900;
-  color:#0f766e;
+  color:#0f7a3c;
 }
 .proker-item-desc{
   margin:0;
@@ -3939,7 +3944,7 @@ text-decoration:underline;
   height:10px;
   border-radius:99px;
   background:linear-gradient(180deg, rgba(16,185,129,.40), rgba(245,158,11,.22));
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
   box-shadow:0 10px 18px rgba(2,6,23,.08);
 }
 
@@ -3958,7 +3963,7 @@ text-decoration:underline;
   position:relative;
   overflow:hidden;
   padding:18px 18px 16px;
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
   background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
   box-shadow:0 10px 30px rgba(2,6,23,.08);
   transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
@@ -3988,8 +3993,8 @@ text-decoration:underline;
   position:relative;
   border-radius:16px;
   overflow:hidden;
-  border:1px solid rgba(15,118,110,.16);
-  background:linear-gradient(180deg, rgba(15,118,110,.10), rgba(245,158,11,.08));
+  border:1px solid rgba(15,122,60,.16);
+  background:linear-gradient(180deg, rgba(15,122,60,.10), rgba(245,158,11,.08));
   box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
   display:flex;
   flex-direction:column;
@@ -4030,7 +4035,7 @@ text-decoration:underline;
   gap:8px;
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid rgba(15,118,110,.22);
+  border:1px solid rgba(15,122,60,.22);
   background:rgba(255,255,255,.58);
   color:rgba(2,6,23,.78);
   font-weight:700;
@@ -4051,7 +4056,7 @@ text-decoration:underline;
 }
 .impact-kpi{
   border-radius:14px;
-  border:1px solid rgba(15,118,110,.16);
+  border:1px solid rgba(15,122,60,.16);
   background:rgba(255,255,255,.62);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
   padding:10px 10px 9px;
@@ -4101,7 +4106,7 @@ text-decoration:underline;
   letter-spacing:.02em;
   color:rgba(15,23,42,.86);
   background:rgba(255,255,255,.72);
-  border:1px solid rgba(15,118,110,.16);
+  border:1px solid rgba(15,122,60,.16);
   box-shadow:0 8px 18px rgba(2,6,23,.06);
 }
 .impact-points{
@@ -4125,13 +4130,13 @@ text-decoration:underline;
   flex:0 0 18px;
   margin-top:1px;
   background:linear-gradient(180deg, rgba(16,185,129,.28), rgba(245,158,11,.18));
-  border:1px solid rgba(15,118,110,.20);
+  border:1px solid rgba(15,122,60,.20);
   box-shadow:0 10px 18px rgba(2,6,23,.08);
 }
 .impact-card:hover,
 .impact-card:focus-visible{
   transform:translateY(-3px);
-  border-color:rgba(15,118,110,.35);
+  border-color:rgba(15,122,60,.35);
   box-shadow:0 16px 44px rgba(2,6,23,.14);
 }
 .impact-card__head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
@@ -4150,12 +4155,12 @@ text-decoration:underline;
   text-transform:uppercase;
   color:rgba(2,44,34,.92);
   background:linear-gradient(180deg, rgba(16,185,129,.16), rgba(245,158,11,.10));
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
 }
 .impact-arrow{opacity:.75}
 .impact-title{margin:0 0 8px;font-size:18px;line-height:1.25}
 .impact-desc{margin:0 0 12px;color:var(--muted, #475569)}
-.impact-cta{font-weight:700;color:var(--accent, #0f766e)}
+.impact-cta{font-weight:700;color:var(--accent, #0f7a3c)}
 .impact-skel{min-height:120px; background:linear-gradient(90deg, rgba(148,163,184,.18), rgba(148,163,184,.10), rgba(148,163,184,.18)); background-size:200% 100%; animation:iksass-shimmer 1.2s linear infinite; border-color:rgba(148,163,184,.18)}
 
 .home-testimonials .testi{margin-top:16px}
@@ -4164,7 +4169,7 @@ text-decoration:underline;
 .testi-card{
   min-width:100%;
   padding:20px;
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
   background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
   box-shadow:0 10px 30px rgba(2,6,23,.08);
 }
@@ -4175,7 +4180,7 @@ text-decoration:underline;
 .testi__controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}
 .testi__dots{display:flex;gap:8px;align-items:center}
 .testi-dot{width:8px;height:8px;border-radius:99px;border:0;background:rgba(15,23,42,.18);cursor:pointer;transition:width .18s ease, background-color .18s ease}
-.testi-dot.is-active{width:22px;background:rgba(15,118,110,.75)}
+.testi-dot.is-active{width:22px;background:rgba(15,122,60,.75)}
 
 @keyframes iksass-shimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
 
@@ -4202,19 +4207,19 @@ text-decoration:underline;
 .page-struktur .struktur-cards .k-card,
 .page-prinsip .pillar-card,
 body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
-  border-color:rgba(15,118,110,.18);
+  border-color:rgba(15,122,60,.18);
 }
 
 /* Program kerja: make list feel premium */
 .proker-box-single{
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
   border-radius:18px;
   padding:18px;
   background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
   box-shadow:0 10px 30px rgba(2,6,23,.08);
 }
 .proker-link{border-radius:14px}
-.proker-link:hover{background:rgba(15,118,110,.06)}
+.proker-link:hover{background:rgba(15,122,60,.06)}
 
 
 
@@ -4304,7 +4309,7 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
 .home-kelmbagaan .grid4{ margin-top:16px; }
 
 .home-kelmbagaan .k-card{
-  border:1px solid rgba(15,118,110,.18);
+  border:1px solid rgba(15,122,60,.18);
   background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
   box-shadow:0 10px 30px rgba(2,6,23,.08);
   transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
@@ -4575,13 +4580,13 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
 .docs-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:10px 0 24px}
 .docs-chips{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 /* Chip & input disamakan tingginya agar center vertikal */
-.docs-chip{height:40px;border:1px solid rgba(15,118,110,.25);background:#fff;color:inherit;border-radius:999px;padding:0 16px;font-size:14px;line-height:1;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
-.docs-chip:hover{border-color:rgba(15,118,110,.45)}
-.docs-chip--active{background:rgba(15,118,110,.1);border-color:rgba(15,118,110,.55)}
-.docs-chip-count{background:rgba(15,118,110,.12);padding:2px 8px;border-radius:999px;font-size:12px}
+.docs-chip{height:40px;border:1px solid rgba(15,122,60,.25);background:#fff;color:inherit;border-radius:999px;padding:0 16px;font-size:14px;line-height:1;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.docs-chip:hover{border-color:rgba(15,122,60,.45)}
+.docs-chip--active{background:rgba(15,122,60,.1);border-color:rgba(15,122,60,.55)}
+.docs-chip-count{background:rgba(15,122,60,.12);padding:2px 8px;border-radius:999px;font-size:12px}
 .docs-search{display:flex;align-items:center;justify-content:flex-end;min-width:260px}
 .docs-search input{height:40px;width:min(420px,100%);padding:0 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;font-size:14px;line-height:1;outline:none;transition:all .2s ease}
-.docs-search input:focus{border-color:rgba(15,118,110,.45);box-shadow:0 0 0 3px rgba(15,118,110,.15)}
+.docs-search input:focus{border-color:rgba(15,122,60,.45);box-shadow:0 0 0 3px rgba(15,122,60,.15)}
 
 @media (max-width:768px){
   .docs-toolbar{flex-direction:column;align-items:stretch}
@@ -4655,3 +4660,680 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
 
 /* Smooth anchor jumps under header */
 section[id]{scroll-margin-top:90px;}
+
+
+/* Kaderisasi – Khidmah quote (scoped utility) */
+.khidmah-quote{border-left:4px solid rgba(0,0,0,.08);padding:14px 16px;background:rgba(0,0,0,.03);border-radius:12px;margin:14px 0}
+.khidmah-quote p{margin:0}
+.khidmah-quote .source{display:block;margin-top:10px;font-weight:600}
+
+
+/* NOTE: Brand quick links were moved into the homepage hero to match the design
+   (right-side alignment) and to avoid crowding the navbar. */
+
+/* --- Homepage hero quick links (desktop-only) --- */
+.hero-quicklinks{ display:none; }
+@media (min-width: 992px){
+  .hero--dramatic .hero-inner{ position:relative; }
+  .hero-quicklinks{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    position:absolute;
+    right:24px;
+    bottom:18px;
+    white-space:nowrap;
+    font-size:12px;
+    line-height:1.2;
+    opacity:.9;
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0,0,0,.55);
+  }
+  .hero-quicklinks .sep{ opacity:.65; margin:0 2px; }
+  .hero-quicklinks a{ color:inherit; text-decoration:none; }
+  .hero-quicklinks a:hover{ text-decoration:underline; }
+}
+
+/* GALERI: konsistensi layout (wrapper container) + grid kartu/album */
+body.page-galeri main.page .breadcrumb,
+body.page-galeri-detail main.page .breadcrumb{ padding-top:0; }
+
+body.page-galeri .breadcrumb a,
+body.page-galeri-detail .breadcrumb a{
+  color:inherit;
+  text-decoration:none;
+  opacity:.9;
+}
+body.page-galeri .breadcrumb a:hover,
+body.page-galeri-detail .breadcrumb a:hover{ text-decoration:underline; }
+body.page-galeri .breadcrumb .sep,
+body.page-galeri-detail .breadcrumb .sep{ opacity:.6; padding:0 6px; }
+
+body.page-galeri .gallery-grid--4{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(1,minmax(0,1fr));
+  margin-top:14px;
+}
+@media (min-width:768px){
+  body.page-galeri .gallery-grid--4{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (min-width:1100px){
+  body.page-galeri .gallery-grid--4{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+body.page-galeri .gallery-card{
+  display:block;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.08);
+  text-decoration:none;
+  background:#fff;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+body.page-galeri .gallery-card__media{ aspect-ratio:16/9; background:rgba(0,0,0,.04); }
+body.page-galeri .gallery-card__media img{ width:100%; height:100%; object-fit:cover; display:block; }
+body.page-galeri .gallery-card__body{ padding:14px; }
+body.page-galeri .gallery-card:hover{ box-shadow:0 14px 40px rgba(0,0,0,.10); transform:translateY(-2px); }
+
+body.page-galeri-detail .gallery-filters{ display:flex; gap:10px; flex-wrap:wrap; }
+body.page-galeri-detail .album-grid{
+  display:grid;
+  gap:12px;
+  margin-top:14px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+@media (min-width:768px){
+  body.page-galeri-detail .album-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (min-width:1100px){
+  body.page-galeri-detail .album-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+body.page-galeri-detail .album-item{
+  display:block;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.08);
+  background:rgba(0,0,0,.03);
+}
+body.page-galeri-detail .album-item img{
+  width:100%;
+  height:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+  transition:transform .2s ease;
+}
+body.page-galeri-detail .album-item:hover img{ transform:scale(1.03); }
+body.page-galeri-detail .album-empty{
+  border:1px dashed rgba(0,0,0,.18);
+  border-radius:14px;
+  padding:16px;
+  background:rgba(0,0,0,.02);
+  grid-column:1/-1;
+}
+body.page-galeri-detail .album-empty code{
+  background:rgba(0,0,0,.06);
+  padding:2px 6px;
+  border-radius:8px;
+}
+
+
+/* === FINAL: Tentang dropdown 2 kolom (mengalahkan .header .dropdown .menu { ... !important } di main.css) === */
+.header .dropdown #dd-tentang-menu.menu-2col{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px 28px !important;
+  align-items: start !important;
+  width: min(760px, calc(100vw - 32px)) !important;
+  min-width: 560px !important;
+  padding: 14px !important;
+
+  /* matikan pemaksaan single-column */
+  columns: unset !important;
+  column-count: unset !important;
+}
+
+.header .dropdown #dd-tentang-menu.menu-2col .menu-block{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.header .dropdown #dd-tentang-menu.menu-2col .menu-title{
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: .02em !important;
+  text-transform: uppercase !important;
+  margin: 2px 8px 8px !important;
+}
+
+.header .dropdown #dd-tentang-menu.menu-2col a{
+  width: auto !important;
+  white-space: normal !important;
+}
+
+/* Kalau layar sempit, turun 1 kolom biar tidak kepotong */
+@media (max-width: 900px){
+  .header .dropdown #dd-tentang-menu.menu-2col{
+    grid-template-columns: 1fr !important;
+    min-width: 260px !important;
+    width: min(520px, calc(100vw - 24px)) !important;
+  }
+}
+
+
+
+/* === FIX: Tentang dropdown tidak boleh selalu tampil (close behavior) === */
+/* Default: ikut pola bawaan .menu = hidden */
+#dd-tentang-menu.menu-2col{
+  display: none !important;
+}
+/* Open hanya saat dropdown Tentang aktif (hover/focus-within/JS is-open/aria-expanded) */
+#dd-tentang-btn[aria-expanded="true"] + #dd-tentang-menu.menu-2col,
+.dropdown:hover #dd-tentang-menu.menu-2col,
+.dropdown:focus-within #dd-tentang-menu.menu-2col,
+.dropdown.is-open #dd-tentang-menu.menu-2col{
+  display: grid !important;
+}
+
+
+
+/* === Tentang dropdown: hover-only behavior (tidak auto-open saat focus) === */
+#dd-tentang-menu.menu-2col{ display:none !important; }
+.dropdown:hover #dd-tentang-menu.menu-2col{ display:grid !important; }
+/* jika CSS bawaan membuka lewat :focus-within, kita matikan khusus Tentang */
+.dropdown:focus-within #dd-tentang-menu.menu-2col{ display:none !important; }
+
+
+
+/* === Tentang dropdown: HOVER ONLY (abaikan focus-within/click) === */
+#dd-tentang-menu.menu-2col{ display:none !important; }
+/* tampil hanya saat hover pada wrapper dropdown Tentang */
+.dropdown:hover > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:grid !important; }
+/* jika fokus (click/keyboard) tapi tidak hover, jangan tampil */
+.dropdown:focus-within:not(:hover) > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:none !important; }
+
+
+
+/* === Tentang hover-only: blokir state is-open (JS) === */
+.dropdown.is-open:not(:hover) > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:none !important; }
+.dropdown:hover.is-open > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:grid !important; }
+
+
+/* === FINAL_TENTANG_HOVER_ONLY (must be last) === */
+/* Pastikan TENTANG tidak pernah tampil kecuali hover */
+#dd-tentang-menu.menu-2col{ display:none !important; }
+/* tampil hanya saat hover pada dropdown Tentang */
+.dropdown:hover > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:grid !important; }
+/* blokir state lain yang bisa membuat nyangkut */
+.dropdown:focus-within:not(:hover) > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:none !important; }
+.dropdown.is-open:not(:hover) > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:none !important; }
+/* tapi kalau hover, tetap tampil walau is-open */
+.dropdown:hover.is-open > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:grid !important; }
+
+
+
+/* === SUPERFINAL FIX: override specificity that forced Tentang always visible === */
+.header .dropdown #dd-tentang-menu.menu-2col{ display:none !important; }
+.header .dropdown:hover > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:grid !important; }
+.header .dropdown:focus-within:not(:hover) > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:none !important; }
+.header .dropdown.is-open:not(:hover) > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:none !important; }
+.header .dropdown:hover.is-open > #dd-tentang-btn + #dd-tentang-menu.menu-2col{ display:grid !important; }
+
+
+
+/* === NAV POLISH (baseline-safe): subtle animation + consistent panel feel === */
+/* NOTE: tidak mengubah positioning/alignment dropdown (mengikuti basis) */
+
+/* Subtle open animation (fade + slight translateY) */
+@keyframes iksassDropIn{
+  from{ opacity: 0; transform: translateY(6px); }
+  to{ opacity: 1; transform: translateY(0px); }
+}
+
+/* Apply animation when dropdown becomes visible (hover). Keep hover-only behavior intact. */
+.header .dropdown:hover > .menu,
+.header .dropdown:hover > .mega{
+  animation: iksassDropIn .14s ease-out both;
+}
+
+/* Unified dropdown panel feel (premium but subtle) */
+.header .dropdown .menu,
+.header .dropdown .mega{
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+/* Consistent item hit-area */
+.header .dropdown .menu a,
+.header .dropdown .mega a{
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+/* Soft hover on items (no color scheme change; just subtle background) */
+.header .dropdown .menu a:hover,
+.header .dropdown .mega a:hover{
+  background: rgba(0,0,0,.04);
+}
+
+
+
+/* === NAVBAR BRAND GRADIENT (Olive, opsi 2) === */
+.header{
+  background: linear-gradient(180deg, var(--brand-800) 0%, var(--brand-700) 55%, var(--brand-500) 100%) !important;
+}
+/* navbar text tone (soft white) */
+.header, .header a, .header .navlinks a, .header .dropbtn{
+  color: #F8FAF7;
+}
+
+
+
+/* === FINAL NAVBAR THEME OVERRIDE (must win over white backgrounds) === */
+:root{
+  --brand-900:#3F551A;
+  --brand-800:#4E6A24;
+  --brand-700:#5E7F2E;
+  --brand-500:#6F8F3A;
+  --brand-300:#9FBC65;
+  --brand-100:#E6F0D2;
+  --accent-ui:#0f7a3c;
+  --accent: var(--brand-500);
+  --accent-dark: var(--brand-700);
+  --bg-soft:#f7f8f4;
+}
+.header,
+.header .navbar{
+  background: linear-gradient(180deg,var(--brand-800) 0%,var(--brand-700) 55%,var(--brand-500) 100%) !important;
+}
+.header .skip-link:focus{ background: #fff; }
+.header, .header a, .header .navlinks a, .header .dropbtn, .header .brand{
+  color:#F8FAF7 !important;
+}
+/* keep dropdown panels readable */
+.header .dropdown .menu,
+.header .dropdown .mega{
+  background: #fff !important;
+  color: inherit;
+}
+.header .dropdown .menu a,
+.header .dropdown .mega a{
+  color: #111827 !important;
+}
+
+
+
+/* === NAVBAR TEXT + ICONS ON DARK HEADER === */
+.header .navlinks .dropbtn,
+.header .navlinks .dropbtn span,
+.header .navlinks .dropbtn .nav-arrow{
+  color:#F8FAF7 !important;
+}
+/* Navbar icons are SVG data-uris using currentColor; in background-image they render dark.
+   Force them to appear white on dark header via filter. */
+@media (min-width: 992px){
+  .header .navlinks .nav-ico{
+    filter: invert(1) brightness(2);
+  }
+}
+
+
+
+/* === FIX: dropdown top-level text (button.dropbtn) + arrow white on dark navbar === */
+.header .navlinks .dropdown > button.dropbtn,
+.header .navlinks .dropdown > button.dropbtn *{
+  color:#F8FAF7 !important;
+}
+/* arrow often is an SVG or pseudo; force fill/stroke via currentColor where possible */
+.header .navlinks .dropdown > button.dropbtn svg,
+.header .navlinks .dropdown > button.dropbtn svg *{
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* === FIX: search/login icon button center === */
+.header .nav-actions .icon-btn,
+.header .nav-actions a.icon-btn,
+.header .nav-actions button.icon-btn{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  line-height:1 !important;
+}
+.header .nav-actions .icon-btn svg,
+.header .nav-actions a.icon-btn svg,
+.header .nav-actions button.icon-btn svg{
+  display:block !important;
+}
+
+/* handle if icons are <i> font icons */
+.header .nav-actions .icon-btn i,
+.header .nav-actions a.icon-btn i,
+.header .nav-actions button.icon-btn i{
+  display:block !important;
+  line-height:1 !important;
+}
+
+
+
+/* === FINAL FIX: dropdown chevron (nav-arrow) on dark navbar === */
+@media (min-width: 992px){
+  .header .navlinks .nav-arrow{
+    color: #F8FAF7 !important;
+  }
+  .header .navlinks .nav-arrow::before{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F8FAF7' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+  }
+  .header .navlinks a:hover .nav-arrow,
+  .header .navlinks .dropbtn:hover .nav-arrow,
+  .header .navlinks a.active .nav-arrow,
+  .header .navlinks .dropbtn.active .nav-arrow{
+    color: #FFFFFF !important;
+  }
+}
+
+
+
+/* === NAV ICON BUTTONS: outline circle (transparent + white stroke) === */
+.header .nav-cta .iconbtn{
+  width: 40px;
+  height: 40px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 1.5px solid rgba(255,255,255,.72) !important;
+  border-radius: 999px !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* keep icons centered and white */
+.header .nav-cta .iconbtn .nav-ico{
+  display: block !important;
+  margin: 0 !important;
+  filter: invert(1) brightness(2);
+}
+
+/* hover/active micro interaction */
+.header .nav-cta .iconbtn:hover{
+  border-color: rgba(255,255,255,.95) !important;
+  background: rgba(255,255,255,.12) !important;
+}
+.header .nav-cta .iconbtn:active{
+  transform: scale(.96);
+}
+
+
+
+/* === FIX LOGO BACKGROUND (remove white box feel) === */
+.header .brand img,
+.header .brand .logo{
+  background: transparent !important;
+}
+.header .brand{
+  background: transparent !important;
+}
+
+/* === HIDE HAMBURGER ON DESKTOP === */
+@media (min-width: 992px){
+  .header .nav-cta .hamburger{
+    display:none !important;
+  }
+}
+
+/* === CHANGE ICON BUTTON SHAPE: ROUNDED (NOT CIRCLE) === */
+.header .nav-cta .iconbtn{
+  border-radius: 10px !important; /* rounded, not circle */
+  width: 38px;
+  height: 38px;
+}
+
+
+
+/* ===== FORCE REMOVE WHITE BACKGROUND ON LOGO (ALL STATES) ===== */
+.header .brand,
+.header .brand:hover,
+.header .brand:focus,
+.header .brand:active{
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header .brand img{
+  background: transparent !important;
+}
+
+/* ===== NAV UNDERLINE COLOR FIX (WHITE ON DARK NAVBAR) ===== */
+@media (min-width: 992px){
+  .header .navlinks > a::after,
+  .header .navlinks > .dropbtn::after{
+    background-color: #FFFFFF !important;
+  }
+
+  .header .navlinks > a:hover::after,
+  .header .navlinks > .dropbtn:hover::after,
+  .header .navlinks > a.active::after,
+  .header .navlinks > .dropbtn.active::after{
+    background-color: #FFFFFF !important;
+  }
+}
+
+
+
+/* === LOGO MARK: remove white background, match navbar (outline) === */
+.header .brand-mark{
+  background: transparent !important;
+  border-color: rgba(255,255,255,.55) !important;
+}
+.header .brand:hover .brand-mark,
+.header .brand:focus .brand-mark,
+.header .brand:active .brand-mark{
+  background: rgba(255,255,255,.10) !important;
+  border-color: rgba(255,255,255,.85) !important;
+}
+
+/* === DROPDOWN TRIGGERS HOVER: remove green highlight, use subtle white tint === */
+@media (min-width: 992px){
+  .header .navlinks .dropdown:hover > button.dropbtn,
+  .header .navlinks .dropdown > button.dropbtn:hover,
+  .header .navlinks .dropdown > button.dropbtn:focus{
+    background: rgba(255,255,255,.12) !important;
+  }
+}
+
+
+
+/* === FIX: dropdown trigger underline should be WHITE (not green) === */
+@media (min-width: 992px){
+  /* underline pseudo for top links and dropdown buttons */
+  .header .navlinks > a::after,
+  .header .navlinks .dropdown > button.dropbtn::after{
+    background-color: #FFFFFF !important;
+  }
+  .header .navlinks > a:hover::after,
+  .header .navlinks > a.active::after,
+  .header .navlinks .dropdown:hover > button.dropbtn::after,
+  .header .navlinks .dropdown > button.dropbtn:hover::after,
+  .header .navlinks .dropdown > button.dropbtn.active::after{
+    background-color: #FFFFFF !important;
+  }
+}
+
+/* === FIX: submenu section headings visibility (mega menu group titles) === */
+/* These headings are rendered with very low opacity; make them readable but still subtle */
+.header .dropdown .menu .menu-group-title,
+.header .dropdown .menu .menu-title,
+.header .dropdown .menu .menu-heading,
+.header .dropdown .menu .group-title,
+.header .dropdown .menu .label,
+.header .dropdown .menu .meta,
+.header .dropdown .menu strong,
+.header .dropdown .menu .muted{
+  color: rgba(17,24,39,.62) !important;
+  letter-spacing: .06em;
+  font-weight: 800;
+}
+
+/* Specifically target the Tentang mega-menu headings (existing markup uses <div class="menu-group-title"> in this project) */
+#dd-tentang-menu .menu-group-title,
+#dd-tentang-menu .menu-heading,
+#dd-tentang-menu .menu-title{
+  color: rgba(17,24,39,.62) !important;
+}
+
+
+
+/* === HERO PREMIUM BALANCE (align with olive navbar) === */
+.hero.hero--dramatic{
+  padding:52px 0 64px;
+}
+/* overlay tint: swap saturated green -> subtle olive */
+.hero.hero--dramatic:after{
+  background:
+    radial-gradient(1200px 520px at 18% 0%, rgba(94,127,46,.18), transparent 60%),
+    radial-gradient(900px 420px at 92% 22%, rgba(111,143,58,.10), transparent 64%),
+    linear-gradient(180deg, rgba(2,6,23,.74), rgba(2,6,23,.88));
+}
+
+/* typography */
+.hero.hero--dramatic .hero-eyebrow{
+  margin:0 0 10px;
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: rgba(248,250,247,.78);
+}
+.hero.hero--dramatic .h-title{
+  font-size:44px;
+  line-height:1.08;
+  letter-spacing:-.02em;
+  margin:0 0 14px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.32);
+}
+.hero.hero--dramatic .h-sub{
+  color: rgba(248,250,247,.82);
+  font-size:16px;
+  line-height:1.55;
+  margin:0 0 22px;
+  max-width:62ch;
+}
+
+/* CTA treatment */
+.hero.hero--dramatic .cta-row .btn{
+  border-radius:14px;
+  padding:12px 16px;
+}
+.hero.hero--dramatic .cta-row .btn.primary{
+  background: linear-gradient(180deg, var(--brand-500), var(--brand-700));
+  border-color: rgba(255,255,255,.0);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+.hero.hero--dramatic .cta-row .btn.primary:hover{
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+.hero.hero--dramatic .cta-row .btn.ghost{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  color: #F8FAF7;
+  backdrop-filter: blur(8px);
+}
+.hero.hero--dramatic .cta-row .btn.ghost:hover{
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.34);
+}
+
+/* quicklinks badge */
+.hero.hero--dramatic .hero-quicklinks{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+  color: rgba(248,250,247,.86);
+}
+.hero.hero--dramatic .hero-quicklinks a{
+  color: rgba(248,250,247,.92);
+  font-weight:700;
+}
+.hero.hero--dramatic .hero-quicklinks a:hover{
+  color:#fff;
+}
+.hero.hero--dramatic .hero-quicklinks .sep{
+  opacity:.55;
+}
+
+/* responsive */
+@media (max-width: 720px){
+  .hero.hero--dramatic{ padding:40px 0 52px; }
+  .hero.hero--dramatic .h-title{ font-size:34px; }
+  .hero.hero--dramatic .h-sub{ font-size:15px; }
+}
+
+
+
+/* === HERO PREMIUM BALANCE HOTFIX: keep hero artwork/logo visible === */
+.hero.hero--dramatic:before{
+  opacity:.90; /* sedikit naikkan image visibility */
+}
+.hero.hero--dramatic:after{
+  /* turunkan gelap overlay biar watermark/logo di artwork tetap kebaca */
+  background:
+    radial-gradient(1200px 520px at 18% 0%, rgba(94,127,46,.16), transparent 60%),
+    radial-gradient(900px 420px at 92% 22%, rgba(111,143,58,.08), transparent 64%),
+    linear-gradient(180deg, rgba(2,6,23,.58), rgba(2,6,23,.78));
+}
+
+
+
+/* === FORCE HERO WATERMARK LOGO (RIGHT SIDE) === */
+.hero.hero--dramatic{
+  background-image:
+    url('../img/hero.jpg'),
+    url('../img/logo-iksass.png');
+  background-size: cover, 420px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, right 6% center;
+}
+
+
+
+/* === HERO: SINGLE WATERMARK (REMOVE DOUBLE LOGO) === */
+/* If hero background currently stacks hero.jpg + logo, force it to hero.jpg only (logo handled by pseudo below). */
+.hero.hero--dramatic{
+  background-image: url('../img/hero.jpg') !important; /* keep same hero image, just remove extra logo layer */
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  position: relative;
+}
+
+/* Render ONE watermark logo via container pseudo (tilt + dramatic transparency) */
+@media (min-width: 768px){
+  .hero.hero--dramatic .container{
+    position: relative;
+    z-index: 2;
+  }
+  .hero.hero--dramatic .container::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-6%;
+    width:520px;
+    height:520px;
+    background:url("../img/logo-iksass.png") no-repeat center;
+    background-size:contain;
+    opacity:.14; /* more dramatic but still visible */
+    transform:translateY(-50%) rotate(-15deg);
+    pointer-events:none;
+    z-index:0;
+  }
+}
+

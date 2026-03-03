@@ -25,7 +25,14 @@ def ok(msg:str)->None:
 
 def is_public_html(p:Path)->bool:
     rel = p.relative_to(ROOT).as_posix()
-    return p.suffix=='.html' and not rel.startswith(('assets/','partials/','tools/'))
+    if p.suffix != '.html':
+        return False
+    if rel.startswith(('assets/','partials/','tools/')):
+        return False
+    # exclude generator templates
+    if '/template-' in '/' + rel or rel.startswith('berita/template-') or rel.endswith('template-berita.html'):
+        return False
+    return True
 
 def resolve_internal(href:str, base:Path)->Path|None:
     if href.startswith(('http://','https://','mailto:','tel:','#')):
@@ -96,6 +103,59 @@ def main()->None:
         sample = '; '.join([f"{a} -> {b}" for a,b in broken[:12]])
         fail(f"Broken internal links ({len(broken)}). Sample: {sample}")
     ok('Internal links resolve')
+
+
+    # 2.5) SEO + URL hygiene
+    seo_bad = []
+    abs_bad = []
+    schema_bad = []
+
+    def _count(pat: str, s: str) -> int:
+        return len(re.findall(pat, s, flags=re.IGNORECASE))
+
+    for hp in ROOT.rglob('*.html'):
+        if not is_public_html(hp):
+            continue
+        s = hp.read_text(encoding='utf-8', errors='ignore')
+
+        dup_rules = [
+            (r"<meta[^>]+name=['\"']description['\"']", 1, "meta description"),
+            (r"<meta[^>]+name=['\"']robots['\"']", 1, "meta robots"),
+            (r"<meta[^>]+name=['\"']theme-color['\"']", 1, "meta theme-color"),
+            (r"<meta[^>]+property=['\"']og:url['\"']", 1, "meta og:url"),
+            (r"<meta[^>]+name=['\"']twitter:card['\"']", 1, "meta twitter:card"),
+        ]
+        for pat, lim, label in dup_rules:
+            c = _count(pat, s)
+            if c > lim:
+                seo_bad.append(f"{hp.relative_to(ROOT).as_posix()} has {c}x {label}")
+
+        if re.search(r"<link[^>]+rel=['\"]manifest['\"][^>]+href=['\"]/site\.webmanifest['\"]", s, flags=re.IGNORECASE):
+            abs_bad.append(f"{hp.relative_to(ROOT).as_posix()} uses /site.webmanifest")
+
+        if re.search(r"(href|src)=['\"']/assets/", s, flags=re.IGNORECASE):
+            abs_bad.append(f"{hp.relative_to(ROOT).as_posix()} uses /assets/... root-absolute")
+
+        # detect double slash in full URLs (ignore scheme separator)
+        for m in re.finditer(r'https?://[^\s"<>]+', s, flags=re.IGNORECASE):
+            url = m.group(0)
+            rest = url.split('://', 1)[1]
+            if '//' in rest:
+                schema_bad.append(f"{hp.relative_to(ROOT).as_posix()} contains bad url: {url}")
+                break
+
+    if seo_bad:
+        fail('SEO duplicate meta detected. Sample: ' + '; '.join(seo_bad[:8]))
+    ok('No duplicate SEO metas')
+
+    if abs_bad:
+        fail('Root-absolute paths detected. Sample: ' + '; '.join(abs_bad[:8]))
+    ok('No root-absolute /assets or /site.webmanifest')
+
+    if schema_bad:
+        fail('Schema/URL contains double-slash. Sample: ' + '; '.join(schema_bad[:6]))
+    ok('No double-slash URLs in HTML')
+
 
     # 3) News JSON validation
     data_dir = ROOT/'berita'/'data'

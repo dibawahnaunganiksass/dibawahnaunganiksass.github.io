@@ -817,3 +817,23 @@ function setupDrawerA11y(){
 }
 document.addEventListener('partials:loaded', setupDrawerA11y);
 
+
+
+/* IKSASS_NAV_LINKFIX: ensure dropdown links navigate reliably */
+(function(){
+  const nav = document.querySelector('.header .navlinks');
+  if(!nav) return;
+  nav.addEventListener('click', (e)=>{
+    const a = e.target.closest('.menu a');
+    if(!a) return;
+    // Let normal navigation happen unless something else cancels it.
+    // Force navigation as a fallback.
+    const href = a.getAttribute('href');
+    if(!href) return;
+    // If another handler called preventDefault, we still navigate.
+    if(e.defaultPrevented){
+      window.location.href = a.href;
+    }
+  }, true);
+})();
+

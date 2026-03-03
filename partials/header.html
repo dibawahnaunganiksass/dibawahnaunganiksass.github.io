@@ -17,47 +17,76 @@
 <!-- Desktop menu (>= 992px) -->
 <nav aria-label="Menu utama" class="navlinks">
 <a href="{{root}}"><span aria-hidden="true" class="nav-ico ico-home"></span>  Beranda</a>
+
 <div class="dropdown">
-<button aria-controls="dd-profil-menu" aria-expanded="false" aria-haspopup="true" class="dropbtn" id="dd-profil-btn" type="button"><span aria-hidden="true" class="nav-ico ico-user"></span> Profil <span aria-hidden="true" class="nav-arrow">˅</span></button>
-<div aria-hidden="true" aria-labelledby="dd-profil-btn" class="menu" id="dd-profil-menu">
-<a href="{{root}}profil/struktur-organisasi/">Struktur</a>
-<a href="{{root}}profil/program-kerja/">Program Kerja</a>
-<a href="{{root}}profil/prinsip-perjuangan/">Prinsip Perjuangan</a><a href="{{root}}profil/yel-yel/">Yel-Yel IKSASS</a>
-<a href="{{root}}profil/mars-hymne/">Mars &amp; Hymne IKSASS</a>
-<a href="{{root}}tentang/website-ini/">Website ini</a>
+  <button aria-controls="dd-tentang-menu" aria-expanded="false" aria-haspopup="true" class="dropbtn" id="dd-tentang-btn" type="button">
+    <span aria-hidden="true" class="nav-ico ico-info"></span> Tentang <span aria-hidden="true" class="nav-arrow">˅</span>
+  </button>
+  <div aria-hidden="true" aria-labelledby="dd-tentang-btn" class="menu menu-2col" id="dd-tentang-menu">
+  <div class="menu-block">
+    <div class="menu-title">Profil Organisasi</div>
+    <a href="{{root}}profil/struktur-organisasi/">Struktur Organisasi</a>
+    <a href="{{root}}profil/program-kerja/">Program Kerja</a>
+    <a href="{{root}}tentang/visi-misi/">Visi &amp; Misi</a>
+  </div>
+
+  <div class="menu-block">
+    <div class="menu-title">Sejarah &amp; Nilai</div>
+    <a href="{{root}}tentang/sejarah/">Sejarah</a>
+    <a href="{{root}}profil/prinsip-perjuangan/">Prinsip Perjuangan</a>
+    <a href="{{root}}tentang/arah-gerak-perjuangan/">Arah Gerak &amp; Perjuangan</a>
+    <a href="{{root}}wasiat/">Wasiat</a>
+  </div>
+
+  <div class="menu-block">
+    <div class="menu-title">Identitas</div>
+    <a href="{{root}}profil/mars-hymne/">Mars &amp; Hymne IKSASS</a>
+    <a href="{{root}}profil/yel-yel/">Yel-yel IKSASS</a>
+  </div>
+
+  <div class="menu-block">
+    <div class="menu-title">Lainnya</div>
+    <a href="{{root}}tentang/iksass/">Tentang IKSASS</a>
+    <a href="{{root}}tentang/website-ini/">Website ini</a>
+  </div>
 </div>
 </div>
+
 <div class="dropdown">
-<button aria-controls="dd-tentang-menu" aria-expanded="false" aria-haspopup="true" class="dropbtn" id="dd-tentang-btn" type="button"><span aria-hidden="true" class="nav-ico ico-info"></span> Tentang <span aria-hidden="true" class="nav-arrow">˅</span></button>
-<div aria-hidden="true" aria-labelledby="dd-tentang-btn" class="menu" id="dd-tentang-menu">
-<a href="{{root}}tentang/iksass/">Tentang IKSASS</a>
-<a href="{{root}}tentang/pesantren-pengasuh-dan-iksass/">Pesantren, Pengasuh, dan IKSASS</a>
-<a href="{{root}}tentang/sejarah/">Sejarah</a>
-<a href="{{root}}tentang/visi-misi/">Visi &amp; Misi</a>
-<a href="{{root}}doktrinasi/">Doktrinasi IKSASS</a>
-<a href="{{root}}tentang/arah-gerak-perjuangan/">Arah Gerak &amp; Perjuangan</a>
+  <button aria-controls="dd-program-menu" aria-expanded="false" aria-haspopup="true" class="dropbtn" id="dd-program-btn" type="button">
+    <span aria-hidden="true" class="nav-ico ico-flag"></span> Program <span aria-hidden="true" class="nav-arrow">˅</span>
+  </button>
+  <div aria-hidden="true" aria-labelledby="dd-program-btn" class="menu" id="dd-program-menu">
+    <a href="{{root}}kaderisasi/">Kaderisasi</a>
+    <a href="{{root}}kaderisasi/ruang-aksi/">Ruang Aksi</a>
+  </div>
 </div>
+
+<div class="dropdown">
+  <button aria-controls="dd-kelembagaan-menu" aria-expanded="false" aria-haspopup="true" class="dropbtn" id="dd-kelembagaan-btn" type="button">
+    <span aria-hidden="true" class="nav-ico ico-org"></span> Kelembagaan <span aria-hidden="true" class="nav-arrow">˅</span>
+  </button>
+  <div aria-hidden="true" aria-labelledby="dd-kelembagaan-btn" class="menu" id="dd-kelembagaan-menu">
+    <a href="{{root}}kelembagaan/pengurus-pusat-iksass/">Pengurus Pusat</a>
+    <a href="{{root}}kelembagaan/pengurus-rayon-iksass/">Rayon</a>
+    <a href="{{root}}kelembagaan/pengurus-sub-rayon-iksass/">Subrayon</a>
+    <a href="{{root}}kelembagaan/pengurus-komisariat-iksass/">Komisariat</a>
+    <a href="{{root}}kelembagaan/">Direktori / Cari Unit</a>
+  </div>
 </div>
-<a href="{{root}}kelembagaan/"><span aria-hidden="true" class="nav-ico ico-org"></span>  Kelembagaan</a>
-<a href="{{root}}wasiat/"><span aria-hidden="true" class="nav-ico ico-book"></span>  Wasiat</a>
-<!-- Berita mega menu (desktop) -->
-<div class="dropdown berita-mega">
-<button class="dropbtn" type="button"><span aria-hidden="true" class="nav-ico ico-news"></span>  Berita <span aria-hidden="true" class="nav-arrow">˅</span></button>
-<div aria-hidden="true" class="mega">
-<div class="mega-head"><h4>Kabar terbaru</h4><a class="small-link mega-all" href="{{root}}berita/">Lihat semua</a></div>
-<div class="mega-posts" data-berita-mega="posts">
-<!-- Fallback (no-JS): will be replaced with latest news via assets/js/partials.js -->
-<a class="mega-card" href="{{root}}berita/">
-<img alt="Berita terbaru IKSASS" class="mega-thumb" decoding="async" loading="lazy" fetchpriority="low" width="160" height="96" src="{{root}}assets/img/og-default.png"/>
-<div class="mega-card-body">
-<div class="mega-card-title">Memuat berita terbaru…</div>
-<div class="mega-card-meta">IKSASS</div>
+
+<div class="dropdown">
+  <button aria-controls="dd-media-menu" aria-expanded="false" aria-haspopup="true" class="dropbtn" id="dd-media-btn" type="button">
+    <span aria-hidden="true" class="nav-ico ico-news"></span> Media <span aria-hidden="true" class="nav-arrow">˅</span>
+  </button>
+  <div aria-hidden="true" aria-labelledby="dd-media-btn" class="menu" id="dd-media-menu">
+    <a href="{{root}}berita/">Berita</a>
+    <a href="{{root}}agenda/">Agenda</a>
+    <a href="{{root}}galeri/">Galeri</a>
+  </div>
 </div>
-</a>
-</div>
-</div>
-</div>
-<a href="{{root}}galeri/"><span aria-hidden="true" class="nav-ico ico-gallery"></span>  Galeri</a>
+
+<a href="{{root}}dokumen/"><span aria-hidden="true" class="nav-ico ico-book"></span>  Dokumen</a>
 <a href="{{root}}kontak/"><span aria-hidden="true" class="nav-ico ico-phone"></span>  Kontak</a>
 </nav>
 <!-- CTA (mobile only) -->
@@ -84,33 +113,55 @@
 </div>
 <div class="drawer-links" data-drawer-content="menu">
 <a href="{{root}}"><span aria-hidden="true" class="drawer-ico ico-home"></span>  Beranda</a>
+
 <div class="drawer-acc">
-<button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-user"></span> Profil</button>
-<div class="drawer-acc-panel">
-<a href="{{root}}profil/struktur-organisasi/">Struktur</a>
-<a href="{{root}}profil/program-kerja/">Program Kerja</a>
-<a href="{{root}}profil/prinsip-perjuangan/">Prinsip Perjuangan</a>
-<a href="{{root}}profil/yel-yel/">Yel-yel IKSASS</a>
-<a href="{{root}}profil/mars-hymne/">Mars &amp; Hymne IKSASS</a>
-<a href="{{root}}tentang/website-ini/">Website ini</a>
+  <button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-info"></span> Tentang</button>
+  <div class="drawer-acc-panel">
+    <a href="{{root}}tentang/iksass/">Tentang IKSASS</a>
+    <a href="{{root}}tentang/sejarah/">Sejarah</a>
+    <a href="{{root}}tentang/visi-misi/">Visi &amp; Misi</a>
+    <a href="{{root}}profil/struktur-organisasi/">Struktur Organisasi</a>
+    <a href="{{root}}profil/program-kerja/">Program Kerja</a>
+    <a href="{{root}}profil/prinsip-perjuangan/">Prinsip Perjuangan</a>
+    <a href="{{root}}tentang/arah-gerak-perjuangan/">Arah Gerak &amp; Perjuangan</a>
+    <a href="{{root}}wasiat/">Wasiat</a>
+    <a href="{{root}}profil/mars-hymne/">Mars &amp; Hymne IKSASS</a>
+    <a href="{{root}}profil/yel-yel/">Yel-yel IKSASS</a>
+    <a href="{{root}}tentang/website-ini/">Website ini</a>
+  </div>
 </div>
-</div>
+
 <div class="drawer-acc">
-<button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-info"></span> Tentang</button>
-<div class="drawer-acc-panel">
-<a href="{{root}}tentang/iksass/">Tentang IKSASS</a>
-<a href="{{root}}tentang/pesantren-pengasuh-dan-iksass/">Pesantren, Pengasuh, dan IKSASS</a>
-<a href="{{root}}tentang/sejarah/">Sejarah</a>
-<a href="{{root}}tentang/visi-misi/">Visi &amp; Misi</a>
-<a href="{{root}}doktrinasi/">Doktrinasi IKSASS</a>
-<a href="{{root}}tentang/arah-gerak-perjuangan/">Arah Gerak &amp; Perjuangan</a>
+  <button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-flag"></span> Program</button>
+  <div class="drawer-acc-panel">
+    <a href="{{root}}kaderisasi/">Kaderisasi</a>
+    <a href="{{root}}kaderisasi/ruang-aksi/">Ruang Aksi</a>
+  </div>
 </div>
+
+<div class="drawer-acc">
+  <button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-org"></span> Kelembagaan</button>
+  <div class="drawer-acc-panel">
+    <a href="{{root}}kelembagaan/pengurus-pusat-iksass/">Pengurus Pusat</a>
+    <a href="{{root}}kelembagaan/pengurus-rayon-iksass/">Rayon</a>
+    <a href="{{root}}kelembagaan/pengurus-sub-rayon-iksass/">Subrayon</a>
+    <a href="{{root}}kelembagaan/pengurus-komisariat-iksass/">Komisariat</a>
+    <a href="{{root}}kelembagaan/">Direktori / Cari Unit</a>
+  </div>
 </div>
-<a href="{{root}}kelembagaan/"><span aria-hidden="true" class="drawer-ico ico-org"></span>  Kelembagaan</a>
-<a href="{{root}}wasiat/"><span aria-hidden="true" class="drawer-ico ico-book"></span>  Wasiat</a>
-<a href="{{root}}berita/"><span aria-hidden="true" class="drawer-ico ico-news"></span> Berita</a>
-<a href="{{root}}galeri/"><span aria-hidden="true" class="drawer-ico ico-gallery"></span>  Galeri</a>
+
+<div class="drawer-acc">
+  <button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-news"></span> Media</button>
+  <div class="drawer-acc-panel">
+    <a href="{{root}}berita/">Berita</a>
+    <a href="{{root}}agenda/">Agenda</a>
+    <a href="{{root}}galeri/">Galeri</a>
+  </div>
+</div>
+
+<a href="{{root}}dokumen/"><span aria-hidden="true" class="drawer-ico ico-book"></span>  Dokumen</a>
 <a href="{{root}}kontak/"><span aria-hidden="true" class="drawer-ico ico-phone"></span>  Kontak</a>
+
 
 <div class="drawer-acc">
 <button class="drawer-acc-btn" type="button"><span aria-hidden="true" class="drawer-ico ico-more"></span> Menu Lainnya</button>
@@ -131,6 +182,10 @@
 </div>
 </div>
 <div class="drawer-links" data-drawer-content="apps" style="display:none">
+
+<a href="{{root}}kaderisasi/"><span aria-hidden="true" class="drawer-ico ico-user"></span> Kaderisasi</a>
+<a href="{{root}}kaderisasi/ruang-aksi/"><span aria-hidden="true" class="drawer-ico ico-more"></span> Ruang Aksi</a>
+
 <a href="{{root}}berita/"><span aria-hidden="true" class="drawer-ico ico-news"></span> Berita</a>
 <a href="{{root}}dokumen/"><span aria-hidden="true" class="drawer-ico ico-org"></span> Info Organisasi</a>
 <a href="{{root}}galeri/"><span aria-hidden="true" class="drawer-ico ico-gallery"></span> Galeri</a>

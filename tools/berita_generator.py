@@ -118,6 +118,10 @@ def main():
   subtitle = data.get("subtitle","").strip() or "IKSASS • Berita"
   location = data.get("location","").strip()
   date_display = data.get("date_display","").strip()
+
+  date_iso = (data.get("date_iso") or "").strip()
+  if not date_iso:
+    raise SystemExit("date_iso wajib diisi (format: YYYY-MM-DD)")
   caption = data.get("caption","").strip() or (subtitle + ". Dokumentasi kegiatan IKSASS.")
   description = data.get("description","").strip() or (title + " — informasi resmi dari IKSASS.")
   body = data.get("body",[])
@@ -150,14 +154,30 @@ def main():
     if not img_out.exists():
       make_banner(title, subtitle, img_out)
     featured_rel = og_rel
+  # featured for HTML (relative, safe for subfolder deploy)
+  featured_html = featured_rel
+  if featured_html.startswith("/assets/"):
+    featured_html = "../../" + featured_html.lstrip("/")
+
+  # featured absolute for OG/Twitter
+  featured_abs = featured_rel
+  if not (featured_abs.startswith("http://") or featured_abs.startswith("https://")):
+    if not featured_abs.startswith("/"):
+      featured_abs = "/" + featured_abs
+    featured_abs = "https://dibawahnaunganiksass.github.io" + featured_abs
+
+  canonical_url = f"https://dibawahnaunganiksass.github.io/berita/{slug}/"
+
   # HTML from template
   tpl = TEMPLATE.read_text(encoding="utf-8")
   html = tpl
   html = html.replace("[JUDUL BERITA]", title)
   html = html.replace("[Ringkasan 150–160 karakter untuk SEO dan preview share]", description)
   html = html.replace("[Ringkasan singkat untuk share]", description)
-  html = html.replace("/assets/img/berita/[slug].png", og_rel)
-  html = html.replace("[FEATURED_IMAGE]", featured_rel)
+  html = html.replace("[FEATURED_IMAGE]", featured_html)
+  html = html.replace("[FEATURED_ABS]", featured_abs)
+  html = html.replace("[CANONICAL_URL]", canonical_url)
+  html = html.replace("[DATE_ISO]", date_iso)
   html = html.replace("[slug]", slug)
   html = html.replace("[Subjudul/lead pendek]", subtitle)
   html = html.replace("[Judul Berita]", title)

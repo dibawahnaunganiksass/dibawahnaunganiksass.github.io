@@ -15,8 +15,7 @@
   margin: 0 0 6px;
   font-weight: 800;
   letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--green);
+color: var(--green);
   font-size: 12px;
 }
 
@@ -70,8 +69,7 @@
   font-size: 13px;
   font-weight: 900;
   letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
+color: var(--muted);
 }
 
 .page-wasiat .wasiat-ol{
@@ -150,8 +148,7 @@
   margin: 6px 0;
   font-weight: 900;
   letter-spacing: .6px;
-  text-transform: uppercase;
-  line-height: 1.15;
+line-height: 1.15;
   font-size: 18px;
 }
 
@@ -229,8 +226,7 @@
   margin: 8px 0;
   font-weight: 900;
   letter-spacing: .4px;
-  text-transform: uppercase;
-  line-height: 1.15;
+line-height: 1.15;
 }
 .page-wasiat .slide-mantra .q{ opacity: .85; }
 .page-wasiat .slide-mantra .a{ color: var(--green); }
@@ -238,15 +234,13 @@
 .page-wasiat .slide-loyal{
   margin: 10px 0 0;
   font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .6px;
+letter-spacing: .6px;
   font-size: 16px;
 }
 .page-wasiat .slide-barisan{
   margin: 6px 0 10px;
   font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .6px;
+letter-spacing: .6px;
   font-size: 16px;
   color: var(--green);
 }

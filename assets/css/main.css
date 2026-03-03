@@ -80,7 +80,7 @@ a:hover{color:var(--accent)}
 .navlinks .dropbtn.active{
   color:var(--text);
   border-bottom-color:var(--accent);
-  background: linear-gradient(180deg, rgba(15,118,110,.18), rgba(15,118,110,.09));
+  background: linear-gradient(180deg, rgba(15,122,60,.18), rgba(15,122,60,.09));
   box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
 }
 .navlinks a:hover,
@@ -1659,7 +1659,7 @@ main{padding-top:var(--iksass-header-h,64px);}
 
 /* Mobile header icon links (search/login) */
 a.iconbtn{ text-decoration:none; color:inherit; }
-a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:2px; }
+a.iconbtn:focus-visible{ outline:3px solid rgba(15,122,60,.35); outline-offset:2px; }
 
 /* --- Mobile Drawer typography & spacing tune (match reference UI) --- */
 @media (max-width: 991px){
@@ -1787,7 +1787,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   /* Glossy green hover (subtle) */
   .navlinks a:hover,
   .navlinks .dropbtn:hover{
-    background: linear-gradient(180deg, rgba(15,118,110,.14), rgba(15,118,110,.07));
+    background: linear-gradient(180deg, rgba(15,122,60,.14), rgba(15,122,60,.07));
     box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
   }
 
@@ -1800,7 +1800,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
     right:12px;
     bottom:6px;
     height:2px;
-    background: rgba(15,118,110,.85);
+    background: rgba(15,122,60,.85);
     opacity:0;
     transform: scaleX(.75);
     transition: opacity .18s ease, transform .18s ease;
@@ -1815,7 +1815,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   /* Active marker (NO font-weight change) */
   .navlinks a.active,
   .navlinks .dropbtn.active{
-    background: linear-gradient(180deg, rgba(15,118,110,.18), rgba(15,118,110,.09));
+    background: linear-gradient(180deg, rgba(15,122,60,.18), rgba(15,122,60,.09));
     box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
   }
   .navlinks a.active::after,
@@ -1827,7 +1827,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   /* Keyboard focus */
   .navlinks a:focus-visible,
   .navlinks .dropbtn:focus-visible{
-    outline: 3px solid rgba(15,118,110,.35);
+    outline: 3px solid rgba(15,122,60,.35);
     outline-offset: 2px;
   }
 }
@@ -1870,7 +1870,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   /* Glossy green hover + underline */
   .header .navlinks a:hover,
   .header .navlinks .dropdown > .dropbtn:hover{
-    background: linear-gradient(180deg, rgba(15,118,110,.16), rgba(15,118,110,.08));
+    background: linear-gradient(180deg, rgba(15,122,60,.16), rgba(15,122,60,.08));
     box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
   }
 
@@ -1882,7 +1882,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
     right:12px;
     bottom:6px;
     height:2px;
-    background: rgba(15,118,110,.9);
+    background: rgba(15,122,60,.9);
     opacity:0;
     transform: scaleX(.75);
     transition: opacity .18s ease, transform .18s ease;
@@ -1898,7 +1898,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   /* Active state (background + underline as marker) */
   .header .navlinks a.active,
   .header .navlinks .dropdown > .dropbtn.active{
-    background: linear-gradient(180deg, rgba(15,118,110,.18), rgba(15,118,110,.10));
+    background: linear-gradient(180deg, rgba(15,122,60,.18), rgba(15,122,60,.10));
     box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
   }
 
@@ -2156,7 +2156,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   border:1px solid rgba(0,0,0,.06);
   border-radius:16px;
   background:
-    radial-gradient(120% 140% at 10% 20%, rgba(15,118,110,.10), rgba(255,255,255,0) 55%),
+    radial-gradient(120% 140% at 10% 20%, rgba(15,122,60,.10), rgba(255,255,255,0) 55%),
     linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,252,1));
   box-shadow: 0 10px 30px rgba(2,6,23,.06);
   position:relative;
@@ -2168,7 +2168,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   position:absolute;
   left:0; right:0; top:0;
   height:4px;
-  background: linear-gradient(90deg, rgba(15,118,110,1), rgba(34,197,94,.55));
+  background: linear-gradient(90deg, rgba(15,122,60,1), rgba(34,197,94,.55));
 }
 .k-stat-top{
   display:flex;
@@ -2181,8 +2181,8 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  background: rgba(15,118,110,.10);
-  border:1px solid rgba(15,118,110,.18);
+  background: rgba(15,122,60,.10);
+  border:1px solid rgba(15,122,60,.18);
   font-size:18px;
 }
 .k-stat-title{ display:flex; align-items:center; gap:8px; min-width:0; }
@@ -2195,8 +2195,8 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
 .k-stat-note{
   width:18px;height:18px;
   border-radius:99px;
-  border:1px solid rgba(15,118,110,.25);
-  background: rgba(15,118,110,.08);
+  border:1px solid rgba(15,122,60,.25);
+  background: rgba(15,122,60,.08);
 }
 .k-stat-main{
   margin-top:10px;
@@ -2216,8 +2216,8 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
 .k-stat-chip{
   justify-self:start;
   align-self:center;
-  border:1px solid rgba(15,118,110,.22);
-  background: rgba(15,118,110,.08);
+  border:1px solid rgba(15,122,60,.22);
+  background: rgba(15,122,60,.08);
   color: var(--primary);
   padding:6px 10px;
   border-radius:999px;
@@ -2237,7 +2237,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   cursor: pointer;
 }
 .k-stat-link:focus-visible{
-  outline: 3px solid rgba(15,118,110,.35);
+  outline: 3px solid rgba(15,122,60,.35);
   outline-offset: 3px;
 }
 .k-stat-link:hover{
@@ -2263,8 +2263,8 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   padding: 6px 10px;
   border-radius: 999px;
   letter-spacing: .02em;
-  border: 1px solid rgba(15,118,110,.22);
-  background: rgba(15,118,110,.08);
+  border: 1px solid rgba(15,122,60,.22);
+  background: rgba(15,122,60,.08);
   color: var(--primary);
 }
 .k-stat-card[data-badge-variant="new"]::after{
@@ -2315,7 +2315,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   font-size: 12px;
   color: var(--text);
   background: rgba(255,255,255,.95);
-  border: 1px solid rgba(15,118,110,.18);
+  border: 1px solid rgba(15,122,60,.18);
   box-shadow: 0 10px 24px rgba(2,6,23,.10);
   opacity: 0;
   transform: translateY(-4px);
@@ -2351,7 +2351,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
 .k-stat-ic{
   font-size:18px !important;
   background-image:none !important;
-  background: rgba(15,118,110,.10);
+  background: rgba(15,122,60,.10);
 }
 
 /* Info icon (circle with i) */
@@ -2359,8 +2359,8 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   width:18px;
   height:18px;
   border-radius:999px;
-  border:1px solid rgba(15,118,110,.25);
-  background: rgba(15,118,110,.08);
+  border:1px solid rgba(15,122,60,.25);
+  background: rgba(15,122,60,.08);
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -2388,7 +2388,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   font-size:12px;
   color: var(--text);
   background: rgba(255,255,255,.96);
-  border: 1px solid rgba(15,118,110,.18);
+  border: 1px solid rgba(15,122,60,.18);
   box-shadow: 0 10px 24px rgba(2,6,23,.10);
   opacity:0;
   pointer-events:none;
@@ -2401,7 +2401,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
   transform: translateX(-50%) translateY(0);
 }
 .k-info:focus-visible{
-  outline: 3px solid rgba(15,118,110,.35);
+  outline: 3px solid rgba(15,122,60,.35);
   outline-offset: 2px;
 }
 
@@ -2495,7 +2495,7 @@ a.iconbtn:focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:
 /* --- Desktop: ensure dropdown buttons get glossy hover + underline (Profil/Tentang/Berita) --- */
 @media (min-width: 992px){
   .header .navlinks .dropbtn:hover{
-    background: linear-gradient(180deg, rgba(15,118,110,.16), rgba(15,118,110,.08)) !important;
+    background: linear-gradient(180deg, rgba(15,122,60,.16), rgba(15,122,60,.08)) !important;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
   }
   .header .navlinks .dropbtn:hover::after{
@@ -2592,8 +2592,8 @@ footer a:focus-visible{
 .navlinks .dropbtn.active {
   background: linear-gradient(
     180deg,
-    rgba(15,118,110,.18),
-    rgba(15,118,110,.09)
+    rgba(15,122,60,.18),
+    rgba(15,122,60,.09)
   ) !important;
 
   border-bottom-color: var(--accent) !important;
@@ -2605,8 +2605,8 @@ footer a:focus-visible{
 .header .navlinks .dropdown.berita-mega > .dropbtn.active{
   background: linear-gradient(
     180deg,
-    rgba(15,118,110,.18),
-    rgba(15,118,110,.09)
+    rgba(15,122,60,.18),
+    rgba(15,122,60,.09)
   ) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.75) !important;
   border-bottom-color: var(--accent) !important;
@@ -2735,3 +2735,22 @@ footer a:focus-visible{
   .header .nav-left{ gap: var(--header-gap-left-mobile, var(--header-gap-mobile, var(--header-gap))); }
   .header .nav-cta{ gap: var(--header-gap-right-mobile, var(--header-gap-mobile, var(--header-gap))); }
 }
+
+
+/* === THEME TOKENS: Olive Primary + Emerald Highlight (v1) === */
+:root{
+  --brand-900:#3F551A;
+  --brand-800:#4E6A24;
+  --brand-700:#5E7F2E;
+  --brand-500:#6F8F3A;
+  --brand-300:#9FBC65;
+  --brand-100:#E6F0D2;
+
+  --accent-ui:#0f7a3c; /* emerald highlight */
+
+  /* map existing system vars */
+  --accent: var(--brand-500);
+  --accent-dark: var(--brand-700);
+  --bg-soft: #f7f8f4; /* slightly warm */
+}
+
