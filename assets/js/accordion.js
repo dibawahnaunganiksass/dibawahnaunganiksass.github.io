@@ -112,3 +112,30 @@
     });
   });
 })();
+
+/* ===== FORCE MOBILE DOT-9 OUTLINE FIX ===== */
+(function () {
+  function isMobile() { return window.matchMedia("(max-width: 768px)").matches; }
+
+  function fixDot9() {
+    if (!isMobile()) return;
+
+    var btn = document.querySelector(".appsbtn");
+    if (!btn) return;
+
+    btn.style.background = "transparent";
+    btn.style.backgroundColor = "transparent";
+    btn.style.boxShadow = "none";
+    btn.style.border = "1.5px solid rgba(255,255,255,.65)";
+
+    btn.querySelectorAll("*").forEach(function (el) {
+      el.style.background = "transparent";
+      el.style.backgroundColor = "transparent";
+      el.style.boxShadow = "none";
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", fixDot9);
+  window.addEventListener("resize", fixDot9);
+})();
+

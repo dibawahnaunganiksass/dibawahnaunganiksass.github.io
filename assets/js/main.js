@@ -837,3 +837,5 @@ document.addEventListener('partials:loaded', setupDrawerA11y);
   }, true);
 })();
 
+
+!function(){function m(){return window.matchMedia("(max-width: 768px)").matches}function fix(){if(!m())return;var b=document.querySelector(".iconbtn.appsbtn,.appsbtn");if(!b)return;var ico=b.querySelector(".nav-ico.ico-apps,.ico-apps,.nav-ico");if(ico){try{ico.style.removeProperty("background");ico.style.removeProperty("background-color");ico.style.removeProperty("box-shadow");ico.style.setProperty("color","#fff","important");}catch(e){}}}document.addEventListener("DOMContentLoaded",function(){setTimeout(fix,300);setTimeout(fix,900);});window.addEventListener("resize",fix);}();
