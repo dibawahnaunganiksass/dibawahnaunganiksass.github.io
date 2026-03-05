@@ -49,5 +49,4 @@
     background-size: 16px 16px !important;
     opacity: 1 !important;
   }
-}
-
+}.header .brand-text,.header .navlinks>a,.header .navlinks .dropbtn,.header .nav-cta .iconbtn,.header .nav-left .iconbtn{color:#fff!important}.header .navlinks>a .nav-ico,.header .navlinks .dropbtn .nav-ico,.header .nav-cta .nav-ico,.header .nav-left .nav-ico{filter:invert(1) brightness(2)!important;opacity:1!important}.header .iconbtn{background:transparent!important;border-color:rgba(255,255,255,.45)!important}.header .iconbtn:hover,.header .iconbtn:active,.header .iconbtn:focus{background:transparent!important;border-color:rgba(255,255,255,.7)!important;box-shadow:none!important}
