@@ -3785,24 +3785,15 @@ text-decoration:underline;
   content:"";
   position:absolute;
   inset:0;
-  background-image:url("../img/pesantren/hero.jpg");
-  background-size:cover;
-  background-position:center;
+  background:
+    url("../img/logo-iksass.png") right -140px bottom -140px / 520px 520px no-repeat,
+    url("../img/pesantren/hero.jpg") center/cover no-repeat;
   transform:scale(1.02);
   filter:saturate(.95) contrast(1.05);
-  opacity:.82;
+  opacity:.90;
   pointer-events:none;
 }
-.hero.hero--dramatic:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(1200px 420px at 18% 0%, rgba(22,163,74,.26), transparent 58%),
-    radial-gradient(900px 380px at 90% 20%, rgba(245,158,11,.14), transparent 62%),
-    linear-gradient(180deg, rgba(2,6,23,.72), rgba(2,6,23,.84));
-  pointer-events:none;
-}
+.hero
 .hero.hero--dramatic .container{position:relative; z-index:1;}
 .hero.hero--dramatic .hero-inner{
   grid-template-columns:1fr;
@@ -4514,26 +4505,8 @@ body:not(.page-struktur):not(.page-prinsip) .proker-box-single{
   position: relative;
   overflow: hidden;
 }
-.hero.hero--dramatic::after{
-  content:"";
-  position:absolute;
-  inset:auto -140px -140px auto;
-  width: 520px;
-  height: 520px;
-  background: url("../img/logo-iksass.png") center/contain no-repeat;
-  opacity: .045;
-  transform: rotate(-8deg);
-  pointer-events:none;
-  filter: saturate(.95) contrast(1.05);
-}
-@media (max-width: 820px){
-  .hero.hero--dramatic::after{
-    width: 380px;
-    height: 380px;
-    inset:auto -120px -160px auto;
-    opacity: .04;
-  }
-}
+.hero@media (max-width: 820px){
+  .hero}
 
 /* === NAV BERITA MEGA: position + safe height (keep original grid look) === */
 .header .berita-mega .mega{
@@ -5191,12 +5164,7 @@ body.page-galeri-detail .album-empty code{
   padding:52px 0 64px;
 }
 /* overlay tint: swap saturated green -> subtle olive */
-.hero.hero--dramatic:after{
-  background:
-    radial-gradient(1200px 520px at 18% 0%, rgba(94,127,46,.18), transparent 60%),
-    radial-gradient(900px 420px at 92% 22%, rgba(111,143,58,.10), transparent 64%),
-    linear-gradient(180deg, rgba(2,6,23,.74), rgba(2,6,23,.88));
-}
+.hero
 
 /* typography */
 .hero.hero--dramatic .hero-eyebrow{
@@ -5293,52 +5261,6 @@ body.page-galeri-detail .album-empty code{
 
 
 
-/* === FORCE HERO WATERMARK LOGO (RIGHT SIDE) === */
-.hero.hero--dramatic{
-  background-image:
-    url('../img/hero.jpg'),
-    url('../img/logo-iksass.png');
-  background-size: cover, 420px;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center center, right 6% center;
-}
-
-
-
-/* === HERO: SINGLE WATERMARK (REMOVE DOUBLE LOGO) === */
-/* If hero background currently stacks hero.jpg + logo, force it to hero.jpg only (logo handled by pseudo below). */
-.hero.hero--dramatic{
-  background-image: url('../img/hero.jpg') !important; /* keep same hero image, just remove extra logo layer */
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  position: relative;
-}
-
-/* Render ONE watermark logo via container pseudo (tilt + dramatic transparency) */
-@media (min-width: 768px){
-  .hero.hero--dramatic .container{
-    position: relative;
-    z-index: 2;
-  }
-  .hero.hero--dramatic .container::after{
-    content:"";
-    position:absolute;
-    top:50%;
-    right:-6%;
-    width:520px;
-    height:520px;
-    background:url("../img/logo-iksass.png") no-repeat center;
-    background-size:contain;
-    opacity:.14; /* more dramatic but still visible */
-    transform:translateY(-50%) rotate(-15deg);
-    pointer-events:none;
-    z-index:0;
-  }
-}
-
-
-
 /* ===== MOBILE DOT-9 ICON: FORCE WHITE SVG (no currentColor) ===== */
 @media (max-width: 768px){
   .navbar .appsbtn .nav-ico.ico-apps{
@@ -5349,33 +5271,95 @@ body.page-galeri-detail .album-empty code{
 }
 
 
-/* === NAVBAR FORCE WHITE (text + icons) === */
-.header .brand-text,
-.header .navlinks > a,
-.header .navlinks .dropbtn,
-.header .nav-cta .iconbtn,
-.header .nav-left .iconbtn{
-  color:#fff !important;
+
+/* ================= NAVBAR FORCE WHITE ================= */
+
+/* All navbar text */
+.header,
+.header .nav,
+.header a,
+.header .menu,
+.header .nav a{
+  color:#ffffff !important;
 }
 
-.header .navlinks > a .nav-ico,
-.header .navlinks .dropbtn .nav-ico,
-.header .nav-cta .nav-ico,
-.header .nav-left .nav-ico{
-  filter:invert(1) brightness(2) !important;
-  opacity:1 !important;
-}
-
-/* keep icon buttons transparent with white border (no fill on hover/active) */
+/* icon buttons */
 .header .iconbtn{
+  color:#ffffff !important;
   background:transparent !important;
-  border-color:rgba(255,255,255,.45) !important;
-}
-.header .iconbtn:hover,
-.header .iconbtn:active,
-.header .iconbtn:focus{
-  background:transparent !important;
-  border-color:rgba(255,255,255,.7) !important;
-  box-shadow:none !important;
+  border:1px solid rgba(255,255,255,.35) !important;
 }
 
+/* svg icons */
+.header .iconbtn svg{
+  fill:#ffffff !important;
+  stroke:#ffffff !important;
+}
+
+/* background svg icons */
+.header .nav-ico{
+  filter:brightness(0) invert(1) !important;
+}
+
+/* hamburger */
+.header .hamburger,
+.header .hamburger span{
+  background:#ffffff !important;
+}
+
+/* keep white when scrolled */
+.header.is-scrolled,
+.header.is-scrolled a,
+.header.is-scrolled .iconbtn{
+  color:#ffffff !important;
+}
+
+
+/* ===========================
+   NEWS DETAIL HERO AUTO IMAGE
+   - Uses JS to set --hero-bg from featured image
+   =========================== */
+.news-hero.has-bg{
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Keep existing gradient as fallback; add overlay for readability */
+.news-hero.has-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+  pointer-events:none;
+}
+
+.news-hero.has-bg > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   NEWS LIST HERO ( /berita/ )
+   - Use static hero.jpg
+   =========================== */
+body.page-berita-list .news-hero{
+  background-image: url("/assets/img/pesantren/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+body.page-berita-list .news-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+  pointer-events:none;
+}
+body.page-berita-list .news-hero > *{
+  position: relative;
+  z-index: 1;
+}
