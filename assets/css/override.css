@@ -5467,3 +5467,19 @@ body.page-berita-list .news-hero > *{
    stack and appear "double".
    ========================================================= */
 .hero.hero--dramatic{ background-image:none !important; }
+
+/* === HOTFIX: MOBILE HAMBURGER ICON (ico-menu) SHOWS AS SQUARE ===
+   Scope: ONLY the hamburger button icon in the header.
+   Strategy: use a white-stroke SVG data-uri (no currentColor), and disable filters.
+*/
+@media (max-width: 991px){
+  .header .hamburger .nav-ico.ico-menu{
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M4%207h16%27/%3E%3Cpath%20d%3D%27M4%2012h16%27/%3E%3Cpath%20d%3D%27M4%2017h16%27/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 18px 18px !important;
+    background-color: transparent !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
