@@ -2754,3 +2754,17 @@ footer a:focus-visible{
   --bg-soft: #f7f8f4; /* slightly warm */
 }
 
+
+/* ==========================================================
+   CRITICAL (mobile): Dot9 / Apps icon must render immediately
+   Prevents FOUC where icon appears late/black on some pages.
+   Scoped ONLY to the Apps (dot9) button.
+   ========================================================== */
+@media (max-width: 991px){
+  .header .iconbtn.apps{ color:#fff; }
+  .header .iconbtn.apps .nav-ico{
+    filter: brightness(0) invert(1);
+    opacity: 1;
+    visibility: visible;
+  }
+}
