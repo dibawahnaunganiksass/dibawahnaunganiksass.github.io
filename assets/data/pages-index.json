@@ -505,20 +505,6 @@
     ]
   },
   {
-    "title": "Design System IKSASS",
-    "url": "styleguide/",
-    "excerpt": "Informasi resmi IKSASS — Panduan UI | IKSASS.",
-    "category": "Halaman",
-    "tags": [
-      "styleguide",
-      "index",
-      "design",
-      "system",
-      "iksass",
-      "halaman"
-    ]
-  },
-  {
     "title": "Arah Gerak & Perjuangan",
     "url": "tentang/arah-gerak-perjuangan/",
     "excerpt": "IKSASS — IKSASS — Arah Gerak &amp; Perjuangan. Informasi organisasi, kegiatan, kelembagaan, berita, dan dokumentasi.",
@@ -620,7 +606,7 @@
   },
   {
     "title": "Buka",
-    "url": "dokumen/RANCANGAN-PROKER-IKSASS-2022-2026.pdf",
+    "url": "assets/files/dokumen/RANCANGAN-PROKER-IKSASS-2022-2026.pdf",
     "excerpt": "Dokumen PDF (klik untuk membuka).",
     "category": "Dokumen",
     "tags": [
@@ -636,7 +622,7 @@
   },
   {
     "title": "Buka",
-    "url": "dokumen/mars-iksass.pdf",
+    "url": "assets/files/dokumen/mars-iksass.pdf",
     "excerpt": "Dokumen PDF (klik untuk membuka).",
     "category": "Dokumen",
     "tags": [
@@ -649,7 +635,7 @@
   },
   {
     "title": "Buka",
-    "url": "dokumen/hymne-iksass.pdf",
+    "url": "assets/files/dokumen/hymne-iksass.pdf",
     "excerpt": "Dokumen PDF (klik untuk membuka).",
     "category": "Dokumen",
     "tags": [
@@ -662,7 +648,7 @@
   },
   {
     "title": "Buka",
-    "url": "dokumen/AD-ART-IKSASS-MUBES-X.pdf",
+    "url": "assets/files/dokumen/AD-ART-IKSASS-MUBES-X.pdf",
     "excerpt": "Dokumen PDF (klik untuk membuka).",
     "category": "Dokumen",
     "tags": [

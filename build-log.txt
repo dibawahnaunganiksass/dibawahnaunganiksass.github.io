@@ -1,0 +1,20 @@
+removed assets/img/kiai/test.txt
+removed assets/js/news-more.js
+removed assets/js/news-more.min.js
+removed assets/css/ultimate-ui.css
+removed assets/css/ultimate-ui.min.css
+removed partials/header/index.html
+removed partials/footer/index.html
+removed partials/head-seo.html
+removed auth/login.html
+removed auth/register.html
+removed styleguide/index.html
+removed empty dir partials/header
+removed empty dir partials/footer
+removed empty dir styleguide
+fixed broken asset paths in profil/index.html
+updated founding-figures.json image paths
+cleaned pages-index.json
+set noindex on auth/login/index.html
+set noindex on auth/register/index.html
+regenerated sitemap.xml (77 pages)

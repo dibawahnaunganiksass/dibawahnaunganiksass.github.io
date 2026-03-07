@@ -1,0 +1,1 @@
+Build siap deploy untuk static hosting root path.
