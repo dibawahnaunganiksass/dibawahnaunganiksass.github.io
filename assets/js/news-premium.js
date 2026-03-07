@@ -1,9 +1,0 @@
-
-document.querySelectorAll('.news-card').forEach((card,i)=>{
- if(i<2){
-  const b=document.createElement('span');
-  b.className='badge-popular';
-  b.innerText='🔥 Popular';
-  card.prepend(b);
- }
-});

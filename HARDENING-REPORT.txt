@@ -1,0 +1,16 @@
+Production-hardened build created.
+Total files: 258
+Total size: 75776805 bytes
+
+Checks:
+- HTML local-reference validation: OK
+- Footer partial invalid SEO block removed: yes
+- .nojekyll present: yes
+- Source duplicate CSS/JS removed from deploy package: yes
+- Auth duplicate flat routes removed: yes
+- Auth pages set noindex: yes
+- Sitemap regenerated: yes
+
+Notes:
+- Target deployment: static hosting at root path.
+- If deploying under a subfolder, root-relative URLs should be reviewed.
