@@ -131,3 +131,204 @@
     visibility:hidden !important;
   }
 }
+
+/* === 2026-03 visual alignment: prinsip, galeri, dokumen === */
+:root{
+  --iksass-header-solid: var(--brand-500, #6F8F3A);
+  --iksass-header-dark: var(--brand-700, #5E7F2E);
+  --iksass-card-border: rgba(111,143,58,.28);
+  --iksass-card-shadow: 0 10px 30px rgba(2,6,23,.08);
+  --iksass-card-shadow-hover: 0 16px 38px rgba(2,6,23,.12);
+  --iksass-card-radius: 18px;
+}
+
+/* Prinsip Perjuangan: samakan aksen warna dan pastikan tidak bocor */
+.page-prinsip .pillars-wrap,
+.page-prinsip .pillars-grid,
+.page-prinsip .pillars-grid > article,
+.page-prinsip .pillars-featured,
+.page-prinsip .pillar-card{
+  min-width:0;
+}
+.page-prinsip .pillars-grid > article,
+.page-prinsip .pillars-featured .pillar-card,
+.page-prinsip .pillars-grid > article:nth-child(1),
+.page-prinsip .pillars-grid > article:nth-child(2),
+.page-prinsip .pillars-grid > article:nth-child(3),
+.page-prinsip .pillars-grid > article:nth-child(4){
+  --pp-accent: var(--iksass-header-solid);
+}
+.page-prinsip .pillar-card{
+  border:1px solid var(--iksass-card-border) !important;
+  border-radius:var(--iksass-card-radius) !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(620px 180px at 20% 0%, rgba(111,143,58,.10) 0%, rgba(111,143,58,0) 55%),
+    linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88)) !important;
+  box-shadow:var(--iksass-card-shadow);
+  isolation:isolate;
+}
+.page-prinsip .pillar-card::before{
+  background:linear-gradient(90deg,var(--iksass-header-solid),rgba(111,143,58,0)) !important;
+}
+.page-prinsip .pillar-card:hover,
+.page-prinsip .pillar-card:focus-within{
+  border-color:rgba(111,143,58,.52) !important;
+  box-shadow:var(--iksass-card-shadow-hover) !important;
+}
+.page-prinsip .pillar-card .quote{
+  border-left-color:var(--iksass-header-solid) !important;
+}
+.page-prinsip .pillar-no{
+  background:rgba(111,143,58,.12) !important;
+  border-color:rgba(111,143,58,.34) !important;
+  color:var(--iksass-header-dark) !important;
+}
+.page-prinsip .kv-row{
+  grid-template-columns:minmax(0,auto) minmax(0,1fr);
+}
+.page-prinsip .kv dt,
+.page-prinsip .kv dd,
+.page-prinsip .pillar-card .title,
+.page-prinsip .pillar-card .desc,
+.page-prinsip .pillar-card .quote{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+/* Galeri: samakan rasa visual card dengan halaman prinsip perjuangan */
+body.page-galeri .hero-card,
+body.page-galeri .gallery-card,
+body.page-galeri-detail .album-empty,
+body.page-galeri-detail .gallery-filters{
+  border-radius:var(--iksass-card-radius);
+}
+body.page-galeri .hero-card,
+body.page-galeri .gallery-card,
+.docs-page .list,
+.info-card{
+  border:1px solid var(--iksass-card-border) !important;
+  background:
+    radial-gradient(620px 180px at 20% 0%, rgba(111,143,58,.10) 0%, rgba(111,143,58,0) 55%),
+    linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,255,255,.90)) !important;
+  box-shadow:var(--iksass-card-shadow);
+}
+body.page-galeri .gallery-card{
+  overflow:hidden;
+  position:relative;
+}
+body.page-galeri .gallery-card::before,
+.docs-page .list::before,
+.info-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--iksass-header-solid),rgba(111,143,58,0));
+  opacity:.95;
+}
+body.page-galeri .gallery-card:hover,
+.docs-page .list:hover,
+.info-card:hover{
+  border-color:rgba(111,143,58,.52) !important;
+  box-shadow:var(--iksass-card-shadow-hover) !important;
+  transform:translateY(-3px);
+}
+body.page-galeri .gallery-card__body{
+  padding:16px;
+}
+body.page-galeri .gallery-card__body .title,
+body.page-galeri .gallery-card__body .desc{
+  overflow-wrap:anywhere;
+}
+
+/* Badge/Akar/Proses/Wadah/Hikmah + badge dokumen selaras warna header */
+.hero-card .pill,
+body.page-galeri .gallery-card .pill,
+.docs-page .doc-actions .small-link,
+.docs-chip,
+.docs-chip-count{
+  border-color:transparent !important;
+}
+.hero-card .pill,
+body.page-galeri .gallery-card .pill,
+.docs-page .doc-actions .small-link,
+.docs-chip--active,
+.docs-chip-count{
+  background:linear-gradient(180deg,var(--brand-800,#4E6A24),var(--brand-500,#6F8F3A)) !important;
+  color:#F8FAF7 !important;
+}
+.hero-card .pill,
+body.page-galeri .gallery-card .pill{
+  font-weight:800;
+  box-shadow:0 8px 18px rgba(78,106,36,.18);
+}
+.docs-chip{
+  color:var(--iksass-header-dark) !important;
+  border:1px solid rgba(111,143,58,.26) !important;
+  background:#fff !important;
+}
+.docs-chip:hover{
+  border-color:rgba(111,143,58,.48) !important;
+}
+.docs-chip--active .docs-chip-count,
+.docs-chip--active{
+  color:#F8FAF7 !important;
+}
+.docs-page .doc-actions .small-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:700;
+  box-shadow:0 8px 18px rgba(78,106,36,.18);
+}
+.docs-page .doc-actions .small-link:hover{
+  background:linear-gradient(180deg,var(--brand-700,#5E7F2E),var(--brand-500,#6F8F3A)) !important;
+  color:#fff !important;
+}
+
+/* Dokumen: card rounded seragam */
+.docs-page .list,
+.info-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--iksass-card-radius) !important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.docs-page .list{
+  padding:16px 18px;
+}
+.docs-page .list .row{
+  border-top-color:rgba(111,143,58,.14);
+}
+.docs-page .list .meta,
+.docs-desc,
+.info-cap span{
+  color:rgba(17,24,39,.72) !important;
+}
+.info-cap{
+  background:transparent;
+}
+@media (max-width:768px){
+  .docs-page .list .row{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .docs-page .doc-actions{
+    width:100%;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+}
+
+
+/* Final fix: label chip dokumen harus selalu terlihat */
+.docs-chip{opacity:1 !important;-webkit-text-fill-color:currentColor !important;}
+.docs-chip .docs-chip-label{display:inline !important;color:inherit !important;opacity:1 !important;visibility:visible !important;-webkit-text-fill-color:currentColor !important;}
+.docs-chip.docs-chip--active,.docs-chip[aria-current="page"]{background:linear-gradient(180deg,var(--brand-800,#4E6A24),var(--brand-500,#6F8F3A)) !important;color:#F8FAF7 !important;border-color:transparent !important;-webkit-text-fill-color:#F8FAF7 !important;}
+.docs-chip.docs-chip--active .docs-chip-label,.docs-chip[aria-current="page"] .docs-chip-label{color:#F8FAF7 !important;-webkit-text-fill-color:#F8FAF7 !important;}

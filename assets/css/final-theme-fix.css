@@ -1,0 +1,99 @@
+:root{
+  --theme-green:#5f7f2b;
+  --theme-green-dark:#4f6d22;
+  --theme-green-soft:#eef4e6;
+  --theme-border:#d6e4c2;
+  --theme-text:#3f5f18;
+}
+
+.docs-chip,
+.docs-chip .docs-chip-label,
+.docs-chip .docs-chip-count{
+  opacity:1 !important;
+  visibility:visible !important;
+  text-shadow:none !important;
+}
+.docs-chip{
+  background:var(--theme-green-soft) !important;
+  color:var(--theme-text) !important;
+  border:1px solid var(--theme-border) !important;
+  -webkit-text-fill-color:var(--theme-text) !important;
+}
+.docs-chip .docs-chip-label,
+.docs-chip:not(.docs-chip--active) .docs-chip-label,
+.docs-chip:first-child .docs-chip-label,
+.docs-chip[data-cat="ALL"] .docs-chip-label{
+  color:var(--theme-text) !important;
+  -webkit-text-fill-color:var(--theme-text) !important;
+  font-weight:500 !important;
+}
+.docs-chip .docs-chip-count{
+  background:var(--theme-green) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.docs-chip.docs-chip--active,
+.docs-chip[aria-current="page"]{
+  background:var(--theme-green) !important;
+  color:#fff !important;
+  border-color:var(--theme-green) !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.docs-chip.docs-chip--active .docs-chip-label,
+.docs-chip[aria-current="page"] .docs-chip-label,
+.docs-chip.docs-chip--active .docs-chip-count,
+.docs-chip[aria-current="page"] .docs-chip-count{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+
+.gallery-tabs .badge,
+.gallery-tabs a,
+.gallery-tabs button,
+.detail-gallery-tabs .badge,
+.detail-gallery-tabs a,
+.detail-gallery-tabs button{
+  background:var(--theme-green-soft) !important;
+  color:var(--theme-green) !important;
+  border:1px solid var(--theme-border) !important;
+  border-radius:999px !important;
+}
+.gallery-tabs .badge.active,
+.gallery-tabs a.active,
+.gallery-tabs button.active,
+.detail-gallery-tabs .badge.active,
+.detail-gallery-tabs a.active,
+.detail-gallery-tabs button.active,
+.gallery-tabs [aria-current="page"],
+.detail-gallery-tabs [aria-current="page"]{
+  background:var(--theme-green) !important;
+  color:#fff !important;
+  border-color:var(--theme-green) !important;
+}
+
+.info-card,
+.gallery-card,
+.document-card,
+.principle-card,
+.prinsip-card,
+.dokumen-card,
+.docs-page .list,
+.docs-page .row{
+  border-radius:20px;
+}
+
+.badge-akar,.badge-proses,.badge-wadah,.badge-hikmah,
+.doc-action,.btn-buka,.btn-unduh,.open-btn,.download-btn,
+.docs-page .small-link{
+  background:var(--theme-green) !important;
+  color:#fff !important;
+  border:1px solid var(--theme-green) !important;
+  border-radius:999px !important;
+}
+.badge-akar:hover,.badge-proses:hover,.badge-wadah:hover,.badge-hikmah:hover,
+.doc-action:hover,.btn-buka:hover,.btn-unduh:hover,.open-btn:hover,.download-btn:hover,
+.docs-page .small-link:hover{
+  background:var(--theme-green-dark) !important;
+  border-color:var(--theme-green-dark) !important;
+  color:#fff !important;
+}
