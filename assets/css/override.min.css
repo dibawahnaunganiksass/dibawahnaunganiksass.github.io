@@ -332,3 +332,19 @@ body.page-galeri .gallery-card .pill{
 .docs-chip .docs-chip-label{display:inline !important;color:inherit !important;opacity:1 !important;visibility:visible !important;-webkit-text-fill-color:currentColor !important;}
 .docs-chip.docs-chip--active,.docs-chip[aria-current="page"]{background:linear-gradient(180deg,var(--brand-800,#4E6A24),var(--brand-500,#6F8F3A)) !important;color:#F8FAF7 !important;border-color:transparent !important;-webkit-text-fill-color:#F8FAF7 !important;}
 .docs-chip.docs-chip--active .docs-chip-label,.docs-chip[aria-current="page"] .docs-chip-label{color:#F8FAF7 !important;-webkit-text-fill-color:#F8FAF7 !important;}
+
+.home-kholifah{padding-top:30px;padding-bottom:18px}.section-head--center{text-align:center;justify-content:center}.section-kicker{margin:0 0 8px;color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.home-kholifah__sub{max-width:760px;margin:10px auto 0;color:var(--muted)}.home-kholifah__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.kholifah-card{padding:0;overflow:hidden;border:1px solid rgba(15,122,60,.12);box-shadow:0 10px 28px rgba(17,24,39,.05);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}.kholifah-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(17,24,39,.1);border-color:rgba(15,122,60,.28)}.kholifah-card__link{display:block;height:100%}.kholifah-card__media{aspect-ratio:4/5;background:linear-gradient(180deg,rgba(15,122,60,.08),rgba(15,122,60,.02));overflow:hidden}.kholifah-card__media img{width:100%;height:100%;object-fit:cover;display:block}.kholifah-card__body{padding:16px 16px 18px}.kholifah-card__meta{display:inline-flex;align-items:center;min-height:28px;padding:6px 10px;border-radius:999px;background:rgba(15,122,60,.08);color:var(--accent-dark);font-size:12px;font-weight:900}.kholifah-card__name{margin:12px 0 6px;font-size:18px;line-height:1.3}.kholifah-card__role{margin:0;color:var(--muted);font-size:14px;font-weight:700}.home-stats{padding-top:18px}@media (max-width:1100px){.home-kholifah__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:640px){.home-kholifah{padding-top:24px}.home-kholifah__grid{grid-template-columns:1fr;gap:14px}.kholifah-card__body{padding:14px 14px 16px}.kholifah-card__name{font-size:17px}}
+
+
+/* mobile drawer tidy + active menu + breadcrumb */
+.drawer-group-title{margin:12px 0 6px;padding:7px 10px;border-radius:10px;background:rgba(0,0,0,.04);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#35543a}
+.drawer-acc-panel a{border-radius:10px}
+.drawer-acc-panel a.is-active,.drawer-links>a.is-active{background:rgba(33,93,55,.10);color:#1f5d37;font-weight:700}
+.drawer-acc-btn.is-active,.navlinks>a.is-active,.dropbtn.is-active{color:#1f5d37}
+.navlinks>a.is-active,.dropbtn.is-active{font-weight:700}
+#dd-tentang-menu a.is-active,#dd-program-menu a.is-active,#dd-kelembagaan-menu a.is-active,#dd-media-menu a.is-active{color:#1f5d37;font-weight:700}
+.breadcrumb a{color:inherit;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb .sep{opacity:.55;margin:0 .42rem}
+.breadcrumb .current{font-weight:700}
+
