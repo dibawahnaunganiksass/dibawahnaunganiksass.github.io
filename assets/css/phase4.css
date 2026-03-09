@@ -255,3 +255,197 @@ body[data-page="tentang/sejarah"] .sejarah-closing{
   body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{max-width:88%;max-height:240px}
   body[data-page="tentang/sejarah"] .sejarah-pillars{grid-template-rows:none}
 }
+
+/* Responsive hardening: tentang/sejarah */
+body[data-page="tentang/sejarah"] .sejarah-shell,
+body[data-page="tentang/sejarah"] .sejarah-hero,
+body[data-page="tentang/sejarah"] .sejarah-hero__content,
+body[data-page="tentang/sejarah"] .sejarah-hero__visual,
+body[data-page="tentang/sejarah"] .sejarah-hero__meta,
+body[data-page="tentang/sejarah"] .sejarah-highlight,
+body[data-page="tentang/sejarah"] .sejarah-grid,
+body[data-page="tentang/sejarah"] .sejarah-grid--balanced,
+body[data-page="tentang/sejarah"] .sejarah-split,
+body[data-page="tentang/sejarah"] .sejarah-closing,
+body[data-page="tentang/sejarah"] .sejarah-step,
+body[data-page="tentang/sejarah"] .sejarah-card,
+body[data-page="tentang/sejarah"] .sejarah-pillars,
+body[data-page="tentang/sejarah"] .sejarah-principles,
+body[data-page="tentang/sejarah"] .sejarah-forums,
+body[data-page="tentang/sejarah"] .sejarah-compare,
+body[data-page="tentang/sejarah"] .sejarah-leaders,
+body[data-page="tentang/sejarah"] .sejarah-pillar,
+body[data-page="tentang/sejarah"] .sejarah-statcard,
+body[data-page="tentang/sejarah"] .sejarah-step__body,
+body[data-page="tentang/sejarah"] .sejarah-chip {
+  min-width: 0;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-title,
+body[data-page="tentang/sejarah"] .sejarah-card__head h2,
+body[data-page="tentang/sejarah"] .sejarah-sectionhead h2,
+body[data-page="tentang/sejarah"] .sejarah-step__body h3,
+body[data-page="tentang/sejarah"] .sejarah-closing h2,
+body[data-page="tentang/sejarah"] .sejarah-statcard strong,
+body[data-page="tentang/sejarah"] .sejarah-chip strong {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+body[data-page="tentang/sejarah"] .sejarah-sub,
+body[data-page="tentang/sejarah"] .sejarah-prose,
+body[data-page="tentang/sejarah"] .sejarah-step__body p,
+body[data-page="tentang/sejarah"] .sejarah-closing p {
+  overflow-wrap: break-word;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-card,
+body[data-page="tentang/sejarah"] .sejarah-statcard,
+body[data-page="tentang/sejarah"] .sejarah-step__body,
+body[data-page="tentang/sejarah"] .sejarah-closing,
+body[data-page="tentang/sejarah"] .sejarah-hero {
+  border-radius: clamp(18px, 3vw, 28px);
+}
+
+@media (max-width: 960px) {
+  body[data-page="tentang/sejarah"] .sejarah-hero,
+  body[data-page="tentang/sejarah"] .sejarah-highlight,
+  body[data-page="tentang/sejarah"] .sejarah-hero__meta,
+  body[data-page="tentang/sejarah"] .sejarah-grid--balanced,
+  body[data-page="tentang/sejarah"] .sejarah-split,
+  body[data-page="tentang/sejarah"] .sejarah-closing,
+  body[data-page="tentang/sejarah"] .sejarah-leaders {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img {
+    max-width: min(72vw, 360px);
+    max-height: 280px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip,
+  body[data-page="tentang/sejarah"] .sejarah-pillar {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  body[data-page="tentang/sejarah"] .page {
+    padding-top: 12px;
+    padding-bottom: 40px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-shell {
+    gap: 16px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero,
+  body[data-page="tentang/sejarah"] .sejarah-card,
+  body[data-page="tentang/sejarah"] .sejarah-timeline-section,
+  body[data-page="tentang/sejarah"] .sejarah-closing,
+  body[data-page="tentang/sejarah"] .sejarah-statcard {
+    padding: 18px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-title {
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-sub,
+  body[data-page="tentang/sejarah"] .sejarah-closing p,
+  body[data-page="tentang/sejarah"] .sejarah-step__body p,
+  body[data-page="tentang/sejarah"] .sejarah-pillar p,
+  body[data-page="tentang/sejarah"] .sejarah-statcard p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap {
+    padding: 14px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img {
+    max-width: min(76vw, 280px);
+    max-height: 220px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-statcard strong,
+  body[data-page="tentang/sejarah"] .sejarah-card__head h2,
+  body[data-page="tentang/sejarah"] .sejarah-sectionhead h2,
+  body[data-page="tentang/sejarah"] .sejarah-closing h2 {
+    font-size: clamp(1.35rem, 5vw, 1.6rem);
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-step {
+    padding-left: 36px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-timeline::before {
+    left: 18px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-step__body {
+    padding: 15px 14px 15px 16px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-step__body::before {
+    left: -22px;
+  }
+}
+
+@media (max-width: 480px) {
+  body[data-page="tentang/sejarah"] .sejarah-breadcrumb {
+    gap: 4px;
+    font-size: 13px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-kicker,
+  body[data-page="tentang/sejarah"] .section-eyebrow,
+  body[data-page="tentang/sejarah"] .sejarah-step__year,
+  body[data-page="tentang/sejarah"] .sejarah-chip strong {
+    font-size: 11px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip {
+    padding: 14px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip strong {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 10px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-statcard,
+  body[data-page="tentang/sejarah"] .sejarah-card,
+  body[data-page="tentang/sejarah"] .sejarah-timeline-section,
+  body[data-page="tentang/sejarah"] .sejarah-closing,
+  body[data-page="tentang/sejarah"] .sejarah-hero {
+    padding: 16px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-step {
+    padding-left: 30px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-timeline::before {
+    left: 14px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-step__body::before {
+    left: -18px;
+    width: 8px;
+    height: 8px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-step__year {
+    min-height: 32px;
+    padding: 7px 10px;
+  }
+}
