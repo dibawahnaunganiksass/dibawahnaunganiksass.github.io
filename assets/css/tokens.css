@@ -1,0 +1,21 @@
+/* Phase 4 theme tokens */
+:root {
+  --iksass-color-primary: #0f6b3d;
+  --iksass-color-primary-strong: #0b5a33;
+  --iksass-color-surface: #ffffff;
+  --iksass-color-surface-muted: #f7faf8;
+  --iksass-color-text: #1f2937;
+  --iksass-color-text-muted: #6b7280;
+  --iksass-color-border: #dbe5dd;
+  --iksass-shadow-sm: 0 2px 8px rgba(15, 107, 61, 0.08);
+  --iksass-shadow-md: 0 8px 24px rgba(15, 107, 61, 0.12);
+  --iksass-radius-sm: 10px;
+  --iksass-radius-md: 16px;
+  --iksass-radius-lg: 24px;
+  --iksass-space-1: 0.25rem;
+  --iksass-space-2: 0.5rem;
+  --iksass-space-3: 0.75rem;
+  --iksass-space-4: 1rem;
+  --iksass-space-5: 1.5rem;
+  --iksass-space-6: 2rem;
+}

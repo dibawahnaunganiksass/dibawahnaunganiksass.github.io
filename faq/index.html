@@ -13,15 +13,16 @@
 <link href="../assets/img/logo-iksass.png" rel="icon"/>
 <link href="../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
 <!-- Social preview (Open Graph / Twitter) -->
-<link as="style" href="../assets/css/main.min.css" rel="preload"/><link href="../assets/css/main.min.css" rel="stylesheet"/>
-<link as="style" href="../assets/css/design-system.min.css" rel="preload"/><link href="../assets/css/design-system.min.css" rel="stylesheet"/>
-<link href="../assets/css/override.min.css" rel="stylesheet"/>
-<script defer="" src="../assets/js/meta-url.min.js"></script>
+<link href="../assets/css/app.css" rel="stylesheet"/>
+
+
+<script src="../assets/js/core/app.js" type="module"></script>
 <link href="https://dibawahnaunganiksass.github.io/faq/" rel="canonical"/>
 <link href="../site.webmanifest" rel="manifest"/>
-<link href="../assets/css/final-theme-fix.css" rel="stylesheet"/>
+
 </head>
-<body>
+<body data-page="faq" data-section="faq">
+<a class="skip-link" href="#konten">Lewati ke konten utama</a>
 <div data-include="header"></div>
 <main class="page" id="konten" tabindex="-1">
 <div class="container">
@@ -71,7 +72,7 @@
 <span aria-hidden="true" class="acc-arrow">▾</span>
 </button>
 <div aria-label="Jawaban: Bagaimana kebijakan privasi situs ini?" class="acc-panel" hidden="" id="faq-5-panel" role="region">
-<p>Silakan baca halaman <a href="/kebijakan-privasi/">Kebijakan Privasi</a> untuk detail pengelolaan data dan informasi.</p>
+<p>Silakan baca halaman <a href="../kebijakan-privasi/">Kebijakan Privasi</a> untuk detail pengelolaan data dan informasi.</p>
 </div>
 </div>
 <div class="acc-item" id="faq-6">
@@ -87,8 +88,6 @@
 </div>
 </main>
 <div data-include="footer"></div>
-<script defer="defer" src="../assets/js/partials.min.js"></script>
-<script defer="defer" src="../assets/js/main.min.js"></script>
-<script defer="defer" src="../assets/js/accordion.min.js"></script>
+
 </body>
 </html>

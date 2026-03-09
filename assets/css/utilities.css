@@ -1,0 +1,32 @@
+/* Phase 3 utilities */
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.u-flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.u-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.u-clamp-2,
+.u-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.u-clamp-2 { -webkit-line-clamp: 2; }
+.u-clamp-3 { -webkit-line-clamp: 3; }

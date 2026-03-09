@@ -13,15 +13,16 @@
 <link href="../assets/img/logo-iksass.png" rel="icon"/>
 <link href="../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
 <!-- Social preview (Open Graph / Twitter) -->
-<link as="style" href="../assets/css/main.min.css" rel="preload"/><link href="../assets/css/main.min.css" rel="stylesheet"/>
-<link as="style" href="../assets/css/design-system.min.css" rel="preload"/><link href="../assets/css/design-system.min.css" rel="stylesheet"/>
-<link href="../assets/css/override.min.css" rel="stylesheet"/>
-<script defer="" src="../assets/js/meta-url.min.js"></script>
+<link href="../assets/css/app.css" rel="stylesheet"/>
+
+
+<script src="../assets/js/core/app.js" type="module"></script>
 <link href="https://dibawahnaunganiksass.github.io/profil/" rel="canonical"/>
 <link href="../site.webmanifest" rel="manifest"/>
-<link href="../assets/css/final-theme-fix.css" rel="stylesheet"/>
+
 </head>
-<body class="page-struktur">
+<body class="page-struktur" data-page="profil" data-section="profil">
+<a class="skip-link" href="#konten">Lewati ke konten utama</a>
 <div data-include="header"></div>
 <main class="page" id="konten" tabindex="-1">
 <section class="section">
@@ -31,19 +32,19 @@
 <p class="section-desc">Ringkasan halaman profil IKSASS. Silakan pilih informasi yang ingin Anda lihat.</p>
 </div>
 <div class="profil-grid">
-<a class="profil-card" href="/profil/struktur-organisasi/">
+<a class="profil-card" href="../profil/struktur-organisasi/">
 <h2>Struktur Organisasi</h2>
 <p>Struktur kelembagaan dan susunan organisasi IKSASS.</p>
 </a>
-<a class="profil-card" href="/profil/mars-hymne/">
+<a class="profil-card" href="../profil/mars-hymne/">
 <h2>Mars &amp; Hymne</h2>
 <p>Lirik, audio, dan unduhan Mars serta Hymne IKSASS.</p>
 </a>
-<a class="profil-card" href="/profil/program-kerja/">
+<a class="profil-card" href="../profil/program-kerja/">
 <h2>Program Kerja</h2>
 <p>Garis besar program kerja dan dokumen pendukung.</p>
 </a>
-<a class="profil-card" href="/tentang/website-ini/">
+<a class="profil-card" href="../tentang/website-ini/">
 <h2>Website Ini</h2>
 <p>Informasi singkat tentang website dan panduan penggunaan.</p>
 </a>
@@ -60,9 +61,6 @@
 </section>
 </main>
 <div data-include="footer"></div>
-<script defer="defer" src="../assets/js/partials.min.js"></script>
-<script defer="" src="../assets/js/main.min.js"></script>
-<script defer="" src="../assets/js/search-index.min.js"></script>
-<script defer="" src="../assets/js/search.min.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,257 @@
+/* Phase 4 production hardening helpers */
+[data-app-ready="false"] [data-include] { min-height: 1px; }
+.app-ready body, body[data-app-ready="true"] { text-rendering: optimizeLegibility; }
+.org-val--pending {
+  color: var(--iksass-color-text-muted, #6b7280);
+  font-style: italic;
+}
+
+
+/* sejarah page visual strengthening */
+body[data-page="tentang/sejarah"] .page{padding-top:20px;padding-bottom:56px}
+.sejarah-shell{display:grid;gap:28px}
+.sejarah-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;color:var(--muted);font-size:14px}
+.sejarah-breadcrumb .current{font-weight:800;color:var(--text)}
+.sejarah-breadcrumb .sep{opacity:.55}
+.sejarah-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:28px;padding:32px;border:1px solid rgba(15,122,60,.12);border-radius:28px;background:radial-gradient(circle at top left,rgba(15,122,60,.12),transparent 38%),linear-gradient(135deg,#f7fffb 0%,#ffffff 55%,#f6faf8 100%);overflow:hidden;box-shadow:0 20px 50px rgba(15,23,42,.06)}
+.sejarah-hero::after{content:"";position:absolute;right:-100px;bottom:-100px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(212,161,6,.14),transparent 68%);pointer-events:none}
+.sejarah-kicker,.section-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(15,122,60,.09);color:#0b5e2e;font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.sejarah-title{max-width:13ch;margin-top:14px;margin-bottom:12px}
+.sejarah-sub{font-size:17px;max-width:62ch;margin-bottom:20px;color:#415064}
+.sejarah-hero__meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sejarah-chip{display:grid;align-content:start;gap:6px;min-height:124px;padding:18px 18px 16px;border:1px solid rgba(15,122,60,.14);border-radius:20px;background:linear-gradient(180deg,#ffffff,#f9fcfa);box-shadow:0 12px 26px rgba(15,23,42,.05);position:relative;overflow:hidden}
+.sejarah-chip::before{content:"";position:absolute;left:18px;right:18px;top:0;height:4px;border-radius:999px;background:linear-gradient(90deg,#0f7a3c,#21a45e)}
+.sejarah-chip strong{display:inline-flex;align-self:start;width:max-content;max-width:100%;margin-top:6px;padding:8px 12px;border-radius:999px;background:rgba(15,122,60,.08);color:#0b5e2e;font-size:15px;line-height:1.25;box-shadow:inset 0 0 0 1px rgba(15,122,60,.08)}
+.sejarah-chip span{font-size:13px;color:var(--muted);line-height:1.55}
+.sejarah-hero__visual{position:relative;display:grid;gap:14px;align-content:start;margin:0}
+.sejarah-hero__imagewrap{aspect-ratio:1/1;display:grid;place-items:center;padding:24px;border-radius:28px;overflow:hidden;background:radial-gradient(circle at top,rgba(15,122,60,.08),rgba(255,255,255,.96) 58%),linear-gradient(180deg,#ffffff,#f7fbf8);border:1px solid rgba(15,122,60,.14);box-shadow:0 18px 38px rgba(15,23,42,.08)}
+.sejarah-hero__imagewrap img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 12px 24px rgba(15,122,60,.12))}
+.sejarah-hero__visual figcaption{font-size:13px;color:var(--muted);line-height:1.6;padding:0 4px}
+.sejarah-highlight{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sejarah-statcard,.sejarah-card{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:24px;box-shadow:0 14px 34px rgba(15,23,42,.05)}
+.sejarah-statcard{padding:22px}
+.sejarah-statcard__label{display:block;margin-bottom:10px;font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.sejarah-statcard strong{display:block;font-size:22px;line-height:1.25;margin-bottom:10px}
+.sejarah-statcard p{margin:0;color:var(--muted)}
+.sejarah-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:20px;align-items:start}
+.sejarah-grid--balanced{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sejarah-card{padding:26px}
+.sejarah-card__head{margin-bottom:16px}
+.sejarah-card__head h2{margin:14px 0 0;font-size:28px;line-height:1.2}
+.sejarah-prose p:last-child{margin-bottom:0}
+.sejarah-pillars,.sejarah-principles,.sejarah-forums,.sejarah-compare,.sejarah-leaders{display:grid;gap:14px}
+.sejarah-pillar,.sejarah-principles article,.sejarah-forums div,.sejarah-compare article{padding:16px 18px;border-radius:18px;background:linear-gradient(180deg,#ffffff,#f8fbf9);border:1px solid rgba(15,122,60,.12)}
+.sejarah-pillar strong,.sejarah-principles h3,.sejarah-compare h3{display:block;margin:0 0 8px;font-size:18px}
+.sejarah-pillar p,.sejarah-principles p,.sejarah-compare p,.sejarah-forums span{margin:0;color:var(--muted);line-height:1.6}
+.sejarah-timeline-section{padding:30px;border-radius:28px;background:linear-gradient(180deg,#0d3f31,#0b5e2e);color:#fff;box-shadow:0 24px 50px rgba(11,94,46,.2)}
+.sejarah-sectionhead{margin-bottom:22px}
+.sejarah-sectionhead .section-eyebrow{background:rgba(255,255,255,.14);color:#fff}
+.sejarah-sectionhead h2{margin:14px 0 8px;font-size:32px;line-height:1.15}
+.sejarah-sectionhead p{margin:0;color:rgba(255,255,255,.78);max-width:66ch}
+.sejarah-timeline{position:relative;display:grid;gap:16px}
+.sejarah-timeline::before{content:"";position:absolute;left:119px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,.15))}
+.sejarah-step{position:relative;display:grid;grid-template-columns:96px 1fr;gap:24px;align-items:start}
+.sejarah-step__year{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-weight:800;font-size:13px;text-align:center;backdrop-filter:blur(6px)}
+.sejarah-step__body{position:relative;padding:18px 20px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.sejarah-step__body::before{content:"";position:absolute;left:-13px;top:20px;width:10px;height:10px;border-radius:50%;background:#f4f7f5;box-shadow:0 0 0 8px rgba(255,255,255,.08)}
+.sejarah-step__body h3{margin:0 0 8px;font-size:20px}
+.sejarah-step__body p{margin:0;color:rgba(255,255,255,.82)}
+.sejarah-card--feature{background:linear-gradient(135deg,#fffef9,#ffffff 42%,#f8fbf9);border-color:rgba(212,161,6,.22)}
+.sejarah-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:18px;align-items:start}
+.sejarah-leaders{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sejarah-leaders h3{margin:0 0 12px;font-size:18px}
+.sejarah-leaders ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.sejarah-leaders li{display:grid;gap:4px;padding:14px 16px;border-radius:18px;background:#f8fbf9;border:1px solid rgba(15,122,60,.12)}
+.sejarah-leaders li strong{font-size:14px;color:var(--accent)}
+.sejarah-leaders li span{font-weight:700;line-height:1.4}
+.sejarah-closing{display:grid;grid-template-columns:minmax(220px,.85fr) minmax(0,1.15fr);gap:20px;align-items:start;padding:28px 30px;border-radius:28px;background:linear-gradient(180deg,rgba(15,122,60,.08),rgba(15,122,60,.03));border:1px solid rgba(15,122,60,.14)}
+.sejarah-closing h2{margin:14px 0 0;font-size:30px;line-height:1.15}
+.sejarah-closing p{margin:0;font-size:17px;line-height:1.8;color:#334155}
+@media (max-width:1080px){.sejarah-hero,.sejarah-grid,.sejarah-grid--balanced,.sejarah-split,.sejarah-closing{grid-template-columns:1fr}.sejarah-highlight,.sejarah-hero__meta,.sejarah-leaders{grid-template-columns:1fr 1fr}.sejarah-title{max-width:none}.sejarah-timeline::before{left:108px}}
+@media (max-width:760px){.sejarah-shell{gap:20px}.sejarah-hero,.sejarah-card,.sejarah-timeline-section,.sejarah-closing{padding:20px}.sejarah-highlight,.sejarah-hero__meta,.sejarah-leaders{grid-template-columns:1fr}.sejarah-card__head h2,.sejarah-sectionhead h2,.sejarah-closing h2{font-size:24px}.sejarah-sub,.sejarah-closing p{font-size:16px}.sejarah-timeline::before{left:22px;top:16px;bottom:16px}.sejarah-step{grid-template-columns:1fr;gap:10px;padding-left:44px}.sejarah-step__year{justify-self:start;min-height:36px;padding:8px 12px}.sejarah-step__body::before{left:-28px;top:18px}.sejarah-step__body{padding:16px 16px 16px 18px}}
+
+@media (min-width:1081px){.sejarah-hero__visual{padding-left:6px}.sejarah-hero__imagewrap{min-height:520px}}
+
+/* Phase 4 final footer stabilization */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > .partial-slot--header,
+body > [data-include="header"] {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+body > main#konten {
+  flex: 1 0 auto;
+  min-height: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+body > .partial-slot--footer,
+body > [data-include="footer"] {
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: auto;
+  clear: both;
+  position: relative;
+  z-index: 30;
+  isolation: isolate;
+}
+
+.partial-slot--footer > .footer,
+[data-partial-slot="footer"] > .footer,
+[data-include="footer"] > .footer,
+footer.footer {
+  display: block;
+  width: 100%;
+  clear: both;
+  position: relative;
+  z-index: 1;
+}
+
+main#konten::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/* Sejarah page premium alignment refresh */
+body[data-page="tentang/sejarah"] .sejarah-hero{
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  align-items:stretch;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__content,
+body[data-page="tentang/sejarah"] .sejarah-hero__visual,
+body[data-page="tentang/sejarah"] .sejarah-grid > .sejarah-card,
+body[data-page="tentang/sejarah"] .sejarah-grid--balanced > .sejarah-card{
+  height:100%;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__content{
+  display:grid;
+  grid-template-rows:auto auto auto 1fr;
+  align-content:start;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__meta{
+  align-self:end;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__visual{
+  grid-template-rows:minmax(0,1fr) auto;
+  min-height:100%;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap{
+  aspect-ratio:auto;
+  min-height:100%;
+  padding:18px 22px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{
+  max-width:82%;
+  max-height:360px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__visual figcaption{
+  margin-top:-2px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-grid,
+body[data-page="tentang/sejarah"] .sejarah-grid--balanced{
+  align-items:stretch;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-card{
+  display:grid;
+  grid-template-rows:auto 1fr;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-card__head{
+  display:grid;
+  align-content:start;
+  min-height:96px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-card__head h2{
+  min-height:2.5em;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-card--sidebar{
+  grid-template-rows:auto 1fr;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-pillars,
+body[data-page="tentang/sejarah"] .sejarah-principles,
+body[data-page="tentang/sejarah"] .sejarah-forums,
+body[data-page="tentang/sejarah"] .sejarah-compare,
+body[data-page="tentang/sejarah"] .sejarah-leaders{
+  align-content:start;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-pillars{
+  grid-template-rows:repeat(3,1fr);
+}
+
+body[data-page="tentang/sejarah"] .sejarah-pillar{
+  display:grid;
+  align-content:start;
+  min-height:120px;
+  box-shadow:0 8px 22px rgba(15,23,42,.04);
+}
+
+body[data-page="tentang/sejarah"] .sejarah-principles{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+body[data-page="tentang/sejarah"] .sejarah-principles article,
+body[data-page="tentang/sejarah"] .sejarah-forums div,
+body[data-page="tentang/sejarah"] .sejarah-compare article{
+  height:100%;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-highlight{
+  align-items:stretch;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-statcard{
+  display:grid;
+  align-content:start;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-timeline-section,
+body[data-page="tentang/sejarah"] .sejarah-card--feature,
+body[data-page="tentang/sejarah"] .sejarah-closing{
+  overflow:hidden;
+}
+
+@media (min-width:1081px){
+  body[data-page="tentang/sejarah"] .sejarah-hero__visual{padding-left:0}
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap{min-height:100%}
+}
+
+@media (max-width:1080px){
+  body[data-page="tentang/sejarah"] .sejarah-principles{grid-template-columns:1fr}
+  body[data-page="tentang/sejarah"] .sejarah-card__head,
+  body[data-page="tentang/sejarah"] .sejarah-card__head h2{min-height:0}
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{max-height:300px}
+}
+
+@media (max-width:760px){
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap{padding:16px}
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{max-width:88%;max-height:240px}
+  body[data-page="tentang/sejarah"] .sejarah-pillars{grid-template-rows:none}
+}

@@ -13,10 +13,10 @@
 <link href="../../assets/img/logo-iksass.png" rel="icon"/>
 <link href="../../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
 <!-- Social preview (Open Graph / Twitter) -->
-<link as="style" href="../../assets/css/main.min.css" rel="preload"/><link href="../../assets/css/main.min.css" rel="stylesheet"/>
-<link as="style" href="../../assets/css/design-system.min.css" rel="preload"/><link href="../../assets/css/design-system.min.css" rel="stylesheet"/>
-<link href="../../assets/css/override.min.css" rel="stylesheet"/>
-<script defer="" src="../../assets/js/meta-url.min.js"></script>
+<link href="../../assets/css/app.css" rel="stylesheet"/>
+
+
+<script src="../../assets/js/core/app.js" type="module"></script>
 <style>
     /* Page-scoped: Mars & Hymne (mobile-first, no style leak)
        NOTE: Typography follows "Tentang IKSASS" page (page-title/page-sub).
@@ -244,9 +244,10 @@
   </style>
 <link href="https://dibawahnaunganiksass.github.io/profil/mars-hymne/" rel="canonical"/>
 <link href="../../site.webmanifest" rel="manifest"/>
-<link href="../../assets/css/final-theme-fix.css" rel="stylesheet"/>
+
 </head>
-<body class="page-mh">
+<body class="page-mh" data-page="profil/mars-hymne" data-section="profil">
+<a class="skip-link" href="#konten">Lewati ke konten utama</a>
 <div data-include="header"></div>
 <main class="page" id="konten" tabindex="-1"><div class="container mh-wrap"><div class="breadcrumb">Profil Organisasi</div><h1 class="page-title">Mars &amp; Hymne IKSASS</h1><p class="page-sub">Dokumen resmi organisasi</p><div class="content-text">
 <section aria-labelledby="mh-title" class="mh-hero">
@@ -451,7 +452,6 @@ Tempat ini ku cinta</pre>
 </div>
 <audio id="audio-mars" preload="metadata" src="../../media/audio/mars-iksass.mp3"></audio>
 <audio id="audio-hymne" preload="metadata" src="../../media/audio/hymne-iksass.mp3"></audio>
-<script defer="" src="../../assets/js/partials.min.js"></script>
-<script defer="" src="../../assets/js/mars-hymne.min.js"></script>
+
 </body>
 </html>

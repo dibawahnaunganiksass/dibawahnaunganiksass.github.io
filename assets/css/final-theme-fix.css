@@ -97,3 +97,5 @@
   border-color:var(--theme-green-dark) !important;
   color:#fff !important;
 }
+
+.org-val--pending{font-style:italic;color:#6b7280}.proker-redirect-note{max-width:780px;margin:24px auto;padding:18px 20px;border:1px solid rgba(15,107,61,.14);border-radius:16px;background:#f8fbf9}.proker-redirect-note a{font-weight:700;color:var(--brand,#0f6b3d)}

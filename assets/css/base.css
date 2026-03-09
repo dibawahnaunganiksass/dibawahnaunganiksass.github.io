@@ -1,0 +1,20 @@
+/* Phase 4 base hardening */
+html { scroll-behavior: smooth; }
+body[data-app-ready="true"] { opacity: 1; }
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 9999;
+  background: var(--iksass-color-surface, #fff);
+  color: var(--iksass-color-primary, #0f6b3d);
+  padding: 0.75rem 1rem;
+  border-radius: var(--iksass-radius-sm, 10px);
+  box-shadow: var(--iksass-shadow-md, 0 8px 24px rgba(15,107,61,0.12));
+}
+img { height: auto; }
+main#konten:focus { outline: none; }

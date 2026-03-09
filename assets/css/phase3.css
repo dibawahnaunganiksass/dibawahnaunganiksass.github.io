@@ -1,0 +1,28 @@
+/* Phase 3 shell polish and theme bridge */
+:root {
+  color-scheme: light;
+}
+
+body[data-section="berita"] .page-title,
+body[data-page="berita"] .page-title {
+  text-wrap: balance;
+}
+
+.breadcrumb,
+.page-breadcrumb {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.card,
+.mega-card,
+.news-card,
+.org-card {
+  backface-visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .table {
+    overflow-x: auto;
+  }
+}
