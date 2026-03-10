@@ -1,0 +1,62 @@
+{
+  "phase": "F",
+  "baseline_zip": "iksass_phaseE_safe.zip",
+  "safe_changes_only": true,
+  "visual_changes_intended": false,
+  "artifacts_added": [
+    "PHASE_F_REPORT.md",
+    "LEGACY_CSS_AUDIT.md",
+    "assets/data/refactor-manifest.json"
+  ],
+  "checks": {
+    "css_files": 26,
+    "html_files": 80,
+    "skip_link_total": 1,
+    "inline_style_attributes_remaining": 69,
+    "duplicate_asset_sha256_match": true
+  },
+  "top_css_by_size_kb": [
+    {
+      "file": "assets/css/override.min.css",
+      "size_kb": 121.7
+    },
+    {
+      "file": "assets/css/main.min.css",
+      "size_kb": 79.3
+    },
+    {
+      "file": "assets/css/phase4.css",
+      "size_kb": 18.4
+    },
+    {
+      "file": "assets/css/pages/mars-hymne.css",
+      "size_kb": 8.5
+    },
+    {
+      "file": "assets/css/pages/yel-yel.css",
+      "size_kb": 7.5
+    }
+  ],
+  "top_important_counts": [
+    {
+      "file": "assets/css/override.min.css",
+      "count": 334
+    },
+    {
+      "file": "assets/css/main.min.css",
+      "count": 180
+    },
+    {
+      "file": "assets/css/final-theme-fix.css",
+      "count": 33
+    },
+    {
+      "file": "assets/css/utilities.css",
+      "count": 9
+    },
+    {
+      "file": "assets/css/pages/mars-hymne.css",
+      "count": 4
+    }
+  ]
+}

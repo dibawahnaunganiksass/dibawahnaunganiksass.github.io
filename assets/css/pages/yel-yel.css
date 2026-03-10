@@ -1,0 +1,145 @@
+/* Page-scoped: Yel–Yel (mobile-first, semantic & scalable) */
+  .page-yelyel .yel-wrap{padding:10px 0 22px}
+
+  /* Subtle section container so the top split feels like one composition */
+  .page-yelyel .yel-top{
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(16,185,129,.06), rgba(255,255,255,0) 45%);
+  }
+
+  .page-yelyel .yel-hero{display:grid;gap:12px}
+  .page-yelyel .yel-kicker{display:inline-flex;align-items:center;gap:8px;width:fit-content;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.10);border:1px solid rgba(16,185,129,.22)}
+  .page-yelyel .yel-title{margin:0;font-size:clamp(34px,6vw,56px);line-height:1.03}
+  .page-yelyel .yel-lead{margin:4px 0 0;color:var(--muted);max-width:70ch}
+
+  .page-yelyel .yel-top{display:grid;gap:16px;margin-top:14px;align-items:start}
+  .page-yelyel .yel-left{display:grid;gap:12px;min-width:0}
+  .page-yelyel .yel-bullets{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:8px;max-width:60ch}
+  .page-yelyel .yel-bullets li::marker{color:var(--primary)}
+  .page-yelyel .yel-subline{margin:0;color:var(--muted)}
+  .page-yelyel .yel-section{padding:0;margin-top:14px}
+
+  .page-yelyel .card{overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.06);transition:box-shadow .18s ease, transform .18s ease}
+  .page-yelyel .card:hover{box-shadow:0 16px 34px rgba(0,0,0,.08);transform:translateY(-1px)}
+  /* Card titles follow site heading scale (match Tentang IKSASS) */
+  .page-yelyel .card__title{margin:0 0 10px;font-size:var(--text-2xl);line-height:var(--lh-tight);font-weight:600}
+
+  /* Give key cards a subtle "brand" accent */
+  .page-yelyel .yel-top > .card{border-top:4px solid rgba(16,185,129,.45)}
+  .page-yelyel .yel-section .card{border-top:3px solid rgba(16,185,129,.28)}
+
+  /* Call & response */
+  .page-yelyel .callresp{display:grid;gap:10px}
+  .page-yelyel .callresp__head{display:none;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:var(--text-xs)}
+  /* Render as a true 2-column list (clean, table-like) */
+  .page-yelyel .callresp__list{list-style:none;padding:0;margin:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff}
+  .page-yelyel .callresp__item{padding:12px 14px;display:grid;gap:6px;min-width:0;transition:background .15s ease}
+  .page-yelyel .callresp__item + .callresp__item{border-top:1px solid var(--border)}
+  .page-yelyel .callresp__item:nth-child(even){background:rgba(15,118,110,.03)}
+  .page-yelyel .callresp__item:hover{background:rgba(15,118,110,.06)}
+  /* Typography locked to site scale (match Tentang IKSASS) */
+  .page-yelyel .callresp__call{font-weight:600;font-size:1rem;line-height:1.6}
+    .page-yelyel .callresp__resp{font-weight:600;font-size:1rem;line-height:1.6}
+  .page-yelyel .callresp__note{margin:10px 0 0;color:var(--muted);font-size:var(--text-sm);max-width:75ch}
+
+  /* Moves */
+  .page-yelyel .moves{margin:0;padding-left:18px;display:grid;gap:10px}
+  .page-yelyel .moves strong{font-weight:600}
+
+  /* Filosofi diagram (no images) */
+  /* Center the section label exactly in the card */
+  .page-yelyel #filosofi-title{display:flex;justify-content:center;margin-bottom:10px}
+  .page-yelyel .tag-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:var(--text-xs);margin-inline:auto}
+  .page-yelyel .diagram{position:relative;display:grid;gap:12px;margin-top:12px}
+  .page-yelyel .node{border:1px solid var(--border);border-radius:16px;background:#fff;padding:14px;min-width:0;box-shadow:0 10px 22px rgba(0,0,0,.06)}
+  .page-yelyel .node__num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:700;color:var(--primary);margin:0 auto 10px}
+  .page-yelyel .node__title{margin:0 0 6px;font-weight:600}
+  .page-yelyel .node__text{margin:0;color:var(--text);line-height:1.5}
+  .page-yelyel .node--center{background:rgba(16,185,129,.10);border-color:rgba(16,185,129,.35)}
+  .page-yelyel .node--center .node__title{letter-spacing:.06em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+
+  /* Mobile only: move "Konsekuensi" to the top + give it stronger emphasis */
+  @media (max-width: 640px){
+    /* Use a simple vertical flow on small screens so ordering is deterministic */
+    .page-yelyel .diagram{display:flex;flex-direction:column}
+    .page-yelyel .diagram .node--center{order:-1}
+
+    /* Visual emphasis: accent bar + subtle highlight + icon */
+    .page-yelyel .diagram .node--center{
+      position:relative;
+      padding:16px;
+      border-left:5px solid rgba(16,185,129,.70);
+      background:linear-gradient(180deg, rgba(16,185,129,.16), rgba(255,255,255,.96));
+      box-shadow:0 12px 26px rgba(0,0,0,.08);
+    }
+    .page-yelyel .diagram .node--center::before{
+      content:"⚖️";
+      position:absolute;
+      top:12px;
+      right:12px;
+      font-size:18px;
+      line-height:1;
+      opacity:.9;
+    }
+    .page-yelyel .diagram .node--center .node__title{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(16,185,129,.14);
+      border:1px solid rgba(16,185,129,.28);
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:var(--text-xs);
+      margin:0 0 10px;
+    }
+    .page-yelyel .diagram .node--center .node__text{color:var(--text);line-height:1.6}
+  }
+
+  @media (min-width: 641px){
+    .page-yelyel .yel-wrap{padding:16px 0 28px}
+    /* Two-column split: left (Yel–Yel) and right (Teriakan & Jawaban) */
+    .page-yelyel .yel-top{grid-template-columns:1fr 1fr;gap:28px}
+    .page-yelyel .callresp__head{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:end}
+    .page-yelyel .callresp__head{padding:0 0 10px}
+    .page-yelyel .callresp__head span{padding:0 12px}
+    .page-yelyel .callresp__head span:first-child{border-right:1px solid var(--border)}
+    .page-yelyel .callresp__head span:last-child{padding-left:14px}
+
+    .page-yelyel .callresp__item{grid-template-columns:1fr 1fr;gap:0;align-items:start}
+    .page-yelyel .callresp__call{padding:2px 12px;border-right:1px solid var(--border)}
+    .page-yelyel .callresp__resp{padding:2px 12px 2px 14px}
+    .page-yelyel .callresp__call{color:var(--text)}
+    .page-yelyel .callresp__resp{justify-self:start}
+    .page-yelyel .callresp__resp{font-size:1rem}
+
+    /* Diagram layout: clean modern (no arrows)
+       02 (top-center)
+       01 (mid-left) — Konsekuensi (center) — 03 (mid-right)
+       04 (bottom-center)
+    */
+    .page-yelyel .diagram{max-width:980px;margin-inline:auto;grid-template-columns:1fr 1.1fr 1fr;grid-template-areas:
+      ".. n2 .."
+      "n1 nc n3"
+      ".. n4 ..";align-items:stretch;gap:14px}
+    .page-yelyel .diagram .n1{grid-area:n1}
+    .page-yelyel .diagram .n2{grid-area:n2}
+    .page-yelyel .diagram .n3{grid-area:n3}
+    .page-yelyel .diagram .nc{grid-area:nc}
+    .page-yelyel .diagram .n4{grid-area:n4}
+
+    /* No arrows for the clean option (A) */
+  }
+
+  @media (min-width: 1025px){
+    .page-yelyel .card__title{font-size:var(--text-2xl)}
+    .page-yelyel .callresp__resp{font-size:1rem}
+
+    /* Make the right card feel premium on desktop (keeps reading context) */
+    .page-yelyel .yel-top > .card{position:sticky;top:92px}
+  }

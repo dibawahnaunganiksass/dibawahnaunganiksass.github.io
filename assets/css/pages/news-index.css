@@ -1,0 +1,3 @@
+/* Progressive enhancement for news listing */
+.page-berita .news-loading{padding:14px;color:var(--muted)}
+.page-berita .news-error{padding:14px;color:var(--muted)}

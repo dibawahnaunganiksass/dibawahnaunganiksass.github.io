@@ -1,0 +1,22 @@
+@media (max-width: 991px) {
+  .cta-row { flex-wrap: wrap; }
+  .home-kholifah__grid,
+  .home-stats__grid,
+  .grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+  .h-title { font-size: clamp(2rem, 8vw, 3rem); }
+  .cta-row { gap: 10px; }
+  .cta-row > * { width: 100%; justify-content: center; }
+  .home-kholifah__grid,
+  .home-stats__grid,
+  .grid4,
+  .news-grid,
+  .profile-grid,
+  .profil-grid { grid-template-columns: 1fr; }
+  img, iframe, video, svg { max-width: 100%; height: auto; }
+  .err404__actions { flex-direction: column; }
+  .err404__btn { width: 100%; }
+}

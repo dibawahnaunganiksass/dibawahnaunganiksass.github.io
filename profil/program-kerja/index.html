@@ -20,7 +20,6 @@
 
 </head>
 <body class="page-proker" data-page="profil/program-kerja" data-section="profil">
-<a class="skip-link" href="#konten">Lewati ke konten utama</a>
 <div data-include="header"></div>
 <main class="page" id="konten" tabindex="-1"><div class="container"><div class="breadcrumb">Profil Organisasi &gt; Program Kerja</div><h1 class="page-title">Program Kerja</h1><p class="page-sub">Daftar bidang program kerja IKSASS.</p>
 <section aria-label="Akses cepat" class="section section-tight home-highlights" style="padding-top:0">
@@ -63,47 +62,6 @@
 </div></div></main>
 <div data-include="footer"></div>
 <script src="../../assets/js/core/app.js" type="module"></script>
-<script>
-(function(){
-  const dialog = document.getElementById('prokerDialog');
-  if(!dialog) return;
 
-  function openDialog(){
-    if(typeof dialog.showModal === 'function'){
-      dialog.showModal();
-    } else {
-      // fallback: open pdf in new tab if <dialog> unsupported
-      window.open(dialog.querySelector('iframe')?.getAttribute('src')?.split('#')[0] || '', '_blank');
-    }
-  }
-  function closeDialog(){
-    if(dialog.open) dialog.close();
-  }
-
-  document.addEventListener('click', function(e){
-    const openBtn = e.target.closest('[data-proker-open]');
-    if(openBtn){
-      e.preventDefault();
-      e.stopPropagation(); // prevent card link navigation
-      openDialog();
-      return;
-    }
-    const closeBtn = e.target.closest('[data-proker-close]');
-    if(closeBtn){
-      e.preventDefault();
-      closeDialog();
-      return;
-    }
-  });
-
-  dialog.addEventListener('click', function(e){
-    const box = dialog.getBoundingClientRect();
-    const inDialog = (box.top <= e.clientY && e.clientY <= box.top + box.height &&
-                      box.left <= e.clientX && e.clientX <= box.left + box.width);
-    // click backdrop to close
-    if(!inDialog) closeDialog();
-  });
-})();
-</script>
 </body>
 </html>
