@@ -70,6 +70,8 @@ function setupMobileDrawer() {
 
   drawer.dataset.navBound = '1';
   stripDrawerCarets(drawer);
+  window.__IKSASS_INIT = window.__IKSASS_INIT || {};
+  window.__IKSASS_INIT.mobileDrawerV2 = true;
 
   const panel = q('.drawer-panel', drawer);
   const title = q('#drawer-title', drawer);
@@ -122,22 +124,27 @@ function setupMobileDrawer() {
     }
   };
 
+  const syncDrawerClasses = (isOpen) => {
+    drawer.classList.toggle('is-open', isOpen);
+    drawer.classList.toggle('open', isOpen);
+    drawer.classList.toggle('drawer-open', isOpen);
+    drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    document.documentElement.classList.toggle('drawer-open', isOpen);
+    document.body.classList.toggle('drawer-open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+
   const closeDrawer = () => {
-    drawer.classList.remove('is-open');
-    drawer.setAttribute('aria-hidden', 'true');
-    document.documentElement.classList.remove('drawer-open');
-    document.body.classList.remove('drawer-open');
+    syncDrawerClasses(false);
     openButtons.forEach((button) => button.setAttribute('aria-expanded', 'false'));
     if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    lastFocused = null;
   };
 
   const openDrawer = (mode = 'menu', trigger = null) => {
     lastFocused = trigger || document.activeElement;
     setMode(mode);
-    drawer.classList.add('is-open');
-    drawer.setAttribute('aria-hidden', 'false');
-    document.documentElement.classList.add('drawer-open');
-    document.body.classList.add('drawer-open');
+    syncDrawerClasses(true);
     openButtons.forEach((button) => {
       const expanded = (button.getAttribute('data-drawer-open') || 'menu') === activeMode;
       button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
@@ -159,14 +166,55 @@ function setupMobileDrawer() {
     trapFocus(event);
   });
 
-  drawer.addEventListener('click', (event) => {
-    const button = event.target.closest('.drawer-acc-btn');
-    if (!button) return;
-    const wrap = button.closest('.drawer-acc');
-    if (!wrap) return;
-    wrap.classList.toggle('open');
-    button.classList.toggle('is-active', wrap.classList.contains('open'));
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('(min-width: 992px)').matches && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
   });
+
+  const toggleAccordion = (button) => {
+    const wrap = button?.closest('.drawer-acc');
+    if (!wrap) return;
+    const isOpen = !wrap.classList.contains('open');
+    wrap.classList.toggle('open', isOpen);
+    button.classList.toggle('is-active', isOpen);
+    button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const panelEl = q('.drawer-acc-panel', wrap);
+    if (panelEl) {
+      panelEl.style.display = isOpen ? 'block' : 'none';
+      panelEl.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    }
+  };
+
+  qa('.drawer-acc', drawer).forEach((wrap) => {
+    const button = q('.drawer-acc-btn', wrap);
+    const panelEl = q('.drawer-acc-panel', wrap);
+    if (!button) return;
+    if (button.dataset.tapBound === '1') return;
+    button.dataset.tapBound = '1';
+    button.setAttribute('type', 'button');
+    const isInitiallyOpen = wrap.classList.contains('open');
+    button.setAttribute('aria-expanded', isInitiallyOpen ? 'true' : 'false');
+    if (panelEl) {
+      panelEl.setAttribute('aria-hidden', isInitiallyOpen ? 'false' : 'true');
+      panelEl.style.display = isInitiallyOpen ? 'block' : 'none';
+    }
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleAccordion(button);
+    });
+  });
+
+  panel?.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+  panel?.addEventListener('pointerup', (event) => {
+    event.stopPropagation();
+  });
+  panel?.addEventListener('touchend', (event) => {
+    event.stopPropagation();
+  }, { passive: false });
 
   setMode('menu');
 }

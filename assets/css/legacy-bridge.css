@@ -7,3 +7,82 @@
 @import url('./final-theme-fix.css');
 @import url('./phase3.css');
 @import url('./phase4.css');
+
+
+/* Mobile drawer interaction hardening */
+.mobile-drawer {
+  pointer-events: none;
+}
+.mobile-drawer.is-open,
+.mobile-drawer.open,
+.mobile-drawer.drawer-open {
+  pointer-events: auto;
+}
+.mobile-drawer .drawer-panel,
+.mobile-drawer .drawer-links,
+.mobile-drawer .drawer-acc,
+.mobile-drawer .drawer-acc-panel {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+.mobile-drawer .drawer-acc-btn,
+.mobile-drawer .drawer-acc-panel a,
+.mobile-drawer .drawer-links > a,
+.mobile-drawer [data-drawer-close] {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+.mobile-drawer .drawer-acc-panel[aria-hidden="true"] {
+  display: none;
+}
+.mobile-drawer .drawer-acc-panel[aria-hidden="false"] {
+  display: block;
+}
+
+
+/* Mobile drawer root-cause fix: decorative and header layers must never swallow taps. */
+.mobile-drawer,
+.mobile-drawer * {
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-drawer .drawer-head,
+.mobile-drawer .drawer-brand,
+.mobile-drawer .drawer-panel::before,
+.mobile-drawer .drawer-panel::after,
+.mobile-drawer .drawer-head::before,
+.mobile-drawer .drawer-head::after,
+.mobile-drawer .drawer-brand::before,
+.mobile-drawer .drawer-brand::after {
+  pointer-events: none;
+}
+.mobile-drawer .drawer-panel,
+.mobile-drawer [data-drawer-content],
+.mobile-drawer .drawer-links,
+.mobile-drawer .drawer-acc,
+.mobile-drawer .drawer-acc-panel {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+.mobile-drawer .drawer-acc-btn,
+.mobile-drawer .drawer-links > a,
+.mobile-drawer .drawer-acc-panel a,
+.mobile-drawer [data-drawer-close] {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+.mobile-drawer .drawer-acc-btn span,
+.mobile-drawer .drawer-acc-btn svg,
+.mobile-drawer .drawer-acc-btn i {
+  pointer-events: none;
+}
+.mobile-drawer .drawer-panel {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}

@@ -1,7 +1,8 @@
 import { formatDateBadgeID, formatDateIDLong, normalizeNewsItems, resolveImageUrl, sortNewsLatest } from '../core/content-utils.js';
 
 (() => {
-  const grid = document.querySelector('[data-news-grid]');
+  const listRoot = document.querySelector('[data-news-list]');
+  const grid = document.querySelector('[data-news-grid]') || listRoot?.querySelector('.news-grid');
   if (!grid) return;
 
   const totalEl = document.querySelector('[data-news-total]');
