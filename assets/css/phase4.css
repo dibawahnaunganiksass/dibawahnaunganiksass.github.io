@@ -449,3 +449,78 @@ body[data-page="tentang/sejarah"] .sejarah-hero {
     padding: 7px 10px;
   }
 }
+
+
+/* Sejarah hero meta card alignment fix v7 */
+body[data-page="tentang/sejarah"] .sejarah-hero__meta{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  align-items:stretch;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-chip{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:12px;
+  min-height:132px;
+  padding:18px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-chip::before{
+  left:20px;
+  right:20px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-chip strong{
+  display:flex;
+  align-items:center;
+  width:100%;
+  min-height:44px;
+  margin-top:4px;
+  padding:10px 14px;
+  line-height:1.35;
+  font-size:15px;
+  border-radius:16px;
+}
+
+body[data-page="tentang/sejarah"] .sejarah-chip span{
+  display:block;
+  margin:0;
+  font-size:14px;
+  line-height:1.65;
+}
+
+@media (max-width:1080px){
+  body[data-page="tentang/sejarah"] .sejarah-hero__meta{
+    grid-template-columns:1fr 1fr;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip:last-child{
+    grid-column:1 / -1;
+  }
+}
+
+@media (max-width:760px){
+  body[data-page="tentang/sejarah"] .sejarah-hero__meta{
+    grid-template-columns:1fr;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip:last-child{
+    grid-column:auto;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip{
+    min-height:0;
+    padding:16px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip strong{
+    min-height:40px;
+    font-size:14px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-chip span{
+    font-size:13px;
+  }
+}

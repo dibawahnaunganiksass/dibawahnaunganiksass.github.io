@@ -1,0 +1,120 @@
+.struktur-quote{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(18px,2vw,28px);
+  border-radius:28px;
+  background:linear-gradient(135deg, rgba(15,107,61,.08), rgba(201,160,74,.12));
+  border:1px solid rgba(15,107,61,.12);
+  box-shadow:0 18px 40px rgba(15,23,42,.08);
+}
+.struktur-quote::before{
+  content:"";
+  position:absolute;
+  inset:auto -12% -35% auto;
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(201,160,74,.18), rgba(201,160,74,0) 68%);
+  pointer-events:none;
+}
+.struktur-quote__grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);
+  gap:clamp(18px,3vw,34px);
+  align-items:center;
+}
+.struktur-quote__eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 14px;
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--primary, #0f6b3d);
+}
+.struktur-quote__eyebrow::before{
+  content:"";
+  width:34px;
+  height:2px;
+  background:currentColor;
+  opacity:.5;
+}
+.struktur-quote__title{
+  margin:0;
+  font-size:clamp(1.5rem,2.5vw,2.1rem);
+  line-height:1.15;
+}
+.struktur-quote__lead{
+  margin:14px 0 0;
+  max-width:58ch;
+  color:var(--text-soft, #475569);
+}
+.struktur-quote__points{
+  margin:20px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+.struktur-quote__points li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  color:var(--text, #102033);
+}
+.struktur-quote__points li::before{
+  content:"";
+  flex:0 0 10px;
+  width:10px;
+  height:10px;
+  margin-top:.5em;
+  border-radius:50%;
+  background:linear-gradient(135deg, #0f6b3d, #c9a04a);
+  box-shadow:0 0 0 6px rgba(15,107,61,.08);
+}
+.struktur-quote__figure{
+  position:relative;
+  margin:0;
+}
+.struktur-quote__frame{
+  position:relative;
+  overflow:hidden;
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(15,23,42,.14);
+}
+.struktur-quote__frame img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.struktur-quote__badge{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  max-width:min(82%, 320px);
+  padding:12px 14px;
+  border-radius:18px;
+  background:rgba(15,33,51,.84);
+  color:#fff;
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 24px rgba(15,23,42,.22);
+}
+.struktur-quote__badge strong{
+  display:block;
+  font-size:1rem;
+}
+.struktur-quote__badge span{
+  display:block;
+  margin-top:4px;
+  font-size:.92rem;
+  color:rgba(255,255,255,.82);
+}
+@media (max-width: 900px){
+  .struktur-quote__grid{grid-template-columns:1fr;}
+  .struktur-quote__copy{order:2;}
+  .struktur-quote__figure{order:1;}
+}

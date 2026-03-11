@@ -12,14 +12,264 @@
 <meta content="#0f766e" name="theme-color"/>
 <link href="../../assets/img/logo-iksass.png" rel="icon"/>
 <link href="../../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
-<!-- Social preview (Open Graph / Twitter) -->
 <link href="../../assets/css/app.css" rel="stylesheet"/>
-
-
 <script src="../../assets/js/core/app.js" type="module"></script>
 <link href="https://dibawahnaunganiksass.github.io/tentang/website-ini/" rel="canonical"/>
 <link href="../../site.webmanifest" rel="manifest"/>
-
+<style>
+.website-hero{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:28px;
+  align-items:center;
+  margin:26px 0 18px;
+  padding:28px;
+  border:1px solid rgba(15,118,110,.14);
+  border-radius:32px;
+  background:
+    radial-gradient(circle at top left, rgba(15,118,110,.12), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(212,161,6,.14), transparent 30%),
+    linear-gradient(135deg, rgba(255,255,255,.98), rgba(248,250,252,.95));
+  box-shadow:0 24px 60px rgba(15,23,42,.10);
+  overflow:hidden;
+}
+.website-hero::before,
+.website-hero::after{
+  content:"";
+  position:absolute;
+  border-radius:999px;
+  pointer-events:none;
+}
+.website-hero::before{
+  width:220px;
+  height:220px;
+  right:-90px;
+  top:-90px;
+  background:radial-gradient(circle, rgba(15,118,110,.12), transparent 68%);
+}
+.website-hero::after{
+  width:200px;
+  height:200px;
+  left:-80px;
+  bottom:-90px;
+  background:radial-gradient(circle, rgba(212,161,6,.12), transparent 68%);
+}
+.website-hero__media{
+  position:relative;
+  margin:0;
+}
+.website-hero__media::before{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  border-radius:32px;
+  background:linear-gradient(135deg, rgba(111,143,58,.18), rgba(15,122,60,.10));
+  z-index:0;
+  transform:rotate(-2deg);
+}
+.website-hero__frame{
+  position:relative;
+  z-index:1;
+  display:grid;
+  place-items:center;
+  min-height:340px;
+  padding:28px;
+  border-radius:28px;
+  border:1px solid rgba(111,143,58,.18);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.80), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,.42), transparent 34%),
+    linear-gradient(135deg, rgba(111,143,58,.18), rgba(15,122,60,.10) 48%, rgba(255,255,255,.92) 100%);
+  box-shadow:0 22px 44px rgba(15,23,42,.10);
+  overflow:hidden;
+}
+.website-hero__frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,.08));
+  pointer-events:none;
+}
+.website-hero__frame::after{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.55);
+  pointer-events:none;
+}
+.website-hero__media img{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  max-width:540px;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 12px 26px rgba(78,106,36,.14));
+}
+.website-hero__content{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:16px;
+  align-content:center;
+}
+.website-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  width:max-content;
+  max-width:100%;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(15,118,110,.10);
+  border:1px solid rgba(15,118,110,.14);
+  color:var(--accent);
+  font-size:.9rem;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.website-badge::before{
+  content:"";
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(135deg, #0f766e, #d4a106);
+  box-shadow:0 0 0 6px rgba(15,118,110,.10);
+}
+.website-intro,
+.website-after-highlight{
+  margin:0;
+}
+.website-highlight{
+  margin:4px 0;
+  padding:22px 24px 18px;
+  border:none;
+  border-radius:24px;
+  background:linear-gradient(135deg, rgba(15,118,110,.11), rgba(255,255,255,.84));
+  box-shadow:inset 0 0 0 1px rgba(15,118,110,.14), 0 18px 34px rgba(15,23,42,.08);
+}
+.website-highlight__text{
+  margin:0;
+  font-size:clamp(18px,2vw,24px);
+  line-height:1.7;
+  font-weight:800;
+  letter-spacing:-.02em;
+  color:#0f172a;
+}
+.website-highlight__label{
+  display:inline-flex;
+  align-items:center;
+  margin-top:14px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(15,118,110,.16);
+  box-shadow:0 10px 24px rgba(15,23,42,.06);
+  font-style:normal;
+  font-weight:700;
+  color:var(--accent);
+}
+.website-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+.website-card{
+  height:100%;
+}
+.website-card h2{
+  margin-bottom:10px;
+  font-size:1.05rem;
+}
+.website-card p{
+  margin:0;
+  color:#475569;
+}
+.social-section{
+  margin-top:8px;
+  padding:22px 0 6px;
+}
+.social-intro{
+  margin:0 0 14px;
+  color:#475569;
+}
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.social-grid a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:58px;
+  padding:14px 16px;
+  border:1px solid rgba(15,118,110,.14);
+  border-radius:18px;
+  background:#fff;
+  color:#0f172a;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(15,23,42,.05);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.social-grid a:hover,
+.social-grid a:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(15,118,110,.28);
+  box-shadow:0 16px 28px rgba(15,23,42,.08);
+}
+@media (max-width:960px){
+  .website-hero{
+    grid-template-columns:1fr;
+    padding:20px;
+    border-radius:24px;
+  }
+  .website-hero__media{
+    max-width:560px;
+    width:100%;
+    margin:0 auto;
+  }
+  .website-grid,
+  .social-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+@media (max-width:640px){
+  .website-hero{
+    padding:16px;
+    border-radius:20px;
+    box-shadow:0 18px 36px rgba(15,23,42,.09);
+  }
+  .website-hero__media::before{
+    inset:-10px;
+    border-radius:24px;
+  }
+  .website-hero__frame{
+    min-height:240px;
+    padding:18px;
+    border-radius:20px;
+  }
+  .website-highlight{
+    padding:18px 16px 16px;
+    border-radius:20px;
+  }
+  .website-highlight__label{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+  .website-grid,
+  .social-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 <body data-page="tentang/website-ini" data-section="tentang">
 <div data-include="header"></div>
@@ -28,38 +278,61 @@
 <div class="breadcrumb">Tentang</div>
 <h1 class="page-title">Tentang Website Ini</h1>
 <p class="page-sub">Di bawah Naungan IKSASS</p>
-<div style="text-align:center; margin:28px 0;">
-<img alt="Logo Di bawah Naungan IKSASS" decoding="async" fetchpriority="high" loading="lazy" src="../../assets/img/dibawahnaungan-iksass.png" style="max-width:560px;width:100%;height:auto;"/>
+
+<section aria-label="Tentang Di bawah Naungan IKSASS" class="website-hero">
+  <figure class="website-hero__media">
+    <div class="website-hero__frame">
+      <img alt="Logo Di bawah Naungan IKSASS" decoding="async" fetchpriority="high" loading="eager" src="../../assets/img/dibawahnaungan-iksass.png"/>
+    </div>
+  </figure>
+  <div class="website-hero__content">
+    <span class="website-badge">Ekosistem Digital Resmi IKSASS</span>
+    <p class="website-intro">
+      Website ini merupakan platform digital yang dikelola <strong>Di bawah Naungan IKSASS</strong> sebagai bagian dari
+      <strong>support system resmi di dunia maya</strong> yang memayungi pembinaan, komunikasi, dan kolaborasi santri serta alumni
+      dalam satu nilai dan arah.
+    </p>
+    <div class="website-highlight">
+      <p class="website-highlight__text">
+        Website ini <strong>bukan organisasi terpisah</strong>, melainkan media representasi dan penjelasan yang memperkenalkan,
+        memframing, serta menguatkan peran IKSASS sebagai sistem pendukung resmi di ruang digital.
+      </p>
+      <span class="website-highlight__label">Satu nilai, satu arah, satu kesadaran kolektif</span>
+    </div>
+    <p class="website-after-highlight">
+      Melalui website ini, IKSASS menghadirkan narasi, informasi, serta gambaran ekosistem digital yang memperkuat jejaring,
+      memfasilitasi pembinaan, dan mendorong kolaborasi santri serta alumni secara terarah dan bertanggung jawab.
+    </p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="website-grid">
+    <article class="card website-card">
+      <h2>Peran Website</h2>
+      <p>
+        Website ini menjadi ruang penjelas yang menegaskan posisi <strong>IKSASS</strong> dalam menghadirkan arah, identitas,
+        dan komunikasi digital yang tetap berpijak pada khidmah organisasi.
+      </p>
+    </article>
+    <article class="card website-card">
+      <h2>Fungsi Kehadiran Digital</h2>
+      <p>
+        Konsep <strong>Di bawah Naungan IKSASS</strong> digunakan sebagai kerangka yang menaungi berbagai aktivitas, media,
+        dan inisiatif digital agar seluruh kontribusi di ruang maya tetap saling menguatkan.
+      </p>
+    </article>
+    <article class="card website-card">
+      <h2>Arah Bersama</h2>
+      <p>
+        Website ini diharapkan menjadi rujukan informasi dan pemahaman bersama mengenai peran
+        <strong>Ikatan Santri Alumni Salafiyah Syafi’iyah (IKSASS)</strong> sebagai support system tunggal dan resmi di dunia maya.
+      </p>
+    </article>
+  </div>
+</section>
 </div>
-<div class="content-text">
-<p>
-          Website ini merupakan platform digital yang dikelola <strong>Di bawah Naungan IKSASS</strong> sebagai bagian dari
-          <strong>support system resmi di dunia maya</strong> yang memayungi pembinaan, komunikasi, dan kolaborasi santri serta alumni
-          dalam satu nilai dan arah.
-        </p>
-<p>
-<strong>Ikatan Santri Alumni Salafiyah Syafi’iyah (IKSASS)</strong> merupakan organisasi yang berperan menjaga kesinambungan nilai,
-          arah, dan peran santri serta alumni di tengah perkembangan zaman, khususnya dalam ruang digital.
-        </p>
-<p>
-          Website ini <strong>bukan organisasi terpisah</strong>, melainkan media representasi dan penjelasan yang bertujuan memperkenalkan,
-          memframing, serta menguatkan peran IKSASS sebagai sistem pendukung resmi di dunia maya.
-        </p>
-<p>
-          Melalui website ini, IKSASS menghadirkan narasi, informasi, serta gambaran ekosistem digital yang mencerminkan fungsi IKSASS dalam
-          memperkuat jejaring, memfasilitasi pembinaan, serta mendorong kolaborasi santri dan alumni secara terarah dan bertanggung jawab.
-        </p>
-<p>
-          Konsep <strong>Di bawah Naungan IKSASS</strong> digunakan sebagai kerangka yang menaungi berbagai aktivitas, media, dan inisiatif
-          digital agar tetap berada dalam satu nilai, satu arah, dan satu kesadaran kolektif. Dengan demikian, setiap bentuk kontribusi di ruang
-          maya dapat saling menguatkan tanpa kehilangan identitas dan pijakan nilai organisasi induk.
-        </p>
-<p>
-          Website ini diharapkan menjadi rujukan informasi dan pemahaman bersama mengenai peran
-          <strong>Ikatan Santri Alumni Salafiyah Syafi’iyah (IKSASS)</strong> sebagai support system tunggal dan resmi di dunia maya.
-        </p>
-</div>
-</div>
+
 <section aria-labelledby="media-sosial-resmi" class="social-section">
 <div class="container">
 <h2 id="media-sosial-resmi">Media Sosial Resmi</h2>
@@ -92,6 +365,5 @@
 </section>
 </main>
 <div data-include="footer"></div>
-
 </body>
 </html>

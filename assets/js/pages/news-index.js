@@ -1,104 +1,137 @@
-(function(){
-  const grid = document.querySelector('.news-grid');
-  if(!grid) return;
+import { formatDateBadgeID, formatDateIDLong, normalizeNewsItems, resolveImageUrl, sortNewsLatest } from '../core/content-utils.js';
 
-  const fmtDate = (iso) => {
-    if(!iso) return '';
-    const d = new Date(iso + 'T00:00:00');
-    if(Number.isNaN(d.getTime())) return iso;
-    return new Intl.DateTimeFormat('id-ID', { day:'2-digit', month:'long', year:'numeric' }).format(d);
-  };
+(() => {
+  const grid = document.querySelector('[data-news-grid]');
+  if (!grid) return;
 
-  const escapeText = (s) => (s ?? '').toString();
+  const totalEl = document.querySelector('[data-news-total]');
+  const latestEl = document.querySelector('[data-news-latest]');
+  const summaryEl = document.querySelector('[data-news-summary]');
+  const sortEl = document.querySelector('[data-news-sort]');
+
+  function renderSkeletons(count = 8) {
+    const fragment = document.createDocumentFragment();
+    for (let index = 0; index < count; index += 1) {
+      const card = document.createElement('div');
+      card.className = 'news-card news-card--skeleton';
+      card.setAttribute('aria-hidden', 'true');
+      card.innerHTML = `
+        <div class="news-thumb"></div>
+        <div class="news-body">
+          <div>
+            <div class="news-skeleton-line"></div>
+            <div class="news-skeleton-line"></div>
+            <div class="news-skeleton-meta"></div>
+          </div>
+          <div>
+            <div class="news-skeleton-line"></div>
+            <div class="news-skeleton-line"></div>
+          </div>
+          <div class="news-skeleton-cta"></div>
+        </div>
+      `;
+      fragment.appendChild(card);
+    }
+    grid.innerHTML = '';
+    grid.appendChild(fragment);
+  }
+
+  function renderNews(items) {
+    if (totalEl) totalEl.textContent = `${items.length} publikasi tersedia`;
+    if (sortEl) sortEl.textContent = 'Urut berdasarkan tanggal publikasi terbaru.';
+
+    const latestItem = items[0];
+    const latestText = latestItem && latestItem.date_iso ? formatDateIDLong(latestItem.date_iso) : '';
+    if (latestEl) latestEl.textContent = latestText ? `Pembaruan terakhir: ${latestText}` : 'Pembaruan terakhir belum tersedia';
+    if (summaryEl) {
+      summaryEl.textContent = latestText
+        ? `Menampilkan ${items.length} berita. Publikasi terbaru tercatat pada ${latestText}.`
+        : `Menampilkan ${items.length} berita IKSASS.`;
+    }
+
+    if (!items.length) {
+      grid.innerHTML = '<p class="news-empty">Belum ada publikasi berita yang dapat ditampilkan saat ini.</p>';
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    const rootPrefix = window.__IKSASS_ROOT_PREFIX || '../';
+
+    items.forEach((item) => {
+      const card = document.createElement('a');
+      card.className = 'news-card';
+      card.href = `./${item.slug}/`;
+      card.setAttribute('aria-label', `Baca berita: ${item.title}`);
+
+      const thumb = document.createElement('div');
+      thumb.className = 'news-thumb';
+
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.src = resolveImageUrl(item.image || 'assets/img/og-default.png', rootPrefix);
+      img.alt = item.title;
+      thumb.appendChild(img);
+
+      const badgeData = formatDateBadgeID(item.date_iso);
+      if (badgeData) {
+        const badge = document.createElement('div');
+        badge.className = 'news-date-badge';
+        badge.innerHTML = `<strong>${badgeData.day}</strong><span>${badgeData.month}</span>`;
+        thumb.appendChild(badge);
+      }
+
+      const body = document.createElement('div');
+      body.className = 'news-body';
+
+      const title = document.createElement('h3');
+      title.className = 'news-title';
+      title.textContent = item.title;
+      body.appendChild(title);
+
+      const metaParts = [];
+      if (item.location) metaParts.push(item.location);
+      if (item.date_iso) metaParts.push(formatDateIDLong(item.date_iso));
+      if (metaParts.length) {
+        const meta = document.createElement('p');
+        meta.className = 'news-meta';
+        meta.textContent = metaParts.join(' • ');
+        body.appendChild(meta);
+      }
+
+      if (item.excerpt) {
+        const excerpt = document.createElement('p');
+        excerpt.className = 'news-snippet';
+        excerpt.textContent = item.excerpt;
+        body.appendChild(excerpt);
+      }
+
+      const more = document.createElement('span');
+      more.className = 'news-card__more';
+      more.textContent = 'Baca selengkapnya';
+      body.appendChild(more);
+
+      card.appendChild(thumb);
+      card.appendChild(body);
+      fragment.appendChild(card);
+    });
+
+    grid.innerHTML = '';
+    grid.appendChild(fragment);
+  }
+
+  renderSkeletons();
 
   fetch('./news-index.json', { cache: 'no-store' })
-    .then(r => {
-      if(!r.ok) throw new Error('Gagal memuat indeks berita');
-      return r.json();
+    .then((response) => {
+      if (!response.ok) throw new Error('Gagal memuat indeks berita');
+      return response.json();
     })
-    .then(items => {
-      if(!Array.isArray(items)) throw new Error('Format indeks berita tidak valid');
-
-      // sort terbaru di atas (date_iso desc). fallback ke popular_score jika date sama/empty.
-      items.sort((a,b) => {
-        const da = (a.date_iso || '');
-        const db = (b.date_iso || '');
-        if(db !== da) return db.localeCompare(da);
-        return (b.popular_score || 0) - (a.popular_score || 0);
-      });
-
-      const frag = document.createDocumentFragment();
-
-      items.forEach(item => {
-        const slug = escapeText(item.slug).trim();
-        const title = escapeText(item.title).trim();
-        if(!slug || !title) return;
-
-        const href = `./${slug}/`;
-        const SITE_BASE = new URL('../', document.baseURI || location.href).toString();
-        const resolveFromSite = (p) => new URL(String(p || '').replace(/^\/+/, ''), SITE_BASE).toString();
-
-        const imgSrcRaw = escapeText(item.image).trim();
-        let imgSrc = imgSrcRaw ? imgSrcRaw : 'assets/img/og-default.png';
-
-        // Normalize image source to be safe on domain-root and subfolder deployments.
-        if (/^(https?:)?\/\//.test(imgSrc) || imgSrc.startsWith('data:')) {
-          // keep absolute / data
-        } else if (imgSrc.startsWith('/')) {
-          // treat as site-root relative (not domain-root)
-          imgSrc = resolveFromSite(imgSrc.slice(1));
-        } else {
-          // relative like 'assets/...'
-          imgSrc = resolveFromSite(imgSrc.replace(/^\.\/?/, ''));
-        }
-        const excerpt = escapeText(item.excerpt).trim();
-        const loc = escapeText(item.location).trim();
-        const dateText = fmtDate(escapeText(item.date_iso).trim());
-        const meta = (loc && dateText) ? `${loc} • ${dateText}` : (loc || dateText || '');
-
-        const a = document.createElement('a');
-        a.className = 'news-card';
-        a.href = href;
-
-        const thumb = document.createElement('div');
-        thumb.className = 'news-thumb';
-
-        const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.src = imgSrc;
-        img.alt = title;
-        thumb.appendChild(img);
-
-        const body = document.createElement('div');
-        body.className = 'news-body';
-
-        const h3 = document.createElement('h3');
-        h3.className = 'news-title';
-        h3.textContent = title;
-
-        const metaDiv = document.createElement('div');
-        metaDiv.className = 'news-meta';
-        metaDiv.textContent = meta;
-
-        const p = document.createElement('p');
-        p.className = 'news-snippet';
-        p.textContent = excerpt;
-
-        body.appendChild(h3);
-        if(meta) body.appendChild(metaDiv);
-        if(excerpt) body.appendChild(p);
-
-        a.appendChild(thumb);
-        a.appendChild(body);
-
-        frag.appendChild(a);
-      });
-
-      grid.innerHTML = '';
-      grid.appendChild(frag);
-    })
+    .then((items) => renderNews(sortNewsLatest(normalizeNewsItems(items))))
     .catch(() => {
+      if (totalEl) totalEl.textContent = 'Publikasi belum dapat dimuat';
+      if (latestEl) latestEl.textContent = 'Silakan coba muat ulang halaman';
+      if (summaryEl) summaryEl.textContent = 'Daftar berita sedang mengalami kendala pemuatan.';
       grid.innerHTML = '<p class="news-error">Daftar berita tidak dapat dimuat saat ini.</p>';
     });
 })();

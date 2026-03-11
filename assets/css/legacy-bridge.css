@@ -1,0 +1,9 @@
+/* Legacy visual bridge.
+   Keeps current production appearance intact while new token/base/component layers
+   continue to coexist with the older CSS stack during controlled refactor. */
+@import url('./main.min.css');
+@import url('./design-system.min.css');
+@import url('./override.min.css');
+@import url('./final-theme-fix.css');
+@import url('./phase3.css');
+@import url('./phase4.css');

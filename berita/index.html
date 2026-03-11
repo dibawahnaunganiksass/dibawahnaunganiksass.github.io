@@ -10,9 +10,6 @@
 <meta content="Berita dan dokumentasi kegiatan IKSASS sebagai bagian dari khidmah santri dan alumni bersama pesantren." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="#0f6b3d" name="theme-color"/>
-<link href="../assets/img/logo-iksass.png" rel="icon"/>
-<link href="../assets/img/logo-iksass.png" rel="apple-touch-icon"/>
-<!-- Social preview (Open Graph / Twitter) -->
 <meta content="website" property="og:type"/>
 <meta content="IKSASS | Ikatan Santri Alumni Salafiyah Syafi’iyah" property="og:site_name"/>
 <meta content="Berita &amp; Kegiatan IKSASS" property="og:title"/>
@@ -26,11 +23,12 @@
 <meta content="Berita dan dokumentasi kegiatan IKSASS sebagai bagian dari khidmah santri dan alumni bersama pesantren." name="twitter:description"/>
 <meta content="https://dibawahnaunganiksass.github.io/assets/img/og-default.png" name="twitter:image"/>
 <link href="../assets/css/app.css" rel="stylesheet"/>
-
 <link href="../assets/css/pages/news.css" rel="stylesheet"/>
-
 <script src="../assets/js/core/app.js" type="module"></script>
-<link href="../assets/img/favicon.ico" rel="icon"/><link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><meta content="id_ID" property="og:locale"/><link href="../assets/css/pages/news-index.css" rel="stylesheet"/>
+<link href="../assets/img/favicon.ico" rel="icon"/>
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="id_ID" property="og:locale"/>
+<link href="../assets/css/pages/news-index.css" rel="stylesheet"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,26 +51,40 @@
 </script>
 <link href="https://dibawahnaunganiksass.github.io/berita/" rel="canonical"/>
 <link href="../site.webmanifest" rel="manifest"/>
-
 <link href="../assets/css/pages/responsive-safe.css" rel="stylesheet"/>
 </head>
 <body class="page-berita page-berita-list" data-page="berita" data-section="berita">
 <div data-include="header"></div>
-<section class="news-hero">
-<div class="container"><div class="breadcrumb">Berita</div>
-<h1 class="page-title">Berita IKSASS</h1>
-<p class="page-sub">Informasi, agenda, dan kegiatan terbaru IKSASS.</p>
-</div>
+<section class="news-hero news-hero--listing">
+  <div class="container">
+    <div class="breadcrumb">Berita</div>
+    <h1 class="page-title">Berita IKSASS</h1>
+    <p class="page-sub">Informasi, agenda, dokumentasi, dan jejak kegiatan terbaru IKSASS dalam satu halaman yang rapi dan mudah diikuti.</p>
+    <div class="news-hero__meta" aria-label="Ringkasan halaman berita">
+      <span class="news-hero__chip">Arsip berita &amp; kegiatan</span>
+      <span class="news-hero__chip" data-news-total>Memuat total publikasi…</span>
+      <span class="news-hero__chip" data-news-latest>Memuat pembaruan terbaru…</span>
+    </div>
+  </div>
 </section>
 <main class="page-content" id="konten" tabindex="-1">
-<div class="container">
-<div class="news-listing" data-news-list="">
-<div class="news-grid"><div aria-hidden="true" class="news-loading">Memuat berita…</div></div><noscript><p>Aktifkan JavaScript untuk memuat daftar berita terbaru.</p></noscript>
-</div>
-</div>
+  <div class="container">
+    <section class="news-listing" data-news-list="">
+      <div class="news-listing__head">
+        <div>
+          <p class="news-listing__eyebrow">Pusat publikasi</p>
+          <h2>Berita terbaru IKSASS</h2>
+          <p class="news-listing__sort" data-news-sort>Urut berdasarkan publikasi terbaru.</p>
+        </div>
+        <p class="news-listing__summary" data-news-summary>Daftar berita sedang dimuat…</p>
+      </div>
+      <div class="news-grid" aria-live="polite">
+        <div aria-hidden="true" class="news-loading">Memuat berita…</div>
+      </div>
+      <noscript><p>Aktifkan JavaScript untuk memuat daftar berita terbaru.</p></noscript>
+    </section>
+  </div>
 </main>
 <div data-include="footer"></div>
-
-
 </body>
 </html>

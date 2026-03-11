@@ -1,25 +1,35 @@
+function keepLast(selector, setup) {
+  const nodes = [...document.querySelectorAll(selector)];
+  let current = nodes[nodes.length - 1];
+  if (!current && typeof setup === 'function') {
+    current = setup();
+  }
+  if (!current) return null;
+  nodes.slice(0, -1).forEach((node) => node.remove());
+  return current;
+}
+
 export function normalizeCanonicalMeta() {
-  const u = new URL(location.href);
-  u.pathname = u.pathname.replace(/\/{2,}/g, '/');
-  const href = u.toString();
+  const url = new URL(location.href);
+  url.pathname = url.pathname.replace(/\/{2,}/g, '/');
+  const href = url.toString();
 
-  const canonicals = [...document.querySelectorAll('link[rel="canonical"]')];
-  let canonical = canonicals[canonicals.length - 1];
-  if (!canonical) {
-    canonical = document.createElement('link');
-    canonical.rel = 'canonical';
-    document.head.appendChild(canonical);
-  }
+  const canonical = keepLast('link[rel="canonical"]', () => {
+    const node = document.createElement('link');
+    node.rel = 'canonical';
+    document.head.appendChild(node);
+    return node;
+  });
   canonical.href = href;
-  canonicals.slice(0, -1).forEach((n) => n.remove());
 
-  const ogs = [...document.querySelectorAll('meta[property="og:url"]')];
-  let ogUrl = ogs[ogs.length - 1];
-  if (!ogUrl) {
-    ogUrl = document.createElement('meta');
-    ogUrl.setAttribute('property', 'og:url');
-    document.head.appendChild(ogUrl);
-  }
+  const ogUrl = keepLast('meta[property="og:url"]', () => {
+    const node = document.createElement('meta');
+    node.setAttribute('property', 'og:url');
+    document.head.appendChild(node);
+    return node;
+  });
   ogUrl.setAttribute('content', href);
-  ogs.slice(0, -1).forEach((n) => n.remove());
+
+  keepLast('link[rel="icon"]:not([sizes])');
+  keepLast('link[rel="apple-touch-icon"]:not([sizes])');
 }

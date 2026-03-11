@@ -3,6 +3,7 @@ import { bindHeaderScrollFX, injectPartial } from './include.js';
 import { decorateBodyDataset, findSiteBase, getRootPrefix } from './path.js';
 import { loadLegacyModules } from './legacy-loader.js';
 import { loadPageModules } from './page-modules.js';
+import { initGlobalNavigation } from './nav.js';
 
 async function init() {
   document.body?.setAttribute('data-app-ready', 'false');
@@ -20,6 +21,7 @@ async function init() {
   ]);
 
   bindHeaderScrollFX();
+  initGlobalNavigation();
   await loadLegacyModules(rootPrefix);
   await loadPageModules(rootPrefix);
 
