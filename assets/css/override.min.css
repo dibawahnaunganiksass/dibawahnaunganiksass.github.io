@@ -348,3 +348,6 @@ body.page-galeri .gallery-card .pill{
 .breadcrumb .sep{opacity:.55;margin:0 .42rem}
 .breadcrumb .current{font-weight:700}
 
+
+/* patch: program kerja quick cards 2-column layout */
+body.page-proker .home-highlights__grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;align-items:stretch;}body.page-proker .home-highlights__grid>.hl-card{height:100%;min-height:unset;}@media (max-width:640px){body.page-proker .home-highlights__grid{grid-template-columns:1fr !important;}}

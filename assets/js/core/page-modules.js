@@ -32,7 +32,7 @@ const PAGE_MODULE_RULES = [
     modules: ['assets/js/pages/org-detail.js'],
   },
   {
-    match: (page) => page === 'profil/program-kerja' || page === 'program-kerja',
+    match: (page) => page === 'tentang/program-kerja' || page === 'program-kerja',
     modules: ['assets/js/pages/proker-dialog.js'],
   },
 ];

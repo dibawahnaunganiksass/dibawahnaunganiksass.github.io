@@ -42,7 +42,7 @@ function manifest(rootPrefix) {
 function requiresLegacyMain() {
   if (pageIs('home')) return true;
   if (pageIs('search')) return true;
-  if (pageIs('profil/mars-hymne')) return true;
+  if (pageIs('tentang/mars-hymne')) return true;
   if (pageIs('wasiat')) return true;
   return false;
 }
@@ -67,10 +67,10 @@ function legacyPlan(rootPrefix) {
   if (pageIs('dokumen') || has('[data-docs-root]') || has('[data-documents]')) {
     scripts.push(m.docs);
   }
-  if (inSet(['faq', 'profil/prinsip-perjuangan', 'kelembagaan/pengurus-pusat-iksass'])) {
+  if (inSet(['faq', 'tentang/prinsip-perjuangan', 'kelembagaan/pengurus-pusat-iksass'])) {
     scripts.push(m.accordion);
   }
-  if (pageIs('profil/mars-hymne')) {
+  if (pageIs('tentang/mars-hymne')) {
     scripts.push(m.marsHymne);
   }
   if (pageIs('wasiat') || has('[data-animate]')) {

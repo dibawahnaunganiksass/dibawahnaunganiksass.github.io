@@ -10,7 +10,7 @@
         "Konsolidasi jejaring alumni lintas rayon",
         "Standarisasi tata kelola & administrasi"
       ],
-      "href": "profil/program-kerja/pengembangan-organisasi-dan-penguatan-sdm/",
+      "href": "tentang/program-kerja/pengembangan-organisasi-dan-penguatan-sdm/",
       "chips": [
         "Pelatihan",
         "Konsolidasi",
@@ -35,19 +35,19 @@
       "title": "Pendidikan, Kajian & Dakwah",
       "tag": "Keilmuan",
       "desc": "Merawat tradisi ngaji dan memperluas manfaat melalui kajian, pendidikan, dan dakwah yang berakar pada nilai pesantren.",
-      "href": "profil/program-kerja/pendidikan-kajian-dan-dakwah/"
+      "href": "tentang/program-kerja/pendidikan-kajian-dan-dakwah/"
     },
     {
       "title": "Publikasi & Teknologi Informasi",
       "tag": "Digital",
       "desc": "Menguatkan literasi, dokumentasi kegiatan, dan sistem informasi agar komunikasi organisasi lebih cepat dan terukur.",
-      "href": "profil/program-kerja/publikasi-dan-teknologi-dan-informasi/"
+      "href": "tentang/program-kerja/publikasi-dan-teknologi-dan-informasi/"
     },
     {
       "title": "Kesehatan & Kesejahteraan Sosial",
       "tag": "Sosial",
       "desc": "Inisiatif layanan sosial, advokasi, dan kolaborasi untuk menghadirkan khidmah yang nyata bagi masyarakat.",
-      "href": "profil/program-kerja/kesehatan-dan-kesejahteraan-sosial/"
+      "href": "tentang/program-kerja/kesehatan-dan-kesejahteraan-sosial/"
     }
   ]
 }

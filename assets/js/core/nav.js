@@ -298,20 +298,20 @@ function setupDesktopDropdowns() {
 }
 
 const TRAILS = {
-  '/profil/': [['Tentang', '/profil/'], ['Profil Organisasi', '/profil/']],
-  '/profil/struktur-organisasi/': [['Tentang', '/profil/'], ['Profil Organisasi', '/profil/'], ['Struktur Organisasi', '/profil/struktur-organisasi/']],
-  '/profil/program-kerja/': [['Tentang', '/profil/'], ['Profil Organisasi', '/profil/'], ['Program Kerja', '/profil/program-kerja/']],
-  '/tentang/visi-misi/': [['Tentang', '/profil/'], ['Profil Organisasi', '/profil/'], ['Visi & Misi', '/tentang/visi-misi/']],
-  '/tentang/pesantren-pengasuh-dan-iksass/': [['Tentang', '/profil/'], ['Profil Organisasi', '/profil/'], ['Pengasuh', '/tentang/pesantren-pengasuh-dan-iksass/']],
-  '/tentang/pesantren/': [['Tentang', '/profil/'], ['Profil Organisasi', '/profil/'], ['Pesantren', '/tentang/pesantren/']],
-  '/tentang/sejarah/': [['Tentang', '/profil/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Sejarah', '/tentang/sejarah/']],
-  '/profil/prinsip-perjuangan/': [['Tentang', '/profil/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Prinsip Perjuangan', '/profil/prinsip-perjuangan/']],
-  '/tentang/arah-gerak-perjuangan/': [['Tentang', '/profil/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Arah Gerak & Perjuangan', '/tentang/arah-gerak-perjuangan/']],
-  '/wasiat/': [['Tentang', '/profil/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Wasiat', '/wasiat/']],
-  '/profil/mars-hymne/': [['Tentang', '/profil/'], ['Identitas', '/profil/mars-hymne/'], ['Mars & Hymne IKSASS', '/profil/mars-hymne/']],
-  '/profil/yel-yel/': [['Tentang', '/profil/'], ['Identitas', '/profil/yel-yel/'], ['Yel-yel IKSASS', '/profil/yel-yel/']],
-  '/tentang/iksass/': [['Tentang', '/profil/'], ['Lainnya', '/tentang/iksass/'], ['Tentang IKSASS', '/tentang/iksass/']],
-  '/tentang/website-ini/': [['Tentang', '/profil/'], ['Lainnya', '/tentang/website-ini/'], ['Website Ini', '/tentang/website-ini/']],
+  '/tentang/': [['Tentang', '/tentang/'], ['Profil Organisasi', '/tentang/']],
+  '/tentang/struktur-organisasi/': [['Tentang', '/tentang/'], ['Profil Organisasi', '/tentang/'], ['Struktur Organisasi', '/tentang/struktur-organisasi/']],
+  '/tentang/program-kerja/': [['Tentang', '/tentang/'], ['Profil Organisasi', '/tentang/'], ['Program Kerja', '/tentang/program-kerja/']],
+  '/tentang/visi-misi/': [['Tentang', '/tentang/'], ['Profil Organisasi', '/tentang/'], ['Visi & Misi', '/tentang/visi-misi/']],
+  '/tentang/pesantren-pengasuh-dan-iksass/': [['Tentang', '/tentang/'], ['Profil Organisasi', '/tentang/'], ['Pengasuh', '/tentang/pesantren-pengasuh-dan-iksass/']],
+  '/tentang/pesantren/': [['Tentang', '/tentang/'], ['Profil Organisasi', '/tentang/'], ['Pesantren', '/tentang/pesantren/']],
+  '/tentang/sejarah/': [['Tentang', '/tentang/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Sejarah', '/tentang/sejarah/']],
+  '/tentang/prinsip-perjuangan/': [['Tentang', '/tentang/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Prinsip Perjuangan', '/tentang/prinsip-perjuangan/']],
+  '/tentang/arah-gerak-perjuangan/': [['Tentang', '/tentang/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Arah Gerak & Perjuangan', '/tentang/arah-gerak-perjuangan/']],
+  '/wasiat/': [['Tentang', '/tentang/'], ['Sejarah & Nilai', '/tentang/sejarah/'], ['Wasiat', '/wasiat/']],
+  '/tentang/mars-hymne/': [['Tentang', '/tentang/'], ['Identitas', '/tentang/mars-hymne/'], ['Mars & Hymne IKSASS', '/tentang/mars-hymne/']],
+  '/tentang/yel-yel/': [['Tentang', '/tentang/'], ['Identitas', '/tentang/yel-yel/'], ['Yel-yel IKSASS', '/tentang/yel-yel/']],
+  '/tentang/iksass/': [['Tentang', '/tentang/'], ['Lainnya', '/tentang/iksass/'], ['Tentang IKSASS', '/tentang/iksass/']],
+  '/tentang/website-ini/': [['Tentang', '/tentang/'], ['Lainnya', '/tentang/website-ini/'], ['Website Ini', '/tentang/website-ini/']],
 };
 
 function setActiveLinks(root = document) {
