@@ -99,3 +99,84 @@
 }
 
 .org-val--pending{font-style:italic;color:#6b7280}.proker-redirect-note{max-width:780px;margin:24px auto;padding:18px 20px;border:1px solid rgba(15,107,61,.14);border-radius:16px;background:#f8fbf9}.proker-redirect-note a{font-weight:700;color:var(--brand,#0f6b3d)}
+
+/* === SITE SHELL CONSISTENCY ===
+   Safe global alignment only.
+   Does not touch dropdown / mega-menu behavior selectors.
+*/
+:root{
+  --iksass-site-shell-max:1180px;
+  --iksass-site-shell-pad:20px;
+  --container-width:var(--iksass-site-shell-max);
+  --wrap-width:var(--iksass-site-shell-max);
+  --container-pad:var(--iksass-site-shell-pad);
+  --wrap-pad:var(--iksass-site-shell-pad);
+}
+
+.container,
+.wrap,
+.page-container,
+.org-structure,
+.page-shell,
+.section-shell{
+  width:100%;
+  max-width:var(--iksass-site-shell-max) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box;
+}
+
+.container,
+.wrap,
+.page-container,
+.org-structure,
+.page-shell,
+.section-shell{
+  padding-left:var(--iksass-site-shell-pad) !important;
+  padding-right:var(--iksass-site-shell-pad) !important;
+}
+
+.header .navbar{
+  width:100%;
+}
+
+.header .navbar > .wrap{
+  max-width:var(--iksass-site-shell-max) !important;
+  padding-left:var(--iksass-site-shell-pad) !important;
+  padding-right:var(--iksass-site-shell-pad) !important;
+}
+
+.page-mh .container.mh-wrap,
+.page-yelyel .container.yel-wrap{
+  max-width:var(--iksass-site-shell-max) !important;
+  padding-left:var(--iksass-site-shell-pad) !important;
+  padding-right:var(--iksass-site-shell-pad) !important;
+}
+
+@media (min-width:992px){
+  .page-mh .mh-wrap,
+  .page-yelyel .yel-wrap{
+    padding-top:16px;
+  }
+
+  .page-mh .mh-hero,
+  .page-mh .mh-tabs,
+  .page-mh .tabrow,
+  .page-mh .panel,
+  .page-yelyel .yel-top,
+  .page-yelyel .yel-section{
+    width:100%;
+  }
+}
+
+@media (max-width:991px){
+  :root{
+    --iksass-site-shell-pad:16px;
+  }
+}
+
+@media (max-width:380px){
+  :root{
+    --iksass-site-shell-pad:14px;
+  }
+}

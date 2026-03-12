@@ -143,3 +143,10 @@
     /* Make the right card feel premium on desktop (keeps reading context) */
     .page-yelyel .yel-top > .card{position:sticky;top:92px}
   }
+
+/* Global shell sync for Yel-Yel */
+.page-yelyel .container.yel-wrap{
+  max-width:var(--container-width) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}

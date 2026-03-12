@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>measure</title>
+<iframe id="f" src="http://127.0.0.1:5500/tentang/program-kerja/" style="width:1366px;height:768px;border:0"></iframe>
+<pre id="out"></pre>
+<script>
+const out=document.getElementById('out');
+function rect(el){ if(!el) return null; const r=el.getBoundingClientRect(); return {left:r.left,right:r.right,width:r.width,top:r.top,bottom:r.bottom,height:r.height}; }
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const doc=document.getElementById('f').contentDocument;
+    const win=document.getElementById('f').contentWindow;
+    const sel=s=>doc.querySelector(s);
+    const data={
+      innerWidth: win.innerWidth,
+      wrap: rect(sel('.header .navbar > .wrap')),
+      navLeft: rect(sel('.header .nav-left')),
+      navLinks: rect(sel('.header .navlinks')),
+      navCta: rect(sel('.header .nav-cta')),
+      mainContainer: rect(sel('main.page > .container')),
+      pageSub: rect(sel('.page-sub')),
+      firstCard: rect(sel('.home-highlights__grid > *:first-child')),
+      prokerBox: rect(sel('.proker-box-single')),
+      rootVars: {
+        containerWidth: getComputedStyle(doc.documentElement).getPropertyValue('--container-width').trim(),
+        wrapWidth: getComputedStyle(doc.documentElement).getPropertyValue('--wrap-width').trim(),
+        containerPad: getComputedStyle(doc.documentElement).getPropertyValue('--container-pad').trim(),
+        wrapPad: getComputedStyle(doc.documentElement).getPropertyValue('--wrap-pad').trim(),
+      },
+      bodyClass: doc.body.className,
+    };
+    out.textContent = JSON.stringify(data,null,2);
+  }, 2500);
+});
+</script>

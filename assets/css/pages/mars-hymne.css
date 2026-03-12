@@ -449,3 +449,10 @@
   .page-mh .mh-actions .btn.action-card{transition:none}
   .page-mh .mh-actions .btn.action-card:hover{transform:none}
 }
+
+/* Global shell sync for Mars & Hymne */
+.page-mh .container.mh-wrap{
+  max-width:var(--container-width) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
