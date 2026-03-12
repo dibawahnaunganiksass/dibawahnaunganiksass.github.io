@@ -1,0 +1,38 @@
+/* FAQ page overrides */
+body[data-page="faq"] .accordion{
+  border-color:color-mix(in srgb,var(--accent) 16%,var(--border));
+  box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+body[data-page="faq"] .acc-btn,
+body[data-page="faq"] .acc-panel{
+  -webkit-tap-highlight-color: transparent;
+}
+body[data-page="faq"] .acc-btn{
+  -webkit-appearance:none;
+  appearance:none;
+  touch-action:manipulation;
+}
+body[data-page="faq"] .acc-btn:hover,
+body[data-page="faq"] .acc-btn:active,
+body[data-page="faq"] .acc-btn[aria-expanded="true"]{
+  background:var(--bg-soft) !important;
+}
+body[data-page="faq"] .acc-btn:hover .acc-arrow,
+body[data-page="faq"] .acc-btn:active .acc-arrow,
+body[data-page="faq"] .acc-btn[aria-expanded="true"] .acc-arrow,
+body[data-page="faq"] .acc-open .acc-arrow{
+  background:var(--bg-soft);
+  border-color:rgba(15,122,60,.35);
+  color:var(--accent);
+}
+@media (max-width: 768px){
+  body[data-page="faq"] .acc-btn{
+    transition:background .18s ease, box-shadow .18s ease;
+  }
+  body[data-page="faq"] .acc-btn:focus,
+  body[data-page="faq"] .acc-btn:focus-visible{
+    outline:none;
+    box-shadow:0 0 0 3px rgba(15,122,60,.14);
+    background:var(--bg-soft) !important;
+  }
+}

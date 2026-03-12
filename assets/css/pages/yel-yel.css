@@ -150,3 +150,78 @@
   margin-left:auto !important;
   margin-right:auto !important;
 }
+
+
+/* Unified card accent to match the Mars/Hymne action card language */
+.page-yelyel{
+  --yel-card-accent: var(--accent,#e07a00);
+}
+.page-yelyel .yel-top{
+  border-color: color-mix(in srgb,var(--yel-card-accent) 18%,var(--border));
+  background: linear-gradient(180deg, color-mix(in srgb,var(--yel-card-accent) 8%, #fff), rgba(255,255,255,0) 45%);
+}
+.page-yelyel .yel-bullets li::marker{
+  color:var(--yel-card-accent);
+}
+.page-yelyel .card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--border) 85%,transparent);
+  background:radial-gradient(600px 180px at 20% 0%,color-mix(in srgb,var(--yel-card-accent) 10%,transparent) 0%,transparent 55%),#fff;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+}
+.page-yelyel .card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--yel-card-accent),transparent);
+  opacity:.95;
+  pointer-events:none;
+}
+.page-yelyel .card:hover{
+  transform:translateY(-3px);
+  border-color:color-mix(in srgb,var(--yel-card-accent) 45%,var(--border));
+  box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+.page-yelyel .yel-top > .card,
+.page-yelyel .yel-section .card{
+  border-top:none;
+}
+.page-yelyel .callresp__item:nth-child(even){
+  background:color-mix(in srgb,var(--yel-card-accent) 5%,#fff);
+}
+.page-yelyel .callresp__item:hover{
+  background:color-mix(in srgb,var(--yel-card-accent) 9%,#fff);
+}
+.page-yelyel .tag-pill{
+  background:color-mix(in srgb,var(--yel-card-accent) 12%,#fff);
+  border-color:color-mix(in srgb,var(--yel-card-accent) 28%,var(--border));
+}
+.page-yelyel .node{
+  border-color:color-mix(in srgb,var(--yel-card-accent) 16%,var(--border));
+  background:radial-gradient(600px 180px at 20% 0%,color-mix(in srgb,var(--yel-card-accent) 8%,transparent) 0%,transparent 55%),#fff;
+}
+.page-yelyel .node__num{
+  background:color-mix(in srgb,var(--yel-card-accent) 12%,#fff);
+  border-color:color-mix(in srgb,var(--yel-card-accent) 28%,var(--border));
+  color:color-mix(in srgb,var(--yel-card-accent) 85%,#0f172a);
+}
+.page-yelyel .node--center{
+  background:linear-gradient(180deg, color-mix(in srgb,var(--yel-card-accent) 12%, #fff), #fff 100%);
+  border-color:color-mix(in srgb,var(--yel-card-accent) 28%,var(--border));
+}
+@media (max-width: 640px){
+  .page-yelyel .diagram .node--center{
+    border-left-color:color-mix(in srgb,var(--yel-card-accent) 70%,transparent);
+    background:linear-gradient(180deg, color-mix(in srgb,var(--yel-card-accent) 16%, #fff), rgba(255,255,255,.96));
+  }
+  .page-yelyel .diagram .node--center .node__title{
+    background:color-mix(in srgb,var(--yel-card-accent) 14%,#fff);
+    border-color:color-mix(in srgb,var(--yel-card-accent) 28%,var(--border));
+    color:color-mix(in srgb,var(--yel-card-accent) 85%,#0f172a);
+  }
+}

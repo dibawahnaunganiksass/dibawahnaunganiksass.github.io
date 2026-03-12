@@ -456,3 +456,21 @@
   margin-left:auto !important;
   margin-right:auto !important;
 }
+
+
+/* Unified card accent with the “📋 Salin lirik” card */
+.page-mh{
+  --mh-card-accent: var(--accent,#e07a00);
+}
+.page-mh .mh-hero,
+.page-mh .tabrow,
+.page-mh .panel,
+.page-mh .lyrics-card,
+.page-mh .mh-audio,
+.page-mh .mh-fs-card{
+  --mh-accent: var(--mh-card-accent) !important;
+}
+.page-mh .mh-actions .btn.action-card,
+.page-mh .mh-actions .btn.action-card:nth-child(n){
+  --mh-action-accent: var(--mh-card-accent) !important;
+}
