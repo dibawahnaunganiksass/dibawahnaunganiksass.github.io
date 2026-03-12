@@ -36,3 +36,21 @@ body[data-page="faq"] .acc-open .acc-arrow{
     background:var(--bg-soft) !important;
   }
 }
+
+body[data-page="faq"] .acc-btn,
+body[data-page="faq"] .acc-btn .acc-title,
+body[data-page="faq"] .acc-btn .acc-arrow,
+body[data-page="faq"] .acc-btn .acc-arrow *{
+  color:var(--text) !important;
+  fill:currentColor !important;
+  stroke:currentColor !important;
+  -webkit-text-fill-color:currentColor;
+}
+body[data-page="faq"] .acc-btn:hover,
+body[data-page="faq"] .acc-btn:active,
+body[data-page="faq"] .acc-btn:focus,
+body[data-page="faq"] .acc-btn:focus-visible,
+body[data-page="faq"] .acc-btn[aria-expanded="true"]{
+  color:var(--text) !important;
+}
+

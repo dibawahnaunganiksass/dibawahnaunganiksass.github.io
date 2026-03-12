@@ -474,3 +474,30 @@
 .page-mh .mh-actions .btn.action-card:nth-child(n){
   --mh-action-accent: var(--mh-card-accent) !important;
 }
+
+.page-mh .tabrow .btn,
+.page-mh .tabrow .btn:hover,
+.page-mh .tabrow .btn:active,
+.page-mh .tabrow .btn:focus,
+.page-mh .tabrow .btn:focus-visible,
+.page-mh .tabbar button,
+.page-mh .tabbar button:hover,
+.page-mh .tabbar button:active,
+.page-mh .tabbar button:focus,
+.page-mh .tabbar button:focus-visible,
+.page-mh .tabbar button[aria-selected="true"],
+.page-mh .tabbar button[aria-selected="false"]{
+  color:var(--text,#0f172a) !important;
+  -webkit-text-fill-color:currentColor;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.page-mh .tabrow .btn *,
+.page-mh .tabbar button *{
+  color:inherit !important;
+  fill:currentColor !important;
+  stroke:currentColor !important;
+}
+
+.page-mh #mh-a-switch{display:none !important}
+

@@ -180,3 +180,40 @@
     --iksass-site-shell-pad:14px;
   }
 }
+
+/* Mobile text color fixes: keep accordion/tab labels from turning browser-blue */
+@media (max-width:768px){
+  body .home-faq__accordion .acc-btn,
+  body .home-faq__accordion .acc-btn .acc-title,
+  body .home-faq__accordion .acc-btn .home-faq__arrow,
+  body .home-faq__accordion .acc-btn .home-faq__arrow *{
+    color:var(--text) !important;
+    fill:currentColor !important;
+    stroke:currentColor !important;
+    -webkit-text-fill-color:currentColor;
+  }
+
+  body .home-faq__accordion .acc-btn,
+  body .home-faq__accordion .acc-btn:hover,
+  body .home-faq__accordion .acc-btn:active,
+  body .home-faq__accordion .acc-btn:focus,
+  body .home-faq__accordion .acc-btn:focus-visible,
+  body .home-faq__accordion .acc-btn[aria-expanded="true"]{
+    background:transparent !important;
+    color:var(--text) !important;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  body .home-faq__accordion .acc-btn:hover .home-faq__arrow,
+  body .home-faq__accordion .acc-btn:active .home-faq__arrow,
+  body .home-faq__accordion .acc-btn:focus .home-faq__arrow,
+  body .home-faq__accordion .acc-btn:focus-visible .home-faq__arrow,
+  body .home-faq__accordion .acc-btn[aria-expanded="true"] .home-faq__arrow{
+    color:var(--text) !important;
+    fill:currentColor !important;
+    stroke:currentColor !important;
+    background:rgba(15,122,60,.12) !important;
+    border-color:rgba(15,122,60,.22) !important;
+  }
+}
+
