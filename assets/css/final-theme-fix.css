@@ -217,3 +217,59 @@
   }
 }
 
+
+
+/* === GLOBAL SHELL ALIGNMENT: every page follows the same navbar/content shell as home === */
+:root{
+  --iksass-nav-left-shift:0px;
+  --iksass-nav-right-shift:0px;
+  --iksass-nav-left-shift-mobile:0px;
+  --iksass-nav-right-shift-mobile:0px;
+}
+
+@media (min-width:992px){
+  .header .navbar > .wrap{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .iksass-shell-target{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .header .nav-left{
+    transform:translateX(var(--iksass-nav-left-shift, 0px));
+  }
+
+  .header .nav-cta{
+    transform:translateX(var(--iksass-nav-right-shift, 0px));
+  }
+}
+
+@media (max-width:991px){
+  .header .nav-left{
+    transform:translateX(var(--iksass-nav-left-shift-mobile, 0px));
+  }
+
+  .header .nav-cta{
+    transform:translateX(var(--iksass-nav-right-shift-mobile, 0px));
+  }
+}
+
+/* === GLOBAL PAGE SHELL FIXES: make every main content shell follow home === */
+main.page > .container,
+main.page-content > .container,
+main.search-page > .container,
+main.err404 > .container,
+main.ppi-profil-main > .container,
+main.sejarah-page > .container,
+main.page > .container.mh-wrap,
+main.page > .container.yel-wrap,
+main.page > .container.sejarah-shell,
+main.page.sejarah-page > .container.sejarah-shell,
+main.page.ppi-profil-main > .container,
+main[class*="page "] > .container{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
