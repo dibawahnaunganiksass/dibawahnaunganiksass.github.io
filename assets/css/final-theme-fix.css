@@ -1141,26 +1141,17 @@ body[data-page="kelembagaan/pengurus-pusat-iksass"] main.page > .container{
   object-fit:cover;
 }
 
-.bumi-promo-card__top,
 .sidik-promo-card__top{
   display:flex;
   align-items:center;
   gap:16px;
 }
 
-.bumi-promo-card__logo,
-.sidik-promo-card__logo{
-  flex:0 0 auto;
-  height:auto;
-  filter:drop-shadow(0 10px 18px rgba(15,23,42,.10));
-}
-
-.bumi-promo-card__logo{
-  width:94px;
-}
-
 .sidik-promo-card__logo{
   width:86px;
+  height:auto;
+  flex:0 0 auto;
+  filter:drop-shadow(0 10px 18px rgba(15,23,42,.10));
 }
 
 @media (max-width:1080px){
@@ -1170,12 +1161,8 @@ body[data-page="kelembagaan/pengurus-pusat-iksass"] main.page > .container{
 }
 
 @media (max-width:768px){
-  .bumi-promo-card__top,
   .sidik-promo-card__top{
     align-items:flex-start;
-  }
-  .bumi-promo-card__logo{
-    width:80px;
   }
   .sidik-promo-card__logo{
     width:74px;
