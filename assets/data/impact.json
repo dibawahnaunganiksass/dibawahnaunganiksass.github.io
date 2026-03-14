@@ -2,32 +2,66 @@
   "updated_at": "2026-02-20",
   "items": [
     {
-      "title": "Penguatan SDM & Organisasi",
-      "tag": "Kaderisasi",
-      "desc": "Penguatan kapasitas pengurus dan jejaring alumni melalui pelatihan, konsolidasi, dan tata kelola yang rapi.",
+      "title": "BUMI — Badan Usaha Milik IKSASS",
+      "tag": "Ekonomi",
+      "desc": "Program utama untuk menguatkan kemandirian ekonomi organisasi melalui usaha, investasi, dan kemitraan yang dikelola profesional.",
       "points": [
-        "Pelatihan & peningkatan kapasitas pengurus",
-        "Konsolidasi jejaring alumni lintas rayon",
-        "Standarisasi tata kelola & administrasi"
+        "Pengelolaan usaha dan pengembangan investasi",
+        "Sumber pendapatan untuk penguatan organisasi",
+        "Skema kerja sama modal, usaha, dan jasa"
       ],
-      "href": "tentang/program-kerja/pengembangan-organisasi-dan-penguatan-sdm/",
+      "href": "tentang/program-kerja/ekonomi-dan-kewirausahaan/",
+      "logo": "assets/img/logo-bumi-premium.png",
       "chips": [
-        "Pelatihan",
-        "Konsolidasi",
-        "Standarisasi"
+        "Usaha",
+        "Investasi",
+        "Kemitraan",
+        "Layanan"
       ],
       "kpis": [
         {
-          "label": "Prioritas",
-          "value": "3 Fokus"
+          "label": "Status",
+          "value": "Program Utama"
         },
         {
-          "label": "Skala",
-          "value": "Lintas Rayon"
+          "label": "Model",
+          "value": "3 Skema"
         },
         {
           "label": "Arah",
-          "value": "Tata Kelola"
+          "value": "Kemandirian"
+        }
+      ]
+    },
+    {
+      "title": "SIDIK — Sistem Informasi Database IKSASS",
+      "tag": "Digital",
+      "desc": "Layanan database alumni untuk registrasi, verifikasi, klasifikasi anggota, dan akses KTA digital melalui satu alur yang rapi.",
+      "points": [
+        "Form registrasi alumni dan pembaruan data mandiri",
+        "Verifikasi admin untuk pengajuan nama dan validasi akun",
+        "Pemetaan, klasifikasi, dan potensi anggota oleh pusat"
+      ],
+      "href": "tentang/program-kerja/sidik/",
+      "logo": "assets/img/logo-sidik-mark.png",
+      "chips": [
+        "Registrasi",
+        "Verifikasi",
+        "KTA Digital",
+        "Database"
+      ],
+      "kpis": [
+        {
+          "label": "Status",
+          "value": "Layanan Aktif"
+        },
+        {
+          "label": "Output",
+          "value": "KTA + Data"
+        },
+        {
+          "label": "Arah",
+          "value": "Pemetaan"
         }
       ]
     },

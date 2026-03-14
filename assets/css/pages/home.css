@@ -1,1 +1,220 @@
 @media (max-width:991px){.hero.hero--dramatic .hero-quicklinks,.hero-quicklinks{display:none!important;visibility:hidden!important}}
+
+/* BUMI logo inside homepage ekonomi card — follow kaderisasi visual language */
+.home-impact .impact-card--with-logo.is-featured{
+  display:grid;
+  grid-template-columns:minmax(190px,220px) minmax(0,1fr);
+  grid-template-areas:
+    "head head"
+    "media title"
+    "media desc"
+    "media points"
+    "media cta";
+  gap:0 22px;
+  align-items:start;
+}
+.home-impact .impact-card--with-logo.is-featured .impact-card__head{
+  grid-area:head;
+  margin-bottom:16px;
+}
+.home-impact .impact-card--with-logo.is-featured .impact-logo-wrap{
+  grid-area:media;
+  position:relative;
+  display:block;
+  width:min(210px,100%);
+  margin:2px 0 6px;
+  align-self:start;
+}
+.home-impact .impact-card--with-logo.is-featured .impact-logo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border-radius:30px;
+  background:linear-gradient(135deg, rgba(15,122,60,.16), rgba(212,161,6,.14));
+  z-index:0;
+  transform:rotate(-2deg);
+}
+.home-impact .impact-card--with-logo.is-featured .impact-logo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.88);
+  pointer-events:none;
+  z-index:2;
+}
+.home-impact .impact-card--with-logo.is-featured .impact-logo{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  aspect-ratio:1 / 1;
+  height:auto;
+  object-fit:contain;
+  border-radius:26px;
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,252,.92));
+  padding:22px;
+  box-shadow:0 22px 44px rgba(15,23,42,.16);
+  filter:none;
+}
+.home-impact .impact-card--with-logo.is-featured .impact-title{grid-area:title;margin-top:4px;}
+.home-impact .impact-card--with-logo.is-featured .impact-desc{grid-area:desc;}
+.home-impact .impact-card--with-logo.is-featured .impact-points{grid-area:points;margin-top:2px;}
+.home-impact .impact-card--with-logo.is-featured .impact-cta{grid-area:cta;}
+@media (max-width:820px){
+  .home-impact .impact-card--with-logo.is-featured{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "head"
+      "media"
+      "title"
+      "desc"
+      "points"
+      "cta";
+    gap:0;
+  }
+  .home-impact .impact-card--with-logo.is-featured .impact-logo-wrap{
+    width:min(180px,72vw);
+    margin:4px auto 16px;
+  }
+  .home-impact .impact-card--with-logo.is-featured .impact-logo-wrap::before{
+    inset:-10px;
+    border-radius:24px;
+  }
+  .home-impact .impact-card--with-logo.is-featured .impact-logo-wrap::after{
+    inset:10px;
+    border-radius:20px;
+  }
+  .home-impact .impact-card--with-logo.is-featured .impact-logo{
+    border-radius:22px;
+    padding:18px;
+  }
+}
+
+
+/* Homepage Program Unggulan: fokuskan pada BUMI + SIDIK */
+.home-impact__grid--duo .impact-card.is-featured,
+.home-impact__grid--duo .impact-card--support{
+  grid-column:span 6;
+  grid-row:span 2;
+}
+.home-impact__grid--duo .impact-card--support{
+  min-height:100%;
+}
+
+/* Samakan komposisi logo SIDIK dengan kartu BUMI */
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo{
+  display:grid;
+  grid-template-columns:minmax(190px,220px) minmax(0,1fr);
+  grid-template-areas:
+    "head head"
+    "media title"
+    "media desc"
+    "media points"
+    "media cta";
+  gap:0 22px;
+  align-items:start;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-card__head{
+  grid-area:head;
+  margin-bottom:16px;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo-wrap{
+  grid-area:media;
+  position:relative;
+  display:block;
+  width:min(210px,100%);
+  margin:2px 0 6px;
+  align-self:start;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border-radius:30px;
+  background:linear-gradient(135deg, rgba(15,122,60,.16), rgba(212,161,6,.14));
+  z-index:0;
+  transform:rotate(-2deg);
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.88);
+  pointer-events:none;
+  z-index:2;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  aspect-ratio:1 / 1;
+  height:auto;
+  object-fit:contain;
+  border-radius:26px;
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,250,252,.92));
+  padding:22px;
+  box-shadow:0 22px 44px rgba(15,23,42,.16);
+  filter:none;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo[src*="logo-sidik-mark"]{
+  padding:14px;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-title{
+  grid-area:title;
+  margin-top:4px;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-desc{
+  grid-area:desc;
+  margin-bottom:0;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-points{
+  grid-area:points;
+  margin-top:2px;
+}
+.home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-cta{
+  grid-area:cta;
+}
+@media (max-width:991px){
+  .home-impact__grid--duo .impact-card.is-featured,
+  .home-impact__grid--duo .impact-card--support{
+    grid-column:1 / -1;
+    grid-row:auto;
+  }
+}
+@media (max-width:820px){
+  .home-impact__grid--duo .impact-card--support.impact-card--with-logo{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "head"
+      "media"
+      "title"
+      "desc"
+      "points"
+      "cta";
+    gap:0;
+  }
+  .home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo-wrap{
+    width:min(180px,72vw);
+    margin:4px auto 16px;
+  }
+  .home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo-wrap::before{
+    inset:-10px;
+    border-radius:24px;
+  }
+  .home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo-wrap::after{
+    inset:10px;
+    border-radius:20px;
+  }
+  .home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo{
+    border-radius:22px;
+    padding:18px;
+  }
+  .home-impact__grid--duo .impact-card--support.impact-card--with-logo .impact-logo[src*="logo-sidik-mark"]{
+    padding:12px;
+  }
+}

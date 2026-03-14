@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1180" viewBox="0 0 900 1180" fill="none">
+  <defs>
+    <linearGradient id="sidikGold" x1="250" y1="170" x2="650" y2="1030" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1B8"/>
+      <stop offset="0.45" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#9A6B12"/>
+    </linearGradient>
+    <linearGradient id="sidikGreen" x1="190" y1="105" x2="715" y2="775" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#064E45"/>
+    </linearGradient>
+  </defs>
+  <rect x="185" y="105" width="530" height="670" rx="190" fill="url(#sidikGreen)"/>
+  <rect x="211" y="131" width="478" height="618" rx="164" stroke="url(#sidikGold)" stroke-width="10"/>
+  <rect x="250" y="175" width="400" height="530" rx="145" fill="#07574E"/>
+  <ellipse cx="450" cy="358" rx="110" ry="28" fill="#ECDEB3" stroke="#D0AE54" stroke-width="3"/>
+  <rect x="340" y="380" width="220" height="38" rx="18" fill="#E3D6A8" stroke="#D0AE54" stroke-width="3"/>
+  <ellipse cx="450" cy="438" rx="110" ry="28" fill="#ECDEB3" stroke="#D0AE54" stroke-width="3"/>
+  <rect x="340" y="460" width="220" height="38" rx="18" fill="#E3D6A8" stroke="#D0AE54" stroke-width="3"/>
+  <ellipse cx="450" cy="518" rx="110" ry="28" fill="#ECDEB3" stroke="#D0AE54" stroke-width="3"/>
+  <rect x="340" y="540" width="220" height="38" rx="18" fill="#E3D6A8" stroke="#D0AE54" stroke-width="3"/>
+  <circle cx="310" cy="358" r="15" fill="#D6F5E9" stroke="#127B6C" stroke-width="3"/>
+  <circle cx="590" cy="438" r="15" fill="#D6F5E9" stroke="#127B6C" stroke-width="3"/>
+  <circle cx="300" cy="518" r="15" fill="#D6F5E9" stroke="#127B6C" stroke-width="3"/>
+  <circle cx="600" cy="330" r="15" fill="#D6F5E9" stroke="#127B6C" stroke-width="3"/>
+  <path d="M325 358H340M560 438H575M315 518H340M560 330H585V438" stroke="#D6F5E9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M388 447L430 490L520 385" stroke="#09655B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="145" y="835" width="610" height="195" rx="70" fill="#FFFDF7" stroke="#E3E8E2" stroke-width="3"/>
+  <text x="450" y="935" text-anchor="middle" font-size="104" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" fill="url(#sidikGold)">SIDIK</text>
+  <text x="450" y="990" text-anchor="middle" font-size="42" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" fill="#0E4A44">Sistem Informasi Database IKSASS</text>
+  <text x="450" y="1030" text-anchor="middle" font-size="27" font-family="DejaVu Sans, Arial, sans-serif" fill="#616C6C">Registrasi alumni • validasi • KTA digital</text>
+</svg>

@@ -49,10 +49,10 @@
   .page-yelyel .moves strong{font-weight:600}
 
   /* Filosofi diagram (no images) */
-  /* Center the section label exactly in the card */
-  .page-yelyel #filosofi-title{display:flex;justify-content:center;margin-bottom:10px}
-  .page-yelyel .tag-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:var(--text-xs);margin-inline:auto}
-  .page-yelyel .diagram{position:relative;display:grid;gap:12px;margin-top:12px}
+  .page-yelyel .card--filosofi .card__header{display:grid;gap:8px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid color-mix(in srgb,var(--yel-card-accent) 16%,var(--border))}
+  .page-yelyel .card--filosofi .card__title{margin:0;font-size:clamp(22px,2.5vw,28px);letter-spacing:-.02em;text-wrap:balance}
+  .page-yelyel .card--filosofi .card__lede{margin:0;max-width:72ch;color:var(--muted);font-size:var(--text-sm);line-height:1.7}
+  .page-yelyel .diagram{position:relative;display:grid;gap:12px;margin-top:0}
   .page-yelyel .node{border:1px solid var(--border);border-radius:16px;background:#fff;padding:14px;min-width:0;box-shadow:0 10px 22px rgba(0,0,0,.06)}
   .page-yelyel .node__num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);font-weight:700;color:var(--primary);margin:0 auto 10px}
   .page-yelyel .node__title{margin:0 0 6px;font-weight:600}
@@ -196,10 +196,6 @@
 }
 .page-yelyel .callresp__item:hover{
   background:color-mix(in srgb,var(--yel-card-accent) 9%,#fff);
-}
-.page-yelyel .tag-pill{
-  background:color-mix(in srgb,var(--yel-card-accent) 12%,#fff);
-  border-color:color-mix(in srgb,var(--yel-card-accent) 28%,var(--border));
 }
 .page-yelyel .node{
   border-color:color-mix(in srgb,var(--yel-card-accent) 16%,var(--border));

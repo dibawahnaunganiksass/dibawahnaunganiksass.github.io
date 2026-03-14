@@ -660,5 +660,19 @@
       "pdf",
       "buka"
     ]
+  },
+  {
+    "title": "SIDIK — Sistem Informasi Database IKSASS",
+    "url": "tentang/program-kerja/sidik/",
+    "excerpt": "SIDIK adalah layanan database alumni IKSASS untuk registrasi, verifikasi admin, pemetaan anggota, klasifikasi data, dan akses KTA digital melalui kta.iksass.id.",
+    "category": "Program Kerja",
+    "tags": [
+      "sidik",
+      "database",
+      "kta",
+      "registrasi",
+      "alumni",
+      "program kerja"
+    ]
   }
 ]
