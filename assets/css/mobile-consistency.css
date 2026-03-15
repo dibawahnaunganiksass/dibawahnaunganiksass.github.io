@@ -1,0 +1,459 @@
+/* Global mobile consistency layer */
+:root {
+  --iksass-mobile-gutter: 1rem;
+  --iksass-mobile-gutter-wide: 1.25rem;
+  --iksass-mobile-gap: 14px;
+  --iksass-mobile-card-pad: 16px;
+  --iksass-mobile-section-pad: 24px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  width: 100%;
+}
+
+pre,
+code,
+blockquote,
+.breadcrumb,
+.page-title,
+.page-sub,
+.title,
+.desc,
+.proker-item-title,
+.proker-item-desc,
+.news-title,
+.news-snippet,
+.callresp__call,
+.callresp__resp,
+.node__text,
+.sidebar-box,
+.ppi-profil-note,
+.pill,
+.org-val {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 991px) {
+  .container,
+  .wrap,
+  .page-shell,
+  .section-shell,
+  .page-container,
+  .page-content > .container,
+  main.page > .container {
+    width: min(100% - var(--iksass-mobile-gutter-wide), var(--max, var(--iksass-content-max, 1320px))) !important;
+    margin-inline: auto !important;
+  }
+
+  main#konten.page,
+  main.page {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .section,
+  .section-tight,
+  .hero,
+  .trustbar,
+  .home-stats,
+  .home-impact,
+  .home-kholifah,
+  .home-kelmbagaan,
+  .home-testimonials,
+  .home-news,
+  .home-faq,
+  .home-sejarah-iksass,
+  .docs-page,
+  .page-content,
+  .page-sidebar {
+    padding-top: var(--iksass-mobile-section-pad) !important;
+    padding-bottom: var(--iksass-mobile-section-pad) !important;
+  }
+
+  .hero-inner,
+  .split,
+  .news-layout,
+  .yel-top,
+  .moves-showcase,
+  .program-promo-grid,
+  .home-impact__grid,
+  .home-impact__grid--duo,
+  .home-highlights__grid,
+  .home-stats__grid,
+  .home-kholifah__grid,
+  .news-grid,
+  .grid2,
+  .grid4,
+  .profil-grid,
+  .profile-grid,
+  .album-grid,
+  .bumi-grid,
+  .bumi-grid--3,
+  .bumi-grid--4,
+  .proker-grid,
+  .ppi-panels,
+  .ppi-profil-grid2,
+  .ppi-tagline-grid,
+  .ppi-tokoh-list,
+  .sidik-home-hero,
+  .sidik-home-panels,
+  .sidik-duo,
+  .sidik-step-grid,
+  .sidik-dashboard-layout,
+  .sidik-dashboard-grid,
+  .sidik-story-grid,
+  .sidik-signal-grid,
+  .sidik-form-grid,
+  .sidik-submit-layout,
+  .sidik-hero,
+  .sidik-flow,
+  .org-structure,
+  .trustbar-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-head,
+  .section-head--center,
+  .cta-row,
+  .hero-card-actions,
+  .home-faq__actions,
+  .gallery-filters,
+  .docs-toolbar,
+  .drawer-auth,
+  .program-promo-card__top,
+  .sidik-promo-card__top,
+  .impact-card__head,
+  .sejarah-card__head,
+  .bumi-badge-row,
+  .bumi-signal-row,
+  .proker-card-actions,
+  .hero-card,
+  .sharebar,
+  .btn-row,
+  .hero-card-actions,
+  .search-box,
+  .k-search {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .cta-row > *,
+  .hero-card-actions > *,
+  .home-faq__actions > *,
+  .drawer-auth > *,
+  .btn-row > *,
+  .proker-card-actions > * {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .card,
+  .list,
+  .hero-card,
+  .sidebar-box,
+  .action-card,
+  .impact-card,
+  .k-card,
+  .ppi-profil-card,
+  .ppi-profil-subcard,
+  .sejarah-card,
+  .bumi-card,
+  .sidik-feature-card,
+  .sidik-step-card,
+  .sidik-story-card,
+  .sidik-info-card,
+  .sidik-outcome-card,
+  .sidik-flow-card,
+  .sidik-form-card,
+  .lyrics-card,
+  .info-card,
+  .featured-media,
+  .featured-media__frame,
+  .tutorial-video__frame,
+  .news-cta,
+  .search-card,
+  .proker-box,
+  .proker-box-single,
+  .ppi-tokoh,
+  .pillar-card,
+  .bumi-promo__card,
+  .k-stat-card,
+  .gallery-card {
+    padding: var(--iksass-mobile-card-pad) !important;
+    border-radius: 18px !important;
+  }
+
+  .page-title,
+  .sidik-page-title {
+    font-size: clamp(1.9rem, 6vw, 2.35rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .page-sub,
+  .sidik-page-sub,
+  .sidik-section-sub,
+  .home-impact__sub,
+  .home-kholifah__sub,
+  .home-news__sub,
+  .home-testimonials__sub,
+  .home-kelmbagaan__sub,
+  .home-sejarah-card__desc {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .breadcrumb,
+  .page-breadcrumb,
+  .proker-breadcrumb {
+    line-height: 1.55 !important;
+    white-space: normal !important;
+  }
+
+  .news-sidebar,
+  .page-sidebar,
+  .yel-top > .card {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .callresp__head {
+    display: none !important;
+  }
+
+  .callresp__item,
+  .kv-row,
+  .org-line,
+  .proker-item,
+  .link-buka,
+  .home-sejarah-card__cta {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .callresp__item {
+    gap: 8px !important;
+  }
+
+  .callresp__resp {
+    justify-self: start !important;
+    text-align: left !important;
+  }
+
+  .org-line,
+  .kv-row,
+  .section-head,
+  .news-meta,
+  .sharebar,
+  .gallery-filters,
+  .docs-chips,
+  .bumi-badge-row,
+  .bumi-signal-row,
+  .home-sejarah-card__chips {
+    gap: 10px !important;
+  }
+
+  .org-line,
+  .news-meta,
+  .sharebar,
+  .gallery-filters,
+  .docs-chips,
+  .pill,
+  .home-sejarah-card__chips {
+    flex-wrap: wrap !important;
+  }
+
+  .pill,
+  .btn,
+  .iconbtn,
+  .drawer-links > a,
+  .drawer-acc-btn,
+  .docs-chip,
+  .sharebtn {
+    min-height: 44px;
+  }
+
+  .proker-pdf,
+  .proker-pdf-wrap iframe {
+    min-height: 68vh !important;
+  }
+
+  .featured-media__frame,
+  .tutorial-video__frame,
+  .sidik-realshot,
+  .sidik-mockup,
+  .sidik-realshot--wide,
+  .sidik-screen__canvas {
+    border-radius: 18px !important;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --iksass-mobile-gutter: 0.875rem;
+    --iksass-mobile-gap: 12px;
+    --iksass-mobile-card-pad: 15px;
+    --iksass-mobile-section-pad: 20px;
+  }
+
+  .container,
+  .wrap,
+  .page-shell,
+  .section-shell,
+  .page-container,
+  .page-content > .container,
+  main.page > .container {
+    width: min(100% - var(--iksass-mobile-gutter), var(--max, var(--iksass-content-max, 1320px))) !important;
+  }
+
+  .section,
+  .section-tight,
+  .hero,
+  .trustbar,
+  .home-stats,
+  .home-impact,
+  .home-kholifah,
+  .home-kelmbagaan,
+  .home-testimonials,
+  .home-news,
+  .home-faq,
+  .home-sejarah-iksass,
+  .docs-page,
+  .page-content,
+  .page-sidebar {
+    padding-top: var(--iksass-mobile-section-pad) !important;
+    padding-bottom: var(--iksass-mobile-section-pad) !important;
+  }
+
+  .page-title,
+  .sidik-page-title,
+  .h-title {
+    font-size: clamp(1.72rem, 7vw, 2.1rem) !important;
+  }
+
+  .section h2,
+  .card__title,
+  .section-head .title,
+  .sidik-story-card__copy h3,
+  .proker-box-single-title {
+    font-size: clamp(1.18rem, 4.8vw, 1.45rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-card-logo,
+  .program-promo-card__logo,
+  .impact-logo-wrap,
+  .home-sejarah-card__logo-wrap,
+  .ppi-profil-logo,
+  .sidik-brand-mark,
+  .sidik-mark {
+    width: min(180px, 100%) !important;
+    margin-inline: auto !important;
+  }
+
+  .program-promo-card__top > div,
+  .impact-card--with-logo .impact-card__body,
+  .home-sejarah-card__body,
+  .sidik-hero__copy,
+  .sidik-story-card__copy,
+  .ppi-profil-head,
+  .ppi-profil-main {
+    width: 100% !important;
+  }
+
+  .drawer-panel {
+    width: min(100vw, 420px) !important;
+  }
+
+  .search-box input,
+  .input,
+  .docs-search,
+  .docs-search input,
+  .drawer-search input {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .sidebar-box,
+  .page-sidebar,
+  .news-sidebar {
+    margin-top: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .card,
+  .list,
+  .hero-card,
+  .sidebar-box,
+  .action-card,
+  .impact-card,
+  .k-card,
+  .ppi-profil-card,
+  .ppi-profil-subcard,
+  .sejarah-card,
+  .bumi-card,
+  .sidik-feature-card,
+  .sidik-step-card,
+  .sidik-story-card,
+  .sidik-info-card,
+  .sidik-outcome-card,
+  .sidik-flow-card,
+  .sidik-form-card,
+  .lyrics-card,
+  .info-card,
+  .featured-media,
+  .featured-media__frame,
+  .tutorial-video__frame,
+  .news-cta,
+  .search-card,
+  .proker-box,
+  .proker-box-single,
+  .ppi-tokoh,
+  .pillar-card,
+  .bumi-promo__card,
+  .k-stat-card,
+  .gallery-card {
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .page-title,
+  .sidik-page-title,
+  .h-title {
+    font-size: clamp(1.58rem, 7.4vw, 1.95rem) !important;
+  }
+
+  .page-sub,
+  .sidik-page-sub,
+  .sidik-section-sub,
+  .home-impact__sub,
+  .home-kholifah__sub,
+  .home-news__sub,
+  .home-testimonials__sub,
+  .home-kelmbagaan__sub,
+  .home-sejarah-card__desc {
+    font-size: 0.94rem !important;
+  }
+}
