@@ -1260,3 +1260,82 @@ body[data-page="kelembagaan/pengurus-pusat-iksass"] main.page > .container{
     max-width:none;
   }
 }
+
+/* === GLOBAL HOMEPAGE SHELL PARITY ===
+   Make every page-content wrapper follow the same shell as the homepage navbar.
+   This sits at the end of the cascade on purpose to beat legacy page-local widths/paddings.
+*/
+:root{
+  --iksass-home-shell-max:var(--iksass-site-shell-max);
+  --iksass-home-shell-pad:var(--iksass-site-shell-pad);
+}
+
+.header .navbar > .wrap,
+body > .header .navbar > .wrap{
+  max-width:var(--iksass-home-shell-max) !important;
+  padding-left:var(--iksass-home-shell-pad) !important;
+  padding-right:var(--iksass-home-shell-pad) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+
+main#konten > .container,
+main#konten.page > .container,
+main#konten.page-content > .container,
+main.page > .container,
+main.page-content > .container,
+main#konten > .page-container,
+main#konten.page > .page-container,
+main.page > .page-container,
+main#konten > .org-structure,
+main.page > .org-structure,
+main#konten > .page-shell,
+main.page > .page-shell,
+main#konten > .section-shell,
+main.page > .section-shell,
+main.page > .container.mh-wrap,
+main.page > .container.yel-wrap,
+main.page > .container.sejarah-shell{
+  width:100% !important;
+  max-width:var(--iksass-home-shell-max) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:var(--iksass-home-shell-pad) !important;
+  padding-right:var(--iksass-home-shell-pad) !important;
+  box-sizing:border-box !important;
+}
+
+/* Guard against page-local shorthand padding resets on custom wrappers. */
+main.page > .container.mh-wrap,
+main.page > .container.yel-wrap,
+main.page > .container.sejarah-shell{
+  padding-inline:var(--iksass-home-shell-pad) !important;
+}
+
+
+/* === NEWS DETAIL SHELL: match homepage navbar shell exactly === */
+body[data-section="berita"] .news-hero > .container,
+body[data-section="berita"] main.page-content > .container{
+  width:100%;
+  max-width:var(--iksass-site-shell-max) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:var(--iksass-site-shell-pad) !important;
+  padding-right:var(--iksass-site-shell-pad) !important;
+  box-sizing:border-box !important;
+}
+
+body[data-section="berita"] .news-layout{
+  width:100%;
+  min-width:0;
+}
+
+body[data-section="berita"] .news-article,
+body[data-section="berita"] .news-sidebar,
+body[data-section="berita"] .news-head,
+body[data-section="berita"] .featured-media,
+body[data-section="berita"] .sharebar,
+body[data-section="berita"] .news-cta{
+  min-width:0;
+}
