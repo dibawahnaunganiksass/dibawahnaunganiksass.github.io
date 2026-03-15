@@ -1,6 +1,6 @@
 import { escapeHTML, normalizeNewsItems, resolveImageUrl, sortNewsLatest } from './content-utils.js';
 
-const CACHE_VERSION = 'phase2-20260313-shell-fix-target-pages-v4';
+const CACHE_VERSION = 'phase2-20260315-mobile-apps-sidik-v1';
 
 function applyRoot(html, rootPrefix) {
   const safeRoot = typeof rootPrefix === 'string' ? rootPrefix : '';
