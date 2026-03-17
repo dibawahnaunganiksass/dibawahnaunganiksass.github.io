@@ -107,6 +107,7 @@
 :root{
   --iksass-site-shell-max:1180px;
   --iksass-site-shell-pad:20px;
+  --iksass-scrollbar-comp:0px;
   --container-width:var(--iksass-site-shell-max);
   --wrap-width:var(--iksass-site-shell-max);
   --container-pad:var(--iksass-site-shell-pad);
@@ -134,6 +135,11 @@
 .section-shell{
   padding-left:var(--iksass-site-shell-pad) !important;
   padding-right:var(--iksass-site-shell-pad) !important;
+}
+
+.header{
+  padding-right:var(--iksass-scrollbar-comp);
+  box-sizing:border-box;
 }
 
 .header .navbar{
@@ -718,6 +724,37 @@ body[data-page="tentang/program-kerja"] .bumi-promo__card{
 .bumi-showcase__copy{display:grid;gap:14px;align-content:start;}
 .bumi-showcase__copy h2{margin:0;color:#10231a;line-height:1.2;font-size:clamp(1.35rem,2vw,2rem);}
 .bumi-showcase__media{min-height:320px;margin:0;}
+.bumi-flow-showcase{
+  align-items:center;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+}
+.bumi-flow-showcase__title{
+  margin:0;
+  color:#10231a;
+  line-height:1.2;
+  font-size:clamp(1.25rem,1.9vw,1.75rem);
+}
+.bumi-showcase__media--diagram{
+  min-height:440px;
+  padding:18px;
+  background:linear-gradient(180deg, rgba(248,251,249,.98), rgba(241,246,242,.92));
+}
+.bumi-showcase__media--diagram::after{
+  height:22%;
+  background:linear-gradient(180deg, rgba(2,6,23,0), rgba(2,6,23,.10));
+}
+.bumi-showcase__media--diagram img{
+  object-fit:contain;
+  padding:8px;
+  background:#f5f7f2;
+  border-radius:16px;
+}
+.bumi-showcase__media--diagram figcaption{
+  background:linear-gradient(180deg, rgba(6,12,9,0), rgba(6,12,9,.62));
+  padding:28px 14px 12px;
+  border-radius:0 0 16px 16px;
+}
+
 .bumi-showcase__media figcaption{
   position:absolute;
   left:16px;
@@ -756,7 +793,8 @@ body[data-page="tentang/program-kerja"] .bumi-promo__card{
 @media (max-width:1100px){
   .bumi-signal-row{grid-template-columns:repeat(2,minmax(0,1fr));}
   .bumi-showcase__card,
-  .bumi-deck-preview{grid-template-columns:1fr;}
+  .bumi-deck-preview,
+  .bumi-flow-showcase{grid-template-columns:1fr;}
 }
 @media (max-width:680px){
   .bumi-signal-row,
@@ -768,6 +806,7 @@ body[data-page="tentang/program-kerja"] .bumi-promo__card{
   .bumi-jump__link{min-height:40px;padding:0 12px;font-size:.95rem;}
   .bumi-deck-preview__media{min-height:160px;}
   .bumi-showcase__media{min-height:240px;}
+  .bumi-showcase__media--diagram{min-height:300px;padding:12px;}
 }
 
 
@@ -835,7 +874,7 @@ body[data-page="tentang/program-kerja"] .bumi-promo__card{
 }
 
 
-/* === GLOBAL SHELL ALIGNMENT: every page follows the same navbar/content shell as home === */
+/* === GLOBAL SHELL CONTRACT: navbar and page content use one fixed shell on every page === */
 :root{
   --iksass-nav-left-shift:0px;
   --iksass-nav-right-shift:0px;
@@ -843,44 +882,23 @@ body[data-page="tentang/program-kerja"] .bumi-promo__card{
   --iksass-nav-right-shift-mobile:0px;
 }
 
-@media (min-width:992px){
-  .header .navbar > .wrap{
-    padding-left:0 !important;
-    padding-right:0 !important;
-  }
-
-  .iksass-shell-target{
-    padding-left:0 !important;
-    padding-right:0 !important;
-  }
-
-  .header .nav-left{
-    transform:translateX(var(--iksass-nav-left-shift, 0px));
-  }
-
-  .header .nav-cta{
-    transform:translateX(var(--iksass-nav-right-shift, 0px));
-  }
+.header .nav-left,
+.header .nav-cta{
+  transform:none !important;
 }
 
-@media (max-width:991px){
-  .header .nav-left{
-    transform:translateX(var(--iksass-nav-left-shift-mobile, 0px));
-  }
-
-  .header .nav-cta{
-    transform:translateX(var(--iksass-nav-right-shift-mobile, 0px));
-  }
-}
-
-
-/* === PAGE-SPECIFIC SHELL FIXES: match home exactly on requested pages === */
+/* Normalize pages that previously opted out of the global shell. */
 body[data-page="tentang/pesantren-pengasuh-dan-iksass"] main.page > .container,
 body[data-page="tentang/mars-hymne"] main.page > .container.mh-wrap,
 body[data-page="tentang/yel-yel"] main.page > .container.yel-wrap,
 body[data-page="kelembagaan/pengurus-pusat-iksass"] main.page > .container{
-  padding-left:0 !important;
-  padding-right:0 !important;
+  width:100% !important;
+  max-width:var(--iksass-site-shell-max) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:var(--iksass-site-shell-pad) !important;
+  padding-right:var(--iksass-site-shell-pad) !important;
+  box-sizing:border-box !important;
 }
 
 
@@ -1272,12 +1290,14 @@ body[data-page="kelembagaan/pengurus-pusat-iksass"] main.page > .container{
 
 .header .navbar > .wrap,
 body > .header .navbar > .wrap{
-  max-width:var(--iksass-home-shell-max) !important;
-  padding-left:var(--iksass-home-shell-pad) !important;
-  padding-right:var(--iksass-home-shell-pad) !important;
+  width:min(100%, var(--iksass-dynamic-shell-outer-width, var(--iksass-home-shell-max))) !important;
+  max-width:var(--iksass-dynamic-shell-outer-width, var(--iksass-home-shell-max)) !important;
+  padding-left:var(--iksass-dynamic-shell-pad-left, var(--iksass-home-shell-pad)) !important;
+  padding-right:var(--iksass-dynamic-shell-pad-right, var(--iksass-home-shell-pad)) !important;
   margin-left:auto !important;
   margin-right:auto !important;
   box-sizing:border-box !important;
+  transform:translateX(var(--iksass-nav-wrap-shift, 0px)) !important;
 }
 
 main#konten > .container,
@@ -1331,6 +1351,12 @@ body[data-section="berita"] .news-layout{
   min-width:0;
 }
 
+/* Final guard: keep navbar geometry fixed across all routes. */
+.header .nav-left,
+.header .nav-cta{
+  transform:none !important;
+}
+
 body[data-section="berita"] .news-article,
 body[data-section="berita"] .news-sidebar,
 body[data-section="berita"] .news-head,
@@ -1338,4 +1364,307 @@ body[data-section="berita"] .featured-media,
 body[data-section="berita"] .sharebar,
 body[data-section="berita"] .news-cta{
   min-width:0;
+}
+
+
+/* === MOBILE SHELL PARITY: content aligns with apps button (left) and hamburger (right) === */
+@media (max-width:991px){
+  :root{
+    --iksass-mobile-shell-left:var(--iksass-site-shell-pad);
+    --iksass-mobile-shell-right:var(--iksass-site-shell-pad);
+  }
+
+  .header .navbar > .wrap,
+  body > .header .navbar > .wrap{
+    width:100% !important;
+    max-width:none !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:var(--iksass-mobile-shell-left) !important;
+    padding-right:var(--iksass-mobile-shell-right) !important;
+    transform:none !important;
+    box-sizing:border-box !important;
+  }
+
+  main#konten > .container,
+  main#konten.page > .container,
+  main#konten.page-content > .container,
+  main.page > .container,
+  main.page-content > .container,
+  main#konten > .page-container,
+  main#konten.page > .page-container,
+  main.page > .page-container,
+  main#konten > .org-structure,
+  main.page > .org-structure,
+  main#konten > .page-shell,
+  main.page > .page-shell,
+  main#konten > .section-shell,
+  main.page > .section-shell,
+  main.page > .container.mh-wrap,
+  main.page > .container.yel-wrap,
+  main.page > .container.sejarah-shell,
+  body[data-section="berita"] .news-hero > .container,
+  body[data-section="berita"] main.page-content > .container{
+    width:100% !important;
+    max-width:none !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:var(--iksass-mobile-shell-left) !important;
+    padding-right:var(--iksass-mobile-shell-right) !important;
+    box-sizing:border-box !important;
+  }
+}
+
+
+/* === MOBILE CONTENT DENSITY: make content feel fuller left-right without touching desktop === */
+@media (max-width:991px){
+  :root{
+    --iksass-mobile-content-pad:14px;
+    --iksass-mobile-content-pad-tight:12px;
+  }
+
+  .breadcrumb,
+  .page-kicker,
+  .page-title,
+  .page-sub,
+  .sidik-page-sub,
+  .sidik-section-sub,
+  .bumi-home__sub,
+  .bumi-hero__lead,
+  .bumi-closing__desc,
+  .struktur-quote__lead,
+  .struktur-quote__title{
+    max-width:none !important;
+  }
+
+  .grid2,
+  .grid3,
+  .grid4,
+  .struktur-cards,
+  .sidik-duo,
+  .sidik-step-grid,
+  .bumi-home__grid,
+  .bumi-grid,
+  .bumi-roadmap,
+  .bumi-flow,
+  .bumi-signal-row,
+  .bumi-signal-row--compact{
+    gap:14px !important;
+  }
+
+  .card,
+  .k-card,
+  .info-card,
+  .gallery-card,
+  .document-card,
+  .principle-card,
+  .prinsip-card,
+  .dokumen-card,
+  .news-card,
+  .news-item{
+    padding:var(--iksass-mobile-content-pad) !important;
+    border-radius:18px !important;
+  }
+
+  .struktur-quote,
+  .sidik-hero,
+  .sidik-info-card,
+  .sidik-flow-card,
+  .sidik-story-card,
+  .sidik-process,
+  .sidik-signal-card,
+  .bumi-home__hero,
+  .bumi-hero,
+  .bumi-promo__card,
+  .bumi-closing__card,
+  .bumi-showcase__card,
+  .bumi-deck-preview,
+  .bumi-jump{
+    padding:var(--iksass-mobile-content-pad) !important;
+    border-radius:22px !important;
+  }
+
+  .struktur-quote__frame,
+  .sidik-story-card__media,
+  .sidik-step-card__media,
+  .bumi-showcase__media--diagram,
+  .bumi-deck-preview__media,
+  .bumi-showcase__media{
+    border-radius:20px !important;
+  }
+
+  .struktur-quote__badge{
+    left:12px !important;
+    right:12px !important;
+    bottom:12px !important;
+    max-width:none !important;
+  }
+
+  .sidik-story-card__copy{
+    padding:2px 0 0 !important;
+  }
+
+  .sidik-step-card__media,
+  .sidik-story-card__media,
+  .bumi-showcase__media--diagram{
+    padding:10px !important;
+  }
+
+  body[data-page="wasiat"] .wasiat-item,
+  body[data-page="wasiat"] .wasiat-affirm-card{
+    padding:var(--iksass-mobile-content-pad) !important;
+    border-radius:18px !important;
+  }
+
+  body[data-page="wasiat"] .slide,
+  body[data-page="wasiat"] .slide-mantra,
+  body[data-page="wasiat"] .slide-quote,
+  body[data-page="wasiat"] .slide-quote-box,
+  body[data-page="wasiat"] .wasiat-affirm-card__quote{
+    padding:12px !important;
+    border-radius:14px !important;
+  }
+
+  body[data-page="wasiat"] .wasiat-item__media,
+  body[data-page="wasiat"] .wasiat-affirm-card__media{
+    max-width:none !important;
+  }
+
+  body[data-page="wasiat"] .wasiat-item__media img,
+  body[data-page="wasiat"] .wasiat-affirm-card__media img{
+    border-radius:16px !important;
+  }
+
+  body[data-section="berita"] .news-hero,
+  body[data-section="berita"] .news-article,
+  body[data-section="berita"] .news-sidebar,
+  body[data-section="berita"] .featured-media,
+  body[data-section="berita"] .sharebar,
+  body[data-section="berita"] .news-cta{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
+/* === MOBILE SHELL PARITY BOOST (v6): make content actually feel full-left-right like navbar shell === */
+@media (max-width:991px){
+  :root{
+    --iksass-mobile-shell-left:12px;
+    --iksass-mobile-shell-right:16px;
+    --iksass-mobile-content-pad:12px;
+    --iksass-mobile-content-pad-tight:10px;
+  }
+
+  /* Keep navbar and main shell on the exact same mobile rails. */
+  /* Slightly increase the right rail so the shell ends flush with the hamburger box,
+     matching what already looks correct on the left with the apps button. */
+  .header .navbar > .wrap,
+  body > .header .navbar > .wrap,
+  main#konten > .container,
+  main#konten.page > .container,
+  main#konten.page-content > .container,
+  main.page > .container,
+  main.page-content > .container,
+  main#konten > .page-container,
+  main#konten.page > .page-container,
+  main.page > .page-container,
+  main#konten > .org-structure,
+  main.page > .org-structure,
+  main#konten > .page-shell,
+  main.page > .page-shell,
+  main#konten > .section-shell,
+  main.page > .section-shell,
+  main.page > .container.mh-wrap,
+  main.page > .container.yel-wrap,
+  main.page > .container.sejarah-shell,
+  body[data-section="berita"] .news-hero > .container,
+  body[data-section="berita"] main.page-content > .container{
+    padding-left:var(--iksass-mobile-shell-left) !important;
+    padding-right:var(--iksass-mobile-shell-right) !important;
+  }
+
+  /* Remove extra horizontal breathing space from page-local wrappers. */
+  main.page > .container > *,
+  main.page-content > .container > *,
+  main#konten.page > .container > *,
+  main#konten.page-content > .container > *,
+  body[data-section="berita"] main.page-content > .container > *{
+    max-width:none !important;
+  }
+
+  .section,
+  .section.section-tight,
+  .struktur-notes,
+  .sidik-section,
+  .bumi-section,
+  .news-section,
+  .wasiat-section,
+  .article-section{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  /* Common layout rows/cards should span the available shell width. */
+  .grid2,
+  .grid3,
+  .grid4,
+  .cards,
+  .card-grid,
+  .struktur-cards,
+  .sidik-duo,
+  .sidik-step-grid,
+  .bumi-home__grid,
+  .bumi-grid,
+  .bumi-roadmap,
+  .bumi-flow,
+  .bumi-signal-row,
+  .bumi-signal-row--compact,
+  .news-layout,
+  .news-list,
+  .docs-grid,
+  .info-grid,
+  .proker-grid,
+  .doktrinasi-grid{
+    width:100% !important;
+    max-width:none !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  /* A few page modules needed a stronger nudge than the previous pass. */
+  .struktur-quote,
+  .sidik-hero,
+  .sidik-info-card,
+  .sidik-flow-card,
+  .sidik-story-card,
+  .sidik-process,
+  .sidik-signal-card,
+  .bumi-home__hero,
+  .bumi-hero,
+  .bumi-promo__card,
+  .bumi-closing__card,
+  .bumi-showcase__card,
+  .bumi-deck-preview,
+  .bumi-jump,
+  body[data-page="wasiat"] .wasiat-item,
+  body[data-page="wasiat"] .wasiat-affirm-card,
+  body[data-section="berita"] .news-article,
+  body[data-section="berita"] .news-sidebar,
+  body[data-section="berita"] .featured-media,
+  body[data-section="berita"] .sharebar,
+  body[data-section="berita"] .news-cta{
+    width:100% !important;
+    max-width:none !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+}
+
+@media (max-width:380px){
+  :root{
+    --iksass-mobile-shell-left:10px;
+    --iksass-mobile-shell-right:14px;
+    --iksass-mobile-content-pad:10px;
+    --iksass-mobile-content-pad-tight:8px;
+  }
 }

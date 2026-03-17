@@ -249,15 +249,8 @@
 .doktrinasi-head{
   display:flex;
   align-items:end;
-  justify-content:center;
+  justify-content:space-between;
   gap:18px;
-  text-align:center;
-  margin:0 auto 24px;
-}
-.doktrinasi-head > div{
-  width:100%;
-  display:grid;
-  justify-items:center;
 }
 .doktrinasi-head__link{
   display:inline-flex;
@@ -283,12 +276,8 @@
     font-size:24px;
   }
   .doktrinasi-head{
-    align-items:center;
+    align-items:flex-start;
     flex-direction:column;
-    text-align:center;
-  }
-  .doktrinasi-head > div{
-    justify-items:center;
   }
 }
 @media (max-width:640px){

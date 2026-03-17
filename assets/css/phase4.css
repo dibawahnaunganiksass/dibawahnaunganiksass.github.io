@@ -526,94 +526,78 @@ body[data-page="tentang/sejarah"] .sejarah-chip span{
 }
 
 
-/* Surat Keputusan section: tentang/sejarah */
-body[data-page="tentang/sejarah"] .sejarah-sk{
-  display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(320px,.95fr);
-  gap:22px;
-  align-items:center;
-  padding:28px;
-  border-radius:28px;
-  background:linear-gradient(180deg,#f8fbf9,#ffffff 60%,#f6faf7);
-  border:1px solid rgba(15,122,60,.12);
-  box-shadow:0 16px 40px rgba(15,23,42,.06);
+/* Sejarah page infographic visual refresh */
+body[data-page="tentang/sejarah"] .sejarah-hero{
+  gap:32px;
+  grid-template-columns:minmax(0,1fr) minmax(320px,460px);
+  align-items:start;
 }
-body[data-page="tentang/sejarah"] .sejarah-sk__content{
-  display:grid;
-  gap:14px;
-  align-content:start;
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__content h2{
-  margin:0;
-  font-size:32px;
-  line-height:1.15;
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__lead{
-  margin:0;
-  color:#475569;
-  font-size:17px;
-  line-height:1.8;
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__meta{
-  display:grid;
-  gap:12px;
-  margin-top:6px;
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__meta div{
-  display:grid;
-  gap:4px;
-  padding:14px 16px;
-  border-radius:18px;
-  background:linear-gradient(180deg,#ffffff,#f8fbf9);
-  border:1px solid rgba(15,122,60,.12);
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__meta strong{
-  font-size:13px;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  color:var(--accent);
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__meta span{
-  color:#0f172a;
-  line-height:1.6;
-  font-weight:600;
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__figure{
-  margin:0;
-  display:grid;
-  gap:10px;
-}
-body[data-page="tentang/sejarah"] .sejarah-sk__frame{
+
+body[data-page="tentang/sejarah"] .sejarah-hero__visual{
+  width:100%;
+  max-width:460px;
   justify-self:end;
-  width:min(100%,520px);
-  padding:14px;
-  border-radius:24px;
-  background:linear-gradient(180deg,#ffffff,#f5f8f6);
-  border:1px solid rgba(15,23,42,.08);
-  box-shadow:0 18px 40px rgba(15,23,42,.08);
+  align-self:start;
+  gap:16px;
 }
-body[data-page="tentang/sejarah"] .sejarah-sk__frame img{
+
+body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap{
+  aspect-ratio:auto;
+  min-height:0;
+  padding:18px;
+  border-radius:32px;
+  background:
+    radial-gradient(circle at top left, rgba(15,122,60,.10), transparent 34%),
+    linear-gradient(180deg, rgba(247,251,248,.96), rgba(255,255,255,.99));
+  box-shadow:0 20px 44px rgba(15,23,42,.08);
+}
+
+body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{
   width:100%;
   height:auto;
-  display:block;
-  border-radius:14px;
+  max-width:100%;
+  max-height:none;
   object-fit:contain;
+  object-position:center top;
+  filter:drop-shadow(0 14px 24px rgba(15,122,60,.10));
 }
-body[data-page="tentang/sejarah"] .sejarah-sk__figure figcaption{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.65;
-  text-align:right;
+
+body[data-page="tentang/sejarah"] .sejarah-hero__visual figcaption{
+  max-width:42ch;
+  margin:0 auto;
+  text-align:center;
 }
+
 @media (max-width:1080px){
-  body[data-page="tentang/sejarah"] .sejarah-sk{grid-template-columns:1fr;align-items:start}
-  body[data-page="tentang/sejarah"] .sejarah-sk__frame{justify-self:start;width:min(100%,620px)}
-  body[data-page="tentang/sejarah"] .sejarah-sk__figure figcaption{text-align:left}
+  body[data-page="tentang/sejarah"] .sejarah-hero{
+    grid-template-columns:1fr;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__visual{
+    max-width:min(100%,560px);
+    justify-self:center;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{
+    max-height:none;
+  }
 }
+
 @media (max-width:760px){
-  body[data-page="tentang/sejarah"] .sejarah-sk{padding:20px}
-  body[data-page="tentang/sejarah"] .sejarah-sk__content h2{font-size:26px}
-  body[data-page="tentang/sejarah"] .sejarah-sk__lead{font-size:16px}
-  body[data-page="tentang/sejarah"] .sejarah-sk__frame{padding:10px;border-radius:18px}
+  body[data-page="tentang/sejarah"] .sejarah-hero{
+    gap:20px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__visual{
+    max-width:min(100%,430px);
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap{
+    padding:12px;
+    border-radius:24px;
+  }
+
+  body[data-page="tentang/sejarah"] .sejarah-hero__imagewrap img{
+    max-width:100%;
+  }
 }

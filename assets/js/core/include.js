@@ -1,6 +1,6 @@
 import { escapeHTML, normalizeNewsItems, resolveImageUrl, sortNewsLatest } from './content-utils.js';
 
-const CACHE_VERSION = 'phase2-20260315-mobile-apps-sidik-v1';
+const CACHE_VERSION = 'phase2-20260317-mobile-shell-right-rail-v5';
 
 function applyRoot(html, rootPrefix) {
   const safeRoot = typeof rootPrefix === 'string' ? rootPrefix : '';
@@ -13,6 +13,19 @@ function cacheKey(name) {
   return `iksass:${CACHE_VERSION}:partial:raw:${name}`;
 }
 
+
+function getViewportScrollbarWidth() {
+  const doc = document.documentElement;
+  const width = window.innerWidth - doc.clientWidth;
+  return Math.max(0, Math.round(width));
+}
+
+function updateViewportShellCompensation() {
+  const root = document.documentElement;
+  const width = getViewportScrollbarWidth();
+  root.style.setProperty('--iksass-scrollbar-comp', `${width}px`);
+  return width;
+}
 
 function getSiteShellCandidates() {
   const shellClasses = ['container', 'page-container', 'page-shell', 'section-shell', 'org-structure', 'sejarah-shell', 'mh-wrap', 'yel-wrap'];
@@ -67,98 +80,85 @@ function getSiteShellCandidates() {
 
 function syncSiteShellAlignment() {
   const root = document.documentElement;
-  const reset = () => {
-    root.style.setProperty('--iksass-nav-left-shift', '0px');
-    root.style.setProperty('--iksass-nav-right-shift', '0px');
-    root.style.setProperty('--iksass-nav-left-shift-mobile', '0px');
-    root.style.setProperty('--iksass-nav-right-shift-mobile', '0px');
-    document.querySelectorAll('.iksass-shell-target').forEach((el) => {
-      el.classList.remove('iksass-shell-target', 'iksass-primary-shell');
-    });
-  };
-
-  const isVisible = (el) => !!(el && el.getClientRects().length && getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden');
-  const rect = (el) => (isVisible(el) ? el.getBoundingClientRect() : null);
-
-  if (!document.body) {
-    reset();
-    return;
-  }
-
-  const candidates = getSiteShellCandidates();
-  if (!candidates.length) {
-    reset();
-    return;
-  }
-
-  document.querySelectorAll('.iksass-shell-target').forEach((el) => {
-    if (!candidates.includes(el)) el.classList.remove('iksass-shell-target', 'iksass-primary-shell');
-  });
-  candidates.forEach((el, index) => {
-    el.classList.add('iksass-shell-target');
-    el.classList.toggle('iksass-primary-shell', index === 0);
-  });
-
-  const content = candidates[0];
-  const navLeft = document.querySelector('.header .nav-left');
-  const navCta = document.querySelector('.header .nav-cta');
-  if (!content || !navLeft || !navCta) {
-    reset();
-    return;
-  }
-
-  const logo = document.querySelector('.header .brand-mark');
-  const login = document.querySelector('.header .nav-cta a[href$="auth/login/"]');
-  const apps = document.querySelector('.header .appsbtn');
-  const ctaButtons = Array.from(document.querySelectorAll('.header .nav-cta .iconbtn, .header .nav-cta a.iconbtn'));
-
+  updateViewportShellCompensation();
   root.style.setProperty('--iksass-nav-left-shift', '0px');
   root.style.setProperty('--iksass-nav-right-shift', '0px');
   root.style.setProperty('--iksass-nav-left-shift-mobile', '0px');
   root.style.setProperty('--iksass-nav-right-shift-mobile', '0px');
+  root.style.setProperty('--iksass-nav-wrap-shift', '0px');
+  root.style.removeProperty('--iksass-dynamic-shell-outer-width');
+  root.style.removeProperty('--iksass-dynamic-shell-pad-left');
+  root.style.removeProperty('--iksass-dynamic-shell-pad-right');
+  root.style.removeProperty('--iksass-mobile-shell-left');
+  root.style.removeProperty('--iksass-mobile-shell-right');
 
-  requestAnimationFrame(() => {
-    const contentRect = content.getBoundingClientRect();
-    const contentStyles = getComputedStyle(content);
-    const contentInnerLeft = contentRect.left + (parseFloat(contentStyles.paddingLeft) || 0);
-    const contentInnerRight = contentRect.right - (parseFloat(contentStyles.paddingRight) || 0);
-
-    if (window.innerWidth >= 992) {
-      const logoRect = rect(logo);
-      const loginRect = rect(login);
-      if (!logoRect || !loginRect) {
-        reset();
-        return;
-      }
-      const leftDelta = contentRect.left - logoRect.left;
-      const rightDelta = contentRect.right - loginRect.right;
-      root.style.setProperty('--iksass-nav-left-shift', `${leftDelta.toFixed(2)}px`);
-      root.style.setProperty('--iksass-nav-right-shift', `${rightDelta.toFixed(2)}px`);
-      return;
-    }
-
-    const leftAnchorEl = isVisible(apps) ? apps : logo;
-    const visibleCtas = ctaButtons.filter(isVisible);
-    const rightAnchorEl = visibleCtas.length ? visibleCtas.reduce((best, el) => (el.getBoundingClientRect().right > best.getBoundingClientRect().right ? el : best)) : login;
-    const leftRect = rect(leftAnchorEl);
-    const rightRect = rect(rightAnchorEl);
-    if (!leftRect || !rightRect) {
-      reset();
-      return;
-    }
-
-    const leftDelta = contentInnerLeft - leftRect.left;
-    const rightDelta = contentInnerRight - rightRect.right;
-    root.style.setProperty('--iksass-nav-left-shift-mobile', `${leftDelta.toFixed(2)}px`);
-    root.style.setProperty('--iksass-nav-right-shift-mobile', `${rightDelta.toFixed(2)}px`);
+  document.querySelectorAll('.iksass-shell-target').forEach((el) => {
+    el.classList.remove('iksass-shell-target', 'iksass-primary-shell');
   });
+
+  const navWrap = document.querySelector('.header .navbar > .wrap, header.header .navbar > .wrap');
+  const contentShell = getSiteShellCandidates()[0] || null;
+  const nav = getShellBounds(navWrap);
+  const content = getShellBounds(contentShell);
+
+  if (navWrap && contentShell && nav && content) {
+    contentShell.classList.add('iksass-shell-target', 'iksass-primary-shell');
+    root.style.setProperty('--iksass-dynamic-shell-outer-width', `${Math.round(content.outerWidth)}px`);
+    root.style.setProperty('--iksass-dynamic-shell-pad-left', `${Math.round(content.padLeft)}px`);
+    root.style.setProperty('--iksass-dynamic-shell-pad-right', `${Math.round(content.padRight)}px`);
+    root.style.setProperty('--iksass-nav-wrap-shift', `${Math.round(content.outerLeft - nav.outerLeft)}px`);
+  }
+
+  if (window.matchMedia('(max-width: 991px)').matches) {
+    const appsBtn = document.querySelector('.header .appsbtn');
+    const hamburgerBtn = document.querySelector('.header .hamburger');
+    const fallbackLeft = nav ? nav.left : 16;
+    const fallbackRight = nav ? Math.max(0, window.innerWidth - nav.right) : 16;
+    const leftEdge = appsBtn && appsBtn.getBoundingClientRect ? appsBtn.getBoundingClientRect().left : fallbackLeft;
+    const rawRightEdge = hamburgerBtn && hamburgerBtn.getBoundingClientRect ? Math.max(0, window.innerWidth - hamburgerBtn.getBoundingClientRect().right) : fallbackRight;
+    const rightVisualTrim = 4;
+    const rightEdge = rawRightEdge + rightVisualTrim;
+    root.style.setProperty('--iksass-mobile-shell-left', `${Math.max(12, Math.round(leftEdge))}px`);
+    root.style.setProperty('--iksass-mobile-shell-right', `${Math.max(12, Math.round(rightEdge))}px`);
+    root.style.setProperty('--iksass-nav-wrap-shift', '0px');
+    root.style.setProperty('--iksass-dynamic-shell-outer-width', '100%');
+    root.style.setProperty('--iksass-dynamic-shell-pad-left', `${Math.max(12, Math.round(leftEdge))}px`);
+    root.style.setProperty('--iksass-dynamic-shell-pad-right', `${Math.max(12, Math.round(rightEdge))}px`);
+  }
+
+  updateShellDebugOverlay();
 }
 
 function scheduleSiteShellAlignment() {
   syncSiteShellAlignment();
-  requestAnimationFrame(syncSiteShellAlignment);
-  setTimeout(syncSiteShellAlignment, 80);
-  setTimeout(syncSiteShellAlignment, 220);
+}
+
+
+function ensureShellDebugOverlay() {
+  return null;
+}
+
+function getShellBounds(el) {
+  if (!el || !el.getBoundingClientRect) return null;
+  const rect = el.getBoundingClientRect();
+  if (!rect.width) return null;
+  const styles = getComputedStyle(el);
+  const padLeft = parseFloat(styles.paddingLeft || '0') || 0;
+  const padRight = parseFloat(styles.paddingRight || '0') || 0;
+  return {
+    left: rect.left + padLeft,
+    right: rect.right - padRight,
+    width: Math.max(0, rect.width - padLeft - padRight),
+    outerLeft: rect.left,
+    outerRight: rect.right,
+    outerWidth: rect.width,
+    padLeft,
+    padRight,
+  };
+}
+
+function updateShellDebugOverlay() {
+  return;
 }
 
 function setHTMLAll(holders, html, removeAttr = true, name = '') {
