@@ -1,0 +1,268 @@
+body[data-page="tentang/arah-gerak-perjuangan"] .page-sub {
+  max-width: 68ch;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-stack {
+  display: grid;
+  gap: clamp(1.25rem, 1rem + 1vw, 2rem);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-card,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-card,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+  border: 1px solid #dbe5dd;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(15, 107, 61, 0.08);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-card {
+  overflow: hidden;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-head {
+  padding: clamp(1.25rem, 1rem + 1vw, 2rem);
+  background:
+    radial-gradient(circle at top left, rgba(208, 184, 92, 0.18), transparent 32%),
+    linear-gradient(135deg, #0b5a33 0%, #0f6b3d 55%, #6a9434 100%);
+  color: #fff;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-head h2,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel h2,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-section-title {
+  margin: 0.75rem 0 0.65rem;
+  font-size: clamp(1.55rem, 1.2rem + 1.2vw, 2.35rem);
+  line-height: 1.12;
+  color: inherit;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-head p,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel p,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-card p,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain p,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-copy p {
+  margin: 0;
+  color: inherit;
+  line-height: 1.7;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-media {
+  padding: clamp(0.85rem, 0.6rem + 1vw, 1.4rem);
+  background: #eff6f0;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-media img,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  padding: 0 clamp(0.85rem, 0.6rem + 1vw, 1.4rem) clamp(1rem, 0.7rem + 0.8vw, 1.5rem);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-mini {
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #d9e5dc;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-mini strong,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-card strong,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain h3,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-badge strong {
+  color: #0b5a33;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-mini p {
+  margin: 0.45rem 0 0;
+  color: #5f6f64;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel {
+  padding: clamp(1.1rem, 0.9rem + 0.8vw, 1.6rem);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel ul,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1.15rem;
+  color: #4f6053;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel li,
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain li {
+  margin-bottom: 0.55rem;
+  line-height: 1.55;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-four {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-card {
+  padding: 1.1rem 1.15rem;
+  position: relative;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-step {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f6b3d, #6a9434);
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-card p {
+  color: #58695d;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain {
+  padding: 1.1rem 1.15rem;
+  border-top: 4px solid #0f6b3d;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain p {
+  margin-top: 0.55rem;
+  color: #596a5e;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-segitiga {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-card {
+  overflow: hidden;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-copy {
+  padding: clamp(1.2rem, 1rem + 0.8vw, 1.7rem);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-copy .agp-section-title {
+  color: #0b5a33;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-figure {
+  padding: 0.8rem;
+  background: linear-gradient(180deg, #0a5a33 0%, #0e6b3c 100%);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-figure img {
+  box-shadow: 0 20px 48px rgba(5, 42, 23, 0.22);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-rail {
+  display: grid;
+  gap: 0.9rem;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-badge {
+  padding: 1rem 1.05rem;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9f5 100%);
+  border: 1px solid #dbe6dc;
+  box-shadow: 0 14px 32px rgba(15, 107, 61, 0.06);
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-badge p {
+  margin: 0.45rem 0 0;
+  color: #607064;
+  line-height: 1.65;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-quote {
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #c8a43a;
+  background: #f7fbf7;
+  border-radius: 0 18px 18px 0;
+  color: #4e5d52;
+  font-style: italic;
+}
+
+body[data-page="tentang/arah-gerak-perjuangan"] .agp-prose-strong {
+  color: #0b5a33;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-pillars,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-grid-2,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-four,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain-grid,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-segitiga {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-head,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-panel,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-card,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-domain,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-copy,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-badge {
+    padding-left: 0.95rem;
+    padding-right: 0.95rem;
+  }
+
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-media,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-triangle-figure {
+    padding: 0.6rem;
+  }
+
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-hero-head h2,
+  body[data-page="tentang/arah-gerak-perjuangan"] .agp-section-title {
+    font-size: 1.45rem;
+  }
+}
